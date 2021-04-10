@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.1.0](https://www.github.com/Toaztr/specs/compare/v0.0.6...v0.1.0) (2021-04-10)
+
+
+### Features
+
+* python packaging ([93b83cf](https://www.github.com/Toaztr/specs/commit/93b83cf38e2e2f21daf9d97bf0d22484b2aa6294))
+* python packaging ([396cc52](https://www.github.com/Toaztr/specs/commit/396cc522cc684e7606d8106b6e080ebdccb81566))
+* python packaging ([525af55](https://www.github.com/Toaztr/specs/commit/525af5553fc955660fd5991fa649df93ce4c17b2))
+
 ### [0.0.6](https://www.github.com/Toaztr/specs/compare/v0.0.5...v0.0.6) (2021-04-10)
 
 
