@@ -1,0 +1,22 @@
+{
+  "name": "@toaztr/specs",
+  "version": "0.0.1",
+  "description": "OpenAPI specs of Toaztr",
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Toaztr/specs.git"
+  },
+  "keywords": [
+    "api",
+    "fintech",
+    "toaztr"
+  ],
+  "author": "Toaztr SAS",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Toaztr/specs/issues"
+  },
+  "homepage": "https://github.com/Toaztr/specs#readme"
+}
