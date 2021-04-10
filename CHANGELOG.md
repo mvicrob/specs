@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.0.2](https://www.github.com/Toaztr/specs/compare/v0.0.1...v0.0.2) (2021-04-10)
+
+
+### Bug Fixes
+
+* release please id ([8d8fe10](https://www.github.com/Toaztr/specs/commit/8d8fe101810773e5439f4d1d1b43807e42b9928a))
+
 ### 0.0.1 (2021-04-10)
 
 
