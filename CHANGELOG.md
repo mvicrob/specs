@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.0.4](https://www.github.com/Toaztr/specs/compare/v0.0.3...v0.0.4) (2021-04-10)
+
+
+### Bug Fixes
+
+* npm token ([3e363c2](https://www.github.com/Toaztr/specs/commit/3e363c246a6c36781edad0fe4a38746913a5f289))
+
 ### [0.0.3](https://www.github.com/Toaztr/specs/compare/v0.0.2...v0.0.3) (2021-04-10)
 
 
