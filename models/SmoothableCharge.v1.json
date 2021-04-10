@@ -1,0 +1,38 @@
+{
+  "type": "object",
+  "title": "SmoothableCharge",
+  "description": "Charge persistante lissable, matérialisée dans le plan de financement.",
+  "properties": {
+    "type": {
+      "type": "string",
+      "description": "Type.",
+      "enum": [
+        "SMOOTHABLE_CHARGE"
+      ]
+    },
+    "start_month": {
+      "description": "Mois de départ du paiement de la charge lissable, dans le plan de financement.",
+      "minimum": 0,
+      "type": "integer"
+    },
+    "end_month": {
+      "description": "Mois de fin du paiement de la charge lissable, dans le plan de financement.",
+      "minimum": 0,
+      "type": "integer"
+    },
+    "monthly_payment": {
+      "description": "Montant du paiement mensuel de la charge.",
+      "minimum": 0,
+      "type": "number"
+    },
+    "charge_name": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "type",
+    "start_month",
+    "end_month",
+    "monthly_payment"
+  ]
+}

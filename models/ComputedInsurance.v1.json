@@ -1,0 +1,20 @@
+{
+  "type": "object",
+  "title": "ComputedInsurance",
+  "properties": {
+    "insurance": {
+      "$ref": "./Insurance.v1.json"
+    },
+    "monthly_values": {
+      "description": "Représente les primes d'assurance mensuelles.",
+      "type": "array",
+      "items": {
+        "type": "number"
+      }
+    }
+  },
+  "required": [
+    "monthly_values"
+  ],
+  "description": "Assurance et primes calculées."
+}

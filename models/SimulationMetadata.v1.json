@@ -1,0 +1,20 @@
+{
+  "type": "object",
+  "title": "SimulationMetadata",
+  "description": "Metadate de la simulation.",
+  "properties": {
+    "id": {
+      "description": "ID unique de la simulation",
+      "type": "string"
+    },
+    "case_id": {
+      "default": null,
+      "description": "ID du dossier lié à cette simulation",
+      "nullable": true,
+      "type": "string"
+    }
+  },
+  "required": [
+    "id"
+  ]
+}

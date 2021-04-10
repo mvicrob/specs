@@ -1,0 +1,88 @@
+{
+  "type": "object",
+  "title": "Employee",
+  "description": "Details professionnels d'un emprunteur employée.",
+  "properties": {
+    "type": {
+      "type": "string",
+      "enum": [
+        "EMPLOYEE"
+      ],
+      "description": "Type de travailleur."
+    },
+    "contract_type": {
+      "type": "string",
+      "default": null,
+      "description": "Type de contrat.",
+      "enum": [
+        "CDD",
+        "CDI",
+        "CIVIL_SERVANT",
+        "OTHER",
+        "null"
+      ],
+      "nullable": true
+    },
+    "sub_contract_type": {
+      "type": "string",
+      "default": null,
+      "description": "Particularité du contrat.",
+      "enum": [
+        "TRIAL_PERIOD",
+        "TITULAR_CIVIL_SERVANT",
+        "CONTRACTUAL_CIVIL_SERVANT",
+        "VACATAIRE_CIVIL_SERVANT",
+        "INTERIM",
+        "INTERN",
+        "null"
+      ],
+      "nullable": true
+    },
+    "profession": {
+      "default": null,
+      "description": "Profession.",
+      "nullable": true,
+      "type": "string"
+    },
+    "employer": {
+      "default": null,
+      "description": "Nom de l'employeur actuel.",
+      "nullable": true,
+      "type": "string"
+    },
+    "employer_address": {
+      "$ref": "./Address.v1.json"
+    },
+    "hiring_date": {
+      "default": null,
+      "description": "Date d'embauche.",
+      "format": "date-time",
+      "nullable": true,
+      "type": "string"
+    },
+    "employees_number": {
+      "type": "integer",
+      "default": null,
+      "description": "Nombre d'employés dans l'entreprise employeuse.",
+      "nullable": true,
+      "minimum": 0
+    },
+    "end_contract_date": {
+      "default": null,
+      "description": "Date de fin contrat, pour les CDD.",
+      "format": "date-time",
+      "nullable": true,
+      "type": "string"
+    },
+    "end_trial_date": {
+      "default": null,
+      "description": "Date de fin de la période d'essai.",
+      "format": "date-time",
+      "nullable": true,
+      "type": "string"
+    }
+  },
+  "required": [
+    "type"
+  ]
+}

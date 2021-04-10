@@ -1,0 +1,76 @@
+{
+  "title": "PinelNewProperty",
+  "type": "object",
+  "description": "Projet d'acquisition d'un logement neuf.",
+  "properties": {
+    "administrative_information": {
+      "$ref": "./PinelAdministrativeInformation.v1.json"
+    },
+    "expenses": {
+      "type": "object",
+      "properties": {
+        "price": {
+          "default": null,
+          "description": "Prix du bien à acquérir. Ou prix du terrain dans le cadre d'une construction.",
+          "minimum": 0,
+          "nullable": true,
+          "type": "number"
+        },
+        "other_expenses": {
+          "default": null,
+          "description": "Montant des éventuelles autres dépenses non catégorisées.",
+          "minimum": 0,
+          "nullable": true,
+          "type": "number"
+        },
+        "vat": {
+          "default": null,
+          "description": "Montant de la TVA, si celle-ci est comptées séparément.",
+          "minimum": 0,
+          "nullable": true,
+          "type": "number"
+        },
+        "other_taxes": {
+          "default": null,
+          "description": "Montant des éventuelles autres taxes (RAP, aménagement, ...).",
+          "minimum": 0,
+          "nullable": true,
+          "type": "number"
+        },
+        "fees": {
+          "type": "object",
+          "properties": {
+            "agency_fees": {
+              "default": null,
+              "description": "Frais d'agence.",
+              "minimum": 0,
+              "nullable": true,
+              "type": "number"
+            },
+            "broker_fees": {
+              "default": null,
+              "nullable": true,
+              "description": "Frais de courtage.",
+              "minimum": 0,
+              "type": "number"
+            },
+            "file_management_fees": {
+              "default": null,
+              "nullable": true,
+              "description": "Frais de dossier.",
+              "minimum": 0,
+              "type": "number"
+            },
+            "notary_fees": {
+              "default": null,
+              "description": "Frais de notaire.",
+              "minimum": 0,
+              "nullable": true,
+              "type": "number"
+            }
+          }
+        }
+      }
+    }
+  }
+}

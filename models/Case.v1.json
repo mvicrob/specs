@@ -1,0 +1,62 @@
+{
+  "type": "object",
+  "title": "Case",
+  "description": "Dossier emprunteur complet.",
+  "properties": {
+    "id": {
+      "default": null,
+      "description": "ID unique du case.",
+      "nullable": true,
+      "type": "string"
+    },
+    "actor": {
+      "oneOf": [
+        {
+          "$ref": "./HouseholdDetails.v1.json"
+        },
+        {
+          "$ref": "./LegalPerson.v1.json"
+        }
+      ]
+    },
+    "partners": {
+      "description": "Liste des intervenants sur le dossier: notaire, courtier, conseiller clientèle banque, agent immobilier, etc...",
+      "type": "array",
+      "items": {
+        "$ref": "./ActivePartner.v1.json"
+      }
+    },
+    "project": {
+      "oneOf": [
+        {
+          "$ref": "./Budget.v1.json"
+        },
+        {
+          "$ref": "./HouseConstruction.v1.json"
+        },
+        {
+          "$ref": "./OldProperty.v1.json"
+        },
+        {
+          "$ref": "./NewProperty.v1.json"
+        },
+        {
+          "$ref": "./Works.v1.json"
+        },
+        {
+          "$ref": "./Land.v1.json"
+        },
+        {
+          "$ref": "./DebtConsolidation.v1.json"
+        },
+        {
+          "$ref": "./Pinel.v1.json"
+        }
+      ],
+      "description": "Projet."
+    },
+    "metadata": {
+      "$ref": "./CaseMetaData.v1.json"
+    }
+  }
+}

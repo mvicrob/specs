@@ -1,0 +1,42 @@
+{
+  "title": "LightLegalPerson",
+  "type": "object",
+  "description": "Informations relatives à l'emprunteur personne morale.",
+  "properties": {
+    "type": {
+      "type": "string",
+      "enum": [
+        "LEGAL_PERSON"
+      ]
+    },
+    "structure_type": {
+      "default": null,
+      "description": "Type de structure.",
+      "type": "string",
+      "enum": [
+        "SCI",
+        "COMPANY",
+        "ASSOCIATION",
+        "POLITICAL_PARTY",
+        "LOCAL_AUTHORITIES",
+        null
+      ],
+      "nullable": true
+    },
+    "persons": {
+      "type": "array",
+      "default": null,
+      "nullable": true,
+      "description": "Associés de la persone morale.",
+      "items": {
+        "$ref": "./LightPerson.v1.json"
+      }
+    },
+    "financial_results": {
+      "$ref": "./FinancialResults.v1.json"
+    }
+  },
+  "required": [
+    "type"
+  ]
+}

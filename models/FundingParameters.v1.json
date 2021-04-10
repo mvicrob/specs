@@ -1,0 +1,12 @@
+{
+  "title": "FundingParameters",
+  "description": "Paramètres d'un calcul de financement.",
+  "allOf": [
+    {
+      "$ref": "./FundingPlanParameters.v1.json"
+    },
+    {
+      "$ref": "./LightCaseFunding.json"
+    }
+  ]
+}

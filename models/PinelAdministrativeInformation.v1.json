@@ -1,0 +1,10 @@
+{
+  "title": "PinelAdministrativeInformation",
+  "type": "object",
+  "properties": {
+    "address": {
+      "$ref": "./LightAddress.v1.json"
+    }
+  },
+  "description": "Informations diverses, dont administratives, relatives au projet."
+}

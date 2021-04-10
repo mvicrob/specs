@@ -1,0 +1,59 @@
+{
+  "title": "FundingResultsSummary",
+  "type": "object",
+  "description": "Résumé du plan de financement: valeurs, montants globaux et zone utilisée pour le calcul.",
+  "properties": {
+    "effective_maximal_monthly_payment": {
+      "type": "number",
+      "minimum": 0,
+      "nullable": true,
+      "default": null,
+      "description": "Montant maximal des mensualités, sur toute la durée du plan de financement."
+    },
+    "duration_months": {
+      "type": "integer",
+      "minimum": 0,
+      "nullable": true,
+      "default": null,
+      "description": "Durée totale du plan de financement."
+    },
+    "total_interests": {
+      "type": "number",
+      "minimum": 0,
+      "nullable": true,
+      "default": null,
+      "description": "Coût total des intérêts."
+    },
+    "total_insurances": {
+      "type": "number",
+      "minimum": 0,
+      "nullable": true,
+      "default": null,
+      "description": "Coût total des assurances."
+    },
+    "total_guaranty": {
+      "type": "number",
+      "minimum": 0,
+      "nullable": true,
+      "default": null,
+      "description": "Coût totals des garanties."
+    },
+    "total_preamortizations": {
+      "type": "number",
+      "minimum": 0,
+      "nullable": true,
+      "default": null,
+      "description": "Coût total du pré-amortissement."
+    },
+    "final_debt_ratio": {
+      "type": "number",
+      "minimum": 0,
+      "nullable": true,
+      "default": null,
+      "description": "Taux d'endettement final de l'emprunteur, calculé en considérant l'ensemble de ses revenus, de ses charges, et du plan de financement. Une valeur a null signifie que le calcul est impossible (revenus non renseignés par exemple)."
+    },
+    "zone": {
+      "$ref": "./Zone.v1.json"
+    }
+  }
+}

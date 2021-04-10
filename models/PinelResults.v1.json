@@ -1,0 +1,130 @@
+{
+  "type": "object",
+  "title": "PinelResults",
+  "description": "Résultats de la simulation d'un dispositif Pinel.",
+  "properties": {
+    "funding_plan": {
+      "$ref": "./FundingResults.v1.json"
+    },
+    "income_information": {
+      "$ref": "./FrenchIncomeTaxResults.v1.json"
+    },
+    "maximum_rent": {
+      "default": null,
+      "nullable": true,
+      "description": "Plafond de loyer légal.",
+      "minimum": 0,
+      "type": "number"
+    },
+    "notary_fees": {
+      "default": null,
+      "nullable": true,
+      "type": "number",
+      "minimum": 0
+    },
+    "pinel_table": {
+      "type": "object",
+      "properties": {
+        "price_evolution": {
+          "default": null,
+          "nullable": true,
+          "type": "array",
+          "description": "Évolution du prix du logement.",
+          "items": {
+            "type": "number"
+          }
+        },
+        "renting_evolution": {
+          "default": null,
+          "nullable": true,
+          "type": "array",
+          "description": "Évolution du loyer.",
+          "items": {
+            "type": "number"
+          }
+        },
+        "renting_received": {
+          "default": null,
+          "nullable": true,
+          "type": "array",
+          "description": "Somme des loyers perçus.",
+          "items": {
+            "type": "number"
+          }
+        },
+        "interests": {
+          "default": null,
+          "nullable": true,
+          "type": "array",
+          "description": "Somme des intérêts d'emprunt.",
+          "items": {
+            "type": "number"
+          }
+        },
+        "insurances": {
+          "default": null,
+          "nullable": true,
+          "type": "array",
+          "description": "Somme des intérêts d'emprunt.",
+          "items": {
+            "type": "number"
+          }
+        },
+        "deductible_charges": {
+          "default": null,
+          "nullable": true,
+          "type": "array",
+          "description": "Charges déductibles.",
+          "items": {
+            "type": "number"
+          }
+        },
+        "renting_result": {
+          "default": null,
+          "nullable": true,
+          "type": "array",
+          "description": "Résultats locatif: loyer - charges.",
+          "items": {
+            "type": "number"
+          }
+        },
+        "tax_on_renting_result": {
+          "default": null,
+          "nullable": true,
+          "type": "array",
+          "description": "Impôt sur le résultat locatif.",
+          "items": {
+            "type": "number"
+          }
+        },
+        "tax_reduction": {
+          "default": null,
+          "nullable": true,
+          "type": "array",
+          "description": "Réduction d'impôt Pinel.",
+          "items": {
+            "type": "number"
+          }
+        },
+        "resulting_tax_impact": {
+          "default": null,
+          "nullable": true,
+          "type": "array",
+          "description": "Impact final sur l'impôt, incluant loyers et réduction Pinel.",
+          "items": {
+            "type": "number"
+          }
+        },
+        "treasury": {
+          "default": null,
+          "nullable": true,
+          "type": "array",
+          "description": "Besoin de trésorerie.",
+          "items": {
+            "type": "number"
+          }
+        }
+      }
+    }
+  }
+}

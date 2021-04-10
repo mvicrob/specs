@@ -1,0 +1,25 @@
+{
+  "properties": {
+    "type": {
+      "description": "Type d'indemnités de remboursement anticipé (IRA): calcul légal, ou valeur spécifique (négociée par exemple).",
+      "type": "string",
+      "enum": [
+        "LEGAL",
+        "NEGOCIATED"
+      ]
+    },
+    "value": {
+      "default": null,
+      "nullable": true,
+      "description": "Montant des indemnités de remboursement anticipé (IRA).",
+      "minimum": 0,
+      "type": "number"
+    }
+  },
+  "required": [
+    "type"
+  ],
+  "type": "object",
+  "title": "Ira",
+  "description": "Indemnités de remboursement anticipé. Si le type est LEGAL, le calcul est fait automatiquement."
+}

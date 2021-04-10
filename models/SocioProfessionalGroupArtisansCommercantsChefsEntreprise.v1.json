@@ -1,0 +1,29 @@
+{
+  "type": "object",
+  "title": "SocioProfessionalGroupArtisansCommercantsChefsEntreprise",
+  "description": "Catégorie socioprofessionnelle des artisants, commerçants et chefs d'entreprise.",
+  "properties": {
+    "type": {
+      "type": "string",
+      "default": "ARTISANS_COMMERCANTS_CHEFS_DENTREPRISE",
+      "enum": [
+        "ARTISANS_COMMERCANTS_CHEFS_DENTREPRISE"
+      ]
+    },
+    "category": {
+      "default": null,
+      "description": "Catégorie socio-profesionnelle.",
+      "type": "string",
+      "enum": [
+        "ARTISANS",
+        "COMMERCANTS_ET_ASSIMILES",
+        "CHEFS_ENTREPRISE_10_SALARIES_OU_PLUS",
+        null
+      ],
+      "nullable": true
+    }
+  },
+  "required": [
+    "type"
+  ]
+}

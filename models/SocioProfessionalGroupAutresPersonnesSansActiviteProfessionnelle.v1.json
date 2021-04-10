@@ -1,0 +1,31 @@
+{
+  "type": "object",
+  "title": "SocioProfessionalGroupAutresPersonnesSansActiviteProfessionnelle",
+  "description": "Catégorie socioprofessionnelle des autres personnes sans activité professionnelle.",
+  "properties": {
+    "type": {
+      "type": "string",
+      "default": "AUTRES_PERSONNES_SANS_ACTIVITE_PROFESSIONNELLE",
+      "enum": [
+        "AUTRES_PERSONNES_SANS_ACTIVITE_PROFESSIONNELLE"
+      ]
+    },
+    "category": {
+      "default": null,
+      "description": "Catégorie socio-profesionnelle.",
+      "type": "string",
+      "enum": [
+        "CHOMEURS_AYANT_JAMAIS_TRAVAILLE",
+        "MILITAIRES_DU_CONTINGENT",
+        "ELEVES_ETUDIANTS",
+        "SANS_ACTIVITE_MOINS_60",
+        "SANS_ACTIVITE_PLUS_60",
+        null
+      ],
+      "nullable": true
+    }
+  },
+  "required": [
+    "type"
+  ]
+}

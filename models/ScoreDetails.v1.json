@@ -1,0 +1,20 @@
+{
+  "type": "object",
+  "title": "ScoreDetails",
+  "description": "Résultat d'un scoring de dossier, permettant d'estimer le taux.",
+  "properties": {
+    "rates": {
+      "default": null,
+      "nullable": true,
+      "description": "List de taux estimés pour chaque durée de crédit.",
+      "type": "array",
+      "items": {
+        "$ref": "./RatePerDuration.v1.json"
+      }
+    },
+    "score": {
+      "description": "Score du dossier.",
+      "type": "number"
+    }
+  }
+}

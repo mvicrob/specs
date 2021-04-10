@@ -1,0 +1,33 @@
+{
+  "type": "object",
+  "title": "SocioProfessionalGroupProfessionsIntermediaires",
+  "description": "Catégorie socioprofessionnelle des professions intermédiaires.",
+  "properties": {
+    "type": {
+      "type": "string",
+      "default": "PROFESSIONS_INTERMEDIAIRES",
+      "enum": [
+        "PROFESSIONS_INTERMEDIAIRES"
+      ]
+    },
+    "category": {
+      "default": null,
+      "description": "Catégorie socio-profesionnelle.",
+      "type": "string",
+      "enum": [
+        "PROFESSEURS_DES_ECOLES_INSTITUTEUR_ET_ASSIMILE",
+        "PROFESSIONS_INTERMEDIAIRES_DE_LA_SANTE_ET_DU_TRAVAIL_SOCIAL",
+        "CLERGE_RELIGIEUX",
+        "PROFESSIONS_INTERMEDIAIRES_ADMINISTRATIVES_DE_LA_FONCTION_PUBLIQUE",
+        "PROFESSIONS_INTERMEDIAIRES_ADMINISTRATIVES_COMMERCIALES_ENTREPRISES",
+        "TECHNICIENS",
+        "CONTREMAITRES_AGENTS_DE_MAITRISE",
+        null
+      ],
+      "nullable": true
+    }
+  },
+  "required": [
+    "type"
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "properties": {
+    "amount": {
+      "description": "Montant débloqué.",
+      "minimum": 0,
+      "type": "number"
+    },
+    "date": {
+      "description": "Date (mois) de déblocage.",
+      "minimum": 0,
+      "type": "integer"
+    },
+    "reason": {
+      "default": null,
+      "description": "Finalité du déblocage.",
+      "type": "string"
+    }
+  },
+  "required": [
+    "amount",
+    "date"
+  ],
+  "type": "object",
+  "title": "CallForFunds",
+  "description": "Appel de fonds, dans le cadre d'un contract CCMI par exemple."
+}

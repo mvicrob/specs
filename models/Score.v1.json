@@ -1,0 +1,16 @@
+{
+  "type": "object",
+  "title": "Score",
+  "description": "Réponse d'un score de dossier.",
+  "properties": {
+    "case": {
+      "$ref": "./Case.v1.json"
+    },
+    "results": {
+      "$ref": "./ScoreDetails.v1.json"
+    }
+  },
+  "required": [
+    "case"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "type": "string",
+  "title": "DpeRate",
+  "enum": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "VIERGE",
+    "null"
+  ],
+  "nullable": true,
+  "description": "Note du diagnostique de performance énergétique (DPE)."
+}

@@ -1,0 +1,21 @@
+{
+  "properties": {
+    "figure": {
+      "default": null,
+      "description": "Chiffre.",
+      "nullable": true,
+      "type": "number"
+    },
+    "weight": {
+      "default": 100,
+      "description": "Pondération en pourcentage: 30 pour 30%. C'est à dire qu'un coefficient de 0.3 sera appliqué à ce chiffre.",
+      "maximum": 100,
+      "minimum": 0,
+      "nullable": true,
+      "type": "number"
+    }
+  },
+  "type": "object",
+  "title": "WeightedFigure",
+  "description": "Valeur monétaire et sa pondération."
+}

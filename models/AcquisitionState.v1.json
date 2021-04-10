@@ -1,0 +1,17 @@
+{
+  "type": "string",
+  "title": "AcquisitionState",
+  "enum": [
+    "VEFA",
+    "SOCIAL",
+    "UNDER_CONSTRUCTION",
+    "RAW_LAND",
+    "NEW",
+    "OLD_WITH_WORKS",
+    "OLD",
+    "WORKS",
+    "null"
+  ],
+  "nullable": true,
+  "description": "État de l'acquisition."
+}

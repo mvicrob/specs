@@ -1,0 +1,19 @@
+{
+  "type": "object",
+  "title": "PinelPerson",
+  "description": "Informations générales sur l'emprunteur.",
+  "properties": {
+    "is_borrower": {
+      "type": "boolean",
+      "nullable": true,
+      "default": true,
+      "description": "Cette personne est-elle un emprunteur, ou est-elle renseignée pour information seulement."
+    },
+    "finance": {
+      "$ref": "./BaseFinanceDetails.v1.json"
+    },
+    "civil": {
+      "$ref": "./LightIndividual.v1.json"
+    }
+  }
+}

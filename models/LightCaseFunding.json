@@ -1,0 +1,36 @@
+{
+  "type": "object",
+  "title": "LightCaseFunding",
+  "description": "Dossier emprunteur limité aux informations impactant le plan de financement, pour un financement.",
+  "properties": {
+    "project": {
+      "oneOf": [
+        {
+          "$ref": "./LightHouseConstruction.v1.json"
+        },
+        {
+          "$ref": "./LightOldProperty.v1.json"
+        },
+        {
+          "$ref": "./LightNewProperty.v1.json"
+        },
+        {
+          "$ref": "./LightWorks.v1.json"
+        },
+        {
+          "$ref": "./LightLand.v1.json"
+        }
+      ]
+    },
+    "actor": {
+      "oneOf": [
+        {
+          "$ref": "./LightHouseholdDetails.v1.json"
+        },
+        {
+          "$ref": "./LightLegalPerson.v1.json"
+        }
+      ]
+    }
+  }
+}

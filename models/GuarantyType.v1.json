@@ -1,0 +1,15 @@
+{
+  "type": "string",
+  "title": "GuarantyType",
+  "enum": [
+    "HYPOTHEQUE",
+    "IPPD",
+    "CASDEN",
+    "CREDIT_LOGEMENT_CLASSIC",
+    "CREDIT_LOGEMENT_INITIO",
+    "MGEN",
+    "null"
+  ],
+  "nullable": true,
+  "description": "Type de garantie du prêt."
+}

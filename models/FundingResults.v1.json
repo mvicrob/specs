@@ -1,0 +1,33 @@
+{
+  "type": "object",
+  "title": "FundingResults",
+  "description": "Résultats d'un calcul de financement.",
+  "properties": {
+    "status": {
+      "description": "Status de la simulation: optimal (c'est à dire qu'un plan de financement a été trouvé) ou infaisable (la plupart du temps, enraison d'une mensualité maximale trop basse).",
+      "type": "string",
+      "enum": [
+        "OPTIMAL",
+        "INFEASIBLE"
+      ]
+    },
+    "loans": {
+      "description": "Ligne(s) de crédit incluses dans le plan de financement.",
+      "type": "array",
+      "default": null,
+      "nullable": true,
+      "items": {
+        "$ref": "./Loan.v1.json"
+      }
+    },
+    "taegs": {
+      "$ref": "./Taeg.v1.json"
+    },
+    "summary": {
+      "$ref": "./FundingResultsSummary.v1.json"
+    }
+  },
+  "required": [
+    "status"
+  ]
+}

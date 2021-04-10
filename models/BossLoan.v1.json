@@ -1,0 +1,29 @@
+{
+  "type": "object",
+  "title": "BossLoan",
+  "description": "Prêt 1% employeur, ainsi que sa ou ses assurance(s) et sa garantie. \n\nL'inclusion de ce prêt dans le plan de financement dépendra au final du résultat de calcul d'élligibilité et donc des caractéristiques du dossier.",
+  "properties": {
+    "type": {
+      "type": "string",
+      "enum": [
+        "BOSS_LOAN"
+      ],
+      "description": "Type de prêt: prêt 1% employeur."
+    },
+    "insurances": {
+      "description": "Assurance(s) emprunteur(s).",
+      "type": "array",
+      "default": null,
+      "nullable": true,
+      "items": {
+        "$ref": "./Insurance.v1.json"
+      }
+    },
+    "guaranty_type": {
+      "$ref": "./GuarantyType.v1.json"
+    }
+  },
+  "required": [
+    "type"
+  ]
+}

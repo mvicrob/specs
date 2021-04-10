@@ -1,0 +1,25 @@
+{
+  "title": "DependentPerson",
+  "type": "object",
+  "description": "Personne à charge, différente des enfants mineurs.",
+  "properties": {
+    "type": {
+      "type": "string",
+      "enum": [
+        "MOTHER",
+        "FATHER",
+        "OTHER"
+      ],
+      "description": "Type de personne à charge."
+    },
+    "comment": {
+      "type": "string",
+      "description": "Commentaire.",
+      "default": null,
+      "nullable": true
+    }
+  },
+  "required": [
+    "type"
+  ]
+}

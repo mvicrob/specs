@@ -1,0 +1,60 @@
+{
+  "title": "LightWorks",
+  "description": "Projet de travaux",
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string",
+      "enum": [
+        "WORKS"
+      ]
+    },
+    "administrative_information": {
+      "$ref": "./LightAdministrativeInformation.v1.json"
+    },
+    "dpe_rate": {
+      "$ref": "./DpeRate.v1.json"
+    },
+    "expenses": {
+      "type": "object",
+      "properties": {
+        "works_price": {
+          "default": null,
+          "description": "Prix des travaux.",
+          "minimum": 0,
+          "nullable": true,
+          "type": "number"
+        },
+        "other_expenses": {
+          "default": null,
+          "description": "Montant des éventuelles autres dépenses non catégorisées.",
+          "minimum": 0,
+          "nullable": true,
+          "type": "number"
+        },
+        "fees": {
+          "type": "object",
+          "properties": {
+            "broker_fees": {
+              "default": null,
+              "nullable": true,
+              "description": "Frais de courtage.",
+              "minimum": 0,
+              "type": "number"
+            },
+            "file_management_fees": {
+              "default": null,
+              "nullable": true,
+              "description": "Frais de dossier.",
+              "minimum": 0,
+              "type": "number"
+            }
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "type"
+  ]
+}

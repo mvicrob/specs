@@ -1,0 +1,16 @@
+{
+  "title": "ScoreResponse",
+  "allOf": [
+    {
+      "$ref": "./SuccessResponse.v1.json"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "data": {
+          "$ref": "./Score.v1.json"
+        }
+      }
+    }
+  ]
+}

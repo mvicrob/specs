@@ -1,0 +1,46 @@
+{
+  "properties": {
+    "income_tax": {
+      "description": "Montant de l'impôt.",
+      "minimum": 0,
+      "type": "number"
+    },
+    "slice_number": {
+      "description": "Numéro de la tranche marginale d'imposition.",
+      "maximum": 5,
+      "minimum": 1,
+      "type": "integer"
+    },
+    "average_rate": {
+      "description": "Taux moyen d'imposition.",
+      "minimum": 0,
+      "type": "number"
+    },
+    "cehr": {
+      "description": "Contribution exceptionelle sur les hauts revenus.",
+      "minimum": 0,
+      "type": "number"
+    },
+    "family_coefficient": {
+      "description": "Coefficient familial.",
+      "minimum": 0,
+      "type": "number"
+    },
+    "remaining_capacity_in_slice": {
+      "description": "Montant résiduel dans la tranche marginal, c'est à dire montant avant de changer de tranche.",
+      "minimum": 0,
+      "type": "number"
+    }
+  },
+  "required": [
+    "average_rate",
+    "cehr",
+    "family_coefficient",
+    "income_tax",
+    "remaining_capacity_in_slice",
+    "slice_number"
+  ],
+  "type": "object",
+  "title": "FrenchIncomeTaxResults",
+  "description": "Résultat de calcul de l'impôt sur le revenu."
+}

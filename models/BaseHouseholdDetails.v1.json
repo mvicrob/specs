@@ -1,0 +1,27 @@
+{
+  "title": "BaseHouseholdDetails",
+  "type": "object",
+  "description": "Informations relatives au ménage.",
+  "properties": {
+    "type": {
+      "type": "string",
+      "enum": [
+        "HOUSEHOLD"
+      ]
+    },
+    "persons": {
+      "type": "array",
+      "nullable": true,
+      "default": null,
+      "items": {
+        "$ref": "./BasePerson.v1.json"
+      }
+    },
+    "finance": {
+      "$ref": "./LightFinanceDetails.v1.json"
+    }
+  },
+  "required": [
+    "type"
+  ]
+}

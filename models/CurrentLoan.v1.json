@@ -1,0 +1,64 @@
+{
+  "type": "object",
+  "title": "CurrentLoan",
+  "description": "Crédit en cours au moment de la constitution du dossier. Seul les crédits de type CONTINUE_AFTER_PROJECT sont considérés dans la capacité de remboursement.",
+  "properties": {
+    "type": {
+      "default": "OTHER",
+      "description": "Type de crédit.",
+      "type": "string",
+      "enum": [
+        "MORTGAGE",
+        "PERSONAL_LOAN",
+        "SPECIFIC_LOAN",
+        "REVOLVING_LOAN",
+        "OTHER"
+      ]
+    },
+    "future": {
+      "default": null,
+      "description": "Futur du crédit.",
+      "type": "string",
+      "enum": [
+        "REIMBURSED_BEFORE_PROJECT",
+        "CONTINUE_AFTER_PROJECT",
+        "REIMBURSED_DURING_PROJECT",
+        "CONSOLIDATED_DURING_PROJECT",
+        null
+      ],
+      "nullable": true
+    },
+    "monthly_payment": {
+      "$ref": "./WeightedPositiveFigure.v1.json"
+    },
+    "remaining_capital": {
+      "default": null,
+      "description": "Capital restant dû.",
+      "nullable": true,
+      "type": "number"
+    },
+    "start_date": {
+      "default": null,
+      "description": "Date de début du prêt.",
+      "format": "date-time",
+      "nullable": true,
+      "type": "string"
+    },
+    "end_date": {
+      "default": null,
+      "description": "Date de fin du prêt.",
+      "format": "date-time",
+      "nullable": true,
+      "type": "string"
+    },
+    "lender": {
+      "default": null,
+      "description": "Organisme prêteur.",
+      "nullable": true,
+      "type": "string"
+    }
+  },
+  "required": [
+    "type"
+  ]
+}

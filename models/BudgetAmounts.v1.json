@@ -1,0 +1,45 @@
+{
+  "type": "object",
+  "title": "BudgetAmounts",
+  "description": "Montants maximums des différents postes de dépense. Le budget total étant égal à la sommes de tous les autres postes de dépense.",
+  "properties": {
+    "broker_fees": {
+      "type": "number",
+      "description": "Part du budget dédiée aux frais de courtage.",
+      "minimum": 0
+    },
+    "file_management_fees": {
+      "type": "number",
+      "description": "Part du budget dédiée aux frais de dossier.",
+      "minimum": 0
+    },
+    "guaranties_fees": {
+      "type": "number",
+      "description": "¨Part du budget dédiée aux frais de garantie des prêts.",
+      "minimum": 0
+    },
+    "maximal_price": {
+      "type": "number",
+      "description": "Part du budget dédiée à l'achat du bien, frais d'agence inclus mais frais de notaire exclus.",
+      "minimum": 0
+    },
+    "notary_fees": {
+      "type": "number",
+      "description": "Part du budget dédiée aux frais de notaire.",
+      "minimum": 0
+    },
+    "total_budget": {
+      "type": "number",
+      "description": "Budget total, incluant le prix bien ainsi tous les frais, à l'exception des frais de garantie.",
+      "minimum": 0
+    }
+  },
+  "required": [
+    "broker_fees",
+    "file_management_fees",
+    "guaranties_fees",
+    "maximal_price",
+    "notary_fees",
+    "total_budget"
+  ]
+}

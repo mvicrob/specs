@@ -1,0 +1,13 @@
+{
+  "description": "État du projet.",
+  "type": "string",
+  "enum": [
+    "BEFORE_COMPROMIS",
+    "COMPROMIS_SIGNED",
+    "SIGNED",
+    "CANCELLED",
+    null
+  ],
+  "nullable": true,
+  "title": "Etat du projet"
+}

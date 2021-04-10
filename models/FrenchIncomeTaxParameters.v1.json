@@ -1,0 +1,35 @@
+{
+  "type": "object",
+  "title": "FrenchIncomeTaxParameters",
+  "description": "Paramètres de calcul de l'impôt sur le revenu.",
+  "properties": {
+    "fiscal_reference_revenue": {
+      "default": null,
+      "description": "Revenue fiscal de référence (fiscal_reference_revenue et net_monthly_revenue sont exclusifs).",
+      "minimum": 0,
+      "nullable": true,
+      "type": "number"
+    },
+    "net_monthly_revenue": {
+      "default": null,
+      "description": "Revenue mensuel net (fiscal_reference_revenue et net_monthly_revenue sont exclusifs).",
+      "minimum": 0,
+      "nullable": true,
+      "type": "number"
+    },
+    "children_in_charge": {
+      "description": "Nombre d'enfant(s) à charge.",
+      "minimum": 0,
+      "default": 0,
+      "type": "integer"
+    },
+    "marital_status": {
+      "$ref": "./MaritalStatus.v1.json"
+    },
+    "apply_ten_percent_discount": {
+      "default": false,
+      "description": "Application (ou pas) des 10% de déduction forfaitaire pour frais réels.",
+      "type": "boolean"
+    }
+  }
+}

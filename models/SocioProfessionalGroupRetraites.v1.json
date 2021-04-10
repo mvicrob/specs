@@ -1,0 +1,32 @@
+{
+  "type": "object",
+  "title": "SocioProfessionalGroupRetraites",
+  "description": "Catégorie socioprofessionnelle des retraités.",
+  "properties": {
+    "type": {
+      "type": "string",
+      "default": "RETRAITES",
+      "enum": [
+        "RETRAITES"
+      ]
+    },
+    "category": {
+      "default": null,
+      "description": "Catégorie socio-profesionnelle.",
+      "type": "string",
+      "enum": [
+        "ANCIENS_AGRICULTEURS_EXPLOITANTS",
+        "ANCIENS_ARTISANTS_COMMERCANTS_CHEFS_DENTREPRISE",
+        "ANCIENS_CADRES",
+        "ANCIENNES_PROFESSIONS_INTERMEDIAIRES",
+        "ANCIENS_EMPLOYES",
+        "ANCIENS_OUVRIERS",
+        null
+      ],
+      "nullable": true
+    }
+  },
+  "required": [
+    "type"
+  ]
+}

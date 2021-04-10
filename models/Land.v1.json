@@ -1,0 +1,84 @@
+{
+  "title": "Land",
+  "description": "Projet d'achat de terrain.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string",
+      "enum": [
+        "LAND"
+      ]
+    },
+    "project_state": {
+      "$ref": "./ProjectState.v1.json"
+    },
+    "administrative_information": {
+      "$ref": "./AdministrativeInformation.v1.json"
+    },
+    "project_dates": {
+      "$ref": "./ProjectDates.v1.json"
+    },
+    "surface": {
+      "default": null,
+      "description": "Surface du terrain.",
+      "minimum": 0,
+      "nullable": true,
+      "type": "number"
+    },
+    "seller": {
+      "$ref": "./Contact.v1.json"
+    },
+    "expenses": {
+      "type": "object",
+      "properties": {
+        "price": {
+          "default": null,
+          "description": "Prix du bien à acquérir.",
+          "minimum": 0,
+          "nullable": true,
+          "type": "number"
+        },
+        "other_expenses": {
+          "default": null,
+          "description": "Montant des éventuelles autres dépenses non catégorisées.",
+          "minimum": 0,
+          "nullable": true,
+          "type": "number"
+        },
+        "fees": {
+          "type": "object",
+          "properties": {
+            "agency_fees": {
+              "default": null,
+              "description": "Frais d'agence.",
+              "minimum": 0,
+              "nullable": true,
+              "type": "number"
+            },
+            "broker_fees": {
+              "default": null,
+              "nullable": true,
+              "description": "Frais de courtage.",
+              "minimum": 0,
+              "type": "number"
+            },
+            "file_management_fees": {
+              "default": null,
+              "nullable": true,
+              "description": "Frais de dossier.",
+              "minimum": 0,
+              "type": "number"
+            },
+            "notary_fees": {
+              "default": null,
+              "description": "Frais de notaire.",
+              "minimum": 0,
+              "nullable": true,
+              "type": "number"
+            }
+          }
+        }
+      }
+    }
+  }
+}

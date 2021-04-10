@@ -1,0 +1,25 @@
+{
+  "title": "Breakup",
+  "type": "object",
+  "description": "Structure du démembrement.",
+  "properties": {
+    "type": {
+      "default": "PLEINE_PROPRIETE",
+      "description": "Type de démembrement.",
+      "type": "string",
+      "enum": [
+        "PLEINE_PROPRIETE",
+        "NUE_PROPRIETE",
+        "USUFRUIT"
+      ]
+    },
+    "portion": {
+      "type": "number",
+      "description": "Pourcentage du bien possédé.",
+      "minimum": 0,
+      "nullable": true,
+      "default": 100,
+      "maximum": 100
+    }
+  }
+}

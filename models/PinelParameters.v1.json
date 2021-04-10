@@ -1,0 +1,12 @@
+{
+  "title": "PinelParameters",
+  "description": "Paramètres de la simulation d'un dispositif Pinel.",
+  "allOf": [
+    {
+      "$ref": "./PinelPlanParameters.v1.json"
+    },
+    {
+      "$ref": "./LightCasePinel.json"
+    }
+  ]
+}

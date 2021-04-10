@@ -1,0 +1,10 @@
+{
+  "type": "object",
+  "title": "LightFamilySituation",
+  "properties": {
+    "marital_status": {
+      "$ref": "./MaritalStatus.v1.json"
+    }
+  },
+  "description": "Situation familiale."
+}

@@ -1,0 +1,31 @@
+{
+  "properties": {
+    "free_taeg": {
+      "description": "TAEG, à l'exclusion du ou des prêt(s) relais.",
+      "minimum": 0,
+      "type": "number"
+    },
+    "free_taeg_above_wear_rate": {
+      "description": "Comparaison du TAEG avec le taux d'usure en vigueur.",
+      "type": "boolean"
+    },
+    "bridge_taeg": {
+      "description": "TAEG du ou des prêts relais.",
+      "minimum": 0,
+      "type": "number"
+    },
+    "bridge_taeg_above_wear_rate": {
+      "description": "Comparaison du TAEG du ou des prêt(s) relais avec le taux d'usure en vigueur.",
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "bridge_taeg",
+    "bridge_taeg_above_wear_rate",
+    "free_taeg",
+    "free_taeg_above_wear_rate"
+  ],
+  "type": "object",
+  "title": "Taeg",
+  "description": "Taux Annuel Effectif Global (TAEG) et confrontation au taux d'usure."
+}

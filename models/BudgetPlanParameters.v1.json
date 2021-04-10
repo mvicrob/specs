@@ -1,0 +1,44 @@
+{
+  "title": "BudgetPlanParameters",
+  "type": "object",
+  "description": "Paramètres du plan de financement d'un calcul de budget",
+  "properties": {
+    "maximal_monthly_payment": {
+      "type": "number",
+      "description": "Mensualité maximale, à ne pas dépasser.",
+      "minimum": 0,
+      "nullable": true,
+      "default": null
+    },
+    "maximal_debt_ratio": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100,
+      "nullable": true,
+      "default": null,
+      "description": "Pourcentage d'endettement à ne pas dépasser. En général égal à 33% des revenus de l'emprunteur."
+    },
+    "loans": {
+      "description": "Type(s) de prêt à considérer pour la simulation. L'ajout d'un élément dans cette liste ne garanti pas qu'il sera utilisé dans le plan de financement final, si le plan peut être satisfait avec un sous ensemble des lignes, ou si l'emprunteur n'est pas elligible à certain de ces prêts (PTZ...).",
+      "type": "array",
+      "items": {
+        "$ref": "./AvailableLoan.v1.json"
+      }
+    },
+    "modulations": {
+      "description": "Profil de modulation de remboursement, pour créer des plans de financement à paliers.",
+      "type": "array",
+      "default": null,
+      "nullable": true,
+      "items": {
+        "$ref": "./Modulation.v1.json"
+      }
+    },
+    "bank": {
+      "$ref": "./ActivePartner.v1.json"
+    }
+  },
+  "required": [
+    "loans"
+  ]
+}

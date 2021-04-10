@@ -1,0 +1,21 @@
+{
+  "title": "AvailableLoan",
+  "oneOf": [
+    {
+      "$ref": "./FreeLoan.v1.json"
+    },
+    {
+      "$ref": "./PtzLoan.v1.json"
+    },
+    {
+      "$ref": "./BossLoan.v1.json"
+    },
+    {
+      "$ref": "./BridgeLoan.v1.json"
+    },
+    {
+      "$ref": "./SmoothableCharge.v1.json"
+    }
+  ],
+  "description": "Prêt à inclure dans le plan de financement.\n\nL'inclusion d'un prêt le plan de financement dépendra de son utilité, ou du résultat de calcul d'élligibilité dans le cas de prêts réglementés."
+}
