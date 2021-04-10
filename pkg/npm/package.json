@@ -2,8 +2,7 @@
   "name": "@toaztr/specs",
   "version": "0.0.1",
   "description": "OpenAPI specs of Toaztr",
-  "scripts": {
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Toaztr/specs.git"
