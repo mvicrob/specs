@@ -27,8 +27,11 @@ jobs:
       - run: npm ci
         if: ${{ steps.release.outputs.release_created }}
       - run: npx openapi bundle reference/*.yaml -o dist/toaztr
+        if: ${{ steps.release.outputs.release_created }}
       - run: cp dist/toaztr* pkg/npm/
+        if: ${{ steps.release.outputs.release_created }}
       - run: cp dist/toaztr* pkg/pypi/
+        if: ${{ steps.release.outputs.release_created }}
       - run: npm publish
         working-directory: ./pkg/npm
         env:
