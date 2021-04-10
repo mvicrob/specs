@@ -1,0 +1,10 @@
+{
+  "type": "string",
+  "title": "NotaryFeesState",
+  "enum": [
+    "OLD",
+    "NEW",
+    "LAND"
+  ],
+  "description": "Etat de l'acquisition, au sens des frais de noataire."
+}

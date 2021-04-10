@@ -1,0 +1,21 @@
+{
+  "properties": {
+    "duration": {
+      "description": "Durée du crédit en mois.",
+      "minimum": 0,
+      "type": "integer"
+    },
+    "rate": {
+      "description": "Estimation du taux annuel.",
+      "minimum": 0,
+      "type": "number"
+    }
+  },
+  "required": [
+    "duration",
+    "rate"
+  ],
+  "type": "object",
+  "title": "RatePerDuration",
+  "description": "Estimation des taux par durée de crédit"
+}

@@ -1,0 +1,18 @@
+{
+  "title": "Simulation",
+  "description": "Objet simulation générique.",
+  "oneOf": [
+    {
+      "$ref": "./BudgetSimulation.v1.json"
+    },
+    {
+      "$ref": "./FundingSimulation.v1.json"
+    },
+    {
+      "$ref": "./DebtConsolidationSimulation.v1.json"
+    },
+    {
+      "$ref": "./PinelSimulation.v1.json"
+    }
+  ]
+}

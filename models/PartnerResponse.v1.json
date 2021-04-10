@@ -1,0 +1,16 @@
+{
+  "title": "PartnerResponse",
+  "allOf": [
+    {
+      "$ref": "./SuccessResponse.v1.json"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "data": {
+          "$ref": "./Partner.v1.json"
+        }
+      }
+    }
+  ]
+}

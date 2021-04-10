@@ -1,0 +1,18 @@
+{
+  "title": "PlanParameters",
+  "oneOf": [
+    {
+      "$ref": "./StandaloneBudgetPlanParameters.v1.json"
+    },
+    {
+      "$ref": "./StandaloneFundingPlanParameters.v1.json"
+    },
+    {
+      "$ref": "./StandaloneDebtConsolidationPlanParameters.v1.json"
+    },
+    {
+      "$ref": "./StandalonePinelParameters.v1.json"
+    }
+  ],
+  "description": "Paramètres conservés isolément."
+}

@@ -1,0 +1,12 @@
+{
+  "title": "DebtConsolidationParameters",
+  "description": "Paramètres d'un rachat ou regroupement de crédits.",
+  "allOf": [
+    {
+      "$ref": "./DebtConsolidationPlanParameters.v1.json"
+    },
+    {
+      "$ref": "./LightCaseDebtConsolidation.json"
+    }
+  ]
+}

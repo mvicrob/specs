@@ -1,0 +1,16 @@
+{
+  "type": "string",
+  "title": "MaritalStatus",
+  "enum": [
+    "MARRIED",
+    "SINGLE",
+    "SEPARATED",
+    "WIDOWER",
+    "DIVORCED",
+    "DIVORCE_ONGOING",
+    "PACSED",
+    "LIVING_TOGETHER",
+    "null"
+  ],
+  "description": "Statut marital"
+}

@@ -1,0 +1,14 @@
+{
+  "type": "object",
+  "title": "LightProfessionDetails",
+  "properties": {
+    "status": {
+      "$ref": "./ProfessionStatus.v1.json"
+    },
+    "employees_number": {
+      "type": "number",
+      "minimum": 0
+    }
+  },
+  "description": "Informations professionnelles relatives à l'emprunteur."
+}

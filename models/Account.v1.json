@@ -1,0 +1,20 @@
+{
+  "type": "object",
+  "title": "Account",
+  "description": "Type de compte utilisateur Toaztr.",
+  "properties": {
+    "type": {
+      "type": "string",
+      "enum": [
+        "GOD",
+        "AGENT",
+        "PARTNER",
+        "CLIENT"
+      ],
+      "description": "Type de compte utilisateur Toaztr."
+    }
+  },
+  "required": [
+    "type"
+  ]
+}

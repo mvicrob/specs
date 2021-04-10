@@ -1,0 +1,15 @@
+{
+  "type": "string",
+  "title": "ProfessionStatus",
+  "enum": [
+    "EMPLOYEE",
+    "INDEPENDENT",
+    "STUDENT",
+    "RETIRED",
+    "UNEMPLOYED",
+    "ANNUITANT",
+    "null"
+  ],
+  "nullable": true,
+  "description": "Status professionnel"
+}

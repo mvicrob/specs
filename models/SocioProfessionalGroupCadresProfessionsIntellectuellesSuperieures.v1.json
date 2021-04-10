@@ -1,0 +1,32 @@
+{
+  "type": "object",
+  "title": "SocioProfessionalGroupCadresProfessionsIntellectuellesSuperieures",
+  "description": "Catégorie socioprofessionnelle des cadres et professions intellectuelles supérieures.",
+  "properties": {
+    "type": {
+      "type": "string",
+      "default": "CADRES_PROFESSIONS_INTELLECTUELLES_SUPERIEURES",
+      "enum": [
+        "CADRES_PROFESSIONS_INTELLECTUELLES_SUPERIEURES"
+      ]
+    },
+    "category": {
+      "default": null,
+      "description": "Catégorie socio-profesionnelle.",
+      "type": "string",
+      "enum": [
+        "PROFESSIONS_LIBERALES",
+        "CADRES_FONCTION_PUBLIQUE",
+        "PROFESSEURS_PROFESSIONS_SCIENTIFIQUES",
+        "PROFESSIONS_INFORMATION_ARTS_SPECTACLES",
+        "CADRES_ADMINISTRATIFS_COMMERCIAUX_ENTREPRISE",
+        "INGENIEURS_CADRES_TECHNIQUES_ENTREPRISE",
+        null
+      ],
+      "nullable": true
+    }
+  },
+  "required": [
+    "type"
+  ]
+}

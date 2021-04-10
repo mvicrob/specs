@@ -1,0 +1,33 @@
+{
+  "type": "object",
+  "title": "SocioProfessionalGroupOuvriers",
+  "description": "Catégorie socioprofessionnelle des ouvriers.",
+  "properties": {
+    "type": {
+      "type": "string",
+      "default": "OUVRIERS",
+      "enum": [
+        "OUVRIERS"
+      ]
+    },
+    "category": {
+      "default": null,
+      "description": "Catégorie socio-profesionnelle.",
+      "type": "string",
+      "enum": [
+        "OUVRIERS_QUALIFIES_DE_TYPE_INDUSTRIEL",
+        "OUVRIERS_QUALIFIES_DE_TYPE_ARTISANAL",
+        "CHAUFFEURS",
+        "OUVRIERS_QUALIFIERS_MANUTENTION_MAGASINAGE_TRANSPORT",
+        "OUVRIERS_NON_QUALIFIES_DE_TYPE_INDUSTRIEL",
+        "OUVRIERS_NON_QUALIFIES_DE_TYPE_ARTISANAL",
+        "OUVRIERS_AGRICOLES",
+        null
+      ],
+      "nullable": true
+    }
+  },
+  "required": [
+    "type"
+  ]
+}

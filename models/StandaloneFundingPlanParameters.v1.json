@@ -1,0 +1,27 @@
+{
+  "title": "StandaloneFundingPlanParameters",
+  "description": "Paramètres d'un financement, conservés isolément.",
+  "allOf": [
+    {
+      "$ref": "./PlanParametersMetadata.v1.json"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "FUNDING_PLAN_PARAMETERS"
+          ],
+          "description": "Type du jeu de paramètres."
+        },
+        "parameters": {
+          "$ref": "./FundingPlanParameters.v1.json"
+        }
+      },
+      "required": [
+        "type"
+      ]
+    }
+  ]
+}

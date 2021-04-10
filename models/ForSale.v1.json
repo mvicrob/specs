@@ -1,0 +1,55 @@
+{
+  "type": "object",
+  "title": "ForSale",
+  "description": "Détails relatifs à la mise en vente d'un bien immobilier.",
+  "properties": {
+    "price": {
+      "type": "number",
+      "default": null,
+      "description": "Prix public de mise en vente.",
+      "nullable": true,
+      "minimum": 0
+    },
+    "agency_fees": {
+      "type": "number",
+      "default": null,
+      "description": "Frais d'agence à la charge du vendeur, et venant donc se retrancher au prix public de mise en vente.",
+      "nullable": true,
+      "minimum": 0
+    },
+    "taxes": {
+      "type": "number",
+      "default": null,
+      "description": "Montant de l'impot éventuel sur le prix de vente, et venant donc se retrancher au prix public de mise en vente.",
+      "nullable": true,
+      "minimum": 0
+    },
+    "since": {
+      "default": null,
+      "description": "Depuis quelle date le bien est-il à vendre.",
+      "format": "date-time",
+      "nullable": true,
+      "type": "string"
+    },
+    "dates": {
+      "$ref": "./ProjectDates.v1.json"
+    },
+    "agencies": {
+      "description": "Agence(s) en charge de la vente.",
+      "type": "array",
+      "default": null,
+      "nullable": true,
+      "items": {
+        "$ref": "./ActivePartner.v1.json"
+      }
+    },
+    "notaries": {
+      "description": "Notaire(s) en charge de la vente.",
+      "type": "array",
+      "nullable": true,
+      "items": {
+        "$ref": "./ActivePartner.v1.json"
+      }
+    }
+  }
+}

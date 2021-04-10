@@ -1,0 +1,77 @@
+{
+  "type": "object",
+  "title": "PatrimonyItem",
+  "description": "Élément de patrimoine de l'emprunteur.",
+  "properties": {
+    "type": {
+      "default": "OTHER",
+      "description": "Type de patrimoine.",
+      "type": "string",
+      "enum": [
+        "LIVRET_A",
+        "LDDS",
+        "LEP",
+        "LIVRET_JEUNE",
+        "LIFE_INSURANCE",
+        "PEL",
+        "CEL",
+        "PEE",
+        "PEA",
+        "PER",
+        "CURRENT_ACCOUNT",
+        "FAMILY_DONATION",
+        "SHARES",
+        "SCI_SHARES",
+        "SOCIAL_SHARES",
+        "JEWELRY",
+        "ART_WORK",
+        "COLLECTION",
+        "REAL_ESTATE_MAIN_PROPERTY",
+        "REAL_ESTATE_SECONDARY_PROPERTY",
+        "REAL_ESTATE_RENTING_PROPERTY",
+        "LAND",
+        "PARKING",
+        "COMMERCIAL_PREMISES",
+        "BUILDING",
+        "PROFESSIONAL_REAL_ESTATE",
+        "CAPITAL_GOODS",
+        "OTHER"
+      ]
+    },
+    "breakup": {
+      "$ref": "./Breakup.v1.json"
+    },
+    "value": {
+      "description": "Valeur: estimée (bien immobilier par exemple) ou de rachat (assurance vie par exemple).",
+      "minimum": 0,
+      "type": "number"
+    },
+    "remaining_capital": {
+      "default": null,
+      "description": "Capital restant dû, si un crédit est toujours en cours.",
+      "minimum": 0,
+      "nullable": true,
+      "type": "number"
+    },
+    "buying_or_opening_date": {
+      "default": null,
+      "description": "Date d'achat (du bien immobilier, des actions...) ou date d'ouverture (de l'assurance vie, du PEE...).",
+      "format": "date-time",
+      "nullable": true,
+      "type": "string"
+    },
+    "for_sale": {
+      "$ref": "./ForSale.v1.json"
+    },
+    "comment": {
+      "default": null,
+      "description": "Commentaire.",
+      "nullable": true,
+      "type": "string"
+    }
+  },
+  "required": [
+    "type",
+    "value"
+  ]
+}

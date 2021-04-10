@@ -1,0 +1,24 @@
+{
+  "properties": {
+    "type": {
+      "description": "Type de différé: partiel (différé d'amortissement uniquement) ou total (différé d'amortissement et d'intérets).",
+      "type": "string",
+      "enum": [
+        "PARTIAL",
+        "TOTAL"
+      ]
+    },
+    "length": {
+      "description": "Durée du différé en mois.",
+      "minimum": 0,
+      "type": "integer"
+    }
+  },
+  "required": [
+    "length",
+    "type"
+  ],
+  "type": "object",
+  "title": "GracePeriod",
+  "description": "Différé d'amortissement ou de remboursement."
+}

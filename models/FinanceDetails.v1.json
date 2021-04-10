@@ -1,0 +1,60 @@
+{
+  "type": "object",
+  "title": "FinanceDetails",
+  "description": "Détails sur les finances de l'emprunteur.\n\nLa capacité de remboursement est calculée comme: Somme(revenu * pondération) - Somme(charge * pondération) - Somme(CréditsPersistants * pondération).",
+  "properties": {
+    "personal_funding": {
+      "default": null,
+      "description": "Apport personnel consacré au financement du projet.",
+      "minimum": 0,
+      "nullable": true,
+      "type": "number"
+    },
+    "acquisition_percentage": {
+      "type": "number",
+      "default": null,
+      "minimum": 0,
+      "nullable": true,
+      "description": "Pourcentage d'acquisition, dans le cas d'un achat en indivision."
+    },
+    "income_tax": {
+      "$ref": "./IncomeTax.v1.json"
+    },
+    "revenues": {
+      "default": null,
+      "description": "Liste des revenus persistants après le projet. Le reste à vivre est calculé comme: sum(revenu * pondération) - sum(charge * pondération).",
+      "nullable": true,
+      "type": "array",
+      "items": {
+        "$ref": "./RevenueItem.v1.json"
+      }
+    },
+    "charges": {
+      "default": null,
+      "description": "Liste des charges persistantes après le projet.",
+      "nullable": true,
+      "type": "array",
+      "items": {
+        "$ref": "./ChargeItem.v1.json"
+      }
+    },
+    "current_loans": {
+      "description": "Prêt(s) existant(s): immobilier, consommation ou autres",
+      "type": "array",
+      "default": null,
+      "nullable": true,
+      "items": {
+        "$ref": "./CurrentLoan.v1.json"
+      }
+    },
+    "patrimony": {
+      "description": "Patrimoine.",
+      "type": "array",
+      "default": null,
+      "nullable": true,
+      "items": {
+        "$ref": "./PatrimonyItem.v1.json"
+      }
+    }
+  }
+}

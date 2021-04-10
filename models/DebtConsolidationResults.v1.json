@@ -1,0 +1,29 @@
+{
+  "type": "object",
+  "title": "DebtConsolidationResults",
+  "description": "Résultats d'un rachat ou regroupement de crédits.",
+  "properties": {
+    "funding_plan": {
+      "$ref": "./FundingResults.v1.json"
+    },
+    "loans_remaining_costs": {
+      "description": "Liste des montants restant à payer, des prêts à racheters (capital, assurance, intérets, IRA).",
+      "type": "array",
+      "items": {
+        "$ref": "./LoanRemainingCosts.v1.json"
+      }
+    },
+    "insurance_gain": {
+      "description": "Différence entre l'assurance restant à payer sur le ou les crédits rachetés et l'assurance du nouveau crédit (une valeur positive représente un gain financier).",
+      "type": "number"
+    },
+    "interests_gain": {
+      "description": "Différence entre les intérêts restants à payer sur le ou les crédits rachetés et les intérets du nouveau crédit (une valeur positive représente un gain financier).",
+      "type": "number"
+    },
+    "total_gain": {
+      "description": "Différence ente l'ensemble des coûts restants à payer sur le ou les crédits rachetés (intérets et assurance) et l'ensemble des coût du nouveau crédit (intérêts, assurance, ira, frais de dossier et de courtage, frais de garantie). Une valeur positive représente un gain financier.",
+      "type": "number"
+    }
+  }
+}

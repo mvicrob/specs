@@ -1,0 +1,113 @@
+{
+  "type": "object",
+  "title": "Loan",
+  "description": "Caractéristiques de la ligne de crédit incluse dans le plan de financement.",
+  "properties": {
+    "type": {
+      "type": "string",
+      "description": "Type de prêt: libre, prêt à taux zéro, relais...",
+      "enum": [
+        "FREE_LOAN",
+        "PTZ_LOAN",
+        "BOSS_LOAN",
+        "BRIDGE_LOAN",
+        "SMOOTHABLE_CHARGE"
+      ]
+    },
+    "yearly_rate": {
+      "description": "Taux d'intérêt annuel.",
+      "minimum": 0,
+      "type": "number"
+    },
+    "duration_months": {
+      "description": "Durée du prêt en mois.",
+      "type": "integer"
+    },
+    "amount": {
+      "description": "Montant du prêt.",
+      "type": "number"
+    },
+    "guaranty": {
+      "$ref": "./Guaranty.v1.json"
+    },
+    "grace_period": {
+      "$ref": "./GracePeriod.v1.json"
+    },
+    "amortizations": {
+      "description": "Représente les amortissements au cours du temps.",
+      "type": "array",
+      "items": {
+        "type": "number"
+      }
+    },
+    "interests": {
+      "description": "Représente les intérêts au cours du temps.",
+      "type": "array",
+      "items": {
+        "type": "number"
+      }
+    },
+    "insurances": {
+      "description": "Représente les détails des assurances, ainsi que les primes mensuelles.",
+      "type": "array",
+      "items": {
+        "$ref": "./ComputedInsurance.v1.json"
+      }
+    },
+    "released_amounts": {
+      "description": "Représente les tranches de déblocage, depuis la première tranche jusqu'au déblocage complet du prêt.",
+      "type": "array",
+      "items": {
+        "type": "number"
+      }
+    },
+    "remaining_capital": {
+      "description": "Représente le capital restant dû au cours du temps.",
+      "type": "array",
+      "items": {
+        "type": "number"
+      }
+    },
+    "preamortizations": {
+      "description": "Compteur de pré-amortissement: représente les remboursements des intérêts capitalisés au cours du temps, dans le cas d'un différé partiel supérieur à 12 mois.",
+      "type": "array",
+      "items": {
+        "type": "number"
+      }
+    },
+    "interests_cost": {
+      "description": "Coût total des intérêts du prêt.",
+      "minimum": 0,
+      "type": "number"
+    },
+    "insurance_cost": {
+      "description": "Coût total des primes d'assurance du prêt.",
+      "minimum": 0,
+      "type": "number"
+    },
+    "preamortization_cost": {
+      "description": "Montant du compteur de pré-amortissement.",
+      "minimum": 0,
+      "type": "number"
+    },
+    "loan_name": {
+      "type": "string",
+      "description": "Nom du prêt: tout type d'identification (appellation marketing, etc...)"
+    }
+  },
+  "required": [
+    "type",
+    "yearly_rate",
+    "duration_months",
+    "amount",
+    "amortizations",
+    "interests",
+    "insurances",
+    "released_amounts",
+    "remaining_capital",
+    "preamortizations",
+    "interests_cost",
+    "insurance_cost",
+    "preamortization_cost"
+  ]
+}

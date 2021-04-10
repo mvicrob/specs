@@ -1,0 +1,46 @@
+{
+  "title": "PinelHouseholdDetails",
+  "type": "object",
+  "description": "Détail relatifs au ménage.",
+  "properties": {
+    "type": {
+      "type": "string",
+      "enum": [
+        "HOUSEHOLD"
+      ]
+    },
+    "people_count": {
+      "type": "integer",
+      "default": null,
+      "description": "Nombre de personnes au total dans le ménage.",
+      "nullable": true,
+      "minimum": 1
+    },
+    "children_count": {
+      "type": "integer",
+      "default": null,
+      "nullable": true,
+      "description": "Nombre d'enfants dans le ménage.",
+      "minimum": 0
+    },
+    "dependent_persons_count": {
+      "type": "integer",
+      "default": null,
+      "nullable": true,
+      "description": "Nombre de personnes à charge dans le ménage, hors enfants.",
+      "minimum": 0
+    },
+    "persons": {
+      "type": "array",
+      "items": {
+        "$ref": "./PinelPerson.v1.json"
+      }
+    },
+    "finance": {
+      "$ref": "./LightFinanceDetails.v1.json"
+    }
+  },
+  "required": [
+    "type"
+  ]
+}

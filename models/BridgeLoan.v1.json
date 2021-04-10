@@ -1,0 +1,50 @@
+{
+  "type": "object",
+  "title": "BridgeLoan",
+  "description": "Prêt relais. \n\nIl est à noter que cet objet peut matérialiser un prêt relais ou un prêt in-fine, ces 2 prêts étants définis de manière identique au sein d'un plan de financement. Les caractéristiques de ces 2 prêts (période de différé partiel et remboursement du capital en une seule fois à la fin du prêt) sont en effet identiques. Seuls changent l'objet du prêt, et ce à quoi le prêt est adossé (un bien immobilier, le nantissement d'un plancement financier...).",
+  "properties": {
+    "type": {
+      "type": "string",
+      "description": "Type de prêt: prêt relais.",
+      "enum": [
+        "BRIDGE_LOAN"
+      ]
+    },
+    "amount": {
+      "description": "Montant maximal du prêt, (pour un prêt de montant fixé, min_amount = max_amount).",
+      "minimum": 0,
+      "type": "number"
+    },
+    "yearly_rate": {
+      "description": "Taux d'intérêt annuel en %. Mettre 2.1 pour 2.1% par exemple.",
+      "maximum": 100,
+      "minimum": 0,
+      "type": "number"
+    },
+    "duration_months": {
+      "description": "Durée maximale du prêt, en mois.",
+      "minimum": 0,
+      "type": "integer"
+    },
+    "insurances": {
+      "description": "Assurance(s) emprunteur(s).",
+      "type": "array",
+      "items": {
+        "$ref": "./Insurance.v1.json"
+      }
+    },
+    "guaranty_type": {
+      "$ref": "./GuarantyType.v1.json"
+    },
+    "loan_name": {
+      "type": "string",
+      "description": "Nom du prêt: tout type d'identification (appellation marketing, etc...)"
+    }
+  },
+  "required": [
+    "type",
+    "amount",
+    "yearly_rate",
+    "duration_months"
+  ]
+}

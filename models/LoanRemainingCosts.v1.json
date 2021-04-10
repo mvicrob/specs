@@ -1,0 +1,31 @@
+{
+  "type": "object",
+  "title": "LoanRemainingCosts",
+  "properties": {
+    "capital": {
+      "description": "Montant du capital restant dû.",
+      "minimum": 0,
+      "type": "number"
+    },
+    "insurance_cost": {
+      "description": "Montant de l'assurance restant à payer.",
+      "minimum": 0,
+      "type": "number"
+    },
+    "interest_cost": {
+      "description": "Montant des intérets restant à payer.",
+      "minimum": 0,
+      "type": "number"
+    },
+    "ira": {
+      "$ref": "./Ira.v1.json"
+    }
+  },
+  "required": [
+    "capital",
+    "insurance_cost",
+    "interest_cost",
+    "ira"
+  ],
+  "description": "Dépenses résiduelles liées au prêt, dans le cadre d'un rachat ou d'un regroupement de crédits."
+}

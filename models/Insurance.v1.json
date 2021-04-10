@@ -1,0 +1,60 @@
+{
+  "type": "object",
+  "title": "Insurance",
+  "properties": {
+    "type": {
+      "description": "Type d'assurance: sur le capital initial, ou sur le capital restant dû.",
+      "type": "string",
+      "enum": [
+        "INITIAL_CAPITAL",
+        "REMAINING_CAPITAL"
+      ]
+    },
+    "rate": {
+      "description": "Taux annuel, en %, de l'assurance, avant multiplication par la quotité. Mettre 0.3 pour 0.3% par exemple.",
+      "maximum": 100,
+      "minimum": 0,
+      "type": "number"
+    },
+    "quota": {
+      "default": 100,
+      "description": "Quotité assurée, en %. Mettre 50 pour 50% par exemple.",
+      "maximum": 100,
+      "minimum": 0,
+      "type": "number"
+    },
+    "mandatory": {
+      "default": true,
+      "description": "Assurance optionnelle ou obligatoire (de cette information dépend son inclusion ou non dans le calcul TAEG).\n\nMettre à true si l'assurance est obligatoire.",
+      "type": "boolean"
+    },
+    "risks_covered": {
+      "description": "Liste des garanties de l'assurance emprunteur.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "ITT",
+          "IPP",
+          "IPT",
+          "PTIA",
+          "DC",
+          "PE",
+          null
+        ],
+        "nullable": true
+      }
+    },
+    "comment": {
+      "default": null,
+      "description": "Commentaire.",
+      "nullable": true,
+      "type": "string"
+    }
+  },
+  "required": [
+    "type",
+    "rate"
+  ],
+  "description": "Assurance"
+}

@@ -1,0 +1,76 @@
+{
+  "type": "object",
+  "title": "HouseholdDetails",
+  "description": "Détail relatifs au ménage. En cas de déclaration fiscale commune des différents emprunteurs, l'information est à insérer dans cet objet.",
+  "properties": {
+    "type": {
+      "type": "string",
+      "enum": [
+        "HOUSEHOLD"
+      ]
+    },
+    "persons": {
+      "description": "Liste des persones du ménage (emprunteurs ou non).",
+      "type": "array",
+      "default": null,
+      "nullable": true,
+      "items": {
+        "$ref": "./Person.v1.json"
+      }
+    },
+    "children": {
+      "description": "Details relatifs aux enfants.",
+      "default": null,
+      "nullable": true,
+      "type": "array",
+      "items": {
+        "$ref": "./Child.v1.json"
+      }
+    },
+    "dependent_persons": {
+      "description": "Details relatifs aux personnes à charge.",
+      "default": null,
+      "nullable": true,
+      "type": "array",
+      "items": {
+        "$ref": "./DependentPerson.v1.json"
+      }
+    },
+    "first_time_buyer": {
+      "default": null,
+      "description": "Primo-accédant(s), ou assimilés (non-propriétaires de résidence principale depuis plus de 2 ans): oui/non.",
+      "nullable": true,
+      "type": "boolean"
+    },
+    "people_count": {
+      "type": "integer",
+      "default": null,
+      "description": "Nombre de personnes au total dans le ménage.",
+      "nullable": true,
+      "minimum": 1
+    },
+    "children_count": {
+      "type": "integer",
+      "default": null,
+      "nullable": true,
+      "minimum": 0,
+      "description": "Nombre d'enfants dans le ménage: correspond à la taille de la liste d'enfant."
+    },
+    "dependent_persons_count": {
+      "type": "integer",
+      "default": null,
+      "nullable": true,
+      "minimum": 0,
+      "description": "Nombre de personnes dépendantes dans le ménage (hors enfants): correspond à la taille de la liste de personnes dépendantes."
+    },
+    "finance": {
+      "$ref": "./FinanceDetails.v1.json"
+    },
+    "bank_info": {
+      "$ref": "./BankInfo.v1.json"
+    }
+  },
+  "required": [
+    "type"
+  ]
+}

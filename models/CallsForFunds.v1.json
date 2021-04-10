@@ -1,0 +1,26 @@
+{
+  "type": "object",
+  "title": "CallsForFunds",
+  "description": "Calendrier d'appels de fonds, dans le cadre d'un contrat CCMI par exemple.",
+  "properties": {
+    "type": {
+      "description": "Type de déblocage. Minimisation des coûts: les fonds sont puisées dans les prêts les moins chers en premier (dans la mesure du possible). Proportionnellement: les fonds sont puisés dans chacun des prêts, proportionnellement aux montants des prêts.",
+      "type": "string",
+      "enum": [
+        "PROPORTIONAL",
+        "INCREASING_RATE"
+      ]
+    },
+    "calls": {
+      "description": "Dates (mois), montants et finalités des tranches de déblocage.",
+      "type": "array",
+      "items": {
+        "$ref": "./CallForFunds.v1.json"
+      }
+    }
+  },
+  "required": [
+    "type",
+    "calls"
+  ]
+}

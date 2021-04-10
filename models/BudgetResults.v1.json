@@ -1,0 +1,13 @@
+{
+  "type": "object",
+  "title": "BudgetResults",
+  "description": "Résultats d'un calcul de budget.",
+  "properties": {
+    "budgets": {
+      "$ref": "./BudgetAmounts.v1.json"
+    },
+    "funding_plan": {
+      "$ref": "./FundingResults.v1.json"
+    }
+  }
+}

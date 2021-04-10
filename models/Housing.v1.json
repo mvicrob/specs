@@ -1,0 +1,28 @@
+{
+  "properties": {
+    "housing_status": {
+      "default": null,
+      "description": "Status d'habitation.",
+      "type": "string",
+      "enum": [
+        "HOMEOWNER",
+        "TENANT",
+        "FREE_OF_CHARGE_TENANT",
+        "STAFF_HOUSING",
+        "OTHER",
+        null
+      ],
+      "nullable": true
+    },
+    "housing_status_since": {
+      "default": null,
+      "description": "Date du dernier changement de status d'habitation.",
+      "format": "date-time",
+      "nullable": true,
+      "type": "string"
+    }
+  },
+  "type": "object",
+  "title": "Housing",
+  "description": "Status d'habitation de l'emprunteur."
+}

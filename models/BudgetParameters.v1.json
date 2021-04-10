@@ -1,0 +1,12 @@
+{
+  "title": "BudgetParameters",
+  "description": "Paramètres d'un calcul de budget.",
+  "allOf": [
+    {
+      "$ref": "./BudgetPlanParameters.v1.json"
+    },
+    {
+      "$ref": "./LightCaseBudget.v1.json"
+    }
+  ]
+}

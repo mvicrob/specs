@@ -1,0 +1,85 @@
+{
+  "type": "object",
+  "title": "Individual",
+  "description": "Informations relatives à l'emprunteur personne physique.",
+  "properties": {
+    "courtesy": {
+      "default": null,
+      "description": "Civilité.",
+      "type": "string",
+      "enum": [
+        "MR",
+        "MRS",
+        null
+      ],
+      "nullable": true
+    },
+    "first_name": {
+      "default": null,
+      "description": "Prénom.",
+      "nullable": true,
+      "type": "string"
+    },
+    "last_name": {
+      "default": null,
+      "description": "Nom de famille.",
+      "nullable": true,
+      "type": "string"
+    },
+    "birth_name": {
+      "default": null,
+      "description": "Nom de naissance.",
+      "nullable": true,
+      "type": "string"
+    },
+    "birth_date": {
+      "default": null,
+      "description": "Date de naissance.",
+      "format": "date-time",
+      "nullable": true,
+      "type": "string"
+    },
+    "birth_place": {
+      "default": null,
+      "description": "Pays de naissance.",
+      "nullable": true,
+      "type": "string"
+    },
+    "email": {
+      "default": null,
+      "description": "Email.",
+      "nullable": true,
+      "type": "string"
+    },
+    "phone_number": {
+      "default": null,
+      "description": "Numéro de téléphone.",
+      "nullable": true,
+      "type": "string"
+    },
+    "residency_address": {
+      "$ref": "./Address.v1.json"
+    },
+    "contact_address": {
+      "$ref": "./Address.v1.json"
+    },
+    "family_situation": {
+      "$ref": "./FamilySituation.v1.json"
+    },
+    "housing": {
+      "$ref": "./Housing.v1.json"
+    },
+    "bank_info": {
+      "$ref": "./BankInfo.v1.json"
+    },
+    "nationality": {
+      "default": null,
+      "description": "Nationalité.",
+      "nullable": true,
+      "type": "string"
+    },
+    "residence_permit": {
+      "$ref": "./ResidencePermit.v1.json"
+    }
+  }
+}

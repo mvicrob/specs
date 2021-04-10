@@ -1,0 +1,20 @@
+{
+  "type": "object",
+  "title": "Child",
+  "description": "Enfant.",
+  "properties": {
+    "birth_date": {
+      "default": null,
+      "description": "Date de naissance de l'enfant.",
+      "format": "date-time",
+      "nullable": true,
+      "type": "string"
+    },
+    "shared_custody": {
+      "default": null,
+      "description": "Garde alternée: oui/non.",
+      "nullable": true,
+      "type": "boolean"
+    }
+  }
+}

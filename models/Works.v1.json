@@ -1,0 +1,97 @@
+{
+  "title": "Works",
+  "description": "Projet de travaux",
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string",
+      "enum": [
+        "WORKS"
+      ]
+    },
+    "administrative_information": {
+      "$ref": "./AdministrativeInformation.v1.json"
+    },
+    "surfaces": {
+      "$ref": "./Surfaces.v1.json"
+    },
+    "construction_date": {
+      "default": null,
+      "description": "Date de construction, pour les logements achevés.",
+      "format": "date-time",
+      "nullable": true,
+      "type": "string"
+    },
+    "construction_norm": {
+      "default": null,
+      "description": "Norme de construction.",
+      "nullable": true,
+      "type": "string"
+    },
+    "delivery_date": {
+      "default": null,
+      "description": "Date de livraison.",
+      "format": "date-time",
+      "nullable": true,
+      "type": "string"
+    },
+    "lot_number": {
+      "default": null,
+      "description": "Numéro de lot.",
+      "nullable": true,
+      "type": "string"
+    },
+    "rooms_count": {
+      "default": null,
+      "description": "Nombre de pièces.",
+      "minimum": 0,
+      "nullable": true,
+      "type": "integer"
+    },
+    "dpe_rate": {
+      "$ref": "./DpeRate.v1.json"
+    },
+    "expenses": {
+      "type": "object",
+      "properties": {
+        "price": {
+          "type": "number",
+          "description": "Prix des travaux.",
+          "minimum": 0
+        },
+        "other_expenses": {
+          "type": "number",
+          "default": null,
+          "description": "Montant des éventuelles autres dépenses non catégorisées.",
+          "minimum": 0,
+          "nullable": true
+        },
+        "fees": {
+          "type": "object",
+          "properties": {
+            "broker_fees": {
+              "default": null,
+              "nullable": true,
+              "description": "Frais de courtage.",
+              "minimum": 0,
+              "type": "number"
+            },
+            "file_management_fees": {
+              "default": null,
+              "nullable": true,
+              "description": "Frais de dossier.",
+              "minimum": 0,
+              "type": "number"
+            }
+          }
+        }
+      },
+      "required": [
+        "price"
+      ]
+    }
+  },
+  "required": [
+    "type"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "type": "object",
+  "title": "Person",
+  "description": "Informations générales sur l'emprunteur.",
+  "properties": {
+    "is_borrower": {
+      "type": "boolean",
+      "nullable": true,
+      "default": true,
+      "description": "Cette personne est-elle un emprunteur, ou est-elle renseignée pour information seulement."
+    },
+    "finance": {
+      "$ref": "./FinanceDetails.v1.json"
+    },
+    "profession": {
+      "$ref": "./ProfessionDetails.v1.json"
+    },
+    "civil": {
+      "$ref": "./Individual.v1.json"
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "type": "object",
+  "title": "BaseIndividual",
+  "description": "Informations relatives à l'emprunteur personne physique.",
+  "properties": {
+    "birth_date": {
+      "default": null,
+      "description": "Date de naissance.",
+      "format": "date-time",
+      "nullable": true,
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "type": "object",
+  "title": "RevenueItem",
+  "description": "Revenu mensuel, ainsi que sa pondération pour le calcul de l'endettement.",
+  "properties": {
+    "type": {
+      "default": "OTHER",
+      "description": "Type de revenu.",
+      "type": "string",
+      "enum": [
+        "SALARY",
+        "DIVIDENDS",
+        "BONUS",
+        "FRENCH_PARTICIPATION",
+        "PROFESSIONAL_PROFITS_BIC_BNC_BA",
+        "RENTAL_INCOMES",
+        "MAINTENANCE",
+        "FAMILY_ALLOWANCE",
+        "OTHER_ALLOWANCES_LIKE_AEH_AAH_AEEH",
+        "APL_AL",
+        "SOCIAL",
+        "RETIREMENT_PENSION",
+        "ANNUITY",
+        "OTHER"
+      ]
+    },
+    "monthly_amount": {
+      "$ref": "./WeightedPositiveFigure.v1.json"
+    },
+    "comment": {
+      "default": null,
+      "description": "Commentaire éventuel.",
+      "nullable": true,
+      "type": "string"
+    }
+  },
+  "required": [
+    "type",
+    "monthly_amount"
+  ]
+}

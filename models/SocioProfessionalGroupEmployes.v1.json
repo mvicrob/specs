@@ -1,0 +1,31 @@
+{
+  "type": "object",
+  "title": "SocioProfessionalGroupEmployes",
+  "description": "Catégorie socioprofessionnelle des employés.",
+  "properties": {
+    "type": {
+      "type": "string",
+      "default": "EMPLOYES",
+      "enum": [
+        "EMPLOYES"
+      ]
+    },
+    "category": {
+      "default": null,
+      "description": "Catégorie socio-profesionnelle.",
+      "type": "string",
+      "enum": [
+        "EMPLOYES_CIVIL_AGENTS_DE_SERVICE_FONCTION_PUBLIQUE",
+        "POLICIERS_MILITAIRES",
+        "EMPLOYES_ADMINISTRATIFS_ENTREPRISE",
+        "EMPLOYES_DE_COMMERCE",
+        "PERSONNELS_DES_SERVICES_DIRECTS_AUX_PARTICULIERS",
+        null
+      ],
+      "nullable": true
+    }
+  },
+  "required": [
+    "type"
+  ]
+}

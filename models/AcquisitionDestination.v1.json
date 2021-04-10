@@ -1,0 +1,15 @@
+{
+  "type": "string",
+  "title": "AcquisitionDestination",
+  "enum": [
+    "MAIN_PROPERTY",
+    "SECONDARY_PROPERTY",
+    "RENTAL_PROPERTY",
+    "PROFESSIONAL_PROPERTY",
+    "VIAGER",
+    "INVESTMENT",
+    "null"
+  ],
+  "nullable": true,
+  "description": "Destination de l'acquisition."
+}

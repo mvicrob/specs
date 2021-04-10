@@ -1,0 +1,48 @@
+{
+  "properties": {
+    "contact_courtesy": {
+      "default": null,
+      "description": "Civilité du contact.",
+      "type": "string",
+      "enum": [
+        "MR",
+        "MRS",
+        null
+      ],
+      "nullable": true
+    },
+    "contact_first_name": {
+      "default": null,
+      "description": "Prénom du contact.",
+      "nullable": true,
+      "type": "string"
+    },
+    "contact_last_name": {
+      "default": null,
+      "description": "Nom de famille du contact.",
+      "nullable": true,
+      "type": "string"
+    },
+    "contact_email": {
+      "default": null,
+      "description": "Email du contact.",
+      "nullable": true,
+      "type": "string"
+    },
+    "contact_phone_number": {
+      "default": null,
+      "description": "Numéro de téléphone du contact.",
+      "nullable": true,
+      "type": "string"
+    },
+    "comment": {
+      "default": null,
+      "description": "Commentaire.",
+      "nullable": true,
+      "type": "string"
+    }
+  },
+  "type": "object",
+  "title": "Contact",
+  "description": "Contact."
+}

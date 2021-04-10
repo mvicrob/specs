@@ -1,0 +1,32 @@
+{
+  "title": "FundingSimulation",
+  "description": "Réponse d'un calcul de financement.",
+  "allOf": [
+    {
+      "$ref": "./SimulationMetadata.v1.json"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "default": "FUNDING",
+          "description": "Type de simulation.",
+          "enum": [
+            "FUNDING"
+          ]
+        },
+        "parameters": {
+          "$ref": "./FundingParameters.v1.json"
+        },
+        "results": {
+          "$ref": "./FundingResults.v1.json"
+        }
+      },
+      "required": [
+        "type",
+        "parameters"
+      ]
+    }
+  ]
+}

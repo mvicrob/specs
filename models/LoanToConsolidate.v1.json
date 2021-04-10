@@ -1,0 +1,52 @@
+{
+  "type": "object",
+  "title": "LoanToConsolidate",
+  "description": "Prêt à racheter ou à regrouper.",
+  "properties": {
+    "yearly_rate": {
+      "description": "Taux annuel.",
+      "minimum": 0,
+      "type": "number"
+    },
+    "duration_months": {
+      "description": "Durée du prêt en mois.",
+      "minimum": 0,
+      "type": "integer"
+    },
+    "initial_capital": {
+      "description": "Capital initial.",
+      "minimum": 0,
+      "type": "number"
+    },
+    "monthly_payment": {
+      "description": "Mensualité du prêt assurance incluse.",
+      "minimum": 0,
+      "type": "number"
+    },
+    "insurances": {
+      "description": "Assurance(s) emprunteur(s).",
+      "default": null,
+      "nullable": true,
+      "type": "array",
+      "items": {
+        "$ref": "./Insurance.v1.json"
+      }
+    },
+    "first_monthly_payment_date": {
+      "description": "Date de la première mensualité.",
+      "format": "date-time",
+      "type": "string"
+    },
+    "ira": {
+      "$ref": "./Ira.v1.json"
+    }
+  },
+  "required": [
+    "yearly_rate",
+    "duration_months",
+    "initial_capital",
+    "monthly_payment",
+    "first_monthly_payment_date",
+    "ira"
+  ]
+}

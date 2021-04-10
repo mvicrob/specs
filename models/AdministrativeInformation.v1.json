@@ -1,0 +1,34 @@
+{
+  "title": "AdministrativeInformation",
+  "type": "object",
+  "description": "Informations diverses, dont administratives, relatives au projet.",
+  "properties": {
+    "nature": {
+      "$ref": "./AcquisitionNature.v1.json"
+    },
+    "state": {
+      "$ref": "./AcquisitionState.v1.json"
+    },
+    "destination": {
+      "$ref": "./AcquisitionDestination.v1.json"
+    },
+    "address": {
+      "$ref": "./Address.v1.json"
+    },
+    "project_dates": {
+      "$ref": "./ProjectDates.v1.json"
+    },
+    "land_register_reference": {
+      "default": null,
+      "description": "Parcelle cadastrale.",
+      "nullable": true,
+      "type": "string"
+    },
+    "description": {
+      "default": null,
+      "description": "Description du bien.",
+      "nullable": true,
+      "type": "string"
+    }
+  }
+}

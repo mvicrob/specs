@@ -1,0 +1,19 @@
+{
+  "title": "LightAdministrativeInformation",
+  "type": "object",
+  "description": "Informations diverses, dont administratives, relatives au projet.",
+  "properties": {
+    "nature": {
+      "$ref": "./AcquisitionNature.v1.json"
+    },
+    "state": {
+      "$ref": "./AcquisitionState.v1.json"
+    },
+    "destination": {
+      "$ref": "./AcquisitionDestination.v1.json"
+    },
+    "address": {
+      "$ref": "./LightAddress.v1.json"
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "type": "object",
+  "title": "User",
+  "description": "Utilisateur de l'application.",
+  "properties": {
+    "id": {
+      "default": null,
+      "description": "ID unique de l'utilisateur.",
+      "nullable": true,
+      "type": "string"
+    },
+    "accounts": {
+      "default": null,
+      "nullable": true,
+      "type": "array",
+      "description": "Comptes de l'utilisateur.",
+      "items": {
+        "$ref": "./Account.v1.json"
+      }
+    },
+    "displayName": {
+      "default": null,
+      "description": "Nom d'affichage de l'utilisateur.",
+      "nullable": true,
+      "type": "string"
+    },
+    "email": {
+      "default": null,
+      "description": "Adresse email de l'utilisateur.",
+      "nullable": true,
+      "type": "string"
+    },
+    "joined_at": {
+      "default": null,
+      "description": "Date de création de l'utilisateur.",
+      "format": "date-time",
+      "nullable": true,
+      "type": "string"
+    }
+  }
+}

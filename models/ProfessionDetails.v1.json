@@ -1,0 +1,54 @@
+{
+  "type": "object",
+  "title": "ProfessionDetails",
+  "description": "Informations professionnelles relatives à l'emprunteur.",
+  "properties": {
+    "socio_professional_group": {
+      "default": null,
+      "description": "Groupe socio-profesionnel.",
+      "nullable": true,
+      "oneOf": [
+        {
+          "$ref": "./SocioProfessionalGroupAgriculateursExploitants.v1.json"
+        },
+        {
+          "$ref": "./SocioProfessionalGroupArtisansCommercantsChefsEntreprise.v1.json"
+        },
+        {
+          "$ref": "./SocioProfessionalGroupCadresProfessionsIntellectuellesSuperieures.v1.json"
+        },
+        {
+          "$ref": "./SocioProfessionalGroupProfessionsIntermediaires.v1.json"
+        },
+        {
+          "$ref": "./SocioProfessionalGroupEmployes.v1.json"
+        },
+        {
+          "$ref": "./SocioProfessionalGroupOuvriers.v1.json"
+        },
+        {
+          "$ref": "./SocioProfessionalGroupRetraites.v1.json"
+        },
+        {
+          "$ref": "./SocioProfessionalGroupAutresPersonnesSansActiviteProfessionnelle.v1.json"
+        }
+      ]
+    },
+    "status": {
+      "$ref": "./ProfessionStatus.v1.json"
+    },
+    "worker": {
+      "default": null,
+      "description": "Travailleur: salarié ou indépendant.",
+      "nullable": true,
+      "oneOf": [
+        {
+          "$ref": "./Employee.v1.json"
+        },
+        {
+          "$ref": "./Independant.v1.json"
+        }
+      ]
+    }
+  }
+}

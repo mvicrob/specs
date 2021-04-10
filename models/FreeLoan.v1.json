@@ -1,0 +1,77 @@
+{
+  "type": "object",
+  "title": "FreeLoan",
+  "description": "Prêt libre: prêt bancaire classique à amortissement. \n\nInutile de préciser le montant: le moteur de calcul le déterminera de façon optimale en fonction des postes de dépense du projet. \n\nEn plus des caractéristiques habituelles (taux, durée, assurance et garantie), des caractéristiques d'amortissement, ou de montant peuvent être précisées si nécessaire.",
+  "properties": {
+    "type": {
+      "type": "string",
+      "description": "Type de prêt: prêt libre.",
+      "enum": [
+        "FREE_LOAN"
+      ]
+    },
+    "yearly_rate": {
+      "description": "Taux d'intérêt annuel en %. Mettre 2.1 pour 2.1% par exemple.",
+      "maximum": 100,
+      "minimum": 0,
+      "type": "number"
+    },
+    "max_duration_months": {
+      "description": "Durée maximale du prêt, en mois.",
+      "minimum": 0,
+      "type": "integer"
+    },
+    "insurances": {
+      "description": "Assurance(s) emprunteur(s).",
+      "default": null,
+      "nullable": true,
+      "type": "array",
+      "items": {
+        "$ref": "./Insurance.v1.json"
+      }
+    },
+    "guaranty_type": {
+      "$ref": "./GuarantyType.v1.json"
+    },
+    "grace_period": {
+      "$ref": "./GracePeriod.v1.json"
+    },
+    "max_amortization": {
+      "default": null,
+      "description": "Amortissement mensuel maximal du prêt, (pour un prêt d'amortissement mensuel constant, min_amortization = max_amortization).",
+      "minimum": 0,
+      "nullable": true,
+      "type": "number"
+    },
+    "max_amount": {
+      "default": null,
+      "description": "Montant maximal du prêt, (pour un prêt de montant fixé, min_amount = max_amount).",
+      "minimum": 0,
+      "nullable": true,
+      "type": "number"
+    },
+    "min_amortization": {
+      "default": null,
+      "description": "Amortissement mensuel minimal du prêt, (pour un prêt d'amortissement mensuel constant, min_amortization = max_amortization).",
+      "minimum": 0,
+      "nullable": true,
+      "type": "number"
+    },
+    "min_amount": {
+      "default": null,
+      "description": "Montant minimal du prêt, (pour un prêt de montant fixé, min_amount = max_amount).",
+      "minimum": 0,
+      "nullable": true,
+      "type": "number"
+    },
+    "loan_name": {
+      "type": "string",
+      "description": "Nom du prêt: tout type d'identification (appellation marketing, etc...)"
+    }
+  },
+  "required": [
+    "type",
+    "yearly_rate",
+    "max_duration_months"
+  ]
+}

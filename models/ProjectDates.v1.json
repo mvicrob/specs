@@ -1,0 +1,28 @@
+{
+  "type": "object",
+  "title": "ProjectDates",
+  "properties": {
+    "sales_agreement_date": {
+      "default": null,
+      "description": "Date de signature du compromis.",
+      "format": "date-time",
+      "nullable": true,
+      "type": "string"
+    },
+    "conditions_precedent_end_date": {
+      "default": null,
+      "description": "Date de levée des conditions suspensives.",
+      "format": "date-time",
+      "nullable": true,
+      "type": "string"
+    },
+    "signature_date": {
+      "default": null,
+      "description": "Date de signature de l'acte.",
+      "format": "date-time",
+      "nullable": true,
+      "type": "string"
+    }
+  },
+  "description": "Dates légales du projet."
+}

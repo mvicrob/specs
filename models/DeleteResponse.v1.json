@@ -1,0 +1,16 @@
+{
+  "title": "DeleteResponse",
+  "allOf": [
+    {
+      "$ref": "./SuccessResponse.v1.json"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "data": {
+          "type": "string"
+        }
+      }
+    }
+  ]
+}

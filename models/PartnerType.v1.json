@@ -1,0 +1,21 @@
+{
+  "type": "string",
+  "title": "PartnerType",
+  "enum": [
+    "NOTARY",
+    "ESTATE_AGENT",
+    "BANK",
+    "BROKER",
+    "COLLECTOR_ONE_PERCENT_EMPLOYER",
+    "HOUSE_BUILDER",
+    "DPE_CHECKER",
+    "LAND_SURVEYOR",
+    "BUSINESS_PROVIDER",
+    "ARCHITECT",
+    "LAWYER",
+    "OTHER",
+    "null"
+  ],
+  "description": "Type de partenaire ou d'intervenant sur un dossier.",
+  "x-examples": {}
+}

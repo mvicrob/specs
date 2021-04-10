@@ -1,0 +1,77 @@
+{
+  "type": "object",
+  "title": "LegalPerson",
+  "description": "Informations relatives à l'emprunteur personne morale.",
+  "properties": {
+    "type": {
+      "type": "string",
+      "description": "Type d'emprunteur: personne personne morale.",
+      "enum": [
+        "LEGAL_PERSON"
+      ],
+      "nullable": true
+    },
+    "name": {
+      "default": null,
+      "description": "Dénomination.",
+      "nullable": true,
+      "type": "string"
+    },
+    "email": {
+      "default": null,
+      "description": "Email.",
+      "nullable": true,
+      "type": "string"
+    },
+    "phone_number": {
+      "default": null,
+      "description": "Numéro de téléphone.",
+      "nullable": true,
+      "type": "string"
+    },
+    "address": {
+      "$ref": "./Address.v1.json"
+    },
+    "contact_address": {
+      "$ref": "./Address.v1.json"
+    },
+    "bank_info": {
+      "$ref": "./BankInfo.v1.json"
+    },
+    "structure_type": {
+      "default": null,
+      "description": "Type de structure.",
+      "type": "string",
+      "enum": [
+        "SCI",
+        "COMPANY",
+        "ASSOCIATION",
+        "POLITICAL_PARTY",
+        "LOCAL_AUTHORITIES",
+        null
+      ],
+      "nullable": true
+    },
+    "legal_status": {
+      "default": null,
+      "description": "Forme juridique (SARL, SA, EURL, auto-entrepreneur, ...).",
+      "nullable": true,
+      "type": "string"
+    },
+    "persons": {
+      "type": "array",
+      "default": null,
+      "nullable": true,
+      "description": "Associés de la personne morale.",
+      "items": {
+        "$ref": "./Person.v1.json"
+      }
+    },
+    "financial_results": {
+      "$ref": "./FinancialResults.v1.json"
+    }
+  },
+  "required": [
+    "type"
+  ]
+}
