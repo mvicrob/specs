@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.0.6](https://www.github.com/Toaztr/specs/compare/v0.0.5...v0.0.6) (2021-04-10)
+
+
+### Bug Fixes
+
+* sync versioning ([ed283e1](https://www.github.com/Toaztr/specs/commit/ed283e13bc94bc57b7f2acb2465f07cd7cffcbd9))
+
 ### [0.0.5](https://www.github.com/Toaztr/specs/compare/v0.0.4...v0.0.5) (2021-04-10)
 
 
