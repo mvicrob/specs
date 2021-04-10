@@ -11,7 +11,7 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           release-type: node
-          package-name: release-please-action
+          package-name: toaztr-specs
           path: pkg/npm
       # The logic below handles the npm publication:
       - uses: actions/checkout@v2
