@@ -38,7 +38,7 @@ jobs:
         if: ${{ steps.release.outputs.release_created }}
       - run: cp dist/toaztr* pkg/npm/
         if: ${{ steps.release.outputs.release_created }}
-      - run: npm publish
+      - run: npm publish --access public
         working-directory: ./pkg/npm
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
