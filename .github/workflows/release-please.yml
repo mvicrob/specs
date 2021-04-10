@@ -36,10 +36,29 @@ jobs:
         if: ${{ steps.release.outputs.release_created }}
       - run: npx openapi bundle reference/*.yaml -o dist/toaztr
         if: ${{ steps.release.outputs.release_created }}
-      - run: cp dist/toaztr* pkg/npm/
+      - run: cp dist/toaztr.yaml pkg/npm/
         if: ${{ steps.release.outputs.release_created }}
       - run: npm version ${{ steps.release.outputs.major }}.${{ steps.release.outputs.minor }}.${{ steps.release.outputs.patch }} && npm publish --access public
+        if: ${{ steps.release.outputs.release_created }}
         working-directory: ./pkg/npm
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - run: cp dist/toaztr.yaml pkg/pypi/src/toaztr_specs/
         if: ${{ steps.release.outputs.release_created }}
+      - uses: actions/setup-python@v2
+        if: ${{ steps.release.outputs.release_created }}
+        with:
+          python-version: '3.8'
+      - run: python -m pip install build --user
+        if: ${{ steps.release.outputs.release_created }}
+        working-directory: ./pkg/pypi
+      - run: python -m build --sdist --wheel --outdir dist/
+        if: ${{ steps.release.outputs.release_created }}
+        working-directory: ./pkg/pypi
+        env:
+          PACKAGE_VERSION: ${{ steps.release.outputs.major }}.${{ steps.release.outputs.minor }}.${{ steps.release.outputs.patch }}
+      - uses: pypa/gh-action-pypi-publish@master
+        if: ${{ steps.release.outputs.release_created }}
+        working-directory: ./pkg/pypi
+        with:
+          password: ${{ secrets.PYPI_API_TOKEN }}
