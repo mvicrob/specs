@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.0.5](https://www.github.com/Toaztr/specs/compare/v0.0.4...v0.0.5) (2021-04-10)
+
+
+### Bug Fixes
+
+* npm publish ([338f325](https://www.github.com/Toaztr/specs/commit/338f325e8ddeb12a6442b646caabae9fde2171b0))
+
 ### [0.0.4](https://www.github.com/Toaztr/specs/compare/v0.0.3...v0.0.4) (2021-04-10)
 
 
