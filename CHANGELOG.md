@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.3.1](https://www.github.com/Toaztr/specs/compare/v0.3.0...v0.3.1) (2021-04-11)
+
+
+### Bug Fixes
+
+* plan parameters endpoint case_id parameter ([223778d](https://www.github.com/Toaztr/specs/commit/223778daa795f1e42a5302963d31c98c76dcafe5))
+
 ## [0.3.0](https://www.github.com/Toaztr/specs/compare/v0.2.0...v0.3.0) (2021-04-11)
 
 
