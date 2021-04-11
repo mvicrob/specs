@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.0](https://www.github.com/Toaztr/specs/compare/v0.1.0...v0.2.0) (2021-04-11)
+
+
+### Features
+
+* additional apis ([9a5136d](https://www.github.com/Toaztr/specs/commit/9a5136de3f38cb39fa597108337b038fcf8ce599))
+
 ## [0.1.0](https://www.github.com/Toaztr/specs/compare/v0.0.6...v0.1.0) (2021-04-10)
 
 
