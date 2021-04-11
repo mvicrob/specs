@@ -1,0 +1,16 @@
+{
+  "title": "PlanParametersResponse",
+  "allOf": [
+    {
+      "$ref": "./SuccessResponse.v1.json"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "data": {
+          "$ref": "./PlanParameters.v1.json"
+        }
+      }
+    }
+  ]
+}
