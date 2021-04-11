@@ -1268,6 +1268,11 @@ paths:
         required: true
         schema:
           type: string
+      - in: path
+        name: case_id
+        required: true
+        schema:
+          type: string
     put:
       tags:
         - PlanParameters
@@ -1327,6 +1332,12 @@ paths:
                 $ref: ../models/ErrorResponse.v1.json
       summary: Updates plan-parameters based on ID
   '/v1/cases/{case_id}/plan-parameters':
+    parameters:
+      - in: path
+        name: case_id
+        required: true
+        schema:
+          type: string
     post:
       tags:
         - PlanParameters
@@ -1367,7 +1378,6 @@ paths:
               schema:
                 $ref: ../models/ErrorResponse.v1.json
       summary: Creates plan-parameters
-    parameters: []
 servers:
   - description: Production server
     url: 'https://api.toaztr.com'
