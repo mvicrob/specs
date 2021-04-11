@@ -833,6 +833,345 @@ paths:
                 $ref: ../models/ErrorResponse.v1.json
       summary: Creates partners
     parameters: []
+  '/v1/users/{id}':
+    delete:
+      tags:
+        - Users
+      description: '/users/{id}'
+      parameters:
+        - description: Entity tag of the resource that is being updated
+          in: header
+          name: If-Match
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+        '403':
+          description: Not authorized to access this endpoint
+        '404':
+          description: Resource not found
+        '409':
+          description: Conflict error while trying to update the resource
+        '500':
+          description: Internal server error
+      summary: Deletes users based on ID
+    get:
+      tags:
+        - Users
+      description: '/users/{id}'
+      responses:
+        '200':
+          content:
+            application/json:
+              example:
+                accounts:
+                  - type: AGENT
+                displayName: John
+                email: john.doe@mail.com
+                id: XXXX-XXXX-XXXX-XXXX
+                joined_at: '2020-01-01T00:00:00.000Z'
+              schema:
+                $ref: ../models/User.v1.json
+          description: OK
+          headers:
+            ETag:
+              description: Entity tag of the user resource
+              schema:
+                type: string
+        '403':
+          description: Not authorized to access this endpoint
+        '404':
+          description: Resource not found
+        '500':
+          description: Internal server error
+      summary: Returns users by ID
+    parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: string
+    put:
+      tags:
+        - Users
+      description: '/users/{id}'
+      parameters:
+        - description: Entity tag of the resource that is being updated
+          in: header
+          name: If-Match
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ../models/User.v1.json
+      responses:
+        '200':
+          content:
+            application/json:
+              example:
+                accounts:
+                  - type: AGENT
+                displayName: John
+                email: john.doe@mail.com
+                id: XXXX-XXXX-XXXX-XXXX
+                joined_at: '2020-01-01T00:00:00.000Z'
+              schema:
+                $ref: ../models/User.v1.json
+          description: OK
+          headers:
+            ETag:
+              description: Entity tag of the user resource
+              schema:
+                type: string
+        '400':
+          description: Bad request
+        '403':
+          description: Not authorized to access this endpoint
+        '404':
+          description: Resource not found
+        '409':
+          description: Conflict error while trying to update the resource
+        '500':
+          description: Internal server error
+      summary: Updates users based on ID
+  /v1/users:
+    get:
+      tags:
+        - Users
+      description: /users
+      parameters:
+        - description: The number of items to skip before starting to collect the result set
+          in: query
+          name: offset
+          schema:
+            type: integer
+        - description: The numbers of items to return
+          in: query
+          name: limit
+          schema:
+            type: integer
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: ../models/User.v1.json
+                type: array
+          description: OK
+        '403':
+          description: Not authorized to access this endpoint
+        '500':
+          description: Internal server error
+      summary: List users
+    post:
+      tags:
+        - Users
+      description: /users
+      requestBody:
+        content:
+          application/json:
+            example:
+              accounts:
+                - type: AGENT
+              displayName: John
+              email: john.doe@mail.com
+              joined_at: '2020-01-01T00:00:00.000Z'
+            schema:
+              $ref: ../models/User.v1.json
+      responses:
+        '200':
+          content:
+            application/json:
+              example:
+                accounts:
+                  - type: AGENT
+                displayName: John
+                email: john.doe@mail.com
+                id: XXXX-XXXX-XXXX-XXXX
+                joined_at: '2020-01-01T00:00:00.000Z'
+              schema:
+                $ref: ../models/User.v1.json
+          description: OK
+          headers:
+            ETag:
+              description: Entity tag of the user resource
+              schema:
+                type: string
+        '400':
+          description: Bad request
+        '403':
+          description: Not authorized to access this endpoint
+        '500':
+          description: Internal server error
+      summary: Creates users
+    parameters: []
+  /v1/simulations/search:
+    post:
+      tags:
+        - Simulations
+      description: /simulations/search
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ../models/SearchQuery.v1.json
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Bad request
+        '500':
+          description: Internal server error
+      summary: Searches through simulations
+    parameters: []
+  /v1/simulations/autocomplete:
+    post:
+      tags:
+        - Simulations
+      description: /simulations/autocomplete
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ../models/AutocompleteQuery.v1.json
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Bad request
+        '500':
+          description: Internal server error
+      summary: Autocompletes for simulations
+    parameters: []
+  /v1/simulations/suggest:
+    post:
+      tags:
+        - Simulations
+      description: /simulations/suggest
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ../models/SuggestQuery.v1.json
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Bad request
+        '500':
+          description: Internal server error
+      summary: Autosuggest for simulations
+    parameters: []
+  /v1/compute/notary_fees:
+    post:
+      tags:
+        - Compute
+      description: /compute/notary_fees
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ../models/NotaryFeesParameters.v1.json
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: ../models/NotaryFees.v1.json
+          description: OK
+        '400':
+          description: Bad request
+        '403':
+          description: Not authorized to access this endpoint
+        '500':
+          description: Internal server error
+      summary: Compute notary fees
+    parameters: []
+  /compute/income_tax:
+    post:
+      tags:
+        - Compute
+      description: /compute/income_tax
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ../models/FrenchIncomeTaxParameters.v1.json
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: ../models/FrenchIncomeTax.v1.json
+          description: OK
+        '400':
+          description: Bad request
+        '403':
+          description: Not authorized to access this endpoint
+        '500':
+          description: Internal server error
+      summary: Computes income taxes
+  /v1/zones/search:
+    post:
+      tags:
+        - Zones
+      description: /zones/search
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ../models/SearchQuery.v1.json
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Bad request
+        '500':
+          description: Internal server error
+      summary: Searches through zones
+    parameters: []
+  /v1/zones/autocomplete:
+    post:
+      tags:
+        - Zones
+      description: /zones/autocomplete
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ../models/AutocompleteQuery.v1.json
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Bad request
+        '500':
+          description: Internal server error
+      summary: Autocomplete for zones
+    parameters: []
+  /v1/zones/suggest:
+    post:
+      tags:
+        - Zones
+      description: /zones/suggest
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ../models/SuggestQuery.v1.json
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Bad request
+        '500':
+          description: Internal server error
+      summary: Autosuggest for zones
+    parameters: []
 servers:
   - description: Production server
     url: 'https://api.toaztr.com'
