@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.0](https://www.github.com/Toaztr/specs/compare/v0.2.0...v0.3.0) (2021-04-11)
+
+
+### Features
+
+* plan-parameters ([efca9fe](https://www.github.com/Toaztr/specs/commit/efca9fed6e41cdec58ad234057ff1a9ade202e03))
+
 ## [0.2.0](https://www.github.com/Toaztr/specs/compare/v0.1.0...v0.2.0) (2021-04-11)
 
 
