@@ -1172,6 +1172,202 @@ paths:
           description: Internal server error
       summary: Autosuggest for zones
     parameters: []
+  '/v1/cases/{case_id}/plan-parameters/{id}':
+    delete:
+      tags:
+        - PlanParameters
+      description: '/cases/{case_id}/plan-parameters/{id}'
+      parameters:
+        - description: Entity tag of the resource that is being updated
+          in: header
+          name: If-Match
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../models/DeleteResponse.v1.json
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: ../models/ErrorResponse.v1.json
+        '403':
+          description: Not authorized to access this endpoint
+          content:
+            application/json:
+              schema:
+                $ref: ../models/ErrorResponse.v1.json
+        '404':
+          description: Resource not found
+          content:
+            application/json:
+              schema:
+                $ref: ../models/ErrorResponse.v1.json
+        '409':
+          description: Conflict error while trying to update the resource
+          content:
+            application/json:
+              schema:
+                $ref: ../models/ErrorResponse.v1.json
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: ../models/ErrorResponse.v1.json
+      summary: Deletes plan-parameters based on ID
+    get:
+      tags:
+        - PlanParameters
+      description: '/cases/{case_id}/plan-parameters/{id}'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: ../models/PlanParametersResponse.v1.json
+          description: OK
+          headers:
+            ETag:
+              description: Entity tag of the user resource
+              schema:
+                type: string
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: ../models/ErrorResponse.v1.json
+        '403':
+          description: Not authorized to access this endpoint
+          content:
+            application/json:
+              schema:
+                $ref: ../models/ErrorResponse.v1.json
+        '404':
+          description: Resource not found
+          content:
+            application/json:
+              schema:
+                $ref: ../models/ErrorResponse.v1.json
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: ../models/ErrorResponse.v1.json
+      summary: Returns plan-parameters by ID
+    parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: string
+    put:
+      tags:
+        - PlanParameters
+      description: '/cases/{case_id}/plan-parameters/{id}'
+      parameters:
+        - description: Entity tag of the resource that is being updated
+          in: header
+          name: If-Match
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ../models/PlanParameters.v1.json
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: ../models/PlanParametersResponse.v1.json
+          description: OK
+          headers:
+            ETag:
+              description: Entity tag of the user resource
+              schema:
+                type: string
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: ../models/ErrorResponse.v1.json
+        '403':
+          description: Not authorized to access this endpoint
+          content:
+            application/json:
+              schema:
+                $ref: ../models/ErrorResponse.v1.json
+        '404':
+          description: Resource not found
+          content:
+            application/json:
+              schema:
+                $ref: ../models/ErrorResponse.v1.json
+        '409':
+          description: Conflict error while trying to update the resource
+          content:
+            application/json:
+              schema:
+                $ref: ../models/ErrorResponse.v1.json
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: ../models/ErrorResponse.v1.json
+      summary: Updates plan-parameters based on ID
+  '/v1/cases/{case_id}/plan-parameters':
+    post:
+      tags:
+        - PlanParameters
+      description: '/v1/cases/{case_id}/plan-parameters'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ../models/PlanParameters.v1.json
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: ../models/PlanParametersResponse.v1.json
+          description: OK
+          headers:
+            ETag:
+              description: Entity tag of the user resource
+              schema:
+                type: string
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: ../models/ErrorResponse.v1.json
+        '403':
+          description: Not authorized to access this endpoint
+          content:
+            application/json:
+              schema:
+                $ref: ../models/ErrorResponse.v1.json
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: ../models/ErrorResponse.v1.json
+      summary: Creates plan-parameters
+    parameters: []
 servers:
   - description: Production server
     url: 'https://api.toaztr.com'
