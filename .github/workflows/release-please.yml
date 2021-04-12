@@ -41,6 +41,7 @@ jobs:
       - run: npx openapi bundle reference/*.yaml --ext json -o dist/toaztr 
       - run: cp dist/toaztr* pkg/npm/
       - run: npm version ${{ needs.release-please.outputs.version_created }}
+        working-directory: ./pkg/npm
       - run: npm publish --access public
         working-directory: ./pkg/npm
         env:
