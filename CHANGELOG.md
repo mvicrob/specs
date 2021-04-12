@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.0](https://www.github.com/Toaztr/specs/compare/v0.3.1...v0.4.0) (2021-04-12)
+
+
+### Features
+
+* js delivery ([2addb0a](https://www.github.com/Toaztr/specs/commit/2addb0ad67f455c8c7a13ee6fc1eba90333ef9af))
+
 ### [0.3.1](https://www.github.com/Toaztr/specs/compare/v0.3.0...v0.3.1) (2021-04-11)
 
 
