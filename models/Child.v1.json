@@ -11,7 +11,7 @@
       "type": "string"
     },
     "shared_custody": {
-      "default": null,
+      "default": false,
       "description": "Garde alternée: oui/non.",
       "nullable": true,
       "type": "boolean"

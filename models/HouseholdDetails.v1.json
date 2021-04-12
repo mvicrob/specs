@@ -37,7 +37,7 @@
       }
     },
     "first_time_buyer": {
-      "default": null,
+      "default": false,
       "description": "Primo-accédant(s), ou assimilés (non-propriétaires de résidence principale depuis plus de 2 ans): oui/non.",
       "nullable": true,
       "type": "boolean"
