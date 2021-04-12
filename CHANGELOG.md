@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.4.1](https://www.github.com/Toaztr/specs/compare/v0.4.0...v0.4.1) (2021-04-12)
+
+
+### Bug Fixes
+
+* delivery npm ([bddd1f0](https://www.github.com/Toaztr/specs/commit/bddd1f08197bd9cc6a9aba6450dace914d6a01cb))
+
 ## [0.4.0](https://www.github.com/Toaztr/specs/compare/v0.3.1...v0.4.0) (2021-04-12)
 
 
