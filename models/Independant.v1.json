@@ -30,7 +30,7 @@
       "type": "string"
     },
     "business_assets_owner": {
-      "default": null,
+      "default": false,
       "description": "Propriétaire du fond: oui/non.",
       "nullable": true,
       "type": "boolean"
@@ -43,7 +43,7 @@
       "type": "number"
     },
     "collateral": {
-      "default": null,
+      "default": false,
       "description": "Existance d'un nantissement: oui/non.",
       "nullable": true,
       "type": "boolean"
