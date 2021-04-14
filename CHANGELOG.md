@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.6.0](https://www.github.com/Toaztr/specs/compare/v0.5.0...v0.6.0) (2021-04-14)
+
+
+### Features
+
+* add summary info ([b6836ba](https://www.github.com/Toaztr/specs/commit/b6836ba386931c8d9b4b8086e0549f9e8995bef7))
+* add summary info, bis ([9385d82](https://www.github.com/Toaztr/specs/commit/9385d82b308c1b4281db1b1e54c2a490d9aebac1))
+
 ## [0.5.0](https://www.github.com/Toaztr/specs/compare/v0.4.1...v0.5.0) (2021-04-14)
 
 
