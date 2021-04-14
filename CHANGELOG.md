@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.5.0](https://www.github.com/Toaztr/specs/compare/v0.4.1...v0.5.0) (2021-04-14)
+
+
+### Features
+
+* release ([6ab7f9f](https://www.github.com/Toaztr/specs/commit/6ab7f9fe0264bf8975d8e01d69d9134415843f50))
+
 ### [0.4.1](https://www.github.com/Toaztr/specs/compare/v0.4.0...v0.4.1) (2021-04-12)
 
 
