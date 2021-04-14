@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.7.0](https://www.github.com/Toaztr/specs/compare/v0.6.0...v0.7.0) (2021-04-14)
+
+
+### Features
+
+* better name for personal funding ([7e23bb7](https://www.github.com/Toaztr/specs/commit/7e23bb7341b8b450563148414e43168f215d0d70))
+
 ## [0.6.0](https://www.github.com/Toaztr/specs/compare/v0.5.0...v0.6.0) (2021-04-14)
 
 
