@@ -52,6 +52,13 @@
       "default": null,
       "description": "Taux d'endettement final de l'emprunteur, calculé en considérant l'ensemble de ses revenus, de ses charges, et du plan de financement. Une valeur a null signifie que le calcul est impossible (revenus non renseignés par exemple)."
     },
+    "personal_funding": {
+      "type": "number",
+      "minimum": 0,
+      "nullable": true,
+      "default": null,
+      "description": "Montant total de l'apport personnel."
+    },
     "total_revenues": {
       "type": "number",
       "minimum": 0,
