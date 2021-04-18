@@ -33,11 +33,7 @@ jobs:
           # npm cache files are stored in `~/.npm` on Linux/macOS
           path: ~/.npm
           key: ${{ runner.OS }}-node-${{ hashFiles('deploy/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.OS }}-node-
-            ${{ runner.OS }}- 
       - run: npm ci
-      - run: npx openapi bundle reference/*.yaml -o dist/toaztr
       - run: npx openapi bundle reference/*.yaml --ext json -o dist/toaztr 
       - run: cp dist/toaztr* pkg/npm/
       - run: npm version ${{ needs.release-please.outputs.version_created }}
@@ -62,11 +58,7 @@ jobs:
           # npm cache files are stored in `~/.npm` on Linux/macOS
           path: ~/.npm
           key: ${{ runner.OS }}-node-${{ hashFiles('deploy/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.OS }}-node-
-            ${{ runner.OS }}- 
       - run: npm ci
-      - run: npx openapi bundle reference/*.yaml -o dist/toaztr
       - run: npx openapi bundle reference/*.yaml --ext json -o dist/toaztr 
       - run: cp dist/toaztr* pkg/pypi/src/toaztr_specs/
       - uses: actions/setup-python@v2
