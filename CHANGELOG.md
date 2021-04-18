@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.7.1](https://www.github.com/Toaztr/specs/compare/v0.7.0...v0.7.1) (2021-04-18)
+
+
+### Bug Fixes
+
+* nullable without type is not allowed ([ebed822](https://www.github.com/Toaztr/specs/commit/ebed82298047a453a7cbf9fe1a8a540ad37ac447))
+
 ## [0.7.0](https://www.github.com/Toaztr/specs/compare/v0.6.0...v0.7.0) (2021-04-14)
 
 
