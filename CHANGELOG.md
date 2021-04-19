@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.7.2](https://www.github.com/Toaztr/specs/compare/v0.7.1...v0.7.2) (2021-04-19)
+
+
+### Bug Fixes
+
+* fixes nullable in enums ([5dbb6e4](https://www.github.com/Toaztr/specs/commit/5dbb6e4652f5ff8d29384e504e91ce5d6d18b878))
+
 ### [0.7.1](https://www.github.com/Toaztr/specs/compare/v0.7.0...v0.7.1) (2021-04-18)
 
 
