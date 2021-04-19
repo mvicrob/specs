@@ -12,7 +12,7 @@
     "OFFICES",
     "SCPI",
     "BALANCING_ADJUSTMENT",
-    "null"
+    null
   ],
   "nullable": true,
   "description": "Nature de l'acquisition."

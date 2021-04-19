@@ -1,4 +1,21 @@
 openapi: 3.0.3
+tags:
+  - name: Cases
+    description: Case related endpoints
+  - name: Simulations
+    description: Simulation related endpoints
+  - name: Compute
+    description: Various utility endpoints
+  - name: Zones
+    description: Zone related endpoints
+  - name: Score
+    description: Score related endpoints
+  - name: Partners
+    description: Partner related endpoints
+  - name: Users
+    description: User related endpoints
+  - name: PlanParameters
+    description: PlanParameters related endpoints
 info:
   contact:
     name: API Support
@@ -17,6 +34,7 @@ components:
 paths:
   '/v1/cases/{id}':
     delete:
+      operationId: deleteCase
       tags:
         - Cases
       description: '/cases/{id}'
@@ -65,6 +83,7 @@ paths:
                 $ref: ../models/ErrorResponse.v1.json
       summary: Deletes cases based on ID
     get:
+      operationId: getCaseById
       tags:
         - Cases
       description: '/cases/{id}'
@@ -112,6 +131,7 @@ paths:
         schema:
           type: string
     put:
+      operationId: putCase
       tags:
         - Cases
       description: '/cases/{id}'
@@ -171,6 +191,7 @@ paths:
       summary: Updates cases based on ID
   /v1/cases:
     get:
+      operationId: getCases
       tags:
         - Cases
       description: /cases
@@ -212,6 +233,7 @@ paths:
                 $ref: ../models/ErrorResponse.v1.json
       summary: List cases
     post:
+      operationId: postCase
       tags:
         - Cases
       description: /cases
@@ -254,6 +276,7 @@ paths:
     parameters: []
   '/v1/simulations/{id}':
     delete:
+      operationId: deleteSimulation
       tags:
         - Simulations
       description: '/simulations/{id}'
@@ -302,6 +325,7 @@ paths:
                 $ref: ../models/ErrorResponse.v1.json
       summary: Deletes simulations based on ID
     get:
+      operationId: getSimulationById
       tags:
         - Simulations
       description: '/simulations/{id}'
@@ -350,6 +374,7 @@ paths:
           type: string
   /v1/simulations:
     get:
+      operationId: getSimulations
       tags:
         - Simulations
       description: /simulations
@@ -393,6 +418,7 @@ paths:
     parameters: []
   /v1/simulations/budget:
     post:
+      operationId: postBudgetSimulation
       tags:
         - Simulations
       description: /simulations/budget
@@ -435,6 +461,7 @@ paths:
     parameters: []
   /v1/simulations/funding:
     post:
+      operationId: postFundingSimulation
       tags:
         - Simulations
       description: /simulations/funding
@@ -477,6 +504,7 @@ paths:
     parameters: []
   /v1/simulations/rental_investment:
     post:
+      operationId: postRentalInvestmentSimulation
       tags:
         - Simulations
       description: /simulations/rental_investment
@@ -519,6 +547,7 @@ paths:
     parameters: []
   /v1/simulations/debt_consolidation:
     post:
+      operationId: postDebtConsolidationSimulation
       tags:
         - Simulations
       description: /simulations/debt_consolidation
@@ -561,6 +590,7 @@ paths:
     parameters: []
   /v1/score:
     post:
+      operationId: postScore
       tags:
         - Score
       description: /score
@@ -598,6 +628,7 @@ paths:
     parameters: []
   '/v1/partners/{id}':
     delete:
+      operationId: deletePartner
       tags:
         - Partners
       description: '/partners/{id}'
@@ -646,6 +677,7 @@ paths:
                 $ref: ../models/ErrorResponse.v1.json
       summary: Deletes partners based on ID
     get:
+      operationId: getPartnerById
       tags:
         - Partners
       description: '/partners/{id}'
@@ -693,6 +725,7 @@ paths:
         schema:
           type: string
     put:
+      operationId: putPartner
       tags:
         - Partners
       description: '/partners/{id}'
@@ -752,6 +785,7 @@ paths:
       summary: Updates partners based on ID
   /v1/partners:
     get:
+      operationId: getPartners
       tags:
         - Partners
       description: /partners
@@ -793,6 +827,7 @@ paths:
                 $ref: ../models/ErrorResponse.v1.json
       summary: List partners
     post:
+      operationId: postPartner
       tags:
         - Partners
       description: /partners
@@ -833,241 +868,9 @@ paths:
                 $ref: ../models/ErrorResponse.v1.json
       summary: Creates partners
     parameters: []
-  '/v1/users/{id}':
-    delete:
-      tags:
-        - Users
-      description: '/users/{id}'
-      parameters:
-        - description: Entity tag of the resource that is being updated
-          in: header
-          name: If-Match
-          schema:
-            type: string
-      responses:
-        '200':
-          description: OK
-        '403':
-          description: Not authorized to access this endpoint
-        '404':
-          description: Resource not found
-        '409':
-          description: Conflict error while trying to update the resource
-        '500':
-          description: Internal server error
-      summary: Deletes users based on ID
-    get:
-      tags:
-        - Users
-      description: '/users/{id}'
-      responses:
-        '200':
-          content:
-            application/json:
-              example:
-                accounts:
-                  - type: AGENT
-                displayName: John
-                email: john.doe@mail.com
-                id: XXXX-XXXX-XXXX-XXXX
-                joined_at: '2020-01-01T00:00:00.000Z'
-              schema:
-                $ref: ../models/User.v1.json
-          description: OK
-          headers:
-            ETag:
-              description: Entity tag of the user resource
-              schema:
-                type: string
-        '403':
-          description: Not authorized to access this endpoint
-        '404':
-          description: Resource not found
-        '500':
-          description: Internal server error
-      summary: Returns users by ID
-    parameters:
-      - in: path
-        name: id
-        required: true
-        schema:
-          type: string
-    put:
-      tags:
-        - Users
-      description: '/users/{id}'
-      parameters:
-        - description: Entity tag of the resource that is being updated
-          in: header
-          name: If-Match
-          schema:
-            type: string
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: ../models/User.v1.json
-      responses:
-        '200':
-          content:
-            application/json:
-              example:
-                accounts:
-                  - type: AGENT
-                displayName: John
-                email: john.doe@mail.com
-                id: XXXX-XXXX-XXXX-XXXX
-                joined_at: '2020-01-01T00:00:00.000Z'
-              schema:
-                $ref: ../models/User.v1.json
-          description: OK
-          headers:
-            ETag:
-              description: Entity tag of the user resource
-              schema:
-                type: string
-        '400':
-          description: Bad request
-        '403':
-          description: Not authorized to access this endpoint
-        '404':
-          description: Resource not found
-        '409':
-          description: Conflict error while trying to update the resource
-        '500':
-          description: Internal server error
-      summary: Updates users based on ID
-  /v1/users:
-    get:
-      tags:
-        - Users
-      description: /users
-      parameters:
-        - description: The number of items to skip before starting to collect the result set
-          in: query
-          name: offset
-          schema:
-            type: integer
-        - description: The numbers of items to return
-          in: query
-          name: limit
-          schema:
-            type: integer
-      responses:
-        '200':
-          content:
-            application/json:
-              schema:
-                items:
-                  $ref: ../models/User.v1.json
-                type: array
-          description: OK
-        '403':
-          description: Not authorized to access this endpoint
-        '500':
-          description: Internal server error
-      summary: List users
-    post:
-      tags:
-        - Users
-      description: /users
-      requestBody:
-        content:
-          application/json:
-            example:
-              accounts:
-                - type: AGENT
-              displayName: John
-              email: john.doe@mail.com
-              joined_at: '2020-01-01T00:00:00.000Z'
-            schema:
-              $ref: ../models/User.v1.json
-      responses:
-        '200':
-          content:
-            application/json:
-              example:
-                accounts:
-                  - type: AGENT
-                displayName: John
-                email: john.doe@mail.com
-                id: XXXX-XXXX-XXXX-XXXX
-                joined_at: '2020-01-01T00:00:00.000Z'
-              schema:
-                $ref: ../models/User.v1.json
-          description: OK
-          headers:
-            ETag:
-              description: Entity tag of the user resource
-              schema:
-                type: string
-        '400':
-          description: Bad request
-        '403':
-          description: Not authorized to access this endpoint
-        '500':
-          description: Internal server error
-      summary: Creates users
-    parameters: []
-  /v1/simulations/search:
-    post:
-      tags:
-        - Simulations
-      description: /simulations/search
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: ../models/SearchQuery.v1.json
-      responses:
-        '200':
-          description: OK
-        '400':
-          description: Bad request
-        '500':
-          description: Internal server error
-      summary: Searches through simulations
-    parameters: []
-  /v1/simulations/autocomplete:
-    post:
-      tags:
-        - Simulations
-      description: /simulations/autocomplete
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: ../models/AutocompleteQuery.v1.json
-      responses:
-        '200':
-          description: OK
-        '400':
-          description: Bad request
-        '500':
-          description: Internal server error
-      summary: Autocompletes for simulations
-    parameters: []
-  /v1/simulations/suggest:
-    post:
-      tags:
-        - Simulations
-      description: /simulations/suggest
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: ../models/SuggestQuery.v1.json
-      responses:
-        '200':
-          description: OK
-        '400':
-          description: Bad request
-        '500':
-          description: Internal server error
-      summary: Autosuggest for simulations
-    parameters: []
   /v1/compute/notary_fees:
     post:
+      operationId: postNotaryFees
       tags:
         - Compute
       description: /compute/notary_fees
@@ -1093,6 +896,7 @@ paths:
     parameters: []
   /compute/income_tax:
     post:
+      operationId: postIncomeTax
       tags:
         - Compute
       description: /compute/income_tax
@@ -1115,65 +919,9 @@ paths:
         '500':
           description: Internal server error
       summary: Computes income taxes
-  /v1/zones/search:
-    post:
-      tags:
-        - Zones
-      description: /zones/search
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: ../models/SearchQuery.v1.json
-      responses:
-        '200':
-          description: OK
-        '400':
-          description: Bad request
-        '500':
-          description: Internal server error
-      summary: Searches through zones
-    parameters: []
-  /v1/zones/autocomplete:
-    post:
-      tags:
-        - Zones
-      description: /zones/autocomplete
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: ../models/AutocompleteQuery.v1.json
-      responses:
-        '200':
-          description: OK
-        '400':
-          description: Bad request
-        '500':
-          description: Internal server error
-      summary: Autocomplete for zones
-    parameters: []
-  /v1/zones/suggest:
-    post:
-      tags:
-        - Zones
-      description: /zones/suggest
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: ../models/SuggestQuery.v1.json
-      responses:
-        '200':
-          description: OK
-        '400':
-          description: Bad request
-        '500':
-          description: Internal server error
-      summary: Autosuggest for zones
-    parameters: []
   '/v1/cases/{case_id}/plan-parameters/{id}':
     delete:
+      operationId: deletePlanParameters
       tags:
         - PlanParameters
       description: '/cases/{case_id}/plan-parameters/{id}'
@@ -1222,6 +970,7 @@ paths:
                 $ref: ../models/ErrorResponse.v1.json
       summary: Deletes plan-parameters based on ID
     get:
+      operationId: getPlanParametersById
       tags:
         - PlanParameters
       description: '/cases/{case_id}/plan-parameters/{id}'
@@ -1274,6 +1023,7 @@ paths:
         schema:
           type: string
     put:
+      operationId: putPlanParameters
       tags:
         - PlanParameters
       description: '/cases/{case_id}/plan-parameters/{id}'
@@ -1339,6 +1089,7 @@ paths:
         schema:
           type: string
     post:
+      operationId: postPlanParameters
       tags:
         - PlanParameters
       description: '/v1/cases/{case_id}/plan-parameters'

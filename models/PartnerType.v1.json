@@ -14,8 +14,9 @@
     "ARCHITECT",
     "LAWYER",
     "OTHER",
-    "null"
+    null
   ],
+  "nullable": true,
   "description": "Type de partenaire ou d'intervenant sur un dossier.",
   "x-examples": {}
 }

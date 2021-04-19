@@ -8,7 +8,7 @@
     "PROFESSIONAL_PROPERTY",
     "VIAGER",
     "INVESTMENT",
-    "null"
+    null
   ],
   "nullable": true,
   "description": "Destination de l'acquisition."

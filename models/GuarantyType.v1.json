@@ -8,7 +8,7 @@
     "CREDIT_LOGEMENT_CLASSIC",
     "CREDIT_LOGEMENT_INITIO",
     "MGEN",
-    "null"
+    null
   ],
   "nullable": true,
   "description": "Type de garantie du prêt."
