@@ -9,7 +9,8 @@
     "B2",
     "C",
     "DROM",
-    "null"
+    null
   ],
+  "nullable": true,
   "description": "Zonage."
 }

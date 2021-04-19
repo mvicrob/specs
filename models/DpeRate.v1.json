@@ -10,7 +10,7 @@
     "F",
     "G",
     "VIERGE",
-    "null"
+    null
   ],
   "nullable": true,
   "description": "Note du diagnostique de performance énergétique (DPE)."

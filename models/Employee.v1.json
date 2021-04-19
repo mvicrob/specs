@@ -19,7 +19,7 @@
         "CDI",
         "CIVIL_SERVANT",
         "OTHER",
-        "null"
+        null
       ],
       "nullable": true
     },
@@ -34,7 +34,7 @@
         "VACATAIRE_CIVIL_SERVANT",
         "INTERIM",
         "INTERN",
-        "null"
+        null
       ],
       "nullable": true
     },

@@ -10,7 +10,8 @@
     "DIVORCE_ONGOING",
     "PACSED",
     "LIVING_TOGETHER",
-    "null"
+    null
   ],
+  "nullable": true,
   "description": "Statut marital"
 }
