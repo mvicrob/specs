@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.8.0](https://www.github.com/Toaztr/specs/compare/v0.7.2...v0.8.0) (2021-04-21)
+
+
+### Features
+
+* revert nullable ([9f9fe60](https://www.github.com/Toaztr/specs/commit/9f9fe600f5453ea9b457117c874dd3ec520dce62))
+
 ### [0.7.2](https://www.github.com/Toaztr/specs/compare/v0.7.1...v0.7.2) (2021-04-19)
 
 
