@@ -4,10 +4,7 @@
   "description": "Informations professionnelles relatives à l'emprunteur.",
   "properties": {
     "socio_professional_group": {
-      "default": null,
       "description": "Groupe socio-profesionnel.",
-      "nullable": true,
-      "type": "object",
       "oneOf": [
         {
           "$ref": "./SocioProfessionalGroupAgriculateursExploitants.v1.json"
@@ -39,9 +36,6 @@
       "$ref": "./ProfessionStatus.v1.json"
     },
     "worker": {
-      "default": null,
-      "nullable": true,
-      "type": "object",
       "description": "Travailleur: salarié ou indépendant.",
       "oneOf": [
         {
