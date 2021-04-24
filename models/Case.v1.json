@@ -9,6 +9,9 @@
       "nullable": true,
       "type": "string"
     },
+    "etag": {
+      "type": "string"
+    },
     "actor": {
       "oneOf": [
         {
