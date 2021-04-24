@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.9.0](https://www.github.com/Toaztr/specs/compare/v0.8.0...v0.9.0) (2021-04-24)
+
+
+### Features
+
+* Add etag flag ([7fa2685](https://www.github.com/Toaztr/specs/commit/7fa26855aac265ad6a9ec3f7689c6cff357d73a9))
+
 ## [0.8.0](https://www.github.com/Toaztr/specs/compare/v0.7.2...v0.8.0) (2021-04-21)
 
 
