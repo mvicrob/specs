@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.10.0](https://www.github.com/Toaztr/specs/compare/v0.9.0...v0.10.0) (2021-04-28)
+
+
+### Features
+
+* Add other_expenses in budget ([f0036d3](https://www.github.com/Toaztr/specs/commit/f0036d34e4b218982d6f775d60c53ce88ea41073))
+
 ## [0.9.0](https://www.github.com/Toaztr/specs/compare/v0.8.0...v0.9.0) (2021-04-24)
 
 
