@@ -28,6 +28,11 @@
       "description": "Part du budget dédiée aux frais de notaire.",
       "minimum": 0
     },
+    "other_expenses": {
+      "type": "number",
+      "description": "Autres dépenses.",
+      "minimum": 0
+    },
     "total_budget": {
       "type": "number",
       "description": "Budget total, incluant le prix bien ainsi tous les frais, à l'exception des frais de garantie.",
@@ -40,6 +45,7 @@
     "guaranties_fees",
     "maximal_price",
     "notary_fees",
+    "other_expenses",
     "total_budget"
   ]
 }

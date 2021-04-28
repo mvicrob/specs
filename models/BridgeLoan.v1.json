@@ -11,7 +11,7 @@
       ]
     },
     "amount": {
-      "description": "Montant maximal du prêt, (pour un prêt de montant fixé, min_amount = max_amount).",
+      "description": "Montant du prêt relais.",
       "minimum": 0,
       "type": "number"
     },
@@ -22,7 +22,7 @@
       "type": "number"
     },
     "duration_months": {
-      "description": "Durée maximale du prêt, en mois.",
+      "description": "Durée du prêt relais, en mois.",
       "minimum": 0,
       "type": "integer"
     },
