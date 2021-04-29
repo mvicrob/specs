@@ -16,6 +16,12 @@
       "nullable": true,
       "type": "string"
     },
+    "profession": {
+      "default": null,
+      "description": "Profession.",
+      "nullable": true,
+      "type": "string"
+    },
     "activity_start_date": {
       "default": null,
       "description": "Date de début d'activité.",
