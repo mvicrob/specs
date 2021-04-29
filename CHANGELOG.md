@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.10.1](https://www.github.com/Toaztr/specs/compare/v0.10.0...v0.10.1) (2021-04-29)
+
+
+### Bug Fixes
+
+* change yaml into json ([4085e05](https://www.github.com/Toaztr/specs/commit/4085e05d5871e7e541eccd1e3b7c53bc4217f8b0))
+
 ## [0.10.0](https://www.github.com/Toaztr/specs/compare/v0.9.0...v0.10.0) (2021-04-28)
 
 
