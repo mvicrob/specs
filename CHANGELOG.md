@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.11.0](https://www.github.com/Toaztr/specs/compare/v0.10.1...v0.11.0) (2021-04-29)
+
+
+### Features
+
+* add profession ([1f1bf2e](https://www.github.com/Toaztr/specs/commit/1f1bf2ee46154ae8f108afb377ff3380c522e9ed))
+
 ### [0.10.1](https://www.github.com/Toaztr/specs/compare/v0.10.0...v0.10.1) (2021-04-29)
 
 
