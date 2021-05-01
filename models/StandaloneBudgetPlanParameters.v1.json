@@ -1,8 +1,9 @@
 {
   "title": "StandaloneBudgetPlanParameters",
+  "description": "Paramètres d'un calcul de budget, conservés isolément.",
   "allOf": [
     {
-      "$ref": "./PlanParametersMetadata.v1.json"
+      "$ref": "./BudgetPlanParameters.v1.json"
     },
     {
       "type": "object",
@@ -12,16 +13,13 @@
           "enum": [
             "BUDGET_PLAN_PARAMETERS"
           ],
-          "description": "Type du jeu de paramètres."
-        },
-        "parameters": {
-          "$ref": "./BudgetPlanParameters.v1.json"
+          "description": "Type du jeu de paramètres.",
+          "default": "BUDGET_PLAN_PARAMETERS"
         }
       },
       "required": [
         "type"
       ]
     }
-  ],
-  "description": "Paramètres d'un calcul de budget, conservés isolément."
+  ]
 }

@@ -3,12 +3,9 @@
   "title": "Case",
   "description": "Dossier emprunteur complet.",
   "properties": {
-    "id": {
-      "description": "ID unique du case.",
-      "type": "string"
-    },
-    "etag": {
-      "type": "string"
+    "name": {
+      "type": "string",
+      "description": "Nom du dossier"
     },
     "actor": {
       "oneOf": [
@@ -55,9 +52,6 @@
         }
       ],
       "description": "Projet."
-    },
-    "metadata": {
-      "$ref": "./CaseMetaData.v1.json"
     }
   }
 }

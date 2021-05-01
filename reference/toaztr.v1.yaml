@@ -1,25 +1,21 @@
 openapi: 3.0.3
 tags:
   - name: Cases
-    description: Case related endpoints
+    description: Relatif aux dossiers
   - name: Simulations
-    description: Simulation related endpoints
+    description: Relatif aux simulations
   - name: Compute
-    description: Various utility endpoints
-  - name: Zones
-    description: Zone related endpoints
+    description: Utilitaires
   - name: Score
-    description: Score related endpoints
+    description: Relatif au scoring
   - name: Partners
-    description: Partner related endpoints
-  - name: Users
-    description: User related endpoints
+    description: Relatif aux partenaires
   - name: PlanParameters
-    description: PlanParameters related endpoints
+    description: Relatif aux parametres de plan de financement
 info:
   contact:
     name: API Support
-  description: This is the documentation for the Toaztr API.
+  description: Documentation des API Toaztr
   title: Toaztr API
   version: 1.0.0
   x-logo:
@@ -29,129 +25,338 @@ components:
   securitySchemes:
     OAuth:
       type: oauth2
-      description: This API uses OAuth2 with clientCredentials and authorizationCode flows
+      description: Cette API utilise le framework d'authorisation OAuth2
       flows:
         clientCredentials:
-          tokenUrl: https://auth.toaztr.com/oauth2/token
+          tokenUrl: 'https://auth.toaztr.com/oauth2/token'
           scopes:
-            simulations/*: Full access to simulations endpoints
-            cases/*: Full access to cases endpoints
+            cases/read: Acces en lecture aux dossiers
+            cases/write: Acces en ecriture aux dossiers
+            cases/*: Acces complet aux dossiers
+            simulations/budget: Acces aux simulations de budget
+            simulations/funding: Acces aux simulations de financement
+            simulations/debt_consolidation: Acces aux simulations de consolidation de dette
+            simulations/pinel: Acces aux simulations pinel
+            simulations/*: Acces a toutes les simulations
+            scores/*: Acces au scoring
         authorizationCode:
-          authorizationUrl: https://auth.toaztr.com/oauth2/authorize
-          tokenUrl: https://auth.toaztr.com/oauth2/token
+          authorizationUrl: 'https://auth.toaztr.com/oauth2/authorize'
+          tokenUrl: 'https://auth.toaztr.com/oauth2/token'
           scopes:
-            simulations/*: Full access to simulations endpoints
-            cases/*: Full access to cases endpoints
+            cases/read: Acces en lecture aux dossiers
+            cases/write: Acces en ecriture aux dossiers
+            cases/*: Acces complet aux dossiers
+            simulations/budget: Acces aux simulations de budget
+            simulations/funding: Acces aux simulations de financement
+            simulations/debt_consolidation: Acces aux simulations de consolidation de dette
+            simulations/pinel: Acces aux simulations pinel
+            simulations/*: Acces a toutes les simulations
+            scores/*: Acces au scoring
+  responses:
+    '400':
+      description: Bad Request
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    '403':
+      description: Not authorized
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    '404':
+      description: Not Found
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    '409':
+      description: Conflict
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    '500':
+      description: Internal Server Error
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+  parameters:
+    id:
+      name: id
+      in: path
+      required: true
+      schema:
+        type: string
+      description: ID unique de la resource
+    caseId:
+      name: caseId
+      in: path
+      required: true
+      schema:
+        type: string
+      description: ID du dossier parent
+    planId:
+      name: planId
+      in: path
+      required: true
+      schema:
+        type: string
+      description: ID des parametres du plan de financement parent
+    IfMatch:
+      name: If-Match
+      in: header
+      required: false
+      schema:
+        type: string
+      description: Entity tag de la resource
+    'page[size]':
+      name: 'page[size]'
+      in: query
+      required: false
+      schema:
+        type: number
+        minimum: 0
+        maximum: 20
+        default: 10
+      description: Taille de la page a retourner
+    'page[after]':
+      name: 'page[after]'
+      in: query
+      required: false
+      schema:
+        type: string
+      description: Curseur a partir duquel la page debute 
+    'page[before]':
+      name: 'page[before]'
+      in: query
+      required: false
+      schema:
+        type: string
+      description: Curseur a partir duquel la page debute 
+  schemas:
+    Resource:
+      title: Resource
+      type: object
+      description: Resource identifiée uniquement par son type et son id
+      properties:
+        id:
+          type: string
+          description: ID unique de la resource
+          readOnly: true
+        type:
+          type: string
+          description: Type de la resource
+        attributes:
+          type: object
+          description: Attributs de la resource
+        meta:
+          type: object
+          description: Meta-données de la resourc
+          properties:
+            etag:
+              type: string
+              description: ETag de la resource
+              readOnly: true
+            created_at:
+              type: string
+              format: date-time
+              description: Date de création de la resourc
+              readOnly: true
+            last_updated_at:
+              type: string
+              format: date-time
+              description: Date de dernière update de la resourc
+              readOnly: true
+      required:
+        - type
+    CaseResource:
+      title: CaseResource
+      allOf:
+        - $ref: '#/components/schemas/Resource'
+        - type: object
+          properties:
+            type:
+              type: string
+              default: CASE
+              enum:
+                - CASE
+            attributes:
+              $ref: ../models/Case.v1.json
+          required:
+            - type
+      description: Represente un dossier
+    ErrorResponse:
+      title: ErrorResponse
+      type: object
+      description: Represente une réponse en erreur
+      properties:
+        errors:
+          type: array
+          items:
+            type: object
+            properties:
+              title:
+                type: string
+                description: Type d'erreur
+              detail:
+                type: string
+                description: Détails de l'erreur
+              source:
+                type: object
+                properties:
+                  pointer:
+                    type: string
+                    description: JSON Pointer vers le field en erreur
+                  parameter:
+                    type: string
+                    description: Nom du paramètre en erreur
+                  header:
+                    type: string
+                    description: Nom du header en erreur
+    PaginatedResponse:
+      title: PaginatedResponse
+      type: object
+      description: Page de resources
+      properties:
+        data:
+          type: array
+          items:
+            type: object
+            properties:
+              meta:
+                type: object
+                properties:
+                  page:
+                    type: object
+                    properties:
+                      cursor:
+                        type: string
+                        description: Curseur pointant sur cet élément
+        links:
+          type: object
+          properties:
+            prev:
+              type: string
+              description: Lien vers la page précedente
+            next:
+              type: string
+              description: Lien vers la prochaine page
+    PartnerResource:
+      title: PartnerResource
+      allOf:
+        - $ref: '#/components/schemas/Resource'
+        - type: object
+          properties:
+            type:
+              type: string
+              default: v
+              enum:
+                - PARTNER
+            attributes:
+              $ref: ../models/Partner.v1.json
+          required:
+            - type
+      description: Représente un partenaire
+    PlanParametersResource:
+      title: PlanParametersResource
+      allOf:
+        - $ref: '#/components/schemas/Resource'
+        - type: object
+          properties:
+            type:
+              type: string
+              default: PLAN_PARAMETERS
+              enum:
+                - PLAN_PARAMETERS
+            attributes:
+              $ref: ../models/PlanParameters.v1.json
+          required:
+            - type
+    SimulationResource:
+      title: SimulationResource
+      allOf:
+        - $ref: '#/components/schemas/Resource'
+        - type: object
+          properties:
+            type:
+              type: string
+              default: SIMULATION
+              enum:
+                - SIMULATION
+            attributes:
+              $ref: ../models/Simulation.v1.json
+          required:
+            - type
 paths:
   '/v1/cases/{id}':
     delete:
       operationId: deleteCase
       tags:
         - Cases
-      description: '/cases/{id}'
+      description: Supprime un dossier par ID
       parameters:
-        - description: Entity tag of the resource that is being updated
-          in: header
-          name: If-Match
-          schema:
-            type: string
+        - $ref: '#/components/parameters/IfMatch'
       responses:
         '200':
           description: OK
-          content:
-            application/json:
-              schema:
-                $ref: ../models/DeleteResponse.v1.json
         '400':
-          description: Bad Request
-          content:
-            application/json:
-              schema:
-                $ref: ../models/ErrorResponse.v1.json
+          $ref: '#/components/responses/400'
         '403':
-          description: Not authorized to access this endpoint
-          content:
-            application/json:
-              schema:
-                $ref: ../models/ErrorResponse.v1.json
+          $ref: '#/components/responses/403'
         '404':
-          description: Resource not found
-          content:
-            application/json:
-              schema:
-                $ref: ../models/ErrorResponse.v1.json
+          $ref: '#/components/responses/404'
         '409':
-          description: Conflict error while trying to update the resource
-          content:
-            application/json:
-              schema:
-                $ref: ../models/ErrorResponse.v1.json
+          $ref: '#/components/responses/409'
         '500':
-          description: Internal server error
-          content:
-            application/json:
-              schema:
-                $ref: ../models/ErrorResponse.v1.json
-      summary: Deletes cases based on ID
+          $ref: '#/components/responses/500'
+      summary: Supprime un dossier par ID
+      security:
+        - OAuth:
+            - cases/write
     get:
       operationId: getCaseById
       tags:
         - Cases
-      description: '/cases/{id}'
+      description: Retourne un dossier par ID
       responses:
         '200':
+          description: OK
           content:
             application/json:
               schema:
-                $ref: ../models/CaseResponse.v1.json
-          description: OK
+                type: object
+                properties:
+                  data:
+                    $ref: '#/components/schemas/CaseResource'
           headers:
             ETag:
-              description: Entity tag of the user resource
               schema:
                 type: string
+              description: Entity tag of the resource
         '400':
-          description: Bad Request
-          content:
-            application/json:
-              schema:
-                $ref: ../models/ErrorResponse.v1.json
+          $ref: '#/components/responses/400'
         '403':
-          description: Not authorized to access this endpoint
-          content:
-            application/json:
-              schema:
-                $ref: ../models/ErrorResponse.v1.json
+          $ref: '#/components/responses/403'
         '404':
-          description: Resource not found
-          content:
-            application/json:
-              schema:
-                $ref: ../models/ErrorResponse.v1.json
+          $ref: '#/components/responses/404'
         '500':
-          description: Internal server error
-          content:
-            application/json:
-              schema:
-                $ref: ../models/ErrorResponse.v1.json
-      summary: Returns cases by ID
+          $ref: '#/components/responses/500'
+      summary: Retourne des cases par ID
+      security:
+        - OAuth:
+            - cases/read
     parameters:
-      - in: path
-        name: id
-        required: true
-        schema:
-          type: string
+      - $ref: '#/components/parameters/id'
     put:
       operationId: putCase
       tags:
         - Cases
-      description: '/cases/{id}'
+      description: Mets a jour un case par ID
       parameters:
-        - description: Entity tag of the resource that is being updated
-          in: header
-          name: If-Match
-          schema:
-            type: string
+        - $ref: '#/components/parameters/IfMatch'
       requestBody:
         content:
           application/json:
@@ -162,92 +367,66 @@ paths:
           content:
             application/json:
               schema:
-                $ref: ../models/CaseResponse.v1.json
+                $ref: '#/components/schemas/CaseResource'
           description: OK
           headers:
             ETag:
-              description: Entity tag of the user resource
+              description: Entity tag of the resource
               schema:
                 type: string
         '400':
-          description: Bad request
-          content:
-            application/json:
-              schema:
-                $ref: ../models/ErrorResponse.v1.json
+          $ref: '#/components/responses/400'
         '403':
-          description: Not authorized to access this endpoint
-          content:
-            application/json:
-              schema:
-                $ref: ../models/ErrorResponse.v1.json
+          $ref: '#/components/responses/403'
         '404':
-          description: Resource not found
-          content:
-            application/json:
-              schema:
-                $ref: ../models/ErrorResponse.v1.json
+          $ref: '#/components/responses/404'
         '409':
-          description: Conflict error while trying to update the resource
-          content:
-            application/json:
-              schema:
-                $ref: ../models/ErrorResponse.v1.json
+          $ref: '#/components/responses/409'
         '500':
-          description: Internal server error
-          content:
-            application/json:
-              schema:
-                $ref: ../models/ErrorResponse.v1.json
-      summary: Updates cases based on ID
+          $ref: '#/components/responses/500'
+      summary: Mets a jour un cases par ID
+      security:
+        - OAuth:
+            - cases/write
   /v1/cases:
     get:
       operationId: getCases
       tags:
         - Cases
-      description: /cases
+      description: List cases
       parameters:
-        - description: The number of items to skip before starting to collect the result set
-          in: query
-          name: offset
-          schema:
-            type: integer
-        - description: The numbers of items to return
-          in: query
-          name: limit
-          schema:
-            type: integer
+        - $ref: '#/components/parameters/page[size]'
+        - $ref: '#/components/parameters/page[after]'
+        - $ref: '#/components/parameters/page[before]'
       responses:
         '200':
           content:
             application/json:
               schema:
-                $ref: ../models/CasesResponse.v1.json
+                allOf:
+                  - $ref: '#/components/schemas/PaginatedResponse'
+                  - type: object
+                    properties:
+                      data:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/CaseResource'
           description: OK
         '400':
-          description: Bad Request
-          content:
-            application/json:
-              schema:
-                $ref: ../models/ErrorResponse.v1.json
+          $ref: '#/components/responses/400'
         '403':
-          description: Not authorized to access this endpoint
-          content:
-            application/json:
-              schema:
-                $ref: ../models/ErrorResponse.v1.json
+          $ref: '#/components/responses/403'
         '500':
-          description: Internal server error
-          content:
-            application/json:
-              schema:
-                $ref: ../models/ErrorResponse.v1.json
+          $ref: '#/components/responses/500'
       summary: List cases
+      security:
+        - OAuth:
+            - cases/read
     post:
       operationId: postCase
       tags:
         - Cases
-      description: /cases
+      description: Creer un case
       requestBody:
         content:
           application/json:
@@ -258,181 +437,33 @@ paths:
           content:
             application/json:
               schema:
-                $ref: ../models/CaseResponse.v1.json
+                type: object
+                properties:
+                  data:
+                    $ref: '#/components/schemas/CaseResource'
           description: OK
           headers:
             ETag:
-              description: Entity tag of the user resource
+              description: Entity tag of the resource
               schema:
                 type: string
         '400':
-          description: Bad request
-          content:
-            application/json:
-              schema:
-                $ref: ../models/ErrorResponse.v1.json
+          $ref: '#/components/responses/400'
         '403':
-          description: Not authorized to access this endpoint
-          content:
-            application/json:
-              schema:
-                $ref: ../models/ErrorResponse.v1.json
+          $ref: '#/components/responses/403'
         '500':
-          description: Internal server error
-          content:
-            application/json:
-              schema:
-                $ref: ../models/ErrorResponse.v1.json
+          $ref: '#/components/responses/500'
       summary: Creates cases
-    parameters: []
-  '/v1/simulations/{id}':
-    delete:
-      operationId: deleteSimulation
-      tags:
-        - Simulations
-      description: '/simulations/{id}'
-      parameters:
-        - description: Entity tag of the resource that is being updated
-          in: header
-          name: If-Match
-          schema:
-            type: string
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                $ref: ../models/DeleteResponse.v1.json
-        '400':
-          description: Bad Request
-          content:
-            application/json:
-              schema:
-                $ref: ../models/ErrorResponse.v1.json
-        '403':
-          description: Not authorized to access this endpoint
-          content:
-            application/json:
-              schema:
-                $ref: ../models/ErrorResponse.v1.json
-        '404':
-          description: Resource not found
-          content:
-            application/json:
-              schema:
-                $ref: ../models/ErrorResponse.v1.json
-        '409':
-          description: Conflict error while trying to update the resource
-          content:
-            application/json:
-              schema:
-                $ref: ../models/ErrorResponse.v1.json
-        '500':
-          description: Internal server error
-          content:
-            application/json:
-              schema:
-                $ref: ../models/ErrorResponse.v1.json
-      summary: Deletes simulations based on ID
-    get:
-      operationId: getSimulationById
-      tags:
-        - Simulations
-      description: '/simulations/{id}'
-      responses:
-        '200':
-          content:
-            application/json:
-              schema:
-                $ref: ../models/SimulationResponse.v1.json
-          description: OK
-          headers:
-            ETag:
-              description: Entity tag of the user resource
-              schema:
-                type: string
-        '400':
-          description: Bad Request
-          content:
-            application/json:
-              schema:
-                $ref: ../models/ErrorResponse.v1.json
-        '403':
-          description: Not authorized to access this endpoint
-          content:
-            application/json:
-              schema:
-                $ref: ../models/ErrorResponse.v1.json
-        '404':
-          description: Resource not found
-          content:
-            application/json:
-              schema:
-                $ref: ../models/ErrorResponse.v1.json
-        '500':
-          description: Internal server error
-          content:
-            application/json:
-              schema:
-                $ref: ../models/ErrorResponse.v1.json
-      summary: Returns simulations by ID
-    parameters:
-      - in: path
-        name: id
-        required: true
-        schema:
-          type: string
-  /v1/simulations:
-    get:
-      operationId: getSimulations
-      tags:
-        - Simulations
-      description: /simulations
-      parameters:
-        - description: The number of items to skip before starting to collect the result set
-          in: query
-          name: offset
-          schema:
-            type: integer
-        - description: The numbers of items to return
-          in: query
-          name: limit
-          schema:
-            type: integer
-      responses:
-        '200':
-          content:
-            application/json:
-              schema:
-                $ref: ../models/SimulationsResponse.v1.json
-          description: OK
-        '400':
-          description: Bad Request
-          content:
-            application/json:
-              schema:
-                $ref: ../models/ErrorResponse.v1.json
-        '403':
-          description: Not authorized to access this endpoint
-          content:
-            application/json:
-              schema:
-                $ref: ../models/ErrorResponse.v1.json
-        '500':
-          description: Internal server error
-          content:
-            application/json:
-              schema:
-                $ref: ../models/ErrorResponse.v1.json
-      summary: List simulations
+      security:
+        - OAuth:
+            - cases/write
     parameters: []
   /v1/simulations/budget:
     post:
       operationId: postBudgetSimulation
       tags:
         - Simulations
-      description: /simulations/budget
+      description: Simulates a budget
       requestBody:
         content:
           application/json:
@@ -443,39 +474,29 @@ paths:
           content:
             application/json:
               schema:
-                $ref: ../models/SimulationResponse.v1.json
+                type: object
+                properties:
+                  data:
+                    $ref: ../models/BudgetResults.v1.json
           description: OK
-          headers:
-            ETag:
-              description: Entity tag of the user resource
-              schema:
-                type: string
+          headers: {}
         '400':
-          description: Bad request
-          content:
-            application/json:
-              schema:
-                $ref: ../models/ErrorResponse.v1.json
+          $ref: '#/components/responses/400'
         '403':
-          description: Not authorized to access this endpoint
-          content:
-            application/json:
-              schema:
-                $ref: ../models/ErrorResponse.v1.json
+          $ref: '#/components/responses/403'
         '500':
-          description: Internal server error
-          content:
-            application/json:
-              schema:
-                $ref: ../models/ErrorResponse.v1.json
+          $ref: '#/components/responses/500'
       summary: Creates budget simulations
+      security:
+        - OAuth:
+            - simulations/budget
     parameters: []
   /v1/simulations/funding:
     post:
       operationId: postFundingSimulation
       tags:
         - Simulations
-      description: /simulations/funding
+      description: Simulates a funding
       requestBody:
         content:
           application/json:
@@ -486,39 +507,29 @@ paths:
           content:
             application/json:
               schema:
-                $ref: ../models/SimulationResponse.v1.json
+                type: object
+                properties:
+                  data:
+                    $ref: ../models/FundingResults.v1.json
           description: OK
-          headers:
-            ETag:
-              description: Entity tag of the user resource
-              schema:
-                type: string
+          headers: {}
         '400':
-          description: Bad request
-          content:
-            application/json:
-              schema:
-                $ref: ../models/ErrorResponse.v1.json
+          $ref: '#/components/responses/400'
         '403':
-          description: Not authorized to access this endpoint
-          content:
-            application/json:
-              schema:
-                $ref: ../models/ErrorResponse.v1.json
+          $ref: '#/components/responses/403'
         '500':
-          description: Internal server error
-          content:
-            application/json:
-              schema:
-                $ref: ../models/ErrorResponse.v1.json
+          $ref: '#/components/responses/500'
       summary: Creates funding simulations
+      security:
+        - OAuth:
+            - simulations/funding
     parameters: []
-  /v1/simulations/rental_investment:
+  /v1/simulations/pinel:
     post:
-      operationId: postRentalInvestmentSimulation
+      operationId: postPinelSimulation
       tags:
         - Simulations
-      description: /simulations/rental_investment
+      description: Simulates pinel
       requestBody:
         content:
           application/json:
@@ -529,39 +540,29 @@ paths:
           content:
             application/json:
               schema:
-                $ref: ../models/SimulationResponse.v1.json
+                type: object
+                properties:
+                  data:
+                    $ref: ../models/PinelResults.v1.json
           description: OK
-          headers:
-            ETag:
-              description: Entity tag of the user resource
-              schema:
-                type: string
+          headers: {}
         '400':
-          description: Bad request
-          content:
-            application/json:
-              schema:
-                $ref: ../models/ErrorResponse.v1.json
+          $ref: '#/components/responses/400'
         '403':
-          description: Not authorized to access this endpoint
-          content:
-            application/json:
-              schema:
-                $ref: ../models/ErrorResponse.v1.json
+          $ref: '#/components/responses/403'
         '500':
-          description: Internal server error
-          content:
-            application/json:
-              schema:
-                $ref: ../models/ErrorResponse.v1.json
-      summary: Creates rental investment simulations
+          $ref: '#/components/responses/500'
+      summary: Creates pinel simulations
+      security:
+        - OAuth:
+            - simulations/pinel
     parameters: []
   /v1/simulations/debt_consolidation:
     post:
       operationId: postDebtConsolidationSimulation
       tags:
         - Simulations
-      description: /simulations/debt_consolidation
+      description: Simulates a debt consolidation
       requestBody:
         content:
           application/json:
@@ -572,39 +573,29 @@ paths:
           content:
             application/json:
               schema:
-                $ref: ../models/SimulationResponse.v1.json
+                type: object
+                properties:
+                  data:
+                    $ref: ../models/DebtConsolidationResults.v1.json
           description: OK
-          headers:
-            ETag:
-              description: Entity tag of the user resource
-              schema:
-                type: string
+          headers: {}
         '400':
-          description: Bad request
-          content:
-            application/json:
-              schema:
-                $ref: ../models/ErrorResponse.v1.json
+          $ref: '#/components/responses/400'
         '403':
-          description: Not authorized to access this endpoint
-          content:
-            application/json:
-              schema:
-                $ref: ../models/ErrorResponse.v1.json
+          $ref: '#/components/responses/403'
         '500':
-          description: Internal server error
-          content:
-            application/json:
-              schema:
-                $ref: ../models/ErrorResponse.v1.json
+          $ref: '#/components/responses/500'
       summary: Creates debt consolidation simulations
+      security:
+        - OAuth:
+            - simulations/debt_consolidation
     parameters: []
-  /v1/score:
+  /v1/scores:
     post:
       operationId: postScore
       tags:
         - Score
-      description: /score
+      description: Scores a case
       requestBody:
         content:
           application/json:
@@ -615,137 +606,88 @@ paths:
           content:
             application/json:
               schema:
-                $ref: ../models/ScoreResponse.v1.json
+                type: object
+                properties:
+                  data:
+                    $ref: ../models/Score.v1.json
           description: OK
         '400':
-          description: Bad request
-          content:
-            application/json:
-              schema:
-                $ref: ../models/ErrorResponse.v1.json
+          $ref: '#/components/responses/400'
         '403':
-          description: Not authorized to access this endpoint
-          content:
-            application/json:
-              schema:
-                $ref: ../models/ErrorResponse.v1.json
+          $ref: '#/components/responses/403'
         '500':
-          description: Internal server error
-          content:
-            application/json:
-              schema:
-                $ref: ../models/ErrorResponse.v1.json
+          $ref: '#/components/responses/500'
       summary: Compute score and rate on a case
+      security:
+        - OAuth:
+            - scores/*
     parameters: []
   '/v1/partners/{id}':
     delete:
       operationId: deletePartner
       tags:
         - Partners
-      description: '/partners/{id}'
+      description: Supprime un a partner par ID
       parameters:
-        - description: Entity tag of the resource that is being updated
-          in: header
-          name: If-Match
-          schema:
-            type: string
+        - $ref: '#/components/parameters/IfMatch'
       responses:
         '200':
           description: OK
-          content:
-            application/json:
-              schema:
-                $ref: ../models/DeleteResponse.v1.json
         '400':
-          description: Bad Request
-          content:
-            application/json:
-              schema:
-                $ref: ../models/ErrorResponse.v1.json
+          $ref: '#/components/responses/400'
         '403':
-          description: Not authorized to access this endpoint
-          content:
-            application/json:
-              schema:
-                $ref: ../models/ErrorResponse.v1.json
+          $ref: '#/components/responses/403'
         '404':
-          description: Resource not found
-          content:
-            application/json:
-              schema:
-                $ref: ../models/ErrorResponse.v1.json
+          $ref: '#/components/responses/404'
         '409':
-          description: Conflict error while trying to update the resource
-          content:
-            application/json:
-              schema:
-                $ref: ../models/ErrorResponse.v1.json
+          $ref: '#/components/responses/409'
         '500':
-          description: Internal server error
-          content:
-            application/json:
-              schema:
-                $ref: ../models/ErrorResponse.v1.json
-      summary: Deletes partners based on ID
+          $ref: '#/components/responses/500'
+      summary: Supprime un partners par ID
+      security:
+        - OAuth:
+            - cases/write
     get:
       operationId: getPartnerById
       tags:
         - Partners
-      description: '/partners/{id}'
+      description: Retourne un partner par ID
       responses:
         '200':
           content:
             application/json:
               schema:
-                $ref: ../models/PartnerResponse.v1.json
+                type: object
+                properties:
+                  data:
+                    $ref: '#/components/schemas/PartnerResource'
           description: OK
           headers:
             ETag:
-              description: Entity tag of the user resource
+              description: Entity tag of the resource
               schema:
                 type: string
         '400':
-          description: Bad Request
-          content:
-            application/json:
-              schema:
-                $ref: ../models/ErrorResponse.v1.json
+          $ref: '#/components/responses/400'
         '403':
-          description: Not authorized to access this endpoint
-          content:
-            application/json:
-              schema:
-                $ref: ../models/ErrorResponse.v1.json
+          $ref: '#/components/responses/403'
         '404':
-          description: Resource not found
-          content:
-            application/json:
-              schema:
-                $ref: ../models/ErrorResponse.v1.json
+          $ref: '#/components/responses/404'
         '500':
-          description: Internal server error
-          content:
-            application/json:
-              schema:
-                $ref: ../models/ErrorResponse.v1.json
-      summary: Returns partners by ID
+          $ref: '#/components/responses/500'
+      summary: Retourne des partners par ID
+      security:
+        - OAuth:
+            - cases/read
     parameters:
-      - in: path
-        name: id
-        required: true
-        schema:
-          type: string
+      - $ref: '#/components/parameters/id'
     put:
       operationId: putPartner
       tags:
         - Partners
-      description: '/partners/{id}'
+      description: Mets a jour un partner par ID
       parameters:
-        - description: Entity tag of the resource that is being updated
-          in: header
-          name: If-Match
-          schema:
-            type: string
+        - $ref: '#/components/parameters/IfMatch'
       requestBody:
         content:
           application/json:
@@ -756,92 +698,69 @@ paths:
           content:
             application/json:
               schema:
-                $ref: ../models/PartnerResponse.v1.json
+                type: object
+                properties:
+                  data:
+                    $ref: '#/components/schemas/PartnerResource'
           description: OK
           headers:
             ETag:
-              description: Entity tag of the user resource
+              description: Entity tag of the resource
               schema:
                 type: string
         '400':
-          description: Bad request
-          content:
-            application/json:
-              schema:
-                $ref: ../models/ErrorResponse.v1.json
+          $ref: '#/components/responses/400'
         '403':
-          description: Not authorized to access this endpoint
-          content:
-            application/json:
-              schema:
-                $ref: ../models/ErrorResponse.v1.json
+          $ref: '#/components/responses/403'
         '404':
-          description: Resource not found
-          content:
-            application/json:
-              schema:
-                $ref: ../models/ErrorResponse.v1.json
+          $ref: '#/components/responses/404'
         '409':
-          description: Conflict error while trying to update the resource
-          content:
-            application/json:
-              schema:
-                $ref: ../models/ErrorResponse.v1.json
+          $ref: '#/components/responses/409'
         '500':
-          description: Internal server error
-          content:
-            application/json:
-              schema:
-                $ref: ../models/ErrorResponse.v1.json
-      summary: Updates partners based on ID
+          $ref: '#/components/responses/500'
+      summary: Mets a jour un partners par ID
+      security:
+        - OAuth:
+            - cases/write
   /v1/partners:
     get:
       operationId: getPartners
       tags:
         - Partners
-      description: /partners
+      description: List partners
       parameters:
-        - description: The number of items to skip before starting to collect the result set
-          in: query
-          name: offset
-          schema:
-            type: integer
-        - description: The numbers of items to return
-          in: query
-          name: limit
-          schema:
-            type: integer
+        - $ref: '#/components/parameters/page[size]'
+        - $ref: '#/components/parameters/page[after]'
+        - $ref: '#/components/parameters/page[before]'
       responses:
         '200':
           content:
             application/json:
               schema:
-                $ref: ../models/PartnersResponse.v1.json
+                allOf:
+                  - $ref: '#/components/schemas/PaginatedResponse'
+                  - type: object
+                    properties:
+                      data:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/PartnerResource'
           description: OK
         '400':
-          description: Bad Request
-          content:
-            application/json:
-              schema:
-                $ref: ../models/ErrorResponse.v1.json
+          $ref: '#/components/responses/400'
         '403':
-          description: Not authorized to access this endpoint
-          content:
-            application/json:
-              schema:
-                $ref: ../models/ErrorResponse.v1.json
+          $ref: '#/components/responses/403'
         '500':
-          description: Internal server error
-          content:
-            application/json:
-              schema:
-                $ref: ../models/ErrorResponse.v1.json
+          $ref: '#/components/responses/500'
       summary: List partners
+      security:
+        - OAuth:
+            - cases/read
     post:
       operationId: postPartner
       tags:
         - Partners
-      description: /partners
+      description: Creer un partner
       requestBody:
         content:
           application/json:
@@ -852,39 +771,33 @@ paths:
           content:
             application/json:
               schema:
-                $ref: ../models/PartnerResponse.v1.json
+                type: object
+                properties:
+                  data:
+                    $ref: '#/components/schemas/PartnerResource'
           description: OK
           headers:
             ETag:
-              description: Entity tag of the user resource
+              description: Entity tag of the resource
               schema:
                 type: string
         '400':
-          description: Bad request
-          content:
-            application/json:
-              schema:
-                $ref: ../models/ErrorResponse.v1.json
+          $ref: '#/components/responses/400'
         '403':
-          description: Not authorized to access this endpoint
-          content:
-            application/json:
-              schema:
-                $ref: ../models/ErrorResponse.v1.json
+          $ref: '#/components/responses/403'
         '500':
-          description: Internal server error
-          content:
-            application/json:
-              schema:
-                $ref: ../models/ErrorResponse.v1.json
+          $ref: '#/components/responses/500'
       summary: Creates partners
+      security:
+        - OAuth:
+            - cases/write
     parameters: []
   /v1/compute/notary_fees:
     post:
       operationId: postNotaryFees
       tags:
         - Compute
-      description: /compute/notary_fees
+      description: Computes notary fees
       requestBody:
         content:
           application/json:
@@ -898,19 +811,22 @@ paths:
                 $ref: ../models/NotaryFees.v1.json
           description: OK
         '400':
-          description: Bad request
+          $ref: '#/components/responses/400'
         '403':
-          description: Not authorized to access this endpoint
+          $ref: '#/components/responses/403'
         '500':
-          description: Internal server error
+          $ref: '#/components/responses/500'
       summary: Compute notary fees
+      security:
+        - OAuth:
+            - simulations/*
     parameters: []
   /v1/compute/income_tax:
     post:
       operationId: postIncomeTax
       tags:
         - Compute
-      description: /compute/income_tax
+      description: Calcule le montant d'impots
       requestBody:
         content:
           application/json:
@@ -924,126 +840,80 @@ paths:
                 $ref: ../models/FrenchIncomeTax.v1.json
           description: OK
         '400':
-          description: Bad request
+          $ref: '#/components/responses/400'
         '403':
-          description: Not authorized to access this endpoint
+          $ref: '#/components/responses/403'
         '500':
-          description: Internal server error
+          $ref: '#/components/responses/500'
       summary: Computes income taxes
-  '/v1/cases/{case_id}/plan-parameters/{id}':
+      security:
+        - OAuth:
+            - simulations/*
+  '/v1/cases/{caseId}/plans-parameters/{id}':
     delete:
-      operationId: deletePlanParameters
-      tags:
-        - PlanParameters
-      description: '/cases/{case_id}/plan-parameters/{id}'
+      operationId: deletePlansParameters
+      description: Supprime un par ID
       parameters:
-        - description: Entity tag of the resource that is being updated
-          in: header
-          name: If-Match
-          schema:
-            type: string
+        - $ref: '#/components/parameters/IfMatch'
       responses:
         '200':
           description: OK
-          content:
-            application/json:
-              schema:
-                $ref: ../models/DeleteResponse.v1.json
         '400':
-          description: Bad Request
-          content:
-            application/json:
-              schema:
-                $ref: ../models/ErrorResponse.v1.json
+          $ref: '#/components/responses/400'
         '403':
-          description: Not authorized to access this endpoint
-          content:
-            application/json:
-              schema:
-                $ref: ../models/ErrorResponse.v1.json
+          $ref: '#/components/responses/403'
         '404':
-          description: Resource not found
-          content:
-            application/json:
-              schema:
-                $ref: ../models/ErrorResponse.v1.json
+          $ref: '#/components/responses/404'
         '409':
-          description: Conflict error while trying to update the resource
-          content:
-            application/json:
-              schema:
-                $ref: ../models/ErrorResponse.v1.json
+          $ref: '#/components/responses/409'
         '500':
-          description: Internal server error
-          content:
-            application/json:
-              schema:
-                $ref: ../models/ErrorResponse.v1.json
-      summary: Deletes plan-parameters based on ID
+          $ref: '#/components/responses/500'
+      summary: Supprime un plan par ID
+      security:
+        - OAuth:
+            - cases/write
+      tags:
+        - Cases
     get:
-      operationId: getPlanParametersById
-      tags:
-        - PlanParameters
-      description: '/cases/{case_id}/plan-parameters/{id}'
+      operationId: getPlansParametersById
+      description: Retourne un plans-parameters par ID
       responses:
         '200':
           content:
             application/json:
               schema:
-                $ref: ../models/PlanParametersResponse.v1.json
+                type: object
+                properties:
+                  data:
+                    $ref: '#/components/schemas/PlanParametersResource'
           description: OK
           headers:
             ETag:
-              description: Entity tag of the user resource
+              description: Entity tag of the resource
               schema:
                 type: string
         '400':
-          description: Bad Request
-          content:
-            application/json:
-              schema:
-                $ref: ../models/ErrorResponse.v1.json
+          $ref: '#/components/responses/400'
         '403':
-          description: Not authorized to access this endpoint
-          content:
-            application/json:
-              schema:
-                $ref: ../models/ErrorResponse.v1.json
+          $ref: '#/components/responses/403'
         '404':
-          description: Resource not found
-          content:
-            application/json:
-              schema:
-                $ref: ../models/ErrorResponse.v1.json
+          $ref: '#/components/responses/404'
         '500':
-          description: Internal server error
-          content:
-            application/json:
-              schema:
-                $ref: ../models/ErrorResponse.v1.json
-      summary: Returns plan-parameters by ID
+          $ref: '#/components/responses/500'
+      summary: Retourne des plans-parameters par ID
+      security:
+        - OAuth:
+            - cases/read
+      tags:
+        - Cases
     parameters:
-      - in: path
-        name: id
-        required: true
-        schema:
-          type: string
-      - in: path
-        name: case_id
-        required: true
-        schema:
-          type: string
+      - $ref: '#/components/parameters/id'
+      - $ref: '#/components/parameters/caseId'
     put:
-      operationId: putPlanParameters
-      tags:
-        - PlanParameters
-      description: '/cases/{case_id}/plan-parameters/{id}'
+      operationId: putPlansParameters
+      description: Mets a jour un plans-parameters par ID
       parameters:
-        - description: Entity tag of the resource that is being updated
-          in: header
-          name: If-Match
-          schema:
-            type: string
+        - $ref: '#/components/parameters/IfMatch'
       requestBody:
         content:
           application/json:
@@ -1054,56 +924,38 @@ paths:
           content:
             application/json:
               schema:
-                $ref: ../models/PlanParametersResponse.v1.json
+                type: object
+                properties:
+                  data:
+                    $ref: '#/components/schemas/PlanParametersResource'
           description: OK
           headers:
             ETag:
-              description: Entity tag of the user resource
+              description: Entity tag of the resource
               schema:
                 type: string
         '400':
-          description: Bad request
-          content:
-            application/json:
-              schema:
-                $ref: ../models/ErrorResponse.v1.json
+          $ref: '#/components/responses/400'
         '403':
-          description: Not authorized to access this endpoint
-          content:
-            application/json:
-              schema:
-                $ref: ../models/ErrorResponse.v1.json
+          $ref: '#/components/responses/403'
         '404':
-          description: Resource not found
-          content:
-            application/json:
-              schema:
-                $ref: ../models/ErrorResponse.v1.json
+          $ref: '#/components/responses/404'
         '409':
-          description: Conflict error while trying to update the resource
-          content:
-            application/json:
-              schema:
-                $ref: ../models/ErrorResponse.v1.json
+          $ref: '#/components/responses/409'
         '500':
-          description: Internal server error
-          content:
-            application/json:
-              schema:
-                $ref: ../models/ErrorResponse.v1.json
-      summary: Updates plan-parameters based on ID
-  '/v1/cases/{case_id}/plan-parameters':
-    parameters:
-      - in: path
-        name: case_id
-        required: true
-        schema:
-          type: string
-    post:
-      operationId: postPlanParameters
+          $ref: '#/components/responses/500'
+      summary: Mets a jour un plans-parameters par ID
+      security:
+        - OAuth:
+            - cases/write
       tags:
-        - PlanParameters
-      description: '/v1/cases/{case_id}/plan-parameters'
+        - Cases
+  '/v1/cases/{caseId}/plans-parameters':
+    parameters:
+      - $ref: '#/components/parameters/caseId'
+    post:
+      operationId: postPlansParameters
+      description: Creer un plans-parameters
       requestBody:
         content:
           application/json:
@@ -1114,32 +966,193 @@ paths:
           content:
             application/json:
               schema:
-                $ref: ../models/PlanParametersResponse.v1.json
+                type: object
+                properties:
+                  data:
+                    $ref: '#/components/schemas/PlanParametersResource'
           description: OK
           headers:
             ETag:
-              description: Entity tag of the user resource
+              description: Entity tag of the resource
               schema:
                 type: string
         '400':
-          description: Bad request
-          content:
-            application/json:
-              schema:
-                $ref: ../models/ErrorResponse.v1.json
+          $ref: '#/components/responses/400'
         '403':
-          description: Not authorized to access this endpoint
-          content:
-            application/json:
-              schema:
-                $ref: ../models/ErrorResponse.v1.json
+          $ref: '#/components/responses/403'
         '500':
-          description: Internal server error
+          $ref: '#/components/responses/500'
+      summary: Creates plans-parameters
+      security:
+        - OAuth:
+            - cases/write
+      tags:
+        - Cases
+    get:
+      summary: List plans-parameters
+      operationId: getPlansParameters
+      responses:
+        '200':
+          description: OK
           content:
             application/json:
               schema:
-                $ref: ../models/ErrorResponse.v1.json
-      summary: Creates plan-parameters
+                allOf:
+                  - $ref: '#/components/schemas/PaginatedResponse'
+                  - type: object
+                    properties:
+                      data:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/PlanParametersResource'
+        '400':
+          $ref: '#/components/responses/400'
+        '403':
+          $ref: '#/components/responses/403'
+        '500':
+          $ref: '#/components/responses/500'
+      description: List plans parameters
+      security:
+        - OAuth:
+            - cases/read
+      parameters:
+        - $ref: '#/components/parameters/page[size]'
+        - $ref: '#/components/parameters/page[after]'
+        - $ref: '#/components/parameters/page[before]'
+      tags:
+        - Cases
+  '/v1/cases/{caseId}/plans-parameters/{planId}/simulations':
+    parameters:
+      - schema:
+          type: string
+        name: caseId
+        in: path
+        required: true
+      - schema:
+          type: string
+        name: planId
+        in: path
+        required: true
+    get:
+      summary: List simulations
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/PaginatedResponse'
+                  - type: object
+                    properties:
+                      data:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/SimulationResource'
+        '400':
+          $ref: '#/components/responses/400'
+        '403':
+          $ref: '#/components/responses/403'
+        '500':
+          $ref: '#/components/responses/500'
+      operationId: getSimulations
+      description: List simulations
+      security:
+        - OAuth:
+            - cases/read
+      parameters:
+        - $ref: '#/components/parameters/page[size]'
+        - $ref: '#/components/parameters/page[after]'
+        - $ref: '#/components/parameters/page[before]'
+      tags:
+        - Cases
+    post:
+      summary: Creates simulations
+      operationId: postSimulation
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    $ref: '#/components/schemas/SimulationResource'
+        '400':
+          $ref: '#/components/responses/400'
+        '403':
+          $ref: '#/components/responses/403'
+        '500':
+          $ref: '#/components/responses/500'
+      description: Creer une simulation pour ce dossier et ce plan
+      parameters: []
+      security:
+        - OAuth:
+            - cases/write
+      tags:
+        - Cases
+  '/v1/cases/{caseId}/plans-parameters/{planId}/simulations/{id}':
+    parameters:
+      - $ref: '#/components/parameters/caseId'
+      - $ref: '#/components/parameters/planId'
+      - $ref: '#/components/parameters/id'
+    get:
+      summary: Retourne des simulations par ID
+      tags:
+        - Cases
+      responses:
+        '200':
+          description: OK
+          headers:
+            ETag:
+              schema:
+                type: string
+              description: Entity tag of the resource
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    $ref: '#/components/schemas/SimulationResource'
+        '400':
+          $ref: '#/components/responses/400'
+        '403':
+          $ref: '#/components/responses/403'
+        '404':
+          $ref: '#/components/responses/404'
+        '500':
+          $ref: '#/components/responses/500'
+      operationId: getSimulationById
+      description: Retourne une simulation par ID
+      security:
+        - OAuth:
+            - cases/read
+    delete:
+      summary: Supprime une simulation par ID
+      operationId: deleteSimulation
+      parameters:
+        - $ref: '#/components/parameters/IfMatch'
+      responses:
+        '200':
+          description: OK
+        '400':
+          $ref: '#/components/responses/400'
+        '403':
+          $ref: '#/components/responses/403'
+        '404':
+          $ref: '#/components/responses/404'
+        '409':
+          $ref: '#/components/responses/409'
+        '500':
+          $ref: '#/components/responses/500'
+      description: Supprime une simulation par ID
+      security:
+        - OAuth:
+            - cases/write
+      tags:
+        - Cases
 servers:
   - description: Production server
     url: 'https://api.toaztr.com'

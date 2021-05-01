@@ -1,32 +1,25 @@
 {
   "title": "PinelSimulation",
   "description": "Réponse de la simulation d'un dispositif Pinel.",
-  "allOf": [
-    {
-      "$ref": "./SimulationMetadata.v1.json"
-    },
-    {
-      "type": "object",
-      "properties": {
-        "type": {
-          "type": "string",
-          "default": "PINEL",
-          "description": "Type de simulation.",
-          "enum": [
-            "PINEL"
-          ]
-        },
-        "parameters": {
-          "$ref": "./PinelParameters.v1.json"
-        },
-        "results": {
-          "$ref": "./PinelResults.v1.json"
-        }
-      },
-      "required": [
-        "type",
-        "parameters"
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string",
+      "default": "PINEL",
+      "description": "Type de simulation.",
+      "enum": [
+        "PINEL"
       ]
+    },
+    "parameters": {
+      "$ref": "./PinelParameters.v1.json"
+    },
+    "results": {
+      "$ref": "./PinelResults.v1.json"
     }
+  },
+  "required": [
+    "type",
+    "parameters"
   ]
 }

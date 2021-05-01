@@ -3,10 +3,6 @@
   "title": "Partner",
   "description": "Partenaire, et sa liste de contacts.",
   "properties": {
-    "id": {
-      "description": "ID unique du partner.",
-      "type": "string"
-    },
     "type": {
       "$ref": "./PartnerType.v1.json"
     },
@@ -44,5 +40,8 @@
       "description": "Commentaire.",
       "type": "string"
     }
-  }
+  },
+  "required": [
+    "type"
+  ]
 }
