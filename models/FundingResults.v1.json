@@ -14,8 +14,6 @@
     "loans": {
       "description": "Ligne(s) de crédit incluses dans le plan de financement.",
       "type": "array",
-      "default": null,
-      "nullable": true,
       "items": {
         "$ref": "./Loan.v1.json"
       }

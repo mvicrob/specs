@@ -10,15 +10,11 @@
       "$ref": "./FrenchIncomeTaxResults.v1.json"
     },
     "maximum_rent": {
-      "default": null,
-      "nullable": true,
       "description": "Plafond de loyer légal.",
       "minimum": 0,
       "type": "number"
     },
     "notary_fees": {
-      "default": null,
-      "nullable": true,
       "type": "number",
       "minimum": 0
     },
@@ -26,8 +22,6 @@
       "type": "object",
       "properties": {
         "price_evolution": {
-          "default": null,
-          "nullable": true,
           "type": "array",
           "description": "Évolution du prix du logement.",
           "items": {
@@ -35,8 +29,6 @@
           }
         },
         "renting_evolution": {
-          "default": null,
-          "nullable": true,
           "type": "array",
           "description": "Évolution du loyer.",
           "items": {
@@ -44,8 +36,6 @@
           }
         },
         "renting_received": {
-          "default": null,
-          "nullable": true,
           "type": "array",
           "description": "Somme des loyers perçus.",
           "items": {
@@ -53,8 +43,6 @@
           }
         },
         "interests": {
-          "default": null,
-          "nullable": true,
           "type": "array",
           "description": "Somme des intérêts d'emprunt.",
           "items": {
@@ -62,8 +50,6 @@
           }
         },
         "insurances": {
-          "default": null,
-          "nullable": true,
           "type": "array",
           "description": "Somme des intérêts d'emprunt.",
           "items": {
@@ -71,8 +57,6 @@
           }
         },
         "deductible_charges": {
-          "default": null,
-          "nullable": true,
           "type": "array",
           "description": "Charges déductibles.",
           "items": {
@@ -80,8 +64,6 @@
           }
         },
         "renting_result": {
-          "default": null,
-          "nullable": true,
           "type": "array",
           "description": "Résultats locatif: loyer - charges.",
           "items": {
@@ -89,8 +71,6 @@
           }
         },
         "tax_on_renting_result": {
-          "default": null,
-          "nullable": true,
           "type": "array",
           "description": "Impôt sur le résultat locatif.",
           "items": {
@@ -98,8 +78,6 @@
           }
         },
         "tax_reduction": {
-          "default": null,
-          "nullable": true,
           "type": "array",
           "description": "Réduction d'impôt Pinel.",
           "items": {
@@ -107,8 +85,6 @@
           }
         },
         "resulting_tax_impact": {
-          "default": null,
-          "nullable": true,
           "type": "array",
           "description": "Impact final sur l'impôt, incluant loyers et réduction Pinel.",
           "items": {
@@ -116,8 +92,6 @@
           }
         },
         "treasury": {
-          "default": null,
-          "nullable": true,
           "type": "array",
           "description": "Besoin de trésorerie.",
           "items": {

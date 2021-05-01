@@ -7,9 +7,7 @@
       "$ref": "./PartnerType.v1.json"
     },
     "name": {
-      "default": null,
       "description": "Nom du partenaire.",
-      "nullable": true,
       "type": "string"
     },
     "address": {
@@ -19,45 +17,32 @@
       "$ref": "./Contact.v1.json"
     },
     "email": {
-      "default": null,
       "description": "Email du partenaire.",
-      "nullable": true,
       "type": "string"
     },
     "phone_number": {
-      "default": null,
       "description": "Numéro de téléphone du partenaire.",
-      "nullable": true,
       "type": "string"
     },
     "role": {
-      "default": null,
       "description": "Role de ce partenaire: côté acheteur, coté vendeur, ou leader si plusieurs partenaires d'un même type existent.",
       "type": "string",
       "enum": [
         "BUYER_SIDE",
         "SELLER_SIDE",
-        "LEADER",
-        null
-      ],
-      "nullable": true
+        "LEADER"
+      ]
     },
     "sub_entity": {
-      "default": null,
       "description": "Sous-entité: agence, etc....",
-      "nullable": true,
       "type": "string"
     },
     "agreement_number": {
-      "default": null,
       "description": "Agrément ORIAS, ou n'importe quelle référence légale.",
-      "nullable": true,
       "type": "string"
     },
     "comment": {
-      "default": null,
       "description": "Commentaire.",
-      "nullable": true,
       "type": "string"
     }
   }

@@ -17,7 +17,6 @@
       "type": "number",
       "description": "Pourcentage du bien possédé.",
       "minimum": 0,
-      "nullable": true,
       "default": 100,
       "maximum": 100
     }

@@ -23,8 +23,6 @@
     },
     "insurances": {
       "description": "Assurance(s) emprunteur(s).",
-      "default": null,
-      "nullable": true,
       "type": "array",
       "items": {
         "$ref": "./Insurance.v1.json"
@@ -37,31 +35,23 @@
       "$ref": "./GracePeriod.v1.json"
     },
     "max_amortization": {
-      "default": null,
       "description": "Amortissement mensuel maximal du prêt, (pour un prêt d'amortissement mensuel constant, min_amortization = max_amortization).",
       "minimum": 0,
-      "nullable": true,
       "type": "number"
     },
     "max_amount": {
-      "default": null,
       "description": "Montant maximal du prêt, (pour un prêt de montant fixé, min_amount = max_amount).",
       "minimum": 0,
-      "nullable": true,
       "type": "number"
     },
     "min_amortization": {
-      "default": null,
       "description": "Amortissement mensuel minimal du prêt, (pour un prêt d'amortissement mensuel constant, min_amortization = max_amortization).",
       "minimum": 0,
-      "nullable": true,
       "type": "number"
     },
     "min_amount": {
-      "default": null,
       "description": "Montant minimal du prêt, (pour un prêt de montant fixé, min_amount = max_amount).",
       "minimum": 0,
-      "nullable": true,
       "type": "number"
     },
     "loan_name": {

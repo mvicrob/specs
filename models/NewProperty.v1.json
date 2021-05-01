@@ -16,32 +16,24 @@
       "$ref": "./Surfaces.v1.json"
     },
     "delivery_date": {
-      "default": null,
       "description": "Date de livraison, dans le cas d'une construction ou d'une VEFA.",
       "format": "date-time",
-      "nullable": true,
       "type": "string"
     },
     "dpe_rate": {
       "$ref": "./DpeRate.v1.json"
     },
     "construction_norm": {
-      "default": null,
       "description": "Norme de construction.",
-      "nullable": true,
       "type": "string"
     },
     "lot_number": {
-      "default": null,
       "description": "Numéro de lot.",
-      "nullable": true,
       "type": "string"
     },
     "rooms_count": {
-      "default": null,
       "description": "Nombre de pièces.",
       "minimum": 0,
-      "nullable": true,
       "type": "integer"
     },
     "program": {
@@ -52,41 +44,31 @@
       "type": "object",
       "properties": {
         "price": {
-          "default": null,
           "description": "Prix du bien à acquérir. Ou prix du terrain dans le cadre d'une construction.",
           "minimum": 0,
-          "nullable": true,
           "type": "number"
         },
         "other_expenses": {
-          "default": null,
           "description": "Montant des éventuelles autres dépenses non catégorisées.",
           "minimum": 0,
-          "nullable": true,
           "type": "number"
         },
         "vat": {
-          "default": null,
           "description": "Montant de la TVA, si celle-ci est comptées séparément.",
           "minimum": 0,
-          "nullable": true,
           "type": "number"
         },
         "other_taxes": {
-          "default": null,
           "description": "Montant des éventuelles autres taxes (RAP, aménagement, ...).",
           "minimum": 0,
-          "nullable": true,
           "type": "number"
         },
         "fees": {
           "type": "object",
           "properties": {
             "agency_fees": {
-              "default": null,
               "description": "Frais d'agence.",
               "minimum": 0,
-              "nullable": true,
               "type": "number"
             },
             "broker_fees": {
@@ -102,10 +84,8 @@
               "type": "number"
             },
             "notary_fees": {
-              "default": null,
               "description": "Frais de notaire.",
               "minimum": 0,
-              "nullable": true,
               "type": "number"
             }
           }

@@ -4,8 +4,6 @@
   "description": "Résultat d'un scoring de dossier, permettant d'estimer le taux.",
   "properties": {
     "rates": {
-      "default": null,
-      "nullable": true,
       "description": "List de taux estimés pour chaque durée de crédit.",
       "type": "array",
       "items": {

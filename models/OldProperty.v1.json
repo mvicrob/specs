@@ -25,28 +25,20 @@
       "$ref": "./DpeRate.v1.json"
     },
     "construction_date": {
-      "default": null,
       "description": "Date de construction, pour les logements achevés.",
-      "nullable": true,
       "type": "string"
     },
     "construction_norm": {
-      "default": null,
       "description": "Norme de construction.",
-      "nullable": true,
       "type": "string"
     },
     "lot_number": {
-      "default": null,
       "description": "Numéro de lot.",
-      "nullable": true,
       "type": "string"
     },
     "rooms_count": {
-      "default": null,
       "description": "Nombre de pièces.",
       "minimum": 0,
-      "nullable": true,
       "type": "integer"
     },
     "seller": {
@@ -56,41 +48,31 @@
       "type": "object",
       "properties": {
         "price": {
-          "default": null,
           "description": "Prix du bien à acquérir.",
           "minimum": 0,
-          "nullable": true,
           "type": "number"
         },
         "works_price": {
-          "default": null,
           "description": "Prix des travaux éventuels.",
           "minimum": 0,
-          "nullable": true,
           "type": "number"
         },
         "furnitures_price": {
-          "default": null,
           "description": "Coût du mobilier.",
           "minimum": 0,
-          "nullable": true,
           "type": "number"
         },
         "other_expenses": {
-          "default": null,
           "description": "Montant des éventuelles autres dépenses non catégorisées.",
           "minimum": 0,
-          "nullable": true,
           "type": "number"
         },
         "fees": {
           "type": "object",
           "properties": {
             "agency_fees": {
-              "default": null,
               "description": "Frais d'agence.",
               "minimum": 0,
-              "nullable": true,
               "type": "number"
             },
             "broker_fees": {
@@ -106,10 +88,8 @@
               "type": "number"
             },
             "notary_fees": {
-              "default": null,
               "description": "Frais de notaire.",
               "minimum": 0,
-              "nullable": true,
               "type": "number"
             }
           }

@@ -13,10 +13,8 @@
     "BUSINESS_PROVIDER",
     "ARCHITECT",
     "LAWYER",
-    "OTHER",
-    null
+    "OTHER"
   ],
-  "nullable": true,
   "description": "Type de partenaire ou d'intervenant sur un dossier.",
   "x-examples": {}
 }

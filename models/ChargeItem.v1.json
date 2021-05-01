@@ -21,9 +21,7 @@
       "$ref": "./WeightedPositiveFigure.v1.json"
     },
     "comment": {
-      "default": null,
       "description": "Nom de la charge: désignation, type, etc...",
-      "nullable": true,
       "type": "string"
     }
   },

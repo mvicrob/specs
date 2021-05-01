@@ -20,25 +20,19 @@
       "type": "object",
       "properties": {
         "other_expenses": {
-          "default": null,
           "description": "Montant des éventuelles autres dépenses non catégorisées.",
           "minimum": 0,
-          "nullable": true,
           "type": "number"
         },
         "fees": {
           "type": "object",
           "properties": {
             "broker_fees": {
-              "default": null,
-              "nullable": true,
               "description": "Frais de courtage.",
               "minimum": 0,
               "type": "number"
             },
             "file_management_fees": {
-              "default": null,
-              "nullable": true,
               "description": "Frais de dossier.",
               "minimum": 0,
               "type": "number"

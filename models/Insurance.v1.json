@@ -25,7 +25,6 @@
     },
     "mandatory": {
       "default": true,
-      "nullable": true,
       "description": "Assurance optionnelle ou obligatoire (de cette information dépend son inclusion ou non dans le calcul TAEG).\n\nMettre à true si l'assurance est obligatoire.",
       "type": "boolean"
     },
@@ -40,16 +39,12 @@
           "IPT",
           "PTIA",
           "DC",
-          "PE",
-          null
-        ],
-        "nullable": true
+          "PE"
+        ]
       }
     },
     "comment": {
-      "default": null,
       "description": "Commentaire.",
-      "nullable": true,
       "type": "string"
     }
   },

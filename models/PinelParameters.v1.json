@@ -6,7 +6,7 @@
       "$ref": "./PinelPlanParameters.v1.json"
     },
     {
-      "$ref": "./LightCasePinel.json"
+      "$ref": "./LightCasePinel.v1.json"
     }
   ]
 }

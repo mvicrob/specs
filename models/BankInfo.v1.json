@@ -4,40 +4,28 @@
   "description": "Informations bancaires d'un emprunteur.",
   "properties": {
     "bic": {
-      "default": null,
       "description": "Code BIC.",
-      "nullable": true,
       "type": "string"
     },
     "current_agency": {
-      "default": null,
       "description": "Nom de l'agence.",
-      "nullable": true,
       "type": "string"
     },
     "current_bank": {
-      "default": null,
       "description": "Nom de la banque actuelle.",
-      "nullable": true,
       "type": "string"
     },
     "customer_since": {
-      "default": null,
       "description": "Date depuis laquelle l'emprunteur est client de sa banque actuelle.",
       "format": "date-time",
-      "nullable": true,
       "type": "string"
     },
     "departement": {
-      "default": null,
       "description": "Département (75, 13, ...) de la banque actuelle.",
-      "nullable": true,
       "type": "string"
     },
     "iban": {
-      "default": null,
       "description": "IBAN.",
-      "nullable": true,
       "type": "string"
     }
   }

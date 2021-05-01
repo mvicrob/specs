@@ -4,9 +4,7 @@
   "description": "Dossier emprunteur complet.",
   "properties": {
     "id": {
-      "default": null,
       "description": "ID unique du case.",
-      "nullable": true,
       "type": "string"
     },
     "etag": {

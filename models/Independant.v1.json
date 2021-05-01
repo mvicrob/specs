@@ -11,100 +11,72 @@
       ]
     },
     "activity_nature": {
-      "default": null,
       "description": "Nature de l'activité.",
-      "nullable": true,
       "type": "string"
     },
     "profession": {
-      "default": null,
       "description": "Profession.",
-      "nullable": true,
       "type": "string"
     },
     "activity_start_date": {
-      "default": null,
       "description": "Date de début d'activité.",
       "format": "date-time",
-      "nullable": true,
       "type": "string"
     },
     "ape_code": {
-      "default": null,
       "description": "Code APE.",
-      "nullable": true,
       "type": "string"
     },
     "business_assets_owner": {
       "default": false,
       "description": "Propriétaire du fond: oui/non.",
-      "nullable": true,
       "type": "boolean"
     },
     "business_assets_value": {
-      "default": null,
       "description": "Valeur du fond.",
       "minimum": 0,
-      "nullable": true,
       "type": "number"
     },
     "collateral": {
       "default": false,
       "description": "Existance d'un nantissement: oui/non.",
-      "nullable": true,
       "type": "boolean"
     },
     "commercial_lease_start_date": {
-      "default": null,
       "description": "Date de début du bail.",
       "format": "date-time",
-      "nullable": true,
       "type": "string"
     },
     "commercial_lease_end_date": {
-      "default": null,
       "description": "Date de fin du bail.",
       "format": "date-time",
-      "nullable": true,
       "type": "string"
     },
     "company_name": {
-      "default": null,
       "description": "Nom de l'entreprise.",
-      "nullable": true,
       "type": "string"
     },
     "employees_number": {
-      "default": null,
       "description": "Nombre d'employés.",
       "minimum": 0,
-      "nullable": true,
       "type": "integer"
     },
     "identification": {
-      "default": null,
       "description": "Numéro d'identification au Registre du Commerce et des Sociétés (RCS).",
-      "nullable": true,
       "type": "string"
     },
     "legal_status": {
-      "default": null,
       "description": "Forme juridique.",
-      "nullable": true,
       "type": "string"
     },
     "remaining_capital": {
-      "default": null,
       "description": "CRD si le fond est acquis via un crédit.",
       "minimum": 0,
-      "nullable": true,
       "type": "number"
     },
     "rent_amount": {
-      "default": null,
       "description": "Loyer annuel.",
       "minimum": 0,
-      "nullable": true,
       "type": "number"
     },
     "workplace_address": {

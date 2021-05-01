@@ -11,8 +11,6 @@
     },
     "persons": {
       "type": "array",
-      "nullable": true,
-      "default": null,
       "items": {
         "$ref": "./LightPerson.v1.json"
       }
@@ -20,26 +18,19 @@
     "first_time_buyer": {
       "default": false,
       "description": "Primo-accédant(s): oui/non.",
-      "nullable": true,
       "type": "boolean"
     },
     "people_count": {
       "type": "integer",
-      "default": null,
       "description": "Nombre de personnes au total dans le ménage.",
-      "nullable": true,
       "minimum": 1
     },
     "children_count": {
-      "default": null,
-      "nullable": true,
       "type": "number",
       "description": "Nombre d'enfants dans le ménage.",
       "minimum": 0
     },
     "dependent_persons_count": {
-      "default": null,
-      "nullable": true,
       "type": "number",
       "description": "Nombre de personnes à charge dans le ménage, hors enfants.",
       "minimum": 0

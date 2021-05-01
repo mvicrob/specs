@@ -8,9 +8,7 @@
       "type": "string"
     },
     "case_id": {
-      "default": null,
       "description": "ID du dossier lié à cette simulation",
-      "nullable": true,
       "type": "string"
     }
   },

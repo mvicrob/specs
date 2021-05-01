@@ -1,10 +1,8 @@
 {
   "properties": {
     "figure": {
-      "default": null,
       "description": "Chiffre.",
       "minimum": 0,
-      "nullable": true,
       "type": "number"
     },
     "weight": {
@@ -12,7 +10,6 @@
       "description": "Pondération en pourcentage: 30 pour 30%. C'est à dire qu'un coefficient de 0.3 sera applicqué à ce chiffre.",
       "maximum": 100,
       "minimum": 0,
-      "nullable": true,
       "type": "number"
     }
   },

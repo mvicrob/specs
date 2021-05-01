@@ -11,9 +11,7 @@
     "COMMERCIAL_PREMISES",
     "OFFICES",
     "SCPI",
-    "BALANCING_ADJUSTMENT",
-    null
+    "BALANCING_ADJUSTMENT"
   ],
-  "nullable": true,
   "description": "Nature de l'acquisition."
 }

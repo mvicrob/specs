@@ -9,8 +9,6 @@
       ]
     },
     "value": {
-      "default": null,
-      "nullable": true,
       "description": "Montant des indemnités de remboursement anticipé (IRA).",
       "minimum": 0,
       "type": "number"

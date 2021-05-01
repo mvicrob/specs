@@ -1,23 +1,17 @@
 {
   "properties": {
     "number": {
-      "default": null,
       "description": "Numéro de titre de séjour.",
-      "nullable": true,
       "type": "string"
     },
     "delivery_date": {
-      "default": null,
       "description": "Date de delivrance du titre de séjour.",
       "format": "date-time",
-      "nullable": true,
       "type": "string"
     },
     "expiry_date": {
-      "default": null,
       "description": "Date d'expiration du titre de séjour.",
       "format": "date-time",
-      "nullable": true,
       "type": "string"
     }
   },

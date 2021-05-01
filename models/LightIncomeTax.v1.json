@@ -3,17 +3,13 @@
   "title": "LightIncomeTax",
   "properties": {
     "fiscal_reference_revenue_Nminus1": {
-      "default": null,
       "description": "Revenu fiscal de référence de l'année N-1.",
       "minimum": 0,
-      "nullable": true,
       "type": "number"
     },
     "fiscal_reference_revenue_Nminus2": {
-      "default": null,
       "description": "Revenu fiscal de référence de l'année N-2.",
       "minimum": 0,
-      "nullable": true,
       "type": "number"
     }
   },

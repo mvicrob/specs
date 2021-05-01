@@ -1,16 +1,13 @@
 {
   "type": "string",
   "title": "Zone",
-  "default": null,
   "enum": [
     "A",
     "A bis",
     "B1",
     "B2",
     "C",
-    "DROM",
-    null
+    "DROM"
   ],
-  "nullable": true,
   "description": "Zonage."
 }

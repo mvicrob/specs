@@ -894,7 +894,7 @@ paths:
           description: Internal server error
       summary: Compute notary fees
     parameters: []
-  /compute/income_tax:
+  /v1/compute/income_tax:
     post:
       operationId: postIncomeTax
       tags:

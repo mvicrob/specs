@@ -4,34 +4,24 @@
   "description": "Adresse complète. Pour obtenir le code INSEE, utilisez https://geo.api.gouv.fr/adresse.",
   "properties": {
     "address": {
-      "default": null,
       "description": "Numéro et rue.",
-      "nullable": true,
       "type": "string"
     },
     "postal_code": {
-      "default": null,
       "description": "Code postal.",
-      "nullable": true,
       "type": "string"
     },
     "city": {
-      "default": null,
       "description": "Ville.",
-      "nullable": true,
       "type": "string"
     },
     "country": {
-      "default": null,
       "description": "Pays.",
-      "nullable": true,
       "type": "string"
     },
     "insee_code": {
-      "default": null,
       "type": "string",
-      "description": "Code INSEE de la commune.",
-       "nullable": true
+      "description": "Code INSEE de la commune."
     }
   }
 }

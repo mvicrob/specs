@@ -24,7 +24,6 @@
       "type": "number"
     },
     "monthly_rent_value_yearly_evolution_rate": {
-      "nullable": true,
       "default": 0,
       "description": "Prévision de l'évolution annuelle du loyer (en pourcentage: mettre 0.5 pour 0.5%, -10 pour -10%, ...).",
       "maximum": 100,
@@ -32,7 +31,6 @@
       "type": "number"
     },
     "price_yearly_evolution_rate": {
-      "nullable": true,
       "default": 0,
       "description": "Prévision de l'évolution annuelle du prix du bien (en pourcentage: mettre 0.5 pour 0.5%, -10 pour -10%, ...).",
       "maximum": 100,
@@ -40,7 +38,6 @@
       "type": "number"
     },
     "renting_charges_rate": {
-      "nullable": true,
       "default": 0,
       "description": "Charges locatives (en pourcentage du loyer: mettre 13 pour 13% par exemple).",
       "maximum": 100,

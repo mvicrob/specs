@@ -7,16 +7,12 @@
     },
     "warnings": {
       "type": "array",
-      "default": null,
-      "nullable": true,
       "items": {
         "$ref": "./ResponseMessage.v1.json"
       }
     },
     "infos": {
       "type": "array",
-      "default": null,
-      "nullable": true,
       "items": {
         "$ref": "./ResponseMessage.v1.json"
       }

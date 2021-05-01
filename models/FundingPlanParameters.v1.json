@@ -9,16 +9,12 @@
     "maximal_monthly_payment": {
       "type": "number",
       "description": "Mensualité maximale, à ne pas dépasser.",
-      "minimum": 0,
-      "nullable": true,
-      "default": null
+      "minimum": 0
     },
     "maximal_debt_ratio": {
       "type": "number",
       "minimum": 0,
       "maximum": 100,
-      "nullable": true,
-      "default": null,
       "description": "Pourcentage d'endettement à ne pas dépasser. En général égale à 33% des revenus de l'emprunteur."
     },
     "loans": {
