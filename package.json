@@ -6,5 +6,5 @@
     "@redocly/openapi-cli": "^1.0.0-beta.44",
     "openapi-diff": "*"
   },
-  "version": "0.11.0"
+  "version": "0.12.0"
 }
