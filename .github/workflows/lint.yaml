@@ -22,4 +22,4 @@ jobs:
     - name: dependencies
       run: npm ci
     - name: lint
-      run: npx spectral lint reference/*.yaml
+      run: npx openapi lint reference/*.yaml

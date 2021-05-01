@@ -7,8 +7,6 @@
       "$ref": "./NotaryFeesState.v1.json"
     },
     "department": {
-      "default": null,
-      "nullable": true,
       "description": "Département de l'acquisition (laisser vide si le département est inconnu).",
       "type": "string"
     },

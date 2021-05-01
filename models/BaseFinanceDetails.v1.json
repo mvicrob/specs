@@ -7,12 +7,9 @@
       "default": 0,
       "description": "Apport personnel consacré au financement du projet.",
       "minimum": 0,
-      "nullable": true,
       "type": "number"
     },
     "revenues": {
-      "default": null,
-      "nullable": true,
       "description": "Liste des revenus persistants après le projet. Le reste à vivre est calculé comme: sum(revenu * pondération) - sum(charge * pondération).",
       "type": "array",
       "items": {
@@ -20,8 +17,6 @@
       }
     },
     "charges": {
-      "default": null,
-      "nullable": true,
       "description": "Liste des charges persistantes après le projet. Le reste à vivre est calculé comme: sum(revenu * pondération) - sum(charge * pondération).",
       "type": "array",
       "items": {
@@ -29,8 +24,6 @@
       }
     },
     "current_loans": {
-      "default": null,
-      "nullable": true,
       "description": "Prêt(s) existant(s): immobilier, consommation ou autres",
       "type": "array",
       "items": {

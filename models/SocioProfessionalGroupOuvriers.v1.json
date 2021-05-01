@@ -11,7 +11,6 @@
       ]
     },
     "category": {
-      "default": null,
       "description": "Catégorie socio-profesionnelle.",
       "type": "string",
       "enum": [
@@ -21,10 +20,8 @@
         "OUVRIERS_QUALIFIERS_MANUTENTION_MAGASINAGE_TRANSPORT",
         "OUVRIERS_NON_QUALIFIES_DE_TYPE_INDUSTRIEL",
         "OUVRIERS_NON_QUALIFIES_DE_TYPE_ARTISANAL",
-        "OUVRIERS_AGRICOLES",
-        null
-      ],
-      "nullable": true
+        "OUVRIERS_AGRICOLES"
+      ]
     }
   },
   "required": [

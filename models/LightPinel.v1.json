@@ -18,24 +18,18 @@
       "type": "number"
     },
     "monthly_rent_value_yearly_evolution_rate": {
-      "default": null,
-      "nullable": true,
       "description": "Prévision de l'évolution annuelle du loyer (en pourcentage: mettre 0.5 pour 0.5%, -10 pour -10%, ...).",
       "maximum": 100,
       "minimum": -100,
       "type": "number"
     },
     "price_yearly_evolution_rate": {
-      "default": null,
-      "nullable": true,
       "description": "Prévision de l'évolution annuelle du prix du bien (en pourcentage: mettre 0.5 pour 0.5%, -10 pour -10%, ...).",
       "maximum": 100,
       "minimum": -100,
       "type": "number"
     },
     "renting_charges_rate": {
-      "default": null,
-      "nullable": true,
       "description": "Charges locatives (en pourcentage du loyer: mettre 13 pour 13% par exemple).",
       "maximum": 100,
       "minimum": 0,
@@ -47,10 +41,8 @@
       "type": "number"
     },
     "additional_surface": {
-      "default": null,
       "description": "Surface des annexes.",
       "minimum": 0,
-      "nullable": true,
       "type": "number"
     },
     "property": {

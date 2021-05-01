@@ -6,7 +6,7 @@
       "$ref": "./FundingPlanParameters.v1.json"
     },
     {
-      "$ref": "./LightCaseFunding.json"
+      "$ref": "./LightCaseFunding.v1.json"
     }
   ]
 }

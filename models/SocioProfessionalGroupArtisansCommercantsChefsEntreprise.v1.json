@@ -11,16 +11,13 @@
       ]
     },
     "category": {
-      "default": null,
       "description": "Catégorie socio-profesionnelle.",
       "type": "string",
       "enum": [
         "ARTISANS",
         "COMMERCANTS_ET_ASSIMILES",
-        "CHEFS_ENTREPRISE_10_SALARIES_OU_PLUS",
-        null
-      ],
-      "nullable": true
+        "CHEFS_ENTREPRISE_10_SALARIES_OU_PLUS"
+      ]
     }
   },
   "required": [

@@ -4,13 +4,10 @@
   "description": "Meta données du dossier.",
   "properties": {
     "name": {
-      "default": null,
       "description": "Nom permettant d'identifier le dossier, ou nom de l'affaire.",
-      "nullable": true,
       "type": "string"
     },
     "state": {
-      "default": null,
       "description": "État du dossier.",
       "type": "string",
       "enum": [
@@ -24,23 +21,17 @@
         "FUNDS_DELIVERED",
         "BILLED",
         "CLOSED",
-        "CANCELLED",
-        null
-      ],
-      "nullable": true
+        "CANCELLED"
+      ]
     },
     "creation_date": {
-      "default": null,
       "description": "Date de création du dossier (cette date est déterminée par le système automatiquement).",
       "format": "date-time",
-      "nullable": true,
       "type": "string"
     },
     "last_update_date": {
-      "default": null,
       "description": "Date de la dernière mise à jour du dossier (cette date est déterminée par le système automatiquement).",
       "format": "date-time",
-      "nullable": true,
       "type": "string"
     }
   }

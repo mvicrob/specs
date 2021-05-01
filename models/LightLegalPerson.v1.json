@@ -10,7 +10,6 @@
       ]
     },
     "structure_type": {
-      "default": null,
       "description": "Type de structure.",
       "type": "string",
       "enum": [
@@ -18,15 +17,11 @@
         "COMPANY",
         "ASSOCIATION",
         "POLITICAL_PARTY",
-        "LOCAL_AUTHORITIES",
-        null
-      ],
-      "nullable": true
+        "LOCAL_AUTHORITIES"
+      ]
     },
     "persons": {
       "type": "array",
-      "default": null,
-      "nullable": true,
       "description": "Associés de la persone morale.",
       "items": {
         "$ref": "./LightPerson.v1.json"

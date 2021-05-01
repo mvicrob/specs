@@ -19,15 +19,11 @@
       "$ref": "./ProjectDates.v1.json"
     },
     "land_register_reference": {
-      "default": null,
       "description": "Parcelle cadastrale.",
-      "nullable": true,
       "type": "string"
     },
     "description": {
-      "default": null,
       "description": "Description du bien.",
-      "nullable": true,
       "type": "string"
     }
   }

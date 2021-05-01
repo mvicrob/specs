@@ -28,9 +28,7 @@
       "$ref": "./WeightedPositiveFigure.v1.json"
     },
     "comment": {
-      "default": null,
       "description": "Commentaire éventuel.",
-      "nullable": true,
       "type": "string"
     }
   },

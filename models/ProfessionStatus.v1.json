@@ -7,9 +7,7 @@
     "STUDENT",
     "RETIRED",
     "UNEMPLOYED",
-    "ANNUITANT",
-    null
+    "ANNUITANT"
   ],
-  "nullable": true,
   "description": "Status professionnel"
 }

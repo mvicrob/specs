@@ -25,8 +25,6 @@
     },
     "insurances": {
       "description": "Assurance(s) emprunteur(s).",
-      "default": null,
-      "nullable": true,
       "type": "array",
       "items": {
         "$ref": "./Insurance.v1.json"

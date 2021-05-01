@@ -4,9 +4,7 @@
   "description": "Adresse, contenant le code INSEE, nécessaires au calcul de zonage. Pour obtenir le code INSEE, utilisez https://geo.api.gouv.fr/adresse.",
   "properties": {
     "insee_code": {
-      "default": null,
       "description": "Code INSEE de la commune.",
-      "nullable": true,
       "type": "string"
     }
   }

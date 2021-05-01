@@ -6,7 +6,7 @@
       "$ref": "./DebtConsolidationPlanParameters.v1.json"
     },
     {
-      "$ref": "./LightCaseDebtConsolidation.json"
+      "$ref": "./LightCaseDebtConsolidation.v1.json"
     }
   ]
 }

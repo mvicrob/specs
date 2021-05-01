@@ -9,9 +9,7 @@
     "NEW",
     "OLD_WITH_WORKS",
     "OLD",
-    "WORKS",
-    null
+    "WORKS"
   ],
-  "nullable": true,
   "description": "État de l'acquisition."
 }

@@ -7,9 +7,7 @@
     "RENTAL_PROPERTY",
     "PROFESSIONAL_PROPERTY",
     "VIAGER",
-    "INVESTMENT",
-    null
+    "INVESTMENT"
   ],
-  "nullable": true,
   "description": "Destination de l'acquisition."
 }

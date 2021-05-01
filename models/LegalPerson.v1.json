@@ -8,25 +8,18 @@
       "description": "Type d'emprunteur: personne personne morale.",
       "enum": [
         "LEGAL_PERSON"
-      ],
-      "nullable": true
+      ]
     },
     "name": {
-      "default": null,
       "description": "Dénomination.",
-      "nullable": true,
       "type": "string"
     },
     "email": {
-      "default": null,
       "description": "Email.",
-      "nullable": true,
       "type": "string"
     },
     "phone_number": {
-      "default": null,
       "description": "Numéro de téléphone.",
-      "nullable": true,
       "type": "string"
     },
     "address": {
@@ -39,7 +32,6 @@
       "$ref": "./BankInfo.v1.json"
     },
     "structure_type": {
-      "default": null,
       "description": "Type de structure.",
       "type": "string",
       "enum": [
@@ -47,21 +39,15 @@
         "COMPANY",
         "ASSOCIATION",
         "POLITICAL_PARTY",
-        "LOCAL_AUTHORITIES",
-        null
-      ],
-      "nullable": true
+        "LOCAL_AUTHORITIES"
+      ]
     },
     "legal_status": {
-      "default": null,
       "description": "Forme juridique (SARL, SA, EURL, auto-entrepreneur, ...).",
-      "nullable": true,
       "type": "string"
     },
     "persons": {
       "type": "array",
-      "default": null,
-      "nullable": true,
       "description": "Associés de la personne morale.",
       "items": {
         "$ref": "./Person.v1.json"

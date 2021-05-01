@@ -14,9 +14,7 @@
     },
     "comment": {
       "type": "string",
-      "description": "Commentaire.",
-      "default": null,
-      "nullable": true
+      "description": "Commentaire."
     }
   },
   "required": [

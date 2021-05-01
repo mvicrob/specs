@@ -11,7 +11,6 @@
       ]
     },
     "category": {
-      "default": null,
       "description": "Catégorie socio-profesionnelle.",
       "type": "string",
       "enum": [
@@ -20,10 +19,8 @@
         "ANCIENS_CADRES",
         "ANCIENNES_PROFESSIONS_INTERMEDIAIRES",
         "ANCIENS_EMPLOYES",
-        "ANCIENS_OUVRIERS",
-        null
-      ],
-      "nullable": true
+        "ANCIENS_OUVRIERS"
+      ]
     }
   },
   "required": [

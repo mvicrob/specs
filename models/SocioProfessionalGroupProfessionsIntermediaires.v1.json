@@ -11,7 +11,6 @@
       ]
     },
     "category": {
-      "default": null,
       "description": "Catégorie socio-profesionnelle.",
       "type": "string",
       "enum": [
@@ -21,10 +20,8 @@
         "PROFESSIONS_INTERMEDIAIRES_ADMINISTRATIVES_DE_LA_FONCTION_PUBLIQUE",
         "PROFESSIONS_INTERMEDIAIRES_ADMINISTRATIVES_COMMERCIALES_ENTREPRISES",
         "TECHNICIENS",
-        "CONTREMAITRES_AGENTS_DE_MAITRISE",
-        null
-      ],
-      "nullable": true
+        "CONTREMAITRES_AGENTS_DE_MAITRISE"
+      ]
     }
   },
   "required": [

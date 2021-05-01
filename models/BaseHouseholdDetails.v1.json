@@ -11,8 +11,6 @@
     },
     "persons": {
       "type": "array",
-      "nullable": true,
-      "default": null,
       "items": {
         "$ref": "./BasePerson.v1.json"
       }

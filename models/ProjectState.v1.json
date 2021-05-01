@@ -5,9 +5,7 @@
     "BEFORE_COMPROMIS",
     "COMPROMIS_SIGNED",
     "SIGNED",
-    "CANCELLED",
-    null
+    "CANCELLED"
   ],
-  "nullable": true,
   "title": "Etat du projet"
 }

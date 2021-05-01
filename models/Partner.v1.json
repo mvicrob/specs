@@ -11,51 +11,37 @@
       "$ref": "./PartnerType.v1.json"
     },
     "name": {
-      "default": null,
       "description": "Nom du partenaire.",
-      "nullable": true,
       "type": "string"
     },
     "address": {
       "$ref": "./Address.v1.json"
     },
     "contacts": {
-      "default": null,
       "description": "Liste des contacts au sein du partenaire.",
-      "nullable": true,
       "type": "array",
       "items": {
         "$ref": "./Contact.v1.json"
       }
     },
     "email": {
-      "default": null,
       "description": "Email du contact.",
-      "nullable": true,
       "type": "string"
     },
     "phone_number": {
-      "default": null,
       "description": "Numéro de téléphone.",
-      "nullable": true,
       "type": "string"
     },
     "sub_entity": {
-      "default": null,
       "description": "Sous-entité: agence, etc....",
-      "nullable": true,
       "type": "string"
     },
     "agreement_number": {
-      "default": null,
       "description": "Agrément ORIAS, ou n'importe quelle référence légale",
-      "nullable": true,
       "type": "string"
     },
     "comment": {
-      "default": null,
       "description": "Commentaire.",
-      "nullable": true,
       "type": "string"
     }
   }

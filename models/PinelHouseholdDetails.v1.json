@@ -11,22 +11,16 @@
     },
     "people_count": {
       "type": "integer",
-      "default": null,
       "description": "Nombre de personnes au total dans le ménage.",
-      "nullable": true,
       "minimum": 1
     },
     "children_count": {
       "type": "integer",
-      "default": null,
-      "nullable": true,
       "description": "Nombre d'enfants dans le ménage.",
       "minimum": 0
     },
     "dependent_persons_count": {
       "type": "integer",
-      "default": null,
-      "nullable": true,
       "description": "Nombre de personnes à charge dans le ménage, hors enfants.",
       "minimum": 0
     },

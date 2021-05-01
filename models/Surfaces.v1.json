@@ -3,24 +3,18 @@
   "title": "Surfaces",
   "properties": {
     "surface": {
-      "default": null,
       "description": "Surface du bien (nouvelle surface dans le cas de travaux d'agrandissement).",
       "minimum": 0,
-      "nullable": true,
       "type": "number"
     },
     "additional_surface": {
-      "default": null,
       "description": "Surface des annexes.",
       "minimum": 0,
-      "nullable": true,
       "type": "number"
     },
     "land_surface": {
-      "default": null,
       "description": "Surface du terrain.",
       "minimum": 0,
-      "nullable": true,
       "type": "number"
     }
   },
