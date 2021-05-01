@@ -27,10 +27,21 @@ info:
     url: 'https://www.toaztr.com/assets/toaztr_logo.png'
 components:
   securitySchemes:
-    ApiKeyAuth:
-      in: header
-      name: X-API-Key
-      type: apiKey
+    OAuth:
+      type: oauth2
+      description: This API uses OAuth2 with clientCredentials and authorizationCode flows
+      flows:
+        clientCredentials:
+          tokenUrl: https://auth.toaztr.com/oauth2/token
+          scopes:
+            simulations/*: Full access to simulations endpoints
+            cases/*: Full access to cases endpoints
+        authorizationCode:
+          authorizationUrl: https://auth.toaztr.com/oauth2/authorize
+          tokenUrl: https://auth.toaztr.com/oauth2/token
+          scopes:
+            simulations/*: Full access to simulations endpoints
+            cases/*: Full access to cases endpoints
 paths:
   '/v1/cases/{id}':
     delete:
