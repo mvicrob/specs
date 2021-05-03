@@ -2,7 +2,7 @@
   "title": "StandalonePinelParameters",
   "allOf": [
     {
-      "$ref": "./PlanParametersMetadata.v1.json"
+      "$ref": "./PinelPlanParameters.v1.json"
     },
     {
       "type": "object",
@@ -12,10 +12,8 @@
           "enum": [
             "PINEL_PLAN_PARAMETERS"
           ],
-          "description": "Type du jeu de paramètres."
-        },
-        "parameters": {
-          "$ref": "./PinelPlanParameters.v1.json"
+          "description": "Type du jeu de paramètres.",
+          "default": "PINEL_PLAN_PARAMETERS"
         }
       },
       "required": [

@@ -2,7 +2,7 @@
   "title": "StandaloneDebtConsolidationPlanParameters",
   "allOf": [
     {
-      "$ref": "./PlanParametersMetadata.v1.json"
+      "$ref": "./DebtConsolidationPlanParameters.v1.json"
     },
     {
       "type": "object",
@@ -12,10 +12,8 @@
           "enum": [
             "DEBT_CONSOLIDATION_PLAN_PARAMETERS"
           ],
-          "description": "Type du jeu de paramètres."
-        },
-        "parameters": {
-          "$ref": "./DebtConsolidationPlanParameters.v1.json"
+          "description": "Type du jeu de paramètres.",
+          "default": "DEBT_CONSOLIDATION_PLAN_PARAMETERS"
         }
       },
       "required": [

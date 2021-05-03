@@ -1,18 +1,31 @@
 {
   "title": "PlanParameters",
-  "oneOf": [
+  "description": "Paramètres conservés isolément.",
+  "allOf": [
     {
-      "$ref": "./StandaloneBudgetPlanParameters.v1.json"
+      "oneOf": [
+        {
+          "$ref": "./StandaloneBudgetPlanParameters.v1.json"
+        },
+        {
+          "$ref": "./StandaloneFundingPlanParameters.v1.json"
+        },
+        {
+          "$ref": "./StandaloneDebtConsolidationPlanParameters.v1.json"
+        },
+        {
+          "$ref": "./StandalonePinelParameters.v1.json"
+        }
+      ]
     },
     {
-      "$ref": "./StandaloneFundingPlanParameters.v1.json"
-    },
-    {
-      "$ref": "./StandaloneDebtConsolidationPlanParameters.v1.json"
-    },
-    {
-      "$ref": "./StandalonePinelParameters.v1.json"
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Nom des paramètres"
+        }
+      }
     }
-  ],
-  "description": "Paramètres conservés isolément."
+  ]
 }
