@@ -1,5 +1,20 @@
 # Changelog
 
+## [0.13.0](https://www.github.com/Toaztr/specs/compare/v0.12.0...v0.13.0) (2021-05-03)
+
+
+### Features
+
+* adds simulations endpoints to plans-parameters ([9a0f3b3](https://www.github.com/Toaztr/specs/commit/9a0f3b31bd144fe364f5b7c17f961097898d1741))
+* aligns with json:api ([9a0f3b3](https://www.github.com/Toaztr/specs/commit/9a0f3b31bd144fe364f5b7c17f961097898d1741))
+* lists all proper OAuth scopes ([9a0f3b3](https://www.github.com/Toaztr/specs/commit/9a0f3b31bd144fe364f5b7c17f961097898d1741))
+
+
+### Bug Fixes
+
+* factorizes various structures ([9a0f3b3](https://www.github.com/Toaztr/specs/commit/9a0f3b31bd144fe364f5b7c17f961097898d1741))
+* renames rental_investment endpoint to pinel ([9a0f3b3](https://www.github.com/Toaztr/specs/commit/9a0f3b31bd144fe364f5b7c17f961097898d1741))
+
 ## [0.12.0](https://www.github.com/Toaztr/specs/compare/v0.11.0...v0.12.0) (2021-05-01)
 
 
