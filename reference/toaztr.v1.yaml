@@ -221,20 +221,15 @@ components:
       type: object
       description: Page de resources
       properties:
-        data:
-          type: array
-          items:
-            type: object
-            properties:
-              meta:
-                type: object
-                properties:
-                  page:
-                    type: object
-                    properties:
-                      cursor:
-                        type: string
-                        description: Curseur pointant sur cet élément
+        meta:
+          type: object
+          properties:
+            page:
+              type: object
+              properties:
+                cursor:
+                  type: string
+                  description: Curseur pointant sur le dernier élément de la page
         links:
           type: object
           properties:
