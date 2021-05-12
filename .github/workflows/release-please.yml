@@ -61,7 +61,7 @@ jobs:
       - run: npm ci
       - run: npx openapi bundle reference/*.yaml --ext json -o dist/toaztr 
       - run: cp dist/toaztr* pkg/pypi/src/toaztr_specs/
-      - uses: actions/setup-python@v2
+      - uses: actions/setup-python@v2.2.2
         with:
           python-version: '3.8'
       - run: python -m pip install build twine --user
