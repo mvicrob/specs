@@ -3,7 +3,7 @@
     "sync": "git remote -v | grep upstream || git remote add upstream git@github.com:Toaztr/specs.git && git checkout master && git fetch upstream master && git rebase upstream/master && git push origin"
   },
   "devDependencies": {
-    "@redocly/openapi-cli": "^1.0.0-beta.44",
+    "@redocly/openapi-cli": "^1.0.0-beta.45",
     "openapi-diff": "*"
   },
   "version": "0.14.0"
