@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.15.0](https://www.github.com/Toaztr/specs/compare/v0.14.0...v0.15.0) (2021-05-13)
+
+
+### Features
+
+* Improves documentation within spec ([9fc195a](https://www.github.com/Toaztr/specs/commit/9fc195adcead60fc1c0c6ed1dd205101976f1597))
+
 ## [0.14.0](https://www.github.com/Toaztr/specs/compare/v0.13.0...v0.14.0) (2021-05-09)
 
 
