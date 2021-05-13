@@ -1,57 +1,92 @@
 openapi: 3.0.3
 tags:
-  - name: Cases
-    description: Relatif aux dossiers
-  - name: Simulations
-    description: Relatif aux simulations
-  - name: Compute
-    description: Utilitaires
-  - name: Score
-    description: Relatif au scoring
-  - name: Partners
-    description: Relatif aux partenaires
-  - name: PlanParameters
-    description: Relatif aux parametres de plan de financement
+  - name: partenaire
+    description: Gestion des partenaires intervenant dans les dossiers clients
+  - name: dossier
+    description: Gestion de dossiers clients
+  - name: financement
+    description: Gestion des plans de financement dans un dossier client
+  - name: simulation
+    description: Gestion des simulations d'un plan de financement dans un dossier client
+  - name: score
+    description: Calcule le score d'un dossier emprunteur
+  - name: standalone_simulation
+    x-displayName: simulation
+    description: Calcule un plan de financement complet relatif à un projet
+  - name: standalone_score
+    x-displayName: score
+    description: Calcule le score d'un dossier emprunteur
+  - name: notaire
+    description: Calcule les frais de notaires
+  - name: impots
+    description: Calcule le montant d'imposition
+  - name: case_model
+    x-displayName: dossier
+    description: |
+      <SchemaDefinition schemaRef="#/components/schemas/Case" />
+  - name: simulation_model
+    x-displayName: simulation
+    description: |
+      <SchemaDefinition schemaRef="#/components/schemas/Simulation" />
+x-tagGroups:
+  - name: Gestion de dossiers
+    tags:
+      - partenaire
+      - dossier
+      - financement
+      - simulation
+      - score
+  - name: APIs de calcul
+    tags:
+      - standalone_simulation
+      - standalone_score
+      - notaire
+      - impots
+  - name: Modèles
+    tags:
+      - case_model
+      - simulation_model
 info:
   contact:
     name: API Support
-  description: Documentation des API Toaztr
+  description:
+    $ref: ./documentation.md
   title: Toaztr API
   version: 1.0.0
   x-logo:
     altText: Toaztr logo
-    url: 'https://www.toaztr.com/assets/toaztr_logo.png'
+    url: 'https://www.dev.toaztr.com/assets/logos/full_light.svg'
 components:
   securitySchemes:
-    OAuth:
+    toaztr_auth:
       type: oauth2
-      description: Cette API utilise le framework d'authorisation OAuth2
+      description: Toaztr utilise [OAuth2](https://oauth.net/2/) afin de fournir une méthode simple et standard d'authorisation.
       flows:
         clientCredentials:
           tokenUrl: 'https://auth.toaztr.com/oauth2/token'
           scopes:
-            cases/read: Acces en lecture aux dossiers
-            cases/write: Acces en ecriture aux dossiers
-            cases/*: Acces complet aux dossiers
-            simulations/budget: Acces aux simulations de budget
-            simulations/funding: Acces aux simulations de financement
-            simulations/debt_consolidation: Acces aux simulations de consolidation de dette
-            simulations/pinel: Acces aux simulations pinel
-            simulations/*: Acces a toutes les simulations
-            scores/*: Acces au scoring
+            cases/read: Accès en lecture aux dossiers
+            cases/write: Accès en ecriture aux dossiers
+            cases/*: Accès complet aux dossiers
+            simulations/budget: Accès aux simulations de budget
+            simulations/funding: Accès aux simulations de financement
+            simulations/debt_consolidation: Accès aux simulations de consolidation de dette
+            simulations/pinel: Accès aux simulations pinel
+            simulations/*: Accès à toutes les simulations
+            scores/*: Accès au scoring
         authorizationCode:
           authorizationUrl: 'https://auth.toaztr.com/oauth2/authorize'
           tokenUrl: 'https://auth.toaztr.com/oauth2/token'
           scopes:
-            cases/read: Acces en lecture aux dossiers
-            cases/write: Acces en ecriture aux dossiers
-            cases/*: Acces complet aux dossiers
-            simulations/budget: Acces aux simulations de budget
-            simulations/funding: Acces aux simulations de financement
-            simulations/debt_consolidation: Acces aux simulations de consolidation de dette
-            simulations/pinel: Acces aux simulations pinel
-            simulations/*: Acces a toutes les simulations
-            scores/*: Acces au scoring
+            cases/read: Accès en lecture aux dossiers
+            cases/write: Accès en ecriture aux dossiers
+            cases/*: Accès complet aux dossiers
+            simulations/budget: Accès aux simulations de budget
+            simulations/funding: Accès aux simulations de financement
+            simulations/debt_consolidation: Accès aux simulations de consolidation de dette
+            simulations/pinel: Accès aux simulations pinel
+            simulations/*: Accès à toutes les simulations
+            scores/*: Accès au scoring
   responses:
     '400':
       description: Bad Request
@@ -111,7 +146,7 @@ components:
       required: false
       schema:
         type: string
-      description: Entity tag de la resource
+      description: ETag de la resource
     'page[size]':
       name: 'page[size]'
       in: query
@@ -140,7 +175,7 @@ components:
     Resource:
       title: Resource
       type: object
-      description: Resource identifiée uniquement par son type et son id
+      description: Resource identifiée par son type et son id
       properties:
         id:
           type: string
@@ -180,7 +215,6 @@ components:
           properties:
             type:
               type: string
-              default: CASE
               enum:
                 - CASE
             attributes:
@@ -191,7 +225,7 @@ components:
     ErrorResponse:
       title: ErrorResponse
       type: object
-      description: Represente une réponse en erreur
+      description: Représente une réponse en erreur
       properties:
         errors:
           type: array
@@ -247,7 +281,6 @@ components:
           properties:
             type:
               type: string
-              default: v
               enum:
                 - PARTNER
             attributes:
@@ -263,13 +296,13 @@ components:
           properties:
             type:
               type: string
-              default: PLAN_PARAMETERS
               enum:
                 - PLAN_PARAMETERS
             attributes:
               $ref: ../models/PlanParameters.v1.json
           required:
             - type
+      description: Représente les paramètres d'un plan de financement
     SimulationResource:
       title: SimulationResource
       allOf:
@@ -278,20 +311,19 @@ components:
           properties:
             type:
               type: string
-              default: SIMULATION
               enum:
                 - SIMULATION
             attributes:
               $ref: ../models/Simulation.v1.json
           required:
             - type
-      description: ''
+      description: Représente une simulation
 paths:
   '/v1/cases/{id}':
     delete:
       operationId: deleteCase
       tags:
-        - Cases
+        - dossier
       description: Supprime un dossier par ID
       parameters:
         - $ref: '#/components/parameters/IfMatch'
@@ -310,12 +342,12 @@ paths:
           $ref: '#/components/responses/500'
       summary: Supprime un dossier par ID
       security:
-        - OAuth:
+        - toaztr_auth:
             - cases/write
     get:
       operationId: getCaseById
       tags:
-        - Cases
+        - dossier
       description: Retourne un dossier par ID
       responses:
         '200':
@@ -342,14 +374,14 @@ paths:
           $ref: '#/components/responses/500'
       summary: Retourne un dossier par ID
       security:
-        - OAuth:
+        - toaztr_auth:
             - cases/read
     parameters:
       - $ref: '#/components/parameters/id'
     put:
       operationId: putCase
       tags:
-        - Cases
+        - dossier
       description: Mets à jour un dossier par ID
       parameters:
         - $ref: '#/components/parameters/IfMatch'
@@ -382,13 +414,13 @@ paths:
           $ref: '#/components/responses/500'
       summary: Mets à jour un dossier par ID
       security:
-        - OAuth:
+        - toaztr_auth:
             - cases/write
   /v1/cases:
     get:
       operationId: getCases
       tags:
-        - Cases
+        - dossier
       description: Liste les dossiers
       parameters:
         - $ref: '#/components/parameters/page[size]'
@@ -416,12 +448,12 @@ paths:
           $ref: '#/components/responses/500'
       summary: Liste les dossiers
       security:
-        - OAuth:
+        - toaztr_auth:
             - cases/read
     post:
       operationId: postCase
       tags:
-        - Cases
+        - dossier
       description: Crée un dossier
       requestBody:
         content:
@@ -451,14 +483,14 @@ paths:
           $ref: '#/components/responses/500'
       summary: Crée un dossier
       security:
-        - OAuth:
+        - toaztr_auth:
             - cases/write
     parameters: []
   /v1/simulations/budget:
     post:
       operationId: postBudgetSimulation
       tags:
-        - Simulations
+        - standalone_simulation
       description: Calcule une simulation de budget
       requestBody:
         content:
@@ -484,14 +516,14 @@ paths:
           $ref: '#/components/responses/500'
       summary: Calcule une simulation de budget
       security:
-        - OAuth:
+        - toaztr_auth:
             - simulations/budget
     parameters: []
   /v1/simulations/funding:
     post:
       operationId: postFundingSimulation
       tags:
-        - Simulations
+        - standalone_simulation
       description: Calcule une simulation de financement
       requestBody:
         content:
@@ -517,14 +549,14 @@ paths:
           $ref: '#/components/responses/500'
       summary: Calcule une simulation de financement
       security:
-        - OAuth:
+        - toaztr_auth:
             - simulations/funding
     parameters: []
   /v1/simulations/pinel:
     post:
       operationId: postPinelSimulation
       tags:
-        - Simulations
+        - standalone_simulation
       description: Calcule une simulation pinel
       requestBody:
         content:
@@ -550,14 +582,14 @@ paths:
           $ref: '#/components/responses/500'
       summary: Calcule une simulation pinel
       security:
-        - OAuth:
+        - toaztr_auth:
             - simulations/pinel
     parameters: []
   /v1/simulations/debt_consolidation:
     post:
       operationId: postDebtConsolidationSimulation
       tags:
-        - Simulations
+        - standalone_simulation
       description: Calcule une simulation de consolidation de dettes
       requestBody:
         content:
@@ -583,14 +615,14 @@ paths:
           $ref: '#/components/responses/500'
       summary: Calcule une simulation de consolidation de dettes
       security:
-        - OAuth:
+        - toaztr_auth:
             - simulations/debt_consolidation
     parameters: []
   /v1/scores:
     post:
       operationId: postScore
       tags:
-        - Score
+        - standalone_score
       description: Calcule le score d'un dossier
       requestBody:
         content:
@@ -615,14 +647,14 @@ paths:
           $ref: '#/components/responses/500'
       summary: Calcule le score d'un dossier
       security:
-        - OAuth:
+        - toaztr_auth:
             - scores/*
     parameters: []
   '/v1/partners/{id}':
     delete:
       operationId: deletePartner
       tags:
-        - Partners
+        - partenaire
       description: Supprime un partenaire par ID
       parameters:
         - $ref: '#/components/parameters/IfMatch'
@@ -641,12 +673,12 @@ paths:
           $ref: '#/components/responses/500'
       summary: Supprime un partenaire par ID
       security:
-        - OAuth:
+        - toaztr_auth:
             - cases/write
     get:
       operationId: getPartnerById
       tags:
-        - Partners
+        - partenaire
       description: Retourne un partenaire par ID
       responses:
         '200':
@@ -673,14 +705,14 @@ paths:
           $ref: '#/components/responses/500'
       summary: Retourne un partenaire par ID
       security:
-        - OAuth:
+        - toaztr_auth:
             - cases/read
     parameters:
       - $ref: '#/components/parameters/id'
     put:
       operationId: putPartner
       tags:
-        - Partners
+        - partenaire
       description: Mets à jour un partenaire par ID
       parameters:
         - $ref: '#/components/parameters/IfMatch'
@@ -716,13 +748,13 @@ paths:
           $ref: '#/components/responses/500'
       summary: Mets à jour un partenaire par ID
       security:
-        - OAuth:
+        - toaztr_auth:
             - cases/write
   /v1/partners:
     get:
-      operationId: getPartners
+      operationId: getPartenaires
       tags:
-        - Partners
+        - partenaire
       description: Liste les partenaires
       parameters:
         - $ref: '#/components/parameters/page[size]'
@@ -750,12 +782,12 @@ paths:
           $ref: '#/components/responses/500'
       summary: Liste les partenaires
       security:
-        - OAuth:
+        - toaztr_auth:
             - cases/read
     post:
       operationId: postPartner
       tags:
-        - Partners
+        - partenaire
       description: Crée un partenaire
       requestBody:
         content:
@@ -785,14 +817,14 @@ paths:
           $ref: '#/components/responses/500'
       summary: Crée un partenaire
       security:
-        - OAuth:
+        - toaztr_auth:
             - cases/write
     parameters: []
   /v1/compute/notary_fees:
     post:
       operationId: postNotaryFees
       tags:
-        - Compute
+        - notaire
       description: Calcule les frais de notaires
       requestBody:
         content:
@@ -814,14 +846,14 @@ paths:
           $ref: '#/components/responses/500'
       summary: Calcule les frais de notaires
       security:
-        - OAuth:
+        - toaztr_auth:
             - simulations/*
     parameters: []
   /v1/compute/income_tax:
     post:
       operationId: postIncomeTax
       tags:
-        - Compute
+        - impots
       description: Calcule le montant d'impôts
       requestBody:
         content:
@@ -843,7 +875,7 @@ paths:
           $ref: '#/components/responses/500'
       summary: Calcule le montant d'impôts
       security:
-        - OAuth:
+        - toaztr_auth:
             - simulations/*
   '/v1/cases/{caseId}/plans-parameters/{id}':
     delete:
@@ -866,10 +898,10 @@ paths:
           $ref: '#/components/responses/500'
       summary: Supprime un plan par ID
       security:
-        - OAuth:
+        - toaztr_auth:
             - cases/write
       tags:
-        - Cases
+        - financement
     get:
       operationId: getPlansParametersById
       description: Retourne un plan par ID
@@ -898,10 +930,10 @@ paths:
           $ref: '#/components/responses/500'
       summary: Retourne un plan par ID
       security:
-        - OAuth:
+        - toaztr_auth:
             - cases/read
       tags:
-        - Cases
+        - financement
     parameters:
       - $ref: '#/components/parameters/id'
       - $ref: '#/components/parameters/caseId'
@@ -942,10 +974,10 @@ paths:
           $ref: '#/components/responses/500'
       summary: Mets à jour un plan par ID
       security:
-        - OAuth:
+        - toaztr_auth:
             - cases/write
       tags:
-        - Cases
+        - financement
   '/v1/cases/{caseId}/plans-parameters':
     parameters:
       - $ref: '#/components/parameters/caseId'
@@ -980,10 +1012,10 @@ paths:
           $ref: '#/components/responses/500'
       summary: Crée un plan
       security:
-        - OAuth:
+        - toaztr_auth:
             - cases/write
       tags:
-        - Cases
+        - financement
     get:
       summary: Liste les plans
       operationId: getPlansParameters
@@ -1009,14 +1041,14 @@ paths:
           $ref: '#/components/responses/500'
       description: Liste les plans
       security:
-        - OAuth:
+        - toaztr_auth:
             - cases/read
       parameters:
         - $ref: '#/components/parameters/page[size]'
         - $ref: '#/components/parameters/page[after]'
         - $ref: '#/components/parameters/page[before]'
       tags:
-        - Cases
+        - financement
   '/v1/cases/{caseId}/plans-parameters/{planId}/simulations':
     parameters:
       - schema:
@@ -1054,14 +1086,14 @@ paths:
       operationId: getSimulations
       description: Liste les simulations
       security:
-        - OAuth:
+        - toaztr_auth:
             - cases/read
       parameters:
         - $ref: '#/components/parameters/page[size]'
         - $ref: '#/components/parameters/page[after]'
         - $ref: '#/components/parameters/page[before]'
       tags:
-        - Cases
+        - simulation
     post:
       summary: Crée une simulation
       operationId: postSimulation
@@ -1084,10 +1116,10 @@ paths:
       description: Crée une simulation
       parameters: []
       security:
-        - OAuth:
+        - toaztr_auth:
             - cases/write
       tags:
-        - Cases
+        - simulation
   '/v1/cases/{caseId}/plans-parameters/{planId}/simulations/{id}':
     parameters:
       - $ref: '#/components/parameters/caseId'
@@ -1096,7 +1128,7 @@ paths:
     get:
       summary: Retourne une simulation par ID
       tags:
-        - Cases
+        - simulation
       responses:
         '200':
           description: OK
@@ -1123,7 +1155,7 @@ paths:
       operationId: getSimulationById
       description: Retourne une simulation par ID
       security:
-        - OAuth:
+        - toaztr_auth:
             - cases/read
     delete:
       summary: Supprime une simulation par ID
@@ -1145,10 +1177,12 @@ paths:
           $ref: '#/components/responses/500'
       description: Supprime une simulation par ID
       security:
-        - OAuth:
+        - toaztr_auth:
             - cases/write
       tags:
-        - Cases
+        - simulation
 servers:
-  - description: Production server
+  - description: Serveur de production
     url: 'https://api.toaztr.com'
+  - description: Server de sandbox
+    url: 'https://api.sandbox.toaztr.com'
