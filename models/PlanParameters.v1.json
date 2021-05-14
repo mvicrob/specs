@@ -3,20 +3,7 @@
   "description": "Paramètres conservés isolément.",
   "allOf": [
     {
-      "oneOf": [
-        {
-          "$ref": "./StandaloneBudgetPlanParameters.v1.json"
-        },
-        {
-          "$ref": "./StandaloneFundingPlanParameters.v1.json"
-        },
-        {
-          "$ref": "./StandaloneDebtConsolidationPlanParameters.v1.json"
-        },
-        {
-          "$ref": "./StandalonePinelParameters.v1.json"
-        }
-      ]
+        "$ref": "./StandalonePlanParameters.v1.json"
     },
     {
       "type": "object",
