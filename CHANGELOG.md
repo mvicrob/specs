@@ -1,5 +1,13 @@
 # Changelog
 
+### [0.15.1](https://www.github.com/Toaztr/specs/compare/v0.15.0...v0.15.1) (2021-05-14)
+
+
+### Bug Fixes
+
+* allof of oneof not properly handled by python lib ([203bb43](https://www.github.com/Toaztr/specs/commit/203bb4334a70b34f9076d3f287401c2842affce6))
+* preview command ([842c3fe](https://www.github.com/Toaztr/specs/commit/842c3fe351ea0edc15f2a041fa27d68ee4e7d310))
+
 ## [0.15.0](https://www.github.com/Toaztr/specs/compare/v0.14.0...v0.15.0) (2021-05-13)
 
 
