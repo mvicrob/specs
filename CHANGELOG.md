@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.15.2](https://www.github.com/Toaztr/specs/compare/v0.15.1...v0.15.2) (2021-05-14)
+
+
+### Bug Fixes
+
+* remove allof of oneof entirely ([b604f1b](https://www.github.com/Toaztr/specs/commit/b604f1b5cc7169a998d8c7d9929305614819bd9a))
+
 ### [0.15.1](https://www.github.com/Toaztr/specs/compare/v0.15.0...v0.15.1) (2021-05-14)
 
 
