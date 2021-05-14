@@ -15,6 +15,10 @@
           ],
           "description": "Type du jeu de paramètres.",
           "default": "BUDGET_PLAN_PARAMETERS"
+        },
+        "name": {
+          "type": "string",
+          "description": "Nom des paramètres"
         }
       },
       "required": [
