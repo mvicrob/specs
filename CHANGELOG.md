@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.16.0](https://www.github.com/Toaztr/specs/compare/v0.15.2...v0.16.0) (2021-05-16)
+
+
+### Features
+
+* properly nest success responses in data ([47f103f](https://www.github.com/Toaztr/specs/commit/47f103ff40831e5bd2e710aa8e922e95f9859c6a))
+
+
+### Bug Fixes
+
+* fix typo ([eae7fd5](https://www.github.com/Toaztr/specs/commit/eae7fd57134b2684e8ebb2bc1516f9b1dd3aacb3))
+
 ### [0.15.2](https://www.github.com/Toaztr/specs/compare/v0.15.1...v0.15.2) (2021-05-14)
 
 
