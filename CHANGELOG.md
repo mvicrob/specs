@@ -1,5 +1,14 @@
 # Changelog
 
+### [0.16.1](https://www.github.com/Toaztr/specs/compare/v0.16.0...v0.16.1) (2021-05-23)
+
+
+### Bug Fixes
+
+* adds 409 responses to some POST ([ad31a60](https://www.github.com/Toaztr/specs/commit/ad31a607cc3647c16d1342e4c2fedc126400bad0))
+* adds names to responses ([ad31a60](https://www.github.com/Toaztr/specs/commit/ad31a607cc3647c16d1342e4c2fedc126400bad0))
+* adds ref to ETag header ([ad31a60](https://www.github.com/Toaztr/specs/commit/ad31a607cc3647c16d1342e4c2fedc126400bad0))
+
 ## [0.16.0](https://www.github.com/Toaztr/specs/compare/v0.15.2...v0.16.0) (2021-05-16)
 
 
