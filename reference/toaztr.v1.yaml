@@ -118,6 +118,11 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/ErrorResponse'
+  headers:
+    ETag:
+      schema:
+        type: string
+      description: Entity tag de la resource
   parameters:
     id:
       name: id
@@ -207,21 +212,6 @@ components:
               readOnly: true
       required:
         - type
-    CaseResource:
-      title: CaseResource
-      allOf:
-        - $ref: '#/components/schemas/Resource'
-        - type: object
-          properties:
-            type:
-              type: string
-              enum:
-                - CASE
-            attributes:
-              $ref: ../models/Case.v1.json
-          required:
-            - type
-      description: Représente un dossier
     ErrorResponse:
       title: ErrorResponse
       type: object
@@ -273,6 +263,38 @@ components:
             next:
               type: string
               description: Lien vers la prochaine page
+    CaseResource:
+      title: CaseResource
+      allOf:
+        - $ref: '#/components/schemas/Resource'
+        - type: object
+          properties:
+            type:
+              type: string
+              enum:
+                - CASE
+            attributes:
+              $ref: ../models/Case.v1.json
+          required:
+            - type
+      description: Représente un dossier
+    CaseResourceResponse:
+      title: CaseResourceResponse
+      type: object
+      properties:
+        data:
+          $ref: '#/components/schemas/CaseResource'
+    CaseResourcePaginatedListResponse:
+      title: CaseResourcePaginatedListResponse
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/PaginatedResponse'
+        - type: object
+          properties:
+            data:
+              type: array
+              items:
+                $ref: '#/components/schemas/CaseResource'
     PartnerResource:
       title: PartnerResource
       allOf:
@@ -288,6 +310,23 @@ components:
           required:
             - type
       description: Représente un partenaire
+    PartnerResourceResponse:
+      title: PartnerResourceResponse
+      type: object
+      properties:
+        data:
+          $ref: '#/components/schemas/PartnerResource'
+    PartnerResourcePaginatedListResponse:
+      title: PartnerResourcePaginatedListResponse
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/PaginatedResponse'
+        - type: object
+          properties:
+            data:
+              type: array
+              items:
+                $ref: '#/components/schemas/PartnerResource'
     PlanParametersResource:
       title: PlanParametersResource
       allOf:
@@ -303,6 +342,23 @@ components:
           required:
             - type
       description: Représente les paramètres d'un plan de financement
+    PlanParametersResourceResponse:
+      title: PlanParametersResourceResponse
+      type: object
+      properties:
+        data:
+          $ref: '#/components/schemas/PlanParametersResource'
+    PlanParametersResourcePaginatedListResponse:
+      title: PlanParametersResourcePaginatedListResponse
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/PaginatedResponse'
+        - type: object
+          properties:
+            data:
+              type: array
+              items:
+                $ref: '#/components/schemas/PlanParametersResource'
     SimulationResource:
       title: SimulationResource
       allOf:
@@ -318,8 +374,190 @@ components:
           required:
             - type
       description: Représente une simulation
+    SimulationResourceResponse:
+      title: SimulationResourceResponse
+      type: object
+      properties:
+        data:
+          $ref: '#/components/schemas/SimulationResource'
+    SimulationResourcePaginatedListResponse:
+      title: SimulationResourcePaginatedListResponse
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/PaginatedResponse'
+        - type: object
+          properties:
+            data:
+              type: array
+              items:
+                $ref: '#/components/schemas/SimulationResource'
+    BudgetSimulationResponse:
+      title: BudgetSimulationResponse
+      type: object
+      properties:
+        data:
+          $ref: ../models/BudgetResults.v1.json
+    FundingSimulationResponse:
+      title: FundingSimulationResponse
+      type: object
+      properties:
+        data:
+          $ref: ../models/FundingResults.v1.json
+    PinelSimulationResponse:
+      title: PinelSimulationResponse
+      type: object
+      properties:
+        data:
+          $ref: ../models/PinelResults.v1.json
+    DebtConsolidationSimulationResponse:
+      title: DebtConsolidationSimulationResponse
+      type: object
+      properties:
+        data:
+          $ref: ../models/DebtConsolidationResults.v1.json
+    ScoreResponse:
+      title: ScoreResponse
+      type: object
+      properties:
+        data:
+          $ref: ../models/Score.v1.json
+    NotaryFeesResponse:
+      title: NotaryFeesResponse
+      type: object
+      properties:
+        data:
+          $ref: ../models/NotaryFees.v1.json
+    IncomeTaxResponse:
+      title: IncomeTaxResponse
+      type: object
+      properties:
+        data:
+          $ref: ../models/FrenchIncomeTax.v1.json
 paths:
+  /v1/cases:
+    parameters: []
+    post:
+      operationId: postCase
+      tags:
+        - dossier
+      description: Crée un dossier
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ../models/Case.v1.json
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CaseResourceResponse'
+          headers:
+            ETag:
+              $ref: '#/components/headers/ETag'
+        '400':
+          $ref: '#/components/responses/400'
+        '403':
+          $ref: '#/components/responses/403'
+        '500':
+          $ref: '#/components/responses/500'
+      summary: Crée un dossier
+      security:
+        - toaztr_auth:
+            - cases/write
+    get:
+      operationId: getCases
+      tags:
+        - dossier
+      description: Liste les dossiers
+      parameters:
+        - $ref: '#/components/parameters/page[size]'
+        - $ref: '#/components/parameters/page[after]'
+        - $ref: '#/components/parameters/page[before]'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CaseResourcePaginatedListResponse'
+        '400':
+          $ref: '#/components/responses/400'
+        '403':
+          $ref: '#/components/responses/403'
+        '500':
+          $ref: '#/components/responses/500'
+      summary: Liste les dossiers
+      security:
+        - toaztr_auth:
+            - cases/read
   '/v1/cases/{id}':
+    parameters:
+      - $ref: '#/components/parameters/id'
+    get:
+      operationId: getCaseById
+      tags:
+        - dossier
+      description: Retourne un dossier par ID
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CaseResourceResponse'
+          headers:
+            ETag:
+              $ref: '#/components/headers/ETag'
+        '400':
+          $ref: '#/components/responses/400'
+        '403':
+          $ref: '#/components/responses/403'
+        '404':
+          $ref: '#/components/responses/404'
+        '500':
+          $ref: '#/components/responses/500'
+      summary: Retourne un dossier par ID
+      security:
+        - toaztr_auth:
+            - cases/read
+    put:
+      operationId: putCase
+      tags:
+        - dossier
+      description: Mets à jour un dossier par ID
+      parameters:
+        - $ref: '#/components/parameters/IfMatch'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ../models/Case.v1.json
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CaseResourceResponse'
+          headers:
+            ETag:
+              $ref: '#/components/headers/ETag'
+        '400':
+          $ref: '#/components/responses/400'
+        '403':
+          $ref: '#/components/responses/403'
+        '404':
+          $ref: '#/components/responses/404'
+        '409':
+          $ref: '#/components/responses/409'
+        '500':
+          $ref: '#/components/responses/500'
+      summary: Mets à jour un dossier par ID
+      security:
+        - toaztr_auth:
+            - cases/write
     delete:
       operationId: deleteCase
       tags:
@@ -344,549 +582,134 @@ paths:
       security:
         - toaztr_auth:
             - cases/write
-    get:
-      operationId: getCaseById
-      tags:
-        - dossier
-      description: Retourne un dossier par ID
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  data:
-                    $ref: '#/components/schemas/CaseResource'
-          headers:
-            ETag:
-              schema:
-                type: string
-              description: Entity tag de la resource
-        '400':
-          $ref: '#/components/responses/400'
-        '403':
-          $ref: '#/components/responses/403'
-        '404':
-          $ref: '#/components/responses/404'
-        '500':
-          $ref: '#/components/responses/500'
-      summary: Retourne un dossier par ID
-      security:
-        - toaztr_auth:
-            - cases/read
+  '/v1/cases/{caseId}/plans-parameters':
     parameters:
-      - $ref: '#/components/parameters/id'
-    put:
-      operationId: putCase
-      tags:
-        - dossier
-      description: Mets à jour un dossier par ID
-      parameters:
-        - $ref: '#/components/parameters/IfMatch'
+      - $ref: '#/components/parameters/caseId'
+    post:
+      operationId: postPlansParameters
+      description: Crée un plan
       requestBody:
         content:
           application/json:
             schema:
-              $ref: ../models/Case.v1.json
+              $ref: ../models/PlanParameters.v1.json
       responses:
-        '200':
+        '201':
+          description: Created
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  data:
-                    $ref: '#/components/schemas/CaseResource'
-          description: OK
+                $ref: '#/components/schemas/PlanParametersResourceResponse'
           headers:
             ETag:
-              description: Entity tag de la resource
-              schema:
-                type: string
+              $ref: '#/components/headers/ETag'
         '400':
           $ref: '#/components/responses/400'
         '403':
           $ref: '#/components/responses/403'
-        '404':
-          $ref: '#/components/responses/404'
         '409':
           $ref: '#/components/responses/409'
         '500':
           $ref: '#/components/responses/500'
-      summary: Mets à jour un dossier par ID
+      summary: Crée un plan
       security:
         - toaztr_auth:
             - cases/write
-  /v1/cases:
-    get:
-      operationId: getCases
       tags:
-        - dossier
-      description: Liste les dossiers
+        - financement
+    get:
+      summary: Liste les plans
+      operationId: getPlansParameters
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PlanParametersResourcePaginatedListResponse'
+        '400':
+          $ref: '#/components/responses/400'
+        '403':
+          $ref: '#/components/responses/403'
+        '500':
+          $ref: '#/components/responses/500'
+      description: Liste les plans
+      security:
+        - toaztr_auth:
+            - cases/read
       parameters:
         - $ref: '#/components/parameters/page[size]'
         - $ref: '#/components/parameters/page[after]'
         - $ref: '#/components/parameters/page[before]'
-      responses:
-        '200':
-          content:
-            application/json:
-              schema:
-                allOf:
-                  - $ref: '#/components/schemas/PaginatedResponse'
-                  - type: object
-                    properties:
-                      data:
-                        type: array
-                        items:
-                          $ref: '#/components/schemas/CaseResource'
-          description: OK
-        '400':
-          $ref: '#/components/responses/400'
-        '403':
-          $ref: '#/components/responses/403'
-        '500':
-          $ref: '#/components/responses/500'
-      summary: Liste les dossiers
-      security:
-        - toaztr_auth:
-            - cases/read
-    post:
-      operationId: postCase
       tags:
-        - dossier
-      description: Crée un dossier
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: ../models/Case.v1.json
-      responses:
-        '201':
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  data:
-                    $ref: '#/components/schemas/CaseResource'
-          description: Created
-          headers:
-            ETag:
-              description: Entity tag de la resource
-              schema:
-                type: string
-        '400':
-          $ref: '#/components/responses/400'
-        '403':
-          $ref: '#/components/responses/403'
-        '500':
-          $ref: '#/components/responses/500'
-      summary: Crée un dossier
-      security:
-        - toaztr_auth:
-            - cases/write
-    parameters: []
-  /v1/simulations/budget:
-    post:
-      operationId: postBudgetSimulation
-      tags:
-        - standalone_simulation
-      description: Calcule une simulation de budget
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: ../models/BudgetParameters.v1.json
-      responses:
-        '200':
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  data:
-                    $ref: ../models/BudgetResults.v1.json
-          description: OK
-          headers: {}
-        '400':
-          $ref: '#/components/responses/400'
-        '403':
-          $ref: '#/components/responses/403'
-        '500':
-          $ref: '#/components/responses/500'
-      summary: Calcule une simulation de budget
-      security:
-        - toaztr_auth:
-            - simulations/budget
-    parameters: []
-  /v1/simulations/funding:
-    post:
-      operationId: postFundingSimulation
-      tags:
-        - standalone_simulation
-      description: Calcule une simulation de financement
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: ../models/FundingParameters.v1.json
-      responses:
-        '200':
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  data:
-                    $ref: ../models/FundingResults.v1.json
-          description: OK
-          headers: {}
-        '400':
-          $ref: '#/components/responses/400'
-        '403':
-          $ref: '#/components/responses/403'
-        '500':
-          $ref: '#/components/responses/500'
-      summary: Calcule une simulation de financement
-      security:
-        - toaztr_auth:
-            - simulations/funding
-    parameters: []
-  /v1/simulations/pinel:
-    post:
-      operationId: postPinelSimulation
-      tags:
-        - standalone_simulation
-      description: Calcule une simulation pinel
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: ../models/PinelParameters.v1.json
-      responses:
-        '200':
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  data:
-                    $ref: ../models/PinelResults.v1.json
-          description: OK
-          headers: {}
-        '400':
-          $ref: '#/components/responses/400'
-        '403':
-          $ref: '#/components/responses/403'
-        '500':
-          $ref: '#/components/responses/500'
-      summary: Calcule une simulation pinel
-      security:
-        - toaztr_auth:
-            - simulations/pinel
-    parameters: []
-  /v1/simulations/debt_consolidation:
-    post:
-      operationId: postDebtConsolidationSimulation
-      tags:
-        - standalone_simulation
-      description: Calcule une simulation de consolidation de dettes
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: ../models/DebtConsolidationParameters.v1.json
-      responses:
-        '200':
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  data:
-                    $ref: ../models/DebtConsolidationResults.v1.json
-          description: OK
-          headers: {}
-        '400':
-          $ref: '#/components/responses/400'
-        '403':
-          $ref: '#/components/responses/403'
-        '500':
-          $ref: '#/components/responses/500'
-      summary: Calcule une simulation de consolidation de dettes
-      security:
-        - toaztr_auth:
-            - simulations/debt_consolidation
-    parameters: []
-  /v1/scores:
-    post:
-      operationId: postScore
-      tags:
-        - standalone_score
-      description: Calcule le score d'un dossier
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: ../models/Case.v1.json
-      responses:
-        '200':
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  data:
-                    $ref: ../models/Score.v1.json
-          description: OK
-        '400':
-          $ref: '#/components/responses/400'
-        '403':
-          $ref: '#/components/responses/403'
-        '500':
-          $ref: '#/components/responses/500'
-      summary: Calcule le score d'un dossier
-      security:
-        - toaztr_auth:
-            - scores/*
-    parameters: []
-  '/v1/partners/{id}':
-    delete:
-      operationId: deletePartner
-      tags:
-        - partenaire
-      description: Supprime un partenaire par ID
-      parameters:
-        - $ref: '#/components/parameters/IfMatch'
-      responses:
-        '200':
-          description: OK
-        '400':
-          $ref: '#/components/responses/400'
-        '403':
-          $ref: '#/components/responses/403'
-        '404':
-          $ref: '#/components/responses/404'
-        '409':
-          $ref: '#/components/responses/409'
-        '500':
-          $ref: '#/components/responses/500'
-      summary: Supprime un partenaire par ID
-      security:
-        - toaztr_auth:
-            - cases/write
-    get:
-      operationId: getPartnerById
-      tags:
-        - partenaire
-      description: Retourne un partenaire par ID
-      responses:
-        '200':
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  data:
-                    $ref: '#/components/schemas/PartnerResource'
-          description: OK
-          headers:
-            ETag:
-              description: Entity tag de la resource
-              schema:
-                type: string
-        '400':
-          $ref: '#/components/responses/400'
-        '403':
-          $ref: '#/components/responses/403'
-        '404':
-          $ref: '#/components/responses/404'
-        '500':
-          $ref: '#/components/responses/500'
-      summary: Retourne un partenaire par ID
-      security:
-        - toaztr_auth:
-            - cases/read
-    parameters:
-      - $ref: '#/components/parameters/id'
-    put:
-      operationId: putPartner
-      tags:
-        - partenaire
-      description: Mets à jour un partenaire par ID
-      parameters:
-        - $ref: '#/components/parameters/IfMatch'
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: ../models/Partner.v1.json
-      responses:
-        '200':
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  data:
-                    $ref: '#/components/schemas/PartnerResource'
-          description: OK
-          headers:
-            ETag:
-              description: Entity tag de la resource
-              schema:
-                type: string
-        '400':
-          $ref: '#/components/responses/400'
-        '403':
-          $ref: '#/components/responses/403'
-        '404':
-          $ref: '#/components/responses/404'
-        '409':
-          $ref: '#/components/responses/409'
-        '500':
-          $ref: '#/components/responses/500'
-      summary: Mets à jour un partenaire par ID
-      security:
-        - toaztr_auth:
-            - cases/write
-  /v1/partners:
-    get:
-      operationId: getPartenaires
-      tags:
-        - partenaire
-      description: Liste les partenaires
-      parameters:
-        - $ref: '#/components/parameters/page[size]'
-        - $ref: '#/components/parameters/page[after]'
-        - $ref: '#/components/parameters/page[before]'
-      responses:
-        '200':
-          content:
-            application/json:
-              schema:
-                allOf:
-                  - $ref: '#/components/schemas/PaginatedResponse'
-                  - type: object
-                    properties:
-                      data:
-                        type: array
-                        items:
-                          $ref: '#/components/schemas/PartnerResource'
-          description: OK
-        '400':
-          $ref: '#/components/responses/400'
-        '403':
-          $ref: '#/components/responses/403'
-        '500':
-          $ref: '#/components/responses/500'
-      summary: Liste les partenaires
-      security:
-        - toaztr_auth:
-            - cases/read
-    post:
-      operationId: postPartner
-      tags:
-        - partenaire
-      description: Crée un partenaire
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: ../models/Partner.v1.json
-      responses:
-        '201':
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  data:
-                    $ref: '#/components/schemas/PartnerResource'
-          description: Created
-          headers:
-            ETag:
-              description: Entity tag de la resource
-              schema:
-                type: string
-        '400':
-          $ref: '#/components/responses/400'
-        '403':
-          $ref: '#/components/responses/403'
-        '500':
-          $ref: '#/components/responses/500'
-      summary: Crée un partenaire
-      security:
-        - toaztr_auth:
-            - cases/write
-    parameters: []
-  /v1/compute/notary_fees:
-    post:
-      operationId: postNotaryFees
-      tags:
-        - notaire
-      description: Calcule les frais de notaires
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: ../models/NotaryFeesParameters.v1.json
-      responses:
-        '200':
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  data:
-                    $ref: ../models/NotaryFees.v1.json
-          description: OK
-        '400':
-          $ref: '#/components/responses/400'
-        '403':
-          $ref: '#/components/responses/403'
-        '500':
-          $ref: '#/components/responses/500'
-      summary: Calcule les frais de notaires
-      security:
-        - toaztr_auth:
-            - simulations/*
-    parameters: []
-  /v1/compute/income_tax:
-    post:
-      operationId: postIncomeTax
-      tags:
-        - impots
-      description: Calcule le montant d'impôts
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: ../models/FrenchIncomeTaxParameters.v1.json
-      responses:
-        '200':
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  data:
-                    $ref: ../models/FrenchIncomeTax.v1.json
-          description: OK
-        '400':
-          $ref: '#/components/responses/400'
-        '403':
-          $ref: '#/components/responses/403'
-        '500':
-          $ref: '#/components/responses/500'
-      summary: Calcule le montant d'impôts
-      security:
-        - toaztr_auth:
-            - simulations/*
+        - financement
   '/v1/cases/{caseId}/plans-parameters/{id}':
+    parameters:
+      - $ref: '#/components/parameters/id'
+      - $ref: '#/components/parameters/caseId'
+    get:
+      operationId: getPlansParametersById
+      description: Retourne un plan par ID
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PlanParametersResourceResponse'
+          headers:
+            ETag:
+              $ref: '#/components/headers/ETag'
+        '400':
+          $ref: '#/components/responses/400'
+        '403':
+          $ref: '#/components/responses/403'
+        '404':
+          $ref: '#/components/responses/404'
+        '500':
+          $ref: '#/components/responses/500'
+      summary: Retourne un plan par ID
+      security:
+        - toaztr_auth:
+            - cases/read
+      tags:
+        - financement
+    put:
+      operationId: putPlansParameters
+      description: Mets à jour un plan par ID
+      parameters:
+        - $ref: '#/components/parameters/IfMatch'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ../models/PlanParameters.v1.json
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PlanParametersResourceResponse'
+          description: OK
+          headers:
+            ETag:
+              $ref: '#/components/headers/ETag'
+        '400':
+          $ref: '#/components/responses/400'
+        '403':
+          $ref: '#/components/responses/403'
+        '404':
+          $ref: '#/components/responses/404'
+        '409':
+          $ref: '#/components/responses/409'
+        '500':
+          $ref: '#/components/responses/500'
+      summary: Mets à jour un plan par ID
+      security:
+        - toaztr_auth:
+            - cases/write
+      tags:
+        - financement
     delete:
       operationId: deletePlansParameters
       description: Supprime un plan par ID
@@ -911,153 +734,6 @@ paths:
             - cases/write
       tags:
         - financement
-    get:
-      operationId: getPlansParametersById
-      description: Retourne un plan par ID
-      responses:
-        '200':
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  data:
-                    $ref: '#/components/schemas/PlanParametersResource'
-          description: OK
-          headers:
-            ETag:
-              description: Entity tag de la resource
-              schema:
-                type: string
-        '400':
-          $ref: '#/components/responses/400'
-        '403':
-          $ref: '#/components/responses/403'
-        '404':
-          $ref: '#/components/responses/404'
-        '500':
-          $ref: '#/components/responses/500'
-      summary: Retourne un plan par ID
-      security:
-        - toaztr_auth:
-            - cases/read
-      tags:
-        - financement
-    parameters:
-      - $ref: '#/components/parameters/id'
-      - $ref: '#/components/parameters/caseId'
-    put:
-      operationId: putPlansParameters
-      description: Mets à jour un plan par ID
-      parameters:
-        - $ref: '#/components/parameters/IfMatch'
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: ../models/PlanParameters.v1.json
-      responses:
-        '200':
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  data:
-                    $ref: '#/components/schemas/PlanParametersResource'
-          description: OK
-          headers:
-            ETag:
-              description: Entity tag de la resource
-              schema:
-                type: string
-        '400':
-          $ref: '#/components/responses/400'
-        '403':
-          $ref: '#/components/responses/403'
-        '404':
-          $ref: '#/components/responses/404'
-        '409':
-          $ref: '#/components/responses/409'
-        '500':
-          $ref: '#/components/responses/500'
-      summary: Mets à jour un plan par ID
-      security:
-        - toaztr_auth:
-            - cases/write
-      tags:
-        - financement
-  '/v1/cases/{caseId}/plans-parameters':
-    parameters:
-      - $ref: '#/components/parameters/caseId'
-    post:
-      operationId: postPlansParameters
-      description: Crée un plan
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: ../models/PlanParameters.v1.json
-      responses:
-        '201':
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  data:
-                    $ref: '#/components/schemas/PlanParametersResource'
-          description: Created
-          headers:
-            ETag:
-              description: Entity tag de la resource
-              schema:
-                type: string
-        '400':
-          $ref: '#/components/responses/400'
-        '403':
-          $ref: '#/components/responses/403'
-        '500':
-          $ref: '#/components/responses/500'
-      summary: Crée un plan
-      security:
-        - toaztr_auth:
-            - cases/write
-      tags:
-        - financement
-    get:
-      summary: Liste les plans
-      operationId: getPlansParameters
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                allOf:
-                  - $ref: '#/components/schemas/PaginatedResponse'
-                  - type: object
-                    properties:
-                      data:
-                        type: array
-                        items:
-                          $ref: '#/components/schemas/PlanParametersResource'
-        '400':
-          $ref: '#/components/responses/400'
-        '403':
-          $ref: '#/components/responses/403'
-        '500':
-          $ref: '#/components/responses/500'
-      description: Liste les plans
-      security:
-        - toaztr_auth:
-            - cases/read
-      parameters:
-        - $ref: '#/components/parameters/page[size]'
-        - $ref: '#/components/parameters/page[after]'
-        - $ref: '#/components/parameters/page[before]'
-      tags:
-        - financement
   '/v1/cases/{caseId}/plans-parameters/{planId}/simulations':
     parameters:
       - schema:
@@ -1070,6 +746,34 @@ paths:
         name: planId
         in: path
         required: true
+    post:
+      summary: Crée une simulation
+      operationId: postSimulation
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SimulationResourceResponse'
+          headers:
+            ETag:
+              $ref: '#/components/headers/ETag'
+        '400':
+          $ref: '#/components/responses/400'
+        '403':
+          $ref: '#/components/responses/403'
+        '409':
+          $ref: '#/components/responses/409'
+        '500':
+          $ref: '#/components/responses/500'
+      description: Crée une simulation
+      parameters: []
+      security:
+        - toaztr_auth:
+            - cases/write
+      tags:
+        - simulation
     get:
       summary: Liste les simulations
       responses:
@@ -1078,14 +782,7 @@ paths:
           content:
             application/json:
               schema:
-                allOf:
-                  - $ref: '#/components/schemas/PaginatedResponse'
-                  - type: object
-                    properties:
-                      data:
-                        type: array
-                        items:
-                          $ref: '#/components/schemas/SimulationResource'
+                $ref: '#/components/schemas/SimulationResourcePaginatedListResponse'
         '400':
           $ref: '#/components/responses/400'
         '403':
@@ -1103,32 +800,6 @@ paths:
         - $ref: '#/components/parameters/page[before]'
       tags:
         - simulation
-    post:
-      summary: Crée une simulation
-      operationId: postSimulation
-      responses:
-        '201':
-          description: Created
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  data:
-                    $ref: '#/components/schemas/SimulationResource'
-        '400':
-          $ref: '#/components/responses/400'
-        '403':
-          $ref: '#/components/responses/403'
-        '500':
-          $ref: '#/components/responses/500'
-      description: Crée une simulation
-      parameters: []
-      security:
-        - toaztr_auth:
-            - cases/write
-      tags:
-        - simulation
   '/v1/cases/{caseId}/plans-parameters/{planId}/simulations/{id}':
     parameters:
       - $ref: '#/components/parameters/caseId'
@@ -1141,18 +812,13 @@ paths:
       responses:
         '200':
           description: OK
-          headers:
-            ETag:
-              schema:
-                type: string
-              description: Entity tag de la resource
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  data:
-                    $ref: '#/components/schemas/SimulationResource'
+                $ref: '#/components/schemas/SimulationResourceResponse'
+          headers:
+            ETag:
+              $ref: '#/components/headers/ETag'
         '400':
           $ref: '#/components/responses/400'
         '403':
@@ -1190,6 +856,357 @@ paths:
             - cases/write
       tags:
         - simulation
+  /v1/partners:
+    parameters: []
+    post:
+      operationId: postPartner
+      tags:
+        - partenaire
+      description: Crée un partenaire
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ../models/Partner.v1.json
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PartnerResourceResponse'
+          headers:
+            ETag:
+              $ref: '#/components/headers/ETag'
+        '400':
+          $ref: '#/components/responses/400'
+        '403':
+          $ref: '#/components/responses/403'
+        '500':
+          $ref: '#/components/responses/500'
+      summary: Crée un partenaire
+      security:
+        - toaztr_auth:
+            - cases/write
+    get:
+      operationId: getPartenaires
+      tags:
+        - partenaire
+      description: Liste les partenaires
+      parameters:
+        - $ref: '#/components/parameters/page[size]'
+        - $ref: '#/components/parameters/page[after]'
+        - $ref: '#/components/parameters/page[before]'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PartnerResourcePaginatedListResponse'
+        '400':
+          $ref: '#/components/responses/400'
+        '403':
+          $ref: '#/components/responses/403'
+        '500':
+          $ref: '#/components/responses/500'
+      summary: Liste les partenaires
+      security:
+        - toaztr_auth:
+            - cases/read
+  '/v1/partners/{id}':
+    parameters:
+      - $ref: '#/components/parameters/id'
+    get:
+      operationId: getPartnerById
+      tags:
+        - partenaire
+      description: Retourne un partenaire par ID
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PartnerResourceResponse'
+          headers:
+            ETag:
+              $ref: '#/components/headers/ETag'
+        '400':
+          $ref: '#/components/responses/400'
+        '403':
+          $ref: '#/components/responses/403'
+        '404':
+          $ref: '#/components/responses/404'
+        '500':
+          $ref: '#/components/responses/500'
+      summary: Retourne un partenaire par ID
+      security:
+        - toaztr_auth:
+            - cases/read
+    put:
+      operationId: putPartner
+      tags:
+        - partenaire
+      description: Mets à jour un partenaire par ID
+      parameters:
+        - $ref: '#/components/parameters/IfMatch'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ../models/Partner.v1.json
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PartnerResourceResponse'
+          headers:
+            ETag:
+              $ref: '#/components/headers/ETag'
+        '400':
+          $ref: '#/components/responses/400'
+        '403':
+          $ref: '#/components/responses/403'
+        '404':
+          $ref: '#/components/responses/404'
+        '409':
+          $ref: '#/components/responses/409'
+        '500':
+          $ref: '#/components/responses/500'
+      summary: Mets à jour un partenaire par ID
+      security:
+        - toaztr_auth:
+            - cases/write
+    delete:
+      operationId: deletePartner
+      tags:
+        - partenaire
+      description: Supprime un partenaire par ID
+      parameters:
+        - $ref: '#/components/parameters/IfMatch'
+      responses:
+        '200':
+          description: OK
+        '400':
+          $ref: '#/components/responses/400'
+        '403':
+          $ref: '#/components/responses/403'
+        '404':
+          $ref: '#/components/responses/404'
+        '409':
+          $ref: '#/components/responses/409'
+        '500':
+          $ref: '#/components/responses/500'
+      summary: Supprime un partenaire par ID
+      security:
+        - toaztr_auth:
+            - cases/write
+  /v1/simulations/budget:
+    parameters: []
+    post:
+      operationId: postBudgetSimulation
+      tags:
+        - standalone_simulation
+      description: Calcule une simulation de budget
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ../models/BudgetParameters.v1.json
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BudgetSimulationResponse'
+        '400':
+          $ref: '#/components/responses/400'
+        '403':
+          $ref: '#/components/responses/403'
+        '500':
+          $ref: '#/components/responses/500'
+      summary: Calcule une simulation de budget
+      security:
+        - toaztr_auth:
+            - simulations/budget
+  /v1/simulations/funding:
+    parameters: []
+    post:
+      operationId: postFundingSimulation
+      tags:
+        - standalone_simulation
+      description: Calcule une simulation de financement
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ../models/FundingParameters.v1.json
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FundingSimulationResponse'
+        '400':
+          $ref: '#/components/responses/400'
+        '403':
+          $ref: '#/components/responses/403'
+        '500':
+          $ref: '#/components/responses/500'
+      summary: Calcule une simulation de financement
+      security:
+        - toaztr_auth:
+            - simulations/funding
+  /v1/simulations/pinel:
+    parameters: []
+    post:
+      operationId: postPinelSimulation
+      tags:
+        - standalone_simulation
+      description: Calcule une simulation pinel
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ../models/PinelParameters.v1.json
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PinelSimulationResponse'
+        '400':
+          $ref: '#/components/responses/400'
+        '403':
+          $ref: '#/components/responses/403'
+        '500':
+          $ref: '#/components/responses/500'
+      summary: Calcule une simulation pinel
+      security:
+        - toaztr_auth:
+            - simulations/pinel
+  /v1/simulations/debt_consolidation:
+    parameters: []
+    post:
+      operationId: postDebtConsolidationSimulation
+      tags:
+        - standalone_simulation
+      description: Calcule une simulation de consolidation de dettes
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ../models/DebtConsolidationParameters.v1.json
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DebtConsolidationSimulationResponse'
+        '400':
+          $ref: '#/components/responses/400'
+        '403':
+          $ref: '#/components/responses/403'
+        '500':
+          $ref: '#/components/responses/500'
+      summary: Calcule une simulation de consolidation de dettes
+      security:
+        - toaztr_auth:
+            - simulations/debt_consolidation
+  /v1/scores:
+    parameters: []
+    post:
+      operationId: postScore
+      tags:
+        - standalone_score
+      description: Calcule le score d'un dossier
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ../models/Case.v1.json
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ScoreResponse'
+        '400':
+          $ref: '#/components/responses/400'
+        '403':
+          $ref: '#/components/responses/403'
+        '500':
+          $ref: '#/components/responses/500'
+      summary: Calcule le score d'un dossier
+      security:
+        - toaztr_auth:
+            - scores/*
+  /v1/compute/notary_fees:
+    parameters: []
+    post:
+      operationId: postNotaryFees
+      tags:
+        - notaire
+      description: Calcule les frais de notaires
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ../models/NotaryFeesParameters.v1.json
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotaryFeesResponse'
+        '400':
+          $ref: '#/components/responses/400'
+        '403':
+          $ref: '#/components/responses/403'
+        '500':
+          $ref: '#/components/responses/500'
+      summary: Calcule les frais de notaires
+      security:
+        - toaztr_auth:
+            - simulations/*
+  /v1/compute/income_tax:
+    parameters: []
+    post:
+      operationId: postIncomeTax
+      tags:
+        - impots
+      description: Calcule le montant d'impôts
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ../models/FrenchIncomeTaxParameters.v1.json
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IncomeTaxResponse'
+        '400':
+          $ref: '#/components/responses/400'
+        '403':
+          $ref: '#/components/responses/403'
+        '500':
+          $ref: '#/components/responses/500'
+      summary: Calcule le montant d'impôts
+      security:
+        - toaztr_auth:
+            - simulations/*
 servers:
   - description: Serveur de production
     url: 'https://api.toaztr.com'
