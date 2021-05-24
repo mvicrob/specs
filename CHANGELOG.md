@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.16.2](https://www.github.com/Toaztr/specs/compare/v0.16.1...v0.16.2) (2021-05-24)
+
+
+### Bug Fixes
+
+* switch tag names to english ([b5b6f20](https://www.github.com/Toaztr/specs/commit/b5b6f20ab161fd3324329135851b2be71a20512a))
+
 ### [0.16.1](https://www.github.com/Toaztr/specs/compare/v0.16.0...v0.16.1) (2021-05-23)
 
 
