@@ -4,9 +4,9 @@
     "start": "npx redoc-cli serve reference/toaztr.v1.yaml --watch"
   },
   "devDependencies": {
-    "@redocly/openapi-cli": "^1.0.0-beta.45",
+    "@redocly/openapi-cli": "1.0.0-beta.45",
     "openapi-diff": "*",
-    "redoc-cli": "^0.11.4"
+    "redoc-cli": "0.11.4"
   },
   "version": "0.16.1"
 }
