@@ -1,10 +1,13 @@
 openapi: 3.0.3
 tags:
-  - name: partenaire
+  - name: partner
+    x-displayName: partenaire
     description: Gestion des partenaires intervenant dans les dossiers clients
-  - name: dossier
+  - name: case
+    x-displayName: dossier
     description: Gestion de dossiers clients
-  - name: financement
+  - name: plan_parameters
+    x-displayName: financement
     description: Gestion des plans de financement dans un dossier client
   - name: simulation
     description: Gestion des simulations d'un plan de financement dans un dossier client
@@ -16,9 +19,11 @@ tags:
   - name: standalone_score
     x-displayName: score
     description: Calcule le score d'un dossier emprunteur
-  - name: notaire
+  - name: notary
+    x-displayName: notaire
     description: Calcule les frais de notaires
-  - name: impots
+  - name: income_tax
+    x-displayName: impots
     description: Calcule le montant d'imposition
   - name: case_model
     x-displayName: dossier
@@ -31,18 +36,18 @@ tags:
 x-tagGroups:
   - name: Gestion de dossiers
     tags:
-      - partenaire
-      - dossier
-      - financement
+      - partner
+      - case
+      - plan_parameters
       - simulation
       - score
   - name: APIs de calcul
     tags:
       - standalone_simulation
       - standalone_score
-      - notaire
-      - impots
-  - name: Modèles
+      - notary
+      - income_tax
+  - name: Modèle
     tags:
       - case_model
       - simulation_model
@@ -439,7 +444,7 @@ paths:
     post:
       operationId: postCase
       tags:
-        - dossier
+        - case
       description: Crée un dossier
       requestBody:
         content:
@@ -469,7 +474,7 @@ paths:
     get:
       operationId: getCases
       tags:
-        - dossier
+        - case
       description: Liste les dossiers
       parameters:
         - $ref: '#/components/parameters/page[size]'
@@ -498,7 +503,7 @@ paths:
     get:
       operationId: getCaseById
       tags:
-        - dossier
+        - case
       description: Retourne un dossier par ID
       responses:
         '200':
@@ -525,7 +530,7 @@ paths:
     put:
       operationId: putCase
       tags:
-        - dossier
+        - case
       description: Mets à jour un dossier par ID
       parameters:
         - $ref: '#/components/parameters/IfMatch'
@@ -561,7 +566,7 @@ paths:
     delete:
       operationId: deleteCase
       tags:
-        - dossier
+        - case
       description: Supprime un dossier par ID
       parameters:
         - $ref: '#/components/parameters/IfMatch'
@@ -616,7 +621,7 @@ paths:
         - toaztr_auth:
             - cases/write
       tags:
-        - financement
+        - plan_parameters
     get:
       summary: Liste les plans
       operationId: getPlansParameters
@@ -642,7 +647,7 @@ paths:
         - $ref: '#/components/parameters/page[after]'
         - $ref: '#/components/parameters/page[before]'
       tags:
-        - financement
+        - plan_parameters
   '/v1/cases/{caseId}/plans-parameters/{id}':
     parameters:
       - $ref: '#/components/parameters/id'
@@ -673,7 +678,7 @@ paths:
         - toaztr_auth:
             - cases/read
       tags:
-        - financement
+        - plan_parameters
     put:
       operationId: putPlansParameters
       description: Mets à jour un plan par ID
@@ -709,7 +714,7 @@ paths:
         - toaztr_auth:
             - cases/write
       tags:
-        - financement
+        - plan_parameters
     delete:
       operationId: deletePlansParameters
       description: Supprime un plan par ID
@@ -733,7 +738,7 @@ paths:
         - toaztr_auth:
             - cases/write
       tags:
-        - financement
+        - plan_parameters
   '/v1/cases/{caseId}/plans-parameters/{planId}/simulations':
     parameters:
       - schema:
@@ -861,7 +866,7 @@ paths:
     post:
       operationId: postPartner
       tags:
-        - partenaire
+        - partner
       description: Crée un partenaire
       requestBody:
         content:
@@ -891,7 +896,7 @@ paths:
     get:
       operationId: getPartenaires
       tags:
-        - partenaire
+        - partner
       description: Liste les partenaires
       parameters:
         - $ref: '#/components/parameters/page[size]'
@@ -920,7 +925,7 @@ paths:
     get:
       operationId: getPartnerById
       tags:
-        - partenaire
+        - partner
       description: Retourne un partenaire par ID
       responses:
         '200':
@@ -947,7 +952,7 @@ paths:
     put:
       operationId: putPartner
       tags:
-        - partenaire
+        - partner
       description: Mets à jour un partenaire par ID
       parameters:
         - $ref: '#/components/parameters/IfMatch'
@@ -983,7 +988,7 @@ paths:
     delete:
       operationId: deletePartner
       tags:
-        - partenaire
+        - partner
       description: Supprime un partenaire par ID
       parameters:
         - $ref: '#/components/parameters/IfMatch'
@@ -1154,7 +1159,7 @@ paths:
     post:
       operationId: postNotaryFees
       tags:
-        - notaire
+        - notary
       description: Calcule les frais de notaires
       requestBody:
         content:
@@ -1183,7 +1188,7 @@ paths:
     post:
       operationId: postIncomeTax
       tags:
-        - impots
+        - income_tax
       description: Calcule le montant d'impôts
       requestBody:
         content:
