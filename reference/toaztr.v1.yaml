@@ -157,6 +157,17 @@ components:
       schema:
         type: string
       description: ETag de la resource
+    ordering:
+      name: ordering
+      in: query
+      required: false
+      schema:
+        type: string
+        enum:
+          - asc
+          - desc
+        default: desc
+      description: Sens de parcours de la liste
     'page[size]':
       name: 'page[size]'
       in: query
@@ -480,6 +491,7 @@ paths:
         - $ref: '#/components/parameters/page[size]'
         - $ref: '#/components/parameters/page[after]'
         - $ref: '#/components/parameters/page[before]'
+        - $ref: '#/components/parameters/ordering'
       responses:
         '200':
           description: OK
@@ -646,6 +658,7 @@ paths:
         - $ref: '#/components/parameters/page[size]'
         - $ref: '#/components/parameters/page[after]'
         - $ref: '#/components/parameters/page[before]'
+        - $ref: '#/components/parameters/ordering'
       tags:
         - plan_parameters
   '/v1/cases/{caseId}/plans-parameters/{id}':
@@ -803,6 +816,7 @@ paths:
         - $ref: '#/components/parameters/page[size]'
         - $ref: '#/components/parameters/page[after]'
         - $ref: '#/components/parameters/page[before]'
+        - $ref: '#/components/parameters/ordering'
       tags:
         - simulation
   '/v1/cases/{caseId}/plans-parameters/{planId}/simulations/{id}':
@@ -902,6 +916,7 @@ paths:
         - $ref: '#/components/parameters/page[size]'
         - $ref: '#/components/parameters/page[after]'
         - $ref: '#/components/parameters/page[before]'
+        - $ref: '#/components/parameters/ordering'
       responses:
         '200':
           description: OK
