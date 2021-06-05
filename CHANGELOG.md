@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.16.3](https://www.github.com/Toaztr/specs/compare/v0.16.2...v0.16.3) (2021-06-05)
+
+
+### Bug Fixes
+
+* Adds ordering parameter in listings ([dc51df9](https://www.github.com/Toaztr/specs/commit/dc51df916be7e23c190609a932e8f6226bfaceb7))
+
 ### [0.16.2](https://www.github.com/Toaztr/specs/compare/v0.16.1...v0.16.2) (2021-05-24)
 
 
