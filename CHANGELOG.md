@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.16.4](https://www.github.com/Toaztr/specs/compare/v0.16.3...v0.16.4) (2021-06-06)
+
+
+### Bug Fixes
+
+* source logo to prod site ([463415d](https://www.github.com/Toaztr/specs/commit/463415d4891314e4ccd59731e49aff2f806430da))
+
 ### [0.16.3](https://www.github.com/Toaztr/specs/compare/v0.16.2...v0.16.3) (2021-06-05)
 
 
