@@ -60,7 +60,7 @@ info:
   version: 1.0.0
   x-logo:
     altText: Toaztr logo
-    url: 'https://www.dev.toaztr.com/assets/logos/full_light.svg'
+    url: 'https://www.toaztr.com/assets/logos/full_light.svg'
 components:
   securitySchemes:
     toaztr_auth:
