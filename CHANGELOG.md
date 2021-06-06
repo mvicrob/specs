@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.17.0](https://www.github.com/Toaztr/specs/compare/v0.16.4...v0.17.0) (2021-06-06)
+
+
+### Features
+
+* next et prev cursor instead of raw cursor ([0690683](https://www.github.com/Toaztr/specs/commit/0690683fa9c0b39681f4c932bf57320425c94767))
+
 ### [0.16.4](https://www.github.com/Toaztr/specs/compare/v0.16.3...v0.16.4) (2021-06-06)
 
 
