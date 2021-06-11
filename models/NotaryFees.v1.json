@@ -6,14 +6,10 @@
       "description": "Frais de notaire.",
       "minimum": 0,
       "type": "number"
-    },
-    "parameters": {
-      "$ref": "./NotaryFeesParameters.v1.json"
     }
   },
   "required": [
-    "fees",
-    "parameters"
+    "fees"
   ],
   "description": "Résultat d'un calcul de frais de notaire."
 }

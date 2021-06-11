@@ -178,20 +178,13 @@ components:
         maximum: 20
         default: 10
       description: Taille de la page à retourner
-    'page[after]':
-      name: 'page[after]'
+    'page[cursor]':
+      name: 'page[cursor]'
       in: query
       required: false
       schema:
         type: string
-      description: Curseur à partir duquel la page débute
-    'page[before]':
-      name: 'page[before]'
-      in: query
-      required: false
-      schema:
-        type: string
-      description: Curseur à partir duquel la page débute
+      description: Curseur à partir duquel la prochaine page débute
   schemas:
     Resource:
       title: Resource
@@ -267,24 +260,15 @@ components:
             page:
               type: object
               properties:
-                next:
+                cursor:
                   type: string
                   description: Curseur à utiliser pour lister la prochaine page
-                prev:
-                  type: string
-                  description: Curseur à utiliser pour lister la page précédente
         links:
           type: object
           properties:
-            prev:
-              type: string
-              description: Lien vers la page précédente
             next:
               type: string
               description: Lien vers la prochaine page
-            first:
-              type: string
-              description: Lien vers la première page
     CaseResource:
       title: CaseResource
       allOf:
@@ -442,7 +426,7 @@ components:
       type: object
       properties:
         data:
-          $ref: ../models/Score.v1.json
+          $ref: ../models/ScoreDetails.v1.json
     NotaryFeesResponse:
       title: NotaryFeesResponse
       type: object
@@ -454,7 +438,7 @@ components:
       type: object
       properties:
         data:
-          $ref: ../models/FrenchIncomeTax.v1.json
+          $ref: ../models/FrenchIncomeTaxResults.v1.json
 paths:
   /v1/cases:
     parameters: []
@@ -495,8 +479,7 @@ paths:
       description: Liste les dossiers
       parameters:
         - $ref: '#/components/parameters/page[size]'
-        - $ref: '#/components/parameters/page[after]'
-        - $ref: '#/components/parameters/page[before]'
+        - $ref: '#/components/parameters/page[cursor]'
         - $ref: '#/components/parameters/ordering'
       responses:
         '200':
@@ -662,8 +645,7 @@ paths:
             - cases/read
       parameters:
         - $ref: '#/components/parameters/page[size]'
-        - $ref: '#/components/parameters/page[after]'
-        - $ref: '#/components/parameters/page[before]'
+        - $ref: '#/components/parameters/page[cursor]'
         - $ref: '#/components/parameters/ordering'
       tags:
         - plan_parameters
@@ -820,8 +802,7 @@ paths:
             - cases/read
       parameters:
         - $ref: '#/components/parameters/page[size]'
-        - $ref: '#/components/parameters/page[after]'
-        - $ref: '#/components/parameters/page[before]'
+        - $ref: '#/components/parameters/page[cursor]'
         - $ref: '#/components/parameters/ordering'
       tags:
         - simulation
@@ -920,8 +901,7 @@ paths:
       description: Liste les partenaires
       parameters:
         - $ref: '#/components/parameters/page[size]'
-        - $ref: '#/components/parameters/page[after]'
-        - $ref: '#/components/parameters/page[before]'
+        - $ref: '#/components/parameters/page[cursor]'
         - $ref: '#/components/parameters/ordering'
       responses:
         '200':
