@@ -438,7 +438,7 @@ components:
       type: object
       properties:
         data:
-          $ref: ../models/FrenchIncomeTax.v1.json
+          $ref: ../models/FrenchIncomeTaxResults.v1.json
 paths:
   /v1/cases:
     parameters: []
