@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.18.0](https://www.github.com/Toaztr/specs/compare/v0.17.0...v0.18.0) (2021-06-11)
+
+
+### Features
+
+* simplify return of income tax and notary fees ([a54b1e1](https://www.github.com/Toaztr/specs/commit/a54b1e10b442449f46efac6e25fd7a881421550b))
+* simplify Score returns ([225268e](https://www.github.com/Toaztr/specs/commit/225268eb5114a08819525d61f6ba6cc2beddf554))
+* switch back to cursor ([225268e](https://www.github.com/Toaztr/specs/commit/225268eb5114a08819525d61f6ba6cc2beddf554))
+
 ## [0.17.0](https://www.github.com/Toaztr/specs/compare/v0.16.4...v0.17.0) (2021-06-06)
 
 
