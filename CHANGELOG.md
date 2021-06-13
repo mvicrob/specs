@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.19.0](https://www.github.com/Toaztr/specs/compare/v0.18.0...v0.19.0) (2021-06-13)
+
+
+### Features
+
+* improve insurance ([ff1c54d](https://www.github.com/Toaztr/specs/commit/ff1c54dd89fd049e5f9317e93d08bccbb179aed0))
+
 ## [0.18.0](https://www.github.com/Toaztr/specs/compare/v0.17.0...v0.18.0) (2021-06-11)
 
 
