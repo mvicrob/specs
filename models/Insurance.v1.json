@@ -23,11 +23,6 @@
       "minimum": 0,
       "type": "number"
     },
-    "mandatory": {
-      "default": true,
-      "description": "Assurance optionnelle ou obligatoire (de cette information dépend son inclusion ou non dans le calcul TAEG).\n\nMettre à true si l'assurance est obligatoire.",
-      "type": "boolean"
-    },
     "risks_covered": {
       "description": "Liste des garanties de l'assurance emprunteur.",
       "type": "array",
@@ -42,6 +37,19 @@
           "PE"
         ]
       }
+    },
+    "mandatory": {
+      "default": true,
+      "description": "Assurance optionnelle ou obligatoire (de cette information dépend son inclusion ou non dans le calcul TAEG).\n\nMettre à true si l'assurance est obligatoire.",
+      "type": "boolean"
+    },
+    "company": {
+      "description": "Assureur.",
+      "type": "string"
+    },
+    "person": {
+      "description": "Emprunteur lié à cette assurance.",
+      "type": "string"
     },
     "comment": {
       "description": "Commentaire.",
