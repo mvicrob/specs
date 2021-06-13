@@ -35,7 +35,7 @@
     },
     "total_budget": {
       "type": "number",
-      "description": "Budget total, incluant le prix bien ainsi tous les frais, à l'exception des frais de garantie.",
+      "description": "Budget total: montant empruntable + apport personnel",
       "minimum": 0
     }
   },
