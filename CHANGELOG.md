@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.20.0](https://www.github.com/Toaztr/specs/compare/v0.19.0...v0.20.0) (2021-06-17)
+
+
+### Features
+
+* Change INDEPENDANT to SELFEMPLOYED ([4f7900f](https://www.github.com/Toaztr/specs/commit/4f7900f9f474078eae71d20d4802791c6c0a14af))
+* Change INDEPENDANT to SELFEMPLOYED, comment ([952c8e5](https://www.github.com/Toaztr/specs/commit/952c8e551b0780f84f0c43bb1952dbdfbc1267b3))
+
 ## [0.19.0](https://www.github.com/Toaztr/specs/compare/v0.18.0...v0.19.0) (2021-06-13)
 
 
