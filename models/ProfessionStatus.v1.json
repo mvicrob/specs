@@ -3,7 +3,7 @@
   "title": "ProfessionStatus",
   "enum": [
     "EMPLOYEE",
-    "INDEPENDENT",
+    "SELFEMPLOYED",
     "STUDENT",
     "RETIRED",
     "UNEMPLOYED",
