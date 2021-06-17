@@ -1,13 +1,13 @@
 {
   "type": "object",
-  "title": "Independant",
+  "title": "SelfEmployed",
   "description": "Details professionnels d'un emprunteur indépendant.",
   "properties": {
     "type": {
       "type": "string",
       "description": "Type de travailleur.",
       "enum": [
-        "INDEPENDANT"
+        "SELFEMPLOYED"
       ]
     },
     "activity_nature": {

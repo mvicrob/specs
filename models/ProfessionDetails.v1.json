@@ -42,7 +42,7 @@
           "$ref": "./Employee.v1.json"
         },
         {
-          "$ref": "./Independant.v1.json"
+          "$ref": "./SelfEmployed.v1.json"
         }
       ]
     }
