@@ -1,0 +1,20 @@
+{
+  "title": "MonthlyProfile",
+  "type": "object",
+  "description": "Prêt ou plan progressif variant mensuellement.",
+  "properties": {
+    "type": {
+      "type": "string",
+      "description": "Fréquence des variations.",
+      "enum": [
+        "MONTHLY"
+      ]
+    },
+    "variation": {
+      "description": "Pourcentage de variation.",
+      "minimum": -100,
+      "maximum": 1000,
+      "type": "number"
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "title": "CustomProfile",
+  "type": "object",
+  "description": "Prêt ou plan progressif variant par palliers.",
+  "properties": {
+    "profile": {
+      "type": "array",
+      "items": {
+        "$ref": "./Step.json"
+      }
+    }
+  }
+}

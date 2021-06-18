@@ -1,0 +1,27 @@
+{
+  "type": "object",
+  "title": "Profile",
+  "description": "Profil de remboursement (variation d'échéances) à appliquer sur le plan de financement.",
+  "properties": {
+    "monthly_payment": {
+      "description": "Montant de la mensualité globale.",
+      "minimum": 0,
+      "type": "number"
+    },
+    "period_start": {
+      "description": "Date (mois) de départ de la modulation d'échéance (l'indice du premier mois est 1).",
+      "minimum": 1,
+      "type": "integer"
+    },
+    "period_end": {
+      "description": "Date (mois) de fin de la modulation d'échéance.",
+      "minimum": 1,
+      "type": "integer"
+    }
+  },
+  "required": [
+    "monthly_payment",
+    "period_start",
+    "period_end"
+  ]
+}

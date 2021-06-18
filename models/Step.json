@@ -1,7 +1,6 @@
 {
+  "title": "Step",
   "type": "object",
-  "title": "Modulation",
-  "description": "Modulation d'échéance à appliquer sur le plan de financement.",
   "properties": {
     "monthly_payment": {
       "description": "Montant de la mensualité globale.",
@@ -19,9 +18,5 @@
       "type": "integer"
     }
   },
-  "required": [
-    "monthly_payment",
-    "period_start",
-    "period_end"
-  ]
+  "description": "Palier d'échéance, permettant de faire varier le profil de remboursement"
 }

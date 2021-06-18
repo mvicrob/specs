@@ -1,0 +1,20 @@
+{
+  "title": "YearlyProfile",
+  "type": "object",
+  "description": "Prêt ou plan progressif variant annuellement.",
+  "properties": {
+        "type": {
+      "type": "string",
+      "description": "Fréquence des variations.",
+      "enum": [
+        "YEARLY"
+      ]
+    },
+    "variation": {
+      "description": "Pourcentage de variation.",
+      "minimum": -100,
+      "maximum": 100,
+      "type": "number"
+    }
+  }
+}

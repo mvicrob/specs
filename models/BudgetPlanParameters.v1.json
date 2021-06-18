@@ -21,12 +21,8 @@
         "$ref": "./AvailableLoan.v1.json"
       }
     },
-    "modulations": {
-      "description": "Profil de modulation de remboursement, pour créer des plans de financement à paliers.",
-      "type": "array",
-      "items": {
-        "$ref": "./Modulation.v1.json"
-      }
+    "profile": {
+      "$ref": "./Profile.v1.json"
     },
     "bank": {
       "$ref": "./ActivePartner.v1.json"
