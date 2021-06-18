@@ -1,11 +1,11 @@
 {
-  "title": "MonthlyProfile",
+  "title": "MonthlyVaryingProfile",
   "type": "object",
   "description": "Prêt ou plan progressif variant mensuellement.",
   "properties": {
     "type": {
       "type": "string",
-      "description": "Fréquence des variations.",
+      "description": "Type de profil de remboursement.",
       "enum": [
         "MONTHLY"
       ]

@@ -1,9 +1,17 @@
 {
   "title": "CustomProfile",
   "type": "object",
-  "description": "Prêt ou plan progressif variant par palliers.",
+  "description": "Prêt ou plan progressif variant par paliers.",
   "properties": {
-    "profile": {
+    "type": {
+      "type": "string",
+      "default": "CUSTOM",
+      "description": "Type de profil de remboursement.",
+      "enum": [
+        "CUSTOM"
+      ]
+    },
+    "steps": {
       "type": "array",
       "items": {
         "$ref": "./Step.json"

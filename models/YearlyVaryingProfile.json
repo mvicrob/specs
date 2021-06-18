@@ -1,11 +1,11 @@
 {
-  "title": "YearlyProfile",
+  "title": "YearlyVaryingProfile",
   "type": "object",
   "description": "Prêt ou plan progressif variant annuellement.",
   "properties": {
-        "type": {
+    "type": {
       "type": "string",
-      "description": "Fréquence des variations.",
+      "description": "Type de profil de remboursement.",
       "enum": [
         "YEARLY"
       ]
