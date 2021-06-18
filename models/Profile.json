@@ -14,5 +14,5 @@
       "$ref": "./CustomProfile.json"
     }
   ],
-  "description": "Profil de remboursement: paliers du prêt ou du plan."
+  "description": "Profils de remboursement: paliers du prêt ou du plan."
 }
