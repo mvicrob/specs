@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.21.0](https://www.github.com/Toaztr/specs/compare/v0.20.0...v0.21.0) (2021-06-18)
+
+
+### Features
+
+* various profiles ([da22b80](https://www.github.com/Toaztr/specs/commit/da22b8003c2c7277485fcb83629b353bb9a9d32a))
+
 ## [0.20.0](https://www.github.com/Toaztr/specs/compare/v0.19.0...v0.20.0) (2021-06-17)
 
 
