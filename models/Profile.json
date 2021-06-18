@@ -5,10 +5,10 @@
       "$ref": "./GrandiozProfile.json"
     },
     {
-      "$ref": "./MonthlyProfile.json"
+      "$ref": "./MonthlyVaryingProfile.json"
     },
     {
-      "$ref": "./YearlyProfile.json"
+      "$ref": "./YearlyVaryingProfile.json"
     },
     {
       "$ref": "./CustomProfile.json"
