@@ -22,7 +22,7 @@
       }
     },
     "profile": {
-      "$ref": "./Profile.v1.json"
+      "$ref": "./Profile.json"
     },
     "bank": {
       "$ref": "./ActivePartner.v1.json"
