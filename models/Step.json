@@ -1,0 +1,22 @@
+{
+  "title": "Step",
+  "type": "object",
+  "properties": {
+    "monthly_payment": {
+      "description": "Montant de la mensualité.",
+      "minimum": 0,
+      "type": "number"
+    },
+    "period_start": {
+      "description": "Indice de départ du palier (l'indice du premier mois est 1).",
+      "minimum": 1,
+      "type": "integer"
+    },
+    "period_end": {
+      "description": "Indice de fin du palier.",
+      "minimum": 1,
+      "type": "integer"
+    }
+  },
+  "description": "Palier d'échéance, permettant de faire varier le profil de remboursement"
+}

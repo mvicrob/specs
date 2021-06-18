@@ -1,0 +1,15 @@
+{
+  "title": "GrandiozProfile",
+  "type": "object",
+  "description": "Prêt ou plan progressif de type prêt Grandioz (Caisse d'Épargne): augmentation de 1% par an.",
+  "properties": {
+    "type": {
+      "type": "string",
+      "default": "GRANDIOZ",
+      "description": "Type de profil de remboursement.",
+      "enum": [
+        "GRANDIOZ"
+      ]
+    }
+  }
+}

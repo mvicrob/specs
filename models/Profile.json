@@ -1,0 +1,18 @@
+{
+  "title": "Profile",
+  "oneOf": [
+    {
+      "$ref": "./GrandiozProfile.json"
+    },
+    {
+      "$ref": "./MonthlyVaryingProfile.json"
+    },
+    {
+      "$ref": "./YearlyVaryingProfile.json"
+    },
+    {
+      "$ref": "./CustomProfile.json"
+    }
+  ],
+  "description": "Profil de remboursement: paliers du prêt ou du plan."
+}

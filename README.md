@@ -12,5 +12,5 @@
 #### - Assurances
 #### - Garanties
 #### - Appels de fonds
-#### - Modulation
+#### - Profil de remboursement
 #### - Frais: de notaire, de dossier, de courtage

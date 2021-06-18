@@ -24,12 +24,8 @@
         "$ref": "./AvailableLoan.v1.json"
       }
     },
-    "modulations": {
-      "description": "Profil de modulation d'échéance.",
-      "type": "array",
-      "items": {
-        "$ref": "./Modulation.v1.json"
-      }
+    "profile": {
+      "$ref": "./Profile.json"
     },
     "bank": {
       "$ref": "./ActivePartner.v1.json"

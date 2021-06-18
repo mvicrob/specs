@@ -27,12 +27,8 @@
     "calls_for_funds": {
       "$ref": "./CallsForFunds.v1.json"
     },
-    "modulations": {
-      "description": "Profil de modulation d'échéance: permet de proposer un plan de financement avec une mensualité variable au court du temps.",
-      "type": "array",
-      "items": {
-        "$ref": "./Modulation.v1.json"
-      }
+    "profile": {
+      "$ref": "./Profile.json"
     },
     "bank": {
       "$ref": "./ActivePartner.v1.json"
