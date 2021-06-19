@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.22.0](https://www.github.com/Toaztr/specs/compare/v0.21.0...v0.22.0) (2021-06-19)
+
+
+### Features
+
+* Profile and common parameters factorisation ([9e52f54](https://www.github.com/Toaztr/specs/commit/9e52f5467d7972e6d085c7989c50ee50ac6d109e))
+
 ## [0.21.0](https://www.github.com/Toaztr/specs/compare/v0.20.0...v0.21.0) (2021-06-18)
 
 
