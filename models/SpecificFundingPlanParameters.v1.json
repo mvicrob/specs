@@ -1,0 +1,13 @@
+{
+  "title": "SpecificFundingPlanParameters",
+  "type": "object",
+  "description": "Paramètres specifiques du plan de financement.",
+  "properties": {
+    "objective": {
+      "$ref": "./SimulationObjective.v1.json"
+    },
+    "calls_for_funds": {
+      "$ref": "./CallsForFunds.v1.json"
+    }
+  }
+}

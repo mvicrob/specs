@@ -1,0 +1,10 @@
+{
+  "title": "SpecificDebtConsolidationPlanParameters",
+  "type": "object",
+  "description": "Paramètres spécifiques du plan de financement d'un rachat ou regroupement de crédits.",
+  "properties": {
+    "objective": {
+      "$ref": "./SimulationObjective.v1.json"
+    }
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "title": "CommonParameters",
+  "type": "object",
+  "description": "Paramètres communs.",
+  "properties": {
+    "maximal_monthly_payment": {
+      "type": "number",
+      "description": "Mensualité maximale, à ne pas dépasser.",
+      "minimum": 0
+    },
+    "maximal_debt_ratio": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100,
+      "description": "Pourcentage d'endettement à ne pas dépasser. En général égal à 33% des revenus de l'emprunteur."
+    },
+    "loans": {
+      "description": "Type(s) de prêt à considérer pour la simulation. L'ajout d'un élément dans cette liste ne garanti pas qu'il sera utilisé dans le plan de financement final, si le plan peut être satisfait avec un sous ensemble des lignes, ou si l'emprunteur n'est pas elligible à certain de ces prêts (PTZ...).",
+      "type": "array",
+      "items": {
+        "$ref": "./AvailableLoan.v1.json"
+      }
+    },
+    "profile": {
+      "oneOf": [
+        {
+          "$ref": "./GrandiozProfile.v1.json"
+        },
+        {
+          "$ref": "./MonthlyVaryingProfile.v1.json"
+        },
+        {
+          "$ref": "./YearlyVaryingProfile.v1.json"
+        },
+        {
+          "$ref": "./CustomProfile.v1.json"
+        }
+      ]
+    },
+    "bank": {
+      "$ref": "./ActivePartner.v1.json"
+    }
+  },
+  "required": [
+    "loans"
+  ]
+}

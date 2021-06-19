@@ -16,5 +16,8 @@
       "maximum": 1000,
       "type": "number"
     }
-  }
+  },
+  "required": [
+    "type"
+  ]
 }
