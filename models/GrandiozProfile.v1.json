@@ -10,6 +10,11 @@
       "enum": [
         "GRANDIOZ"
       ]
+    },
+    "initial_monthly_payment": {
+      "type": "number",
+      "description": "Montant de la mensualité de départ.",
+      "minimum": 0
     }
   },
   "required": [
