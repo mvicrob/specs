@@ -14,8 +14,11 @@
     "steps": {
       "type": "array",
       "items": {
-        "$ref": "./Step.json"
+        "$ref": "./Step.v1.json"
       }
     }
-  }
+  },
+  "required": [
+    "type"
+  ]
 }

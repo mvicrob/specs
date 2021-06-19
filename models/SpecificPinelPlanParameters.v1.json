@@ -1,0 +1,10 @@
+{
+  "title": "SpecificPinelPlanParameters",
+  "type": "object",
+  "description": "Paramètres spécifiques du plan de financement d'un investissement Pinel.",
+  "properties": {
+    "objective": {
+      "$ref": "./SimulationObjective.v1.json"
+    }
+  }
+}
