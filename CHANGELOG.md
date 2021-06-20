@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.23.1](https://www.github.com/Toaztr/specs/compare/v0.23.0...v0.23.1) (2021-06-20)
+
+
+### Bug Fixes
+
+* Adds listing cases by name ([74f97b9](https://www.github.com/Toaztr/specs/commit/74f97b9a145208d646d38b9ed4ad1af63db5173f))
+
 ## [0.23.0](https://www.github.com/Toaztr/specs/compare/v0.22.0...v0.23.0) (2021-06-19)
 
 
