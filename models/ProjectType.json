@@ -1,0 +1,16 @@
+{
+  "type": "string",
+  "title": "ProjectType",
+  "enum": [
+    "BUDGET",
+    "LAND",
+    "OLD_PROPERTY",
+    "NEW_PROPERTY",
+    "HOUSE_CONSTRUCTION",
+    "WORKS",
+    "DEBT_CONSOLIDATION",
+    "PINEL",
+    "LMNP"
+  ],
+  "description": "Type de projet."
+}

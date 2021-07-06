@@ -9,6 +9,9 @@
         "NEW_PROPERTY"
       ]
     },
+    "project_state": {
+      "$ref": "./ProjectState.v1.json"
+    },
     "administrative_information": {
       "$ref": "./AdministrativeInformation.v1.json"
     },

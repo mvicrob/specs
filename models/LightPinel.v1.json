@@ -3,6 +3,12 @@
   "description": "Projet d'investissement dans le cadre du dispositif Pinel.",
   "type": "object",
   "properties": {
+    "type": {
+      "type": "string",
+      "enum": [
+        "PINEL"
+      ]
+    },
     "pinel_duration": {
       "description": "Durée du dispositif Pinel: 6, 9 ou 12 ans.",
       "type": "integer",

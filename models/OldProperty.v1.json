@@ -15,9 +15,6 @@
     "administrative_information": {
       "$ref": "./AdministrativeInformation.v1.json"
     },
-    "project_dates": {
-      "$ref": "./ProjectDates.v1.json"
-    },
     "surfaces": {
       "$ref": "./Surfaces.v1.json"
     },
