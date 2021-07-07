@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.24.0](https://www.github.com/Toaztr/specs/compare/v0.23.1...v0.24.0) (2021-07-07)
+
+
+### Features
+
+* add project enum and remove duplicate ProjectDates ([5466a7a](https://www.github.com/Toaztr/specs/commit/5466a7adecd504ab2784fa6f1cb9b331f91ba296))
+
 ### [0.23.1](https://www.github.com/Toaztr/specs/compare/v0.23.0...v0.23.1) (2021-06-20)
 
 
