@@ -1,5 +1,5 @@
 {
-  "title": "StandalonePinelParameters",
+  "title": "StandalonePinelPlanParameters",
   "allOf": [
     {
       "$ref": "./PinelPlanParameters.v1.json"

@@ -6,7 +6,7 @@
     "type": {
       "$ref": "./GuarantyType.v1.json"
     },
-    "guaranty_value": {
+    "value": {
       "type": "number",
       "default": 0,
       "description": "Montant de la commission de la garantie dans le cas ou la valeur est entrée manuellement (type CUSTOM).",
