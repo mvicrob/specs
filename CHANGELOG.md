@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.27.0](https://www.github.com/Toaztr/specs/compare/v0.26.0...v0.27.0) (2021-07-16)
+
+
+### Features
+
+* Fix Base objects ([dbcad7f](https://www.github.com/Toaztr/specs/commit/dbcad7fe61aeec2135ee458464f7d07d7e694246))
+* renaming ([653583e](https://www.github.com/Toaztr/specs/commit/653583e3a3568a98dac9fd23af5f5908a0ee0564))
+
 ## [0.26.0](https://www.github.com/Toaztr/specs/compare/v0.25.0...v0.26.0) (2021-07-16)
 
 
