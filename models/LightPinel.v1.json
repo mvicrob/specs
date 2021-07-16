@@ -41,23 +41,12 @@
       "minimum": 0,
       "type": "number"
     },
-    "surface": {
-      "description": "Surface du bien (nouvelle surface dans le cas de travaux d'agrandissement).",
-      "minimum": 0,
-      "type": "number"
-    },
-    "additional_surface": {
-      "description": "Surface des annexes.",
-      "minimum": 0,
-      "type": "number"
-    },
     "property": {
       "$ref": "./PinelNewProperty.v1.json"
     }
   },
   "required": [
     "pinel_duration",
-    "monthly_rent_value",
-    "surface"
+    "monthly_rent_value"
   ]
 }
