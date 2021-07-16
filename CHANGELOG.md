@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.25.0](https://www.github.com/Toaztr/specs/compare/v0.24.0...v0.25.0) (2021-07-16)
+
+
+### Features
+
+* align LightPinel on Pinel ([3d74f69](https://www.github.com/Toaztr/specs/commit/3d74f69efbff0b0b269202859cc1884ffc91dcfd))
+
 ## [0.24.0](https://www.github.com/Toaztr/specs/compare/v0.23.1...v0.24.0) (2021-07-07)
 
 
