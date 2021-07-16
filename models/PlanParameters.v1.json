@@ -12,7 +12,7 @@
       "$ref": "./StandaloneDebtConsolidationPlanParameters.v1.json"
     },
     {
-      "$ref": "./StandalonePinelParameters.v1.json"
+      "$ref": "./StandalonePinelPlanParameters.v1.json"
     }
   ]
 }
