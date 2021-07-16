@@ -9,7 +9,7 @@
       "description": "Cette personne est-elle un emprunteur, ou est-elle renseignée pour information seulement."
     },
     "finance": {
-      "$ref": "./BaseFinanceDetails.v1.json"
+      "$ref": "./LightFinanceDetails.v1.json"
     },
     "civil": {
       "$ref": "./LightIndividual.v1.json"
