@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.26.0](https://www.github.com/Toaztr/specs/compare/v0.25.0...v0.26.0) (2021-07-16)
+
+
+### Features
+
+* permits manual guaranty value ([580c03d](https://www.github.com/Toaztr/specs/commit/580c03da1abdb00fef69a99681850474259106e5))
+
 ## [0.25.0](https://www.github.com/Toaztr/specs/compare/v0.24.0...v0.25.0) (2021-07-16)
 
 
