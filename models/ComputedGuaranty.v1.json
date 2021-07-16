@@ -1,0 +1,25 @@
+{
+  "type": "object",
+  "title": "ComputedGuaranty",
+  "description": "Garantie calculée du prêt.",
+  "properties": {
+    "type": {
+      "$ref": "./GuarantyType.v1.json"
+    },
+    "guaranty_commission": {
+      "type": "number",
+      "default": 0,
+      "description": "Montant de la commission de la garantie: frais de dossier en général, à fond perdu.",
+      "minimum": 0
+    },
+    "mutualized_guaranty_contribution": {
+      "type": "number",
+      "default": 0,
+      "description": "Montant de la contribution au fond mutuel de garantie. Dans le cas d'une Hypothèque ou IPPD par exemple, ce montant n'a pas de sens.",
+      "minimum": 0
+    }
+  },
+  "required": [
+    "type"
+  ]
+}

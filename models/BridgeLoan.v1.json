@@ -33,8 +33,8 @@
         "$ref": "./Insurance.v1.json"
       }
     },
-    "guaranty_type": {
-      "$ref": "./GuarantyType.v1.json"
+    "guaranty": {
+      "$ref": "./Guaranty.v1.json"
     },
     "loan_name": {
       "type": "string",

@@ -7,7 +7,8 @@
     "CASDEN",
     "CREDIT_LOGEMENT_CLASSIC",
     "CREDIT_LOGEMENT_INITIO",
-    "MGEN"
+    "MGEN",
+    "CUSTOM"
   ],
   "description": "Type de garantie du prêt."
 }
