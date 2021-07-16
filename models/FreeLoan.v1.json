@@ -28,8 +28,8 @@
         "$ref": "./Insurance.v1.json"
       }
     },
-    "guaranty_type": {
-      "$ref": "./GuarantyType.v1.json"
+    "guaranty": {
+      "$ref": "./Guaranty.v1.json"
     },
     "grace_period": {
       "$ref": "./GracePeriod.v1.json"
