@@ -1,0 +1,17 @@
+{
+  "type": "object",
+  "title": "PinelLightSurfaces",
+  "properties": {
+    "surface": {
+      "description": "Surface du bien.",
+      "minimum": 0,
+      "type": "number"
+    },
+    "additional_surface": {
+      "description": "Surface des annexes.",
+      "minimum": 0,
+      "type": "number"
+    }
+  },
+  "description": "Surfaces: du bien et des annexes."
+}
