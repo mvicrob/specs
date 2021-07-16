@@ -16,7 +16,7 @@
       }
     },
     "finance": {
-      "$ref": "./LightFinanceDetails.v1.json"
+      "$ref": "./BaseFinanceDetails.v1.json"
     }
   },
   "required": [
