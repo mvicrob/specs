@@ -28,7 +28,7 @@
       "type": "number"
     },
     "guaranty": {
-      "$ref": "./Guaranty.v1.json"
+      "$ref": "./ComputedGuaranty.v1.json"
     },
     "grace_period": {
       "$ref": "./GracePeriod.v1.json"
