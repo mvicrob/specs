@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.28.0](https://www.github.com/Toaztr/specs/compare/v0.27.0...v0.28.0) (2021-07-17)
+
+
+### Features
+
+* ComputedGuaranty in Loan ([52ccb50](https://www.github.com/Toaztr/specs/commit/52ccb50a0f6b35ddda46f9dd0e8ff43afb4b86fd))
+
 ## [0.27.0](https://www.github.com/Toaztr/specs/compare/v0.26.0...v0.27.0) (2021-07-16)
 
 
