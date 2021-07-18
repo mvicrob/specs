@@ -20,6 +20,26 @@
     "monthly_amount": {
       "$ref": "./WeightedPositiveFigure.v1.json"
     },
+    "continue": {
+      "default": false,
+      "description": "Persiste pendant le projet ?.",
+      "type": "boolean"
+    },
+    "start_month": {
+      "description": "Mois de départ du paiement de la charge.",
+      "minimum": 0,
+      "type": "integer"
+    },
+    "end_month": {
+      "description": "Mois de fin du paiement de la charge.",
+      "minimum": 0,
+      "type": "integer"
+    },
+    "smoothable": {
+      "default": false,
+      "description": "Charge lissable: si la charge est lissable, elle sera intégrée au plan de financement, et les lignes de crédit seront lissées sur celle-ci.",
+      "type": "boolean"
+    },
     "comment": {
       "description": "Nom de la charge: désignation, type, etc...",
       "type": "string"
