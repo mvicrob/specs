@@ -18,16 +18,21 @@
       "minimum": 0,
       "type": "number"
     },
-    "monthly_payment": {
-      "description": "Mensualité du prêt assurance incluse.",
-      "minimum": 0,
-      "type": "number"
-    },
     "insurances": {
       "description": "Assurance(s) emprunteur(s).",
       "type": "array",
       "items": {
         "$ref": "./Insurance.v1.json"
+      }
+    },
+    "grace_period": {
+      "$ref": "./GracePeriod.v1.json"
+    },
+    "smoothable_elements": {
+      "description": "Liste du ou des elements sur lesquels lisser le prêt.",
+      "type": "array",
+      "items": {
+        "$ref": "./SmoothableCharge.v1.json"
       }
     },
     "first_monthly_payment_date": {
@@ -43,7 +48,6 @@
     "yearly_rate",
     "duration_months",
     "initial_capital",
-    "monthly_payment",
     "first_monthly_payment_date",
     "ira"
   ]
