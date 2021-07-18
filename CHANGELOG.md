@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.29.0](https://www.github.com/Toaztr/specs/compare/v0.28.0...v0.29.0) (2021-07-18)
+
+
+### Features
+
+* Adds subscriptions endpoints ([3e26da3](https://www.github.com/Toaztr/specs/commit/3e26da3a37c461b0765a90cd73dcd662621e4e80))
+* comments ([8d55f1e](https://www.github.com/Toaztr/specs/commit/8d55f1e2a76ffff832a80ad923136db8c28077e8))
+* fix typo ([7bea80f](https://www.github.com/Toaztr/specs/commit/7bea80f2cbde540f17c15aa050c9ddf8ce10d13b))
+* improve charge object ([df98bf3](https://www.github.com/Toaztr/specs/commit/df98bf3c6738f928ee3cdd2f837637d442be5150))
+
 ## [0.28.0](https://www.github.com/Toaztr/specs/compare/v0.27.0...v0.28.0) (2021-07-17)
 
 
