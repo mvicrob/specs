@@ -1,0 +1,14 @@
+{
+  "title": "SubscriptionManagerParameters",
+  "description": "Parametres pour initier le management d'une souscription",
+  "type": "object",
+  "properties": {
+    "return_url": {
+      "type": "string",
+      "description": "URL de retour."
+    }
+  },
+  "required": [
+    "return_url"
+  ]
+}

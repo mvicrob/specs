@@ -25,6 +25,9 @@ tags:
   - name: income_tax
     x-displayName: impots
     description: Calcule le montant d'imposition
+  - name: subscription
+    x-displayName: souscription
+    description: Gestion des souscriptions
   - name: case_model
     x-displayName: dossier
     description: |
@@ -51,6 +54,9 @@ x-tagGroups:
     tags:
       - case_model
       - simulation_model
+  - name: Administration
+    tags:
+      - subscription
 info:
   contact:
     name: API Support
@@ -92,7 +98,16 @@ components:
             simulations/pinel: Accès aux simulations pinel
             simulations/*: Accès à toutes les simulations
             scores/*: Accès au scoring
+            subscriptions/read: Accès en lecture aux souscriptions
+            subscriptions/write: Accès en ecriture aux souscriptions
+            subscriptions/*: Accès complet aux souscriptions
   responses:
+    '303':
+      description: See Other
+      headers:
+        Location:
+          schema:
+            type: string
     '400':
       description: Bad Request
       content:
@@ -150,6 +165,13 @@ components:
       schema:
         type: string
       description: ID des paramètres du plan de financement parent
+    subscriptionId:
+      name: subscriptionId
+      in: path
+      required: true
+      schema:
+        type: string
+      description: ID de la souscription parente
     IfMatch:
       name: If-Match
       in: header
@@ -439,6 +461,70 @@ components:
       properties:
         data:
           $ref: ../models/FrenchIncomeTaxResults.v1.json
+    SubscriptionResource:
+      title: SubscriptionResource
+      allOf:
+        - $ref: '#/components/schemas/Resource'
+        - type: object
+          properties:
+            type:
+              type: string
+              enum:
+                - SUBSCRIPTION
+            attributes:
+              $ref: ../models/Subscription.v1.json
+          required:
+            - type
+      description: Représente une souscription
+    SubscriptionResourceResponse:
+      title: SubscriptionResourceResponse
+      type: object
+      properties:
+        data:
+          $ref: '#/components/schemas/SubscriptionResource'
+    SubscriptionResourcePaginatedListResponse:
+      title: SubscriptionResourcePaginatedListResponse
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/PaginatedResponse'
+        - type: object
+          properties:
+            data:
+              type: array
+              items:
+                $ref: '#/components/schemas/SubscriptionResource'
+    SubscriptionItemResource:
+      title: SubscriptionItemResource
+      allOf:
+        - $ref: '#/components/schemas/Resource'
+        - type: object
+          properties:
+            type:
+              type: string
+              enum:
+                - SUBSCRIPTION
+            attributes:
+              $ref: ../models/SubscriptionItem.v1.json
+          required:
+            - type
+      description: Représente un item de souscription
+    SubscriptionItemResourceResponse:
+      title: SubscriptionItemResourceResponse
+      type: object
+      properties:
+        data:
+          $ref: '#/components/schemas/SubscriptionItemResource'
+    SubscriptionItemResourcePaginatedListResponse:
+      title: SubscriptionItemResourcePaginatedListResponse
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/PaginatedResponse'
+        - type: object
+          properties:
+            data:
+              type: array
+              items:
+                $ref: '#/components/schemas/SubscriptionItemResource'
 paths:
   /v1/cases:
     parameters: []
@@ -1246,6 +1332,175 @@ paths:
       security:
         - toaztr_auth:
             - simulations/*
+  /v1/subscriptions/checkout:
+    parameters: []
+    post:
+      operationId: checkoutSubscription
+      tags:
+        - subscription
+      description: Checkout une nouvelle souscription
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ../models/SubscriptionCheckoutParameters.v1.json
+      responses:
+        '303':
+          $ref: '#/components/responses/303'
+        '400':
+          $ref: '#/components/responses/400'
+        '403':
+          $ref: '#/components/responses/403'
+        '500':
+          $ref: '#/components/responses/500'
+      summary: Ouvre une session de checkout
+      security:
+        - toaztr_auth:
+            - subscriptions/write
+  /v1/subscriptions:
+    parameters: []
+    get:
+      operationId: getSubscriptions
+      tags:
+        - subscription
+      description: Liste les souscriptions
+      parameters:
+        - $ref: '#/components/parameters/page[size]'
+        - $ref: '#/components/parameters/page[cursor]'
+        - $ref: '#/components/parameters/ordering'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SubscriptionResourcePaginatedListResponse'
+        '400':
+          $ref: '#/components/responses/400'
+        '403':
+          $ref: '#/components/responses/403'
+        '500':
+          $ref: '#/components/responses/500'
+      summary: Liste les souscriptions
+      security:
+        - toaztr_auth:
+            - subscriptions/read
+  '/v1/subscriptions/{id}':
+    parameters:
+      - $ref: '#/components/parameters/id'
+    get:
+      operationId: getSubscriptionById
+      tags:
+        - subscription
+      description: Retourne une souscription par ID
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SubscriptionResourceResponse'
+          headers:
+            ETag:
+              $ref: '#/components/headers/ETag'
+        '400':
+          $ref: '#/components/responses/400'
+        '403':
+          $ref: '#/components/responses/403'
+        '404':
+          $ref: '#/components/responses/404'
+        '500':
+          $ref: '#/components/responses/500'
+      summary: Retourne une souscription par ID
+      security:
+        - toaztr_auth:
+            - subscriptions/read
+  '/v1/subscriptions/{id}/manage':
+    parameters:
+      - $ref: '#/components/parameters/id'
+    post:
+      operationId: manageSubscription
+      tags:
+        - subscription
+      description: Manage une souscription
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ../models/SubscriptionManageParameters.v1.json
+      responses:
+        '303':
+          $ref: '#/components/responses/303'
+        '400':
+          $ref: '#/components/responses/400'
+        '403':
+          $ref: '#/components/responses/403'
+        '500':
+          $ref: '#/components/responses/500'
+      summary: Ouvre une session de management de souscription
+      security:
+        - toaztr_auth:
+            - subscriptions/write
+  '/v1/subscriptions/{subscriptionId}/items':
+    parameters:
+      - $ref: '#/components/parameters/subscriptionId'
+    get:
+      summary: Liste les items de souscription
+      operationId: getSubscriptionItems
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SubscriptionItemResourcePaginatedListResponse'
+        '400':
+          $ref: '#/components/responses/400'
+        '403':
+          $ref: '#/components/responses/403'
+        '500':
+          $ref: '#/components/responses/500'
+      description: Liste les items de souscription
+      security:
+        - toaztr_auth:
+            - subscriptions/read
+      parameters:
+        - $ref: '#/components/parameters/page[size]'
+        - $ref: '#/components/parameters/page[cursor]'
+        - $ref: '#/components/parameters/ordering'
+      tags:
+        - subscription
+  '/v1/subscriptions/{subscriptionId}/items/{id}':
+    parameters:
+      - $ref: '#/components/parameters/id'
+      - $ref: '#/components/parameters/subscriptionId'
+    get:
+      operationId: getSubscriptionItemById
+      description: Retourne un item de souscription par ID
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SubscriptionItemResourceResponse'
+          headers:
+            ETag:
+              $ref: '#/components/headers/ETag'
+        '400':
+          $ref: '#/components/responses/400'
+        '403':
+          $ref: '#/components/responses/403'
+        '404':
+          $ref: '#/components/responses/404'
+        '500':
+          $ref: '#/components/responses/500'
+      summary: Retourne un item de souscription par ID
+      security:
+        - toaztr_auth:
+            - subscriptions/read
+      tags:
+        - subscription
 servers:
   - description: Serveur de production
     url: 'https://api.toaztr.com'

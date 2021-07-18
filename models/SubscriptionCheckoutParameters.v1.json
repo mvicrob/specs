@@ -1,0 +1,27 @@
+{
+  "title": "SubscriptionCheckoutParameters",
+  "description": "Parametres pour initier le checkout d'une souscription",
+  "type": "object",
+  "properties": {
+    "success_url": {
+      "type": "string",
+      "description": "URL de retour en cas de succès du checkout."
+    },
+    "cancel_url": {
+      "type": "string",
+      "description": "URL de retour en cas d'échec du checkout."
+    },
+    "type": {
+      "type": "string",
+      "description": "Type de souscription.",
+      "enum": [
+        "LICENSE"
+      ]
+    }
+  },
+  "required": [
+    "success_url",
+    "cancel_url",
+    "type"
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "title": "Subscription",
+  "description": "Souscription Toaztr",
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string",
+      "description": "Type de souscription.",
+      "enum": [
+        "LICENSE"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "description": "Status de la souscription.",
+      "enum": [
+        "ACTIVE",
+        "CLOSED"
+      ]
+    }
+  },
+  "required": [
+    "type",
+    "status"
+  ]
+}
