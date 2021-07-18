@@ -20,13 +20,10 @@
     "monthly_amount": {
       "$ref": "./WeightedPositiveFigure.v1.json"
     },
-    "future": {
-      "description": "Futur de la charge.",
-      "type": "string",
-      "enum": [
-        "CONTINUE_AFTER_PROJECT",
-        "STOP_AFTER_PROJECT"
-      ]
+    "continue": {
+      "default": false,
+      "description": "Persiste pendant le projet ?.",
+      "type": "boolean"
     },
     "start_month": {
       "description": "Mois de départ du paiement de la charge.",
