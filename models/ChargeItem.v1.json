@@ -40,7 +40,7 @@
     },
     "smoothable": {
       "default": false,
-      "description": "Charge lissable: si la charge est lissable, elle sera intégrée au plan de financement, et les ligne de crédit seront lissées sur celle-ci.",
+      "description": "Charge lissable: si la charge est lissable, elle sera intégrée au plan de financement, et les lignes de crédit seront lissées sur celle-ci.",
       "type": "boolean"
     },
     "comment": {
