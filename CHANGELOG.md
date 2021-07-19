@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.30.0](https://www.github.com/Toaztr/specs/compare/v0.29.0...v0.30.0) (2021-07-19)
+
+
+### Features
+
+* add smoothable elements and grace period in LoanToConsolidate ([5a4e2de](https://www.github.com/Toaztr/specs/commit/5a4e2def03f8f07626b6ed3856e8cfd52acd6ce9))
+
 ## [0.29.0](https://www.github.com/Toaztr/specs/compare/v0.28.0...v0.29.0) (2021-07-18)
 
 
