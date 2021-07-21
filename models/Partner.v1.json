@@ -13,28 +13,44 @@
     "address": {
       "$ref": "./Address.v1.json"
     },
+    "representative_courtesy": {
+      "description": "Civilité du représentant ou gérant ou président.",
+      "type": "string",
+      "enum": [
+        "MR",
+        "MRS"
+      ]
+    },
+    "representative_first_name": {
+      "description": "Prénom du représentant ou gérant ou président.",
+      "type": "string"
+    },
+    "representative_last_name": {
+      "description": "Nom de famille du représentant ou gérant ou président.",
+      "type": "string"
+    },
+    "email": {
+      "description": "Email principal du partenaire.",
+      "type": "string"
+    },
+    "phone_number": {
+      "description": "Numéro de téléphone principal du partenaire.",
+      "type": "string"
+    },
+    "sub_entity": {
+      "description": "Sous-entité: agence, bureau, etc....",
+      "type": "string"
+    },
+    "agreement_number": {
+      "description": "Agrément ORIAS, ou n'importe quelle référence légale",
+      "type": "string"
+    },
     "contacts": {
       "description": "Liste des contacts au sein du partenaire.",
       "type": "array",
       "items": {
         "$ref": "./Contact.v1.json"
       }
-    },
-    "email": {
-      "description": "Email du contact.",
-      "type": "string"
-    },
-    "phone_number": {
-      "description": "Numéro de téléphone.",
-      "type": "string"
-    },
-    "sub_entity": {
-      "description": "Sous-entité: agence, etc....",
-      "type": "string"
-    },
-    "agreement_number": {
-      "description": "Agrément ORIAS, ou n'importe quelle référence légale",
-      "type": "string"
     },
     "comment": {
       "description": "Commentaire.",
