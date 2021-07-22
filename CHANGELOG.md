@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.31.0](https://www.github.com/Toaztr/specs/compare/v0.30.0...v0.31.0) (2021-07-22)
+
+
+### Features
+
+* comments ([97ad71f](https://www.github.com/Toaztr/specs/commit/97ad71fd0761ac0a5e9060b97ce327b29863d90b))
+* improve partner ([ec49bcf](https://www.github.com/Toaztr/specs/commit/ec49bcf422e59e9e5fba98f2936d72bd32743344))
+
 ## [0.30.0](https://www.github.com/Toaztr/specs/compare/v0.29.0...v0.30.0) (2021-07-19)
 
 
