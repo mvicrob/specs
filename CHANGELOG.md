@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.32.0](https://www.github.com/Toaztr/specs/compare/v0.31.0...v0.32.0) (2021-07-22)
+
+
+### Features
+
+* smoothable loans ([f7476c8](https://www.github.com/Toaztr/specs/commit/f7476c87bfea8de8d7a4c5ff36820fec23e6119d))
+
 ## [0.31.0](https://www.github.com/Toaztr/specs/compare/v0.30.0...v0.31.0) (2021-07-22)
 
 
