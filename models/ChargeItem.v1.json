@@ -20,7 +20,7 @@
     "monthly_amount": {
       "$ref": "./WeightedPositiveFigure.v1.json"
     },
-    "continue": {
+    "continue_after_project": {
       "default": false,
       "description": "Persiste pendant le projet ?.",
       "type": "boolean"

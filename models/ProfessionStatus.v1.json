@@ -5,6 +5,7 @@
     "EMPLOYEE",
     "SELFEMPLOYED",
     "STUDENT",
+    "EARLY_RETIREMENT",
     "RETIRED",
     "UNEMPLOYED",
     "ANNUITANT"
