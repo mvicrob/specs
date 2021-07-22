@@ -28,6 +28,11 @@
     "monthly_payment": {
       "$ref": "./WeightedPositiveFigure.v1.json"
     },
+    "smoothable": {
+      "default": false,
+      "description": "Crédit lissable: si le crédit est lissable, il sera intégrée au plan de financement, et les lignes du nouveau crédit seront lissées sur celui-ci.",
+      "type": "boolean"
+    },
     "remaining_capital": {
       "description": "Capital restant dû.",
       "type": "number"
@@ -44,6 +49,10 @@
     },
     "lender": {
       "description": "Organisme prêteur.",
+      "type": "string"
+    },
+    "comment": {
+      "description": "Commentaire.",
       "type": "string"
     }
   },

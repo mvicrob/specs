@@ -1,4 +1,7 @@
 {
+  "type": "object",
+  "title": "WeightedFigure",
+  "description": "Valeur monétaire et sa pondération.",
   "properties": {
     "figure": {
       "description": "Chiffre.",
@@ -12,7 +15,7 @@
       "type": "number"
     }
   },
-  "type": "object",
-  "title": "WeightedFigure",
-  "description": "Valeur monétaire et sa pondération."
+  "required": [
+    "figure"
+  ]
 }
