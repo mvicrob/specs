@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.33.0](https://www.github.com/Toaztr/specs/compare/v0.32.0...v0.33.0) (2021-07-24)
+
+
+### Features
+
+* better naming + remaining for living ([5c5f8b5](https://www.github.com/Toaztr/specs/commit/5c5f8b5400f509d1de1ebc54c1a379adac382dc5))
+
 ## [0.32.0](https://www.github.com/Toaztr/specs/compare/v0.31.0...v0.32.0) (2021-07-22)
 
 
