@@ -48,15 +48,20 @@
       "minimum": 0,
       "description": "Montant total des revenus pondérés."
     },
-    "total_charges": {
+    "max_total_charges": {
       "type": "number",
       "minimum": 0,
-      "description": "Montant total des charges pondérées."
+      "description": "Montant total maximal des charges pondérées (celles-ci ayant une date de début et de fin, le maximum peut n'être que ponctuel)."
     },
-    "total_persistant_loans": {
+    "max_total_persistant_loans": {
       "type": "number",
       "minimum": 0,
-      "description": "Montant total des prêts persistants."
+      "description": "Montant total des prêts persistants (ceux-ci ayant une date de début et de fin, le maximum peut n'être que ponctuel)."
+    },
+    "min_remaining_for_living": {
+      "type": "number",
+      "minimum": 0,
+      "description": "Montant minimal du reste à vivre."
     },
     "zone": {
       "$ref": "./Zone.v1.json"
