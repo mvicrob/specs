@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.34.0](https://www.github.com/Toaztr/specs/compare/v0.33.0...v0.34.0) (2021-07-25)
+
+
+### Features
+
+* Add capitalized interests in pre-amortization ([73c00b4](https://www.github.com/Toaztr/specs/commit/73c00b45aeb24f198a6fee29548e570d1d338f65))
+
 ## [0.33.0](https://www.github.com/Toaztr/specs/compare/v0.32.0...v0.33.0) (2021-07-24)
 
 
