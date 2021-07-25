@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.35.0](https://www.github.com/Toaztr/specs/compare/v0.34.0...v0.35.0) (2021-07-25)
+
+
+### Features
+
+* capitalized interests in loan ([8d59c7d](https://www.github.com/Toaztr/specs/commit/8d59c7d1a0f2eda4d4063fba0792a5223463aef1))
+
 ## [0.34.0](https://www.github.com/Toaztr/specs/compare/v0.33.0...v0.34.0) (2021-07-25)
 
 
