@@ -28,10 +28,15 @@
       "minimum": 0,
       "description": "Coût totals des garanties."
     },
+    "total_capitalized_interests": {
+      "type": "number",
+      "minimum": 0,
+      "description": "Total des intérêts capitalisés, dans le cadre d'un différé total."
+    },
     "total_preamortizations": {
       "type": "number",
       "minimum": 0,
-      "description": "Coût total du pré-amortissement."
+      "description": "Valeur du compteur d'intérêts (ou de pré-amortissement), dans le cadre d'un différé total."
     },
     "final_debt_ratio": {
       "type": "number",
