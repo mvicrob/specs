@@ -68,6 +68,13 @@
         "type": "number"
       }
     },
+    "capitalized_interests": {
+      "description": "Intérêts capitalisés, dans le cadre d'un différé total.",
+      "type": "array",
+      "items": {
+        "type": "number"
+      }
+    },
     "preamortizations": {
       "description": "Compteur de pré-amortissement: représente les remboursements des intérêts capitalisés au cours du temps, dans le cas d'un différé partiel supérieur à 12 mois.",
       "type": "array",
@@ -86,7 +93,12 @@
       "type": "number"
     },
     "preamortization_cost": {
-      "description": "Montant du compteur de pré-amortissement.",
+      "description": "Montant du compteur d'intérêts (ou de pré-amortissement), dans le cadre d'un différé total.",
+      "minimum": 0,
+      "type": "number"
+    },
+    "capitalized_interests_cost": {
+      "description": "Coût total des intérêts capitalisés du prêt, dans le cadre d'un différé total.",
       "minimum": 0,
       "type": "number"
     },
