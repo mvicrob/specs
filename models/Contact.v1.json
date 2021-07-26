@@ -1,6 +1,9 @@
 {
+  "type": "object",
+  "title": "Contact",
+  "description": "Contact.",
   "properties": {
-    "contact_courtesy": {
+    "courtesy": {
       "description": "Civilité du contact.",
       "type": "string",
       "enum": [
@@ -8,19 +11,19 @@
         "MRS"
       ]
     },
-    "contact_first_name": {
+    "first_name": {
       "description": "Prénom du contact.",
       "type": "string"
     },
-    "contact_last_name": {
+    "last_name": {
       "description": "Nom de famille du contact.",
       "type": "string"
     },
-    "contact_email": {
+    "email": {
       "description": "Email du contact.",
       "type": "string"
     },
-    "contact_phone_number": {
+    "phone_number": {
       "description": "Numéro de téléphone du contact.",
       "type": "string"
     },
@@ -28,8 +31,5 @@
       "description": "Commentaire.",
       "type": "string"
     }
-  },
-  "type": "object",
-  "title": "Contact",
-  "description": "Contact."
+  }
 }
