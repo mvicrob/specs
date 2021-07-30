@@ -68,6 +68,11 @@
       "minimum": 0,
       "description": "Montant minimal du reste à vivre."
     },
+    "jump_charge": {
+      "type": "number",
+      "minimum": 0,
+      "description": "Saut de charge."
+    },
     "zone": {
       "$ref": "./Zone.v1.json"
     }
