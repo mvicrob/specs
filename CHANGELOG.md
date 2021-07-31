@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.36.0](https://www.github.com/Toaztr/specs/compare/v0.35.0...v0.36.0) (2021-07-31)
+
+
+### Features
+
+* saut de charge ([2736392](https://www.github.com/Toaztr/specs/commit/27363925bb42d996847270e64edc8cc4b8eb531f))
+* simplify contact ([f480172](https://www.github.com/Toaztr/specs/commit/f480172d62690b4aa7b935732ebc754b716b3c65))
+
 ## [0.35.0](https://www.github.com/Toaztr/specs/compare/v0.34.0...v0.35.0) (2021-07-25)
 
 
