@@ -27,5 +27,5 @@
   ],
   "type": "object",
   "title": "Taeg",
-  "description": "Taux Annuel Effectif Global (TAEG) et confrontation au taux d'usure."
+  "description": "Taux Annuel Effectif Global (TAEG) et confrontation aux taux d'usure."
 }
