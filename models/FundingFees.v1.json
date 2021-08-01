@@ -1,0 +1,17 @@
+{
+  "title": "FundingFees",
+  "type": "object",
+  "description": "Frais relatifs au plan de financement: frais de dossier bancaire et frais de courtage.",
+  "properties": {
+    "broker_fees": {
+      "description": "Frais de courtage.",
+      "minimum": 0,
+      "type": "number"
+    },
+    "file_management_fees": {
+      "description": "Frais de dossier.",
+      "minimum": 0,
+      "type": "number"
+    }
+  }
+}

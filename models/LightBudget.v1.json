@@ -22,21 +22,6 @@
           "description": "Montant des éventuelles autres dépenses à diminuer du budget. Ces dépenses seront exclus du calcul des frais de noataire.",
           "minimum": 0,
           "type": "number"
-        },
-        "fees": {
-          "type": "object",
-          "properties": {
-            "broker_fees": {
-              "description": "Frais de courtage.",
-              "minimum": 0,
-              "type": "number"
-            },
-            "file_management_fees": {
-              "description": "Frais de dossier.",
-              "minimum": 0,
-              "type": "number"
-            }
-          }
         }
       }
     }
