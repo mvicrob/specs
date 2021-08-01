@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.37.0](https://www.github.com/Toaztr/specs/compare/v0.36.0...v0.37.0) (2021-08-01)
+
+
+### Features
+
+* fix typo ([de84313](https://www.github.com/Toaztr/specs/commit/de84313951c32fa1b105a7b6c9e8c46040cd2d24))
+
 ## [0.36.0](https://www.github.com/Toaztr/specs/compare/v0.35.0...v0.36.0) (2021-07-31)
 
 
