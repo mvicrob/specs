@@ -23,21 +23,6 @@
           "description": "Montant des éventuelles autres dépenses non catégorisées.",
           "minimum": 0,
           "type": "number"
-        },
-        "fees": {
-          "type": "object",
-          "properties": {
-            "broker_fees": {
-              "description": "Frais de courtage.",
-              "minimum": 0,
-              "type": "number"
-            },
-            "file_management_fees": {
-              "description": "Frais de dossier.",
-              "minimum": 0,
-              "type": "number"
-            }
-          }
         }
       }
     }
