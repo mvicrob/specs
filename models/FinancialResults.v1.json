@@ -2,24 +2,24 @@
   "type": "object",
   "title": "FinancialResults",
   "properties": {
-    "Profits_Nminus1": {
+    "profits_Nminus1": {
       "$ref": "./WeightedFigure.v1.json"
     },
-    "Profits_Nminus2": {
+    "profits_Nminus2": {
       "$ref": "./WeightedFigure.v1.json"
     },
-    "Profits_Nminus3": {
+    "profits_Nminus3": {
       "$ref": "./WeightedFigure.v1.json"
     },
-    "Turnover_Nminus1": {
-      "$ref": "./WeightedFigure.v1.json"
+    "turnover_Nminus1": {
+      "$ref": "./WeightedPositiveFigure.v1.json"
     },
-    "Turnover_Nminus2": {
-      "$ref": "./WeightedFigure.v1.json"
+    "turnover_Nminus2": {
+      "$ref": "./WeightedPositiveFigure.v1.json"
     },
-    "Turnover_Nminus3": {
-      "$ref": "./WeightedFigure.v1.json"
+    "turnover_Nminus3": {
+      "$ref": "./WeightedPositiveFigure.v1.json"
     }
   },
-  "description": "Résultats financiers d'une personne morale, sur les trois dernières années."
+  "description": "Résultats financiers d'une personne morale, sur les trois dernières années. Profits représente le CA et turnover les bénéfices (forcément positifs donc)."
 }
