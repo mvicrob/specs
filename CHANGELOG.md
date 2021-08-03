@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.38.0](https://www.github.com/Toaztr/specs/compare/v0.37.0...v0.38.0) (2021-08-03)
+
+
+### Features
+
+* improve FinancialResults object ([b78d458](https://www.github.com/Toaztr/specs/commit/b78d458917e0d6245fb00d5aa55b9c8ec3dded40))
+
 ## [0.37.0](https://www.github.com/Toaztr/specs/compare/v0.36.0...v0.37.0) (2021-08-01)
 
 
