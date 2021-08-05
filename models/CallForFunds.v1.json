@@ -1,4 +1,7 @@
 {
+  "type": "object",
+  "title": "CallForFunds",
+  "description": "Appel de fonds, dans le cadre d'un contract CCMI par exemple.",
   "properties": {
     "percentage": {
       "description": "Montant débloqué.",
@@ -17,10 +20,7 @@
     }
   },
   "required": [
-    "amount",
+    "percentage",
     "date"
-  ],
-  "type": "object",
-  "title": "CallForFunds",
-  "description": "Appel de fonds, dans le cadre d'un contract CCMI par exemple."
+  ]
 }
