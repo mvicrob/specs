@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.39.0](https://www.github.com/Toaztr/specs/compare/v0.38.0...v0.39.0) (2021-08-05)
+
+
+### Features
+
+* pass CallForFunds in percentage ([9d3dce5](https://www.github.com/Toaztr/specs/commit/9d3dce5d81c6cd263737ba41be22f03b282b719e))
+
 ## [0.38.0](https://www.github.com/Toaztr/specs/compare/v0.37.0...v0.38.0) (2021-08-03)
 
 
