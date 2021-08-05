@@ -1,8 +1,9 @@
 {
   "properties": {
-    "amount": {
+    "percentage": {
       "description": "Montant débloqué.",
       "minimum": 0,
+      "maximum": 100,
       "type": "number"
     },
     "date": {
