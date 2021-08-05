@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.40.0](https://www.github.com/Toaztr/specs/compare/v0.39.0...v0.40.0) (2021-08-05)
+
+
+### Features
+
+* fix non-mandatory amount ([1ef8341](https://www.github.com/Toaztr/specs/commit/1ef8341bff65d8c20a6379da5f23523408fd60e8))
+
 ## [0.39.0](https://www.github.com/Toaztr/specs/compare/v0.38.0...v0.39.0) (2021-08-05)
 
 
