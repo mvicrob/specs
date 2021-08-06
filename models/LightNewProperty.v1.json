@@ -12,6 +12,9 @@
     "administrative_information": {
       "$ref": "./LightAdministrativeInformation.v1.json"
     },
+    "calls_for_funds": {
+      "$ref": "./CallsForFunds.v1.json"
+    },
     "dpe_rate": {
       "$ref": "./DpeRate.v1.json"
     },
