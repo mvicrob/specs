@@ -55,6 +55,9 @@
     },
     "financial_results": {
       "$ref": "./FinancialResults.v1.json"
+    },
+    "finance": {
+      "$ref": "./FinanceDetails.v1.json"
     }
   },
   "required": [

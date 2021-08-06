@@ -6,6 +6,9 @@
     "administrative_information": {
       "$ref": "./PinelAdministrativeInformation.v1.json"
     },
+    "calls_for_funds": {
+      "$ref": "./CallsForFunds.v1.json"
+    },
     "surfaces": {
       "$ref": "./PinelLightSurfaces.v1.json"
     },

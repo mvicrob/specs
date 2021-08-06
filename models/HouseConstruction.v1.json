@@ -15,6 +15,9 @@
     "administrative_information": {
       "$ref": "./AdministrativeInformation.v1.json"
     },
+    "calls_for_funds": {
+      "$ref": "./CallsForFunds.v1.json"
+    },
     "surfaces": {
       "$ref": "./Surfaces.v1.json"
     },
