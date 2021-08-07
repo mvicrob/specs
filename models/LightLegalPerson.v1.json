@@ -29,6 +29,9 @@
     },
     "financial_results": {
       "$ref": "./FinancialResults.v1.json"
+    },
+    "finance": {
+      "$ref": "./LightFinanceDetails.v1.json"
     }
   },
   "required": [
