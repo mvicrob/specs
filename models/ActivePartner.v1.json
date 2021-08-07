@@ -16,6 +16,9 @@
     "contact": {
       "$ref": "./Contact.v1.json"
     },
+    "main_contact": {
+      "$ref": "./Contact.v1.json"
+    },
     "email": {
       "description": "Email du partenaire.",
       "type": "string"
