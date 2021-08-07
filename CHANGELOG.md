@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.42.0](https://www.github.com/Toaztr/specs/compare/v0.41.0...v0.42.0) (2021-08-07)
+
+
+### Features
+
+* add finance in LightLegalPerson ([1b663fe](https://www.github.com/Toaztr/specs/commit/1b663fe75a107636774858eca323b922986c60bf))
+
 ## [0.41.0](https://www.github.com/Toaztr/specs/compare/v0.40.0...v0.41.0) (2021-08-06)
 
 
