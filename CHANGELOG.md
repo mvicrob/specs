@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.45.0](https://www.github.com/Toaztr/specs/compare/v0.44.0...v0.45.0) (2021-08-08)
+
+
+### Features
+
+* remove default profile ([645e65e](https://www.github.com/Toaztr/specs/commit/645e65e90fb40bd95e1bdab75aad6b6e7a6ecac9))
+
 ## [0.44.0](https://www.github.com/Toaztr/specs/compare/v0.43.0...v0.44.0) (2021-08-08)
 
 
