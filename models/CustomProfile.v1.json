@@ -5,7 +5,6 @@
   "properties": {
     "type": {
       "type": "string",
-      "default": "CUSTOM",
       "description": "Type de profil de remboursement.",
       "enum": [
         "CUSTOM"
