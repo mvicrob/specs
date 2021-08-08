@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.43.0](https://www.github.com/Toaztr/specs/compare/v0.42.0...v0.43.0) (2021-08-08)
+
+
+### Features
+
+* add main contact in active partner ([64a1cde](https://www.github.com/Toaztr/specs/commit/64a1cded8248d76e3b75c0f2e8c444a935b58675))
+
 ## [0.42.0](https://www.github.com/Toaztr/specs/compare/v0.41.0...v0.42.0) (2021-08-07)
 
 
