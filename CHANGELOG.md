@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.44.0](https://www.github.com/Toaztr/specs/compare/v0.43.0...v0.44.0) (2021-08-08)
+
+
+### Features
+
+* re-add Specific plan parameters objects ([5efd1e8](https://www.github.com/Toaztr/specs/commit/5efd1e8a9b74d7e430dc5401ad4a2e37ec60206f))
+
 ## [0.43.0](https://www.github.com/Toaztr/specs/compare/v0.42.0...v0.43.0) (2021-08-08)
 
 
