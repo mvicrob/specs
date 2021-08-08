@@ -3,7 +3,7 @@
   "description": "Paramètres du plan de financement d'un rachat ou regroupement de crédits.",
   "allOf": [
     {
-      "$ref": "./SimulationObjective.v1.json"
+      "$ref": "./SpecificDebtConsolidationPlanParameters.v1.json"
     },
     {
       "$ref": "./CommonParameters.v1.json"
