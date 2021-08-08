@@ -1,7 +1,7 @@
 {
   "allOf": [
     {
-      "$ref": "./SimulationObjective.v1.json"
+      "$ref": "./SpecificPinelPlanParameters.v1.json"
     },
     {
       "$ref": "./CommonParameters.v1.json"
