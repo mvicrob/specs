@@ -31,6 +31,10 @@
         "$ref": "./Contact.v1.json"
       }
     },
+    "logo_uri": {
+      "description": "Lien vers le logo du partenaire. Par exemple: https://www.toaztr.com/assets/toaztr_logo.png",
+      "type": "string"
+    },
     "comment": {
       "description": "Commentaire.",
       "type": "string"

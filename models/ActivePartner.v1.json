@@ -44,6 +44,10 @@
       "description": "Agrément ORIAS, ou n'importe quelle référence légale.",
       "type": "string"
     },
+    "logo_uri": {
+      "description": "Lien vers le logo du partenaire. Par exemple: https://www.toaztr.com/assets/toaztr_logo.png",
+      "type": "string"
+    },
     "comment": {
       "description": "Commentaire.",
       "type": "string"
