@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.46.0](https://www.github.com/Toaztr/specs/compare/v0.45.0...v0.46.0) (2021-08-11)
+
+
+### Features
+
+* comments ([880a32e](https://www.github.com/Toaztr/specs/commit/880a32eb1db1dae7e4333241a3b6b169a8310549))
+* Logo link ([98b2de9](https://www.github.com/Toaztr/specs/commit/98b2de99e2dbb0d91c4e60fe5b290ae47e23a614))
+
 ## [0.45.0](https://www.github.com/Toaztr/specs/compare/v0.44.0...v0.45.0) (2021-08-08)
 
 
