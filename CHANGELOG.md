@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.47.0](https://www.github.com/Toaztr/specs/compare/v0.46.0...v0.47.0) (2021-08-15)
+
+
+### Features
+
+* add Balancing adjustment project ([1e9ab03](https://www.github.com/Toaztr/specs/commit/1e9ab0300d8e98e49ef70af5e067fa4f044f058d))
+
 ## [0.46.0](https://www.github.com/Toaztr/specs/compare/v0.45.0...v0.46.0) (2021-08-11)
 
 
