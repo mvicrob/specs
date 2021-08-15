@@ -1,0 +1,57 @@
+{
+  "title": "LightBalancingAdjustment",
+  "description": "Projet de rachat de soulte.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string",
+      "enum": [
+        "BALANCING_ADJUSTMENT"
+      ]
+    },
+    "administrative_information": {
+      "$ref": "./LightAdministrativeInformation.v1.json"
+    },
+    "dpe_rate": {
+      "$ref": "./DpeRate.v1.json"
+    },
+    "expenses": {
+      "type": "object",
+      "properties": {
+        "total_balancing_adjustment_value": {
+          "description": "Prix du bien à acquérir.",
+          "minimum": 0,
+          "type": "number"
+        },
+        "works_price": {
+          "description": "Prix des travaux éventuels.",
+          "minimum": 0,
+          "type": "number"
+        },
+        "furnitures_price": {
+          "description": "Coût du mobilier.",
+          "minimum": 0,
+          "type": "number"
+        },
+        "other_expenses": {
+          "description": "Montant des éventuelles autres dépenses non catégorisées.",
+          "minimum": 0,
+          "type": "number"
+        },
+        "fees": {
+          "type": "object",
+          "properties": {
+            "notary_fees": {
+              "description": "Frais de notaire.",
+              "minimum": 0,
+              "type": "number"
+            }
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "type"
+  ]
+}

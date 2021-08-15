@@ -10,8 +10,7 @@
     "PARKING",
     "COMMERCIAL_PREMISES",
     "OFFICES",
-    "SCPI",
-    "BALANCING_ADJUSTMENT"
+    "SCPI"
   ],
   "description": "Nature de l'acquisition."
 }

@@ -1,0 +1,86 @@
+{
+  "title": "BalancingAdjustment",
+  "description": "Projet de rachat de soulte.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string",
+      "enum": [
+        "BALANCING_ADJUSTMENT"
+      ]
+    },
+    "project_state": {
+      "$ref": "./ProjectState.v1.json"
+    },
+    "administrative_information": {
+      "$ref": "./AdministrativeInformation.v1.json"
+    },
+    "surfaces": {
+      "$ref": "./Surfaces.v1.json"
+    },
+    "dpe_rate": {
+      "$ref": "./DpeRate.v1.json"
+    },
+    "construction_date": {
+      "description": "Date de construction, pour les logements achevés.",
+      "type": "string"
+    },
+    "construction_norm": {
+      "description": "Norme de construction.",
+      "type": "string"
+    },
+    "lot_number": {
+      "description": "Numéro de lot.",
+      "type": "string"
+    },
+    "rooms_count": {
+      "description": "Nombre de pièces.",
+      "minimum": 0,
+      "type": "integer"
+    },
+    "undivided_persons": {
+      "type": "array",
+      "items": {
+        "$ref": "./UndividedPerson.v1.json"
+      }
+    },
+    "expenses": {
+      "type": "object",
+      "properties": {
+        "total_balancing_adjustment_value": {
+          "description": "Prix du bien à acquérir.",
+          "minimum": 0,
+          "type": "number"
+        },
+        "works_price": {
+          "description": "Prix des travaux éventuels.",
+          "minimum": 0,
+          "type": "number"
+        },
+        "furnitures_price": {
+          "description": "Coût du mobilier.",
+          "minimum": 0,
+          "type": "number"
+        },
+        "other_expenses": {
+          "description": "Montant des éventuelles autres dépenses non catégorisées.",
+          "minimum": 0,
+          "type": "number"
+        },
+        "fees": {
+          "type": "object",
+          "properties": {
+            "notary_fees": {
+              "description": "Frais de notaire.",
+              "minimum": 0,
+              "type": "number"
+            }
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "type"
+  ]
+}

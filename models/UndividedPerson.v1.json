@@ -1,0 +1,18 @@
+{
+  "title": "UndividedPerson.v1",
+  "type": "object",
+  "description": "Indivisaire",
+  "properties": {
+    "share_percentage": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "relationship": {
+      "$ref": "./Relationship.v1.json"
+    },
+    "contact": {
+      "$ref": "./Contact.v1.json"
+    }
+  }
+}

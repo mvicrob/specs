@@ -1,0 +1,16 @@
+{
+  "type": "string",
+  "title": "Relationship",
+  "enum": [
+    "SPOUSE",
+    "EX-SPOUSE",
+    "HUSBAND",
+    "EX-HUSBAND",
+    "BROTHER",
+    "SISTER",
+    "MOTHER",
+    "FATHER",
+    "OTHER"
+  ],
+  "description": "Relation avec l'emprunteur."
+}

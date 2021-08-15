@@ -20,6 +20,10 @@
         {
           "$ref": "./LightLand.v1.json"
         }
+        ,
+        {
+        "$ref": "./LightBalancingAdjustment.v1.json"
+        }
       ]
     },
     "actor": {
