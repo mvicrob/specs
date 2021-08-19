@@ -23,6 +23,12 @@
     },
     "summary": {
       "$ref": "./FundingResultsSummary.v1.json"
+    },
+    "informations": {
+      "type": "array",
+      "items": {
+        "$ref": "./Information.v1.json"
+      }
     }
   },
   "required": [
