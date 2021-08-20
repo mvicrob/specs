@@ -1,5 +1,5 @@
 {
-  "title": "Information.v1",
+  "title": "Information",
   "type": "object",
   "description": "Informations relative à la simulation. Décisions prises par le moteur de calcul, warning, erreurs non-bloquantes...",
   "properties": {
