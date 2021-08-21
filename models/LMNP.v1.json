@@ -35,16 +35,21 @@
       "minimum": 0,
       "type": "number"
     },
+    "duration": {
+      "description": "Durée du dispositif LMNP.",
+      "minimum": 0,
+      "type": "integer"
+    },
     "property": {
       "oneOf": [
         {
-          "$ref": "../NewProperty.v1.json"
+          "$ref": "./NewProperty.v1.json"
         },
         {
-          "$ref": "../OldProperty.v1.json"
+          "$ref": "./OldProperty.v1.json"
         },
         {
-          "$ref": "../HouseConstruction.v1.json"
+          "$ref": "./HouseConstruction.v1.json"
         }
       ]
     }
