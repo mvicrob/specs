@@ -72,13 +72,6 @@
             "type": "number"
           }
         },
-        "tax_reduction": {
-          "type": "array",
-          "description": "Réduction d'impôt LMNP.",
-          "items": {
-            "type": "number"
-          }
-        },
         "resulting_tax_impact": {
           "type": "array",
           "description": "Impact final sur l'impôt, incluant loyers et réduction Pinel.",
@@ -95,7 +88,7 @@
         }
       }
     },
-    "informations": {
+    "logs": {
       "type": "array",
       "items": {
         "$ref": "./Information.v1.json"
