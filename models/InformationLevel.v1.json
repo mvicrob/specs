@@ -3,8 +3,7 @@
   "title": "InformationLevel",
   "enum": [
     "INFO",
-    "WARN",
-    "ERROR"
+    "WARN"
   ],
   "description": "Niveau de l'information."
 }

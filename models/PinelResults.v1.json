@@ -100,7 +100,7 @@
         }
       }
     },
-    "informations": {
+    "information": {
       "type": "array",
       "items": {
         "$ref": "./Information.v1.json"

@@ -25,7 +25,7 @@
       "description": "Différence ente l'ensemble des coûts restants à payer sur le ou les crédits rachetés (intérets et assurance) et l'ensemble des coût du nouveau crédit (intérêts, assurance, ira, frais de dossier et de courtage, frais de garantie). Une valeur positive représente un gain financier.",
       "type": "number"
     },
-    "informations": {
+    "information": {
       "type": "array",
       "items": {
         "$ref": "./Information.v1.json"

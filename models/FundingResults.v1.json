@@ -24,7 +24,7 @@
     "summary": {
       "$ref": "./FundingResultsSummary.v1.json"
     },
-    "informations": {
+    "information": {
       "type": "array",
       "items": {
         "$ref": "./Information.v1.json"

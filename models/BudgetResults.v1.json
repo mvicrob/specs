@@ -9,7 +9,7 @@
     "funding_plan": {
       "$ref": "./FundingResults.v1.json"
     },
-    "informations": {
+    "information": {
       "type": "array",
       "items": {
         "$ref": "./Information.v1.json"
