@@ -8,6 +8,12 @@
     },
     "funding_plan": {
       "$ref": "./FundingResults.v1.json"
+    },
+    "logs": {
+      "type": "array",
+      "items": {
+        "$ref": "./Information.v1.json"
+      }
     }
   }
 }

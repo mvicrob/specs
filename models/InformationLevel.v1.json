@@ -1,0 +1,9 @@
+{
+  "type": "string",
+  "title": "InformationLevel",
+  "enum": [
+    "INFO",
+    "WARN"
+  ],
+  "description": "Niveau de l'information."
+}
