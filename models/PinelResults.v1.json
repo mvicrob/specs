@@ -100,7 +100,7 @@
         }
       }
     },
-    "information": {
+    "logs": {
       "type": "array",
       "items": {
         "$ref": "./Information.v1.json"
