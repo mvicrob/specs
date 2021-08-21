@@ -1,0 +1,105 @@
+{
+  "type": "object",
+  "title": "LMNPResults",
+  "description": "Résultats de la simulation d'un dispositif LMNP.",
+  "properties": {
+    "funding_plan": {
+      "$ref": "./FundingResults.v1.json"
+    },
+    "income_information": {
+      "$ref": "./FrenchIncomeTaxResults.v1.json"
+    },
+    "notary_fees": {
+      "type": "number",
+      "minimum": 0
+    },
+    "lmnp_table": {
+      "type": "object",
+      "properties": {
+        "price_evolution": {
+          "type": "array",
+          "description": "Évolution du prix du logement.",
+          "items": {
+            "type": "number"
+          }
+        },
+        "renting_evolution": {
+          "type": "array",
+          "description": "Évolution du loyer.",
+          "items": {
+            "type": "number"
+          }
+        },
+        "renting_received": {
+          "type": "array",
+          "description": "Somme des loyers perçus.",
+          "items": {
+            "type": "number"
+          }
+        },
+        "interests": {
+          "type": "array",
+          "description": "Somme des intérêts d'emprunt.",
+          "items": {
+            "type": "number"
+          }
+        },
+        "insurances": {
+          "type": "array",
+          "description": "Somme des intérêts d'emprunt.",
+          "items": {
+            "type": "number"
+          }
+        },
+        "deductible_charges": {
+          "type": "array",
+          "description": "Charges déductibles.",
+          "items": {
+            "type": "number"
+          }
+        },
+        "renting_result": {
+          "type": "array",
+          "description": "Résultats locatif: loyer - charges.",
+          "items": {
+            "type": "number"
+          }
+        },
+        "tax_on_renting_result": {
+          "type": "array",
+          "description": "Impôt sur le résultat locatif.",
+          "items": {
+            "type": "number"
+          }
+        },
+        "tax_reduction": {
+          "type": "array",
+          "description": "Réduction d'impôt LMNP.",
+          "items": {
+            "type": "number"
+          }
+        },
+        "resulting_tax_impact": {
+          "type": "array",
+          "description": "Impact final sur l'impôt, incluant loyers et réduction Pinel.",
+          "items": {
+            "type": "number"
+          }
+        },
+        "treasury": {
+          "type": "array",
+          "description": "Besoin de trésorerie.",
+          "items": {
+            "type": "number"
+          }
+        }
+      }
+    },
+    "informations": {
+      "type": "array",
+      "items": {
+        "$ref": "./Information.v1.json"
+      }
+    }
+  }
+}

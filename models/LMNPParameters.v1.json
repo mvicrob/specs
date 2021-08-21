@@ -1,0 +1,12 @@
+{
+  "title": "LMNPParameters",
+  "description": "Paramètres de la simulation d'un dispositif LMNP.",
+  "allOf": [
+    {
+      "$ref": "./LMNPPlanParameters.v1.json"
+    },
+    {
+      "$ref": "./LightCaseLMNP.v1.json"
+    }
+  ]
+}
