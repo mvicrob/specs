@@ -1,0 +1,56 @@
+{
+  "title": "LMNPOldProperty",
+  "description": "Projet d'acquisition d'un logement ancien.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string",
+      "enum": [
+        "OLD_PROPERTY"
+      ]
+    },
+    "expenses": {
+      "type": "object",
+      "properties": {
+        "price": {
+          "description": "Prix du bien à acquérir.",
+          "minimum": 0,
+          "type": "number"
+        },
+        "furnitures_price": {
+          "description": "Coût du mobilier.",
+          "minimum": 0,
+          "type": "number"
+        },
+        "works_price": {
+          "description": "Prix des travaux éventuels.",
+          "minimum": 0,
+          "type": "number"
+        },
+        "other_expenses": {
+          "description": "Montant des éventuelles autres dépenses non catégorisées.",
+          "minimum": 0,
+          "type": "number"
+        },
+        "fees": {
+          "type": "object",
+          "properties": {
+            "agency_fees": {
+              "description": "Frais d'agence.",
+              "minimum": 0,
+              "type": "number"
+            },
+            "notary_fees": {
+              "description": "Frais de notaire.",
+              "minimum": 0,
+              "type": "number"
+            }
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "type"
+  ]
+}

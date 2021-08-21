@@ -1,21 +1,12 @@
 {
-  "title": "LightPinel",
-  "description": "Projet d'investissement dans le cadre du dispositif Pinel.",
+  "title": "LMNP",
+  "description": "Projet d'investissement dans le cadre du dispositif LMNP.",
   "type": "object",
   "properties": {
     "type": {
       "type": "string",
       "enum": [
-        "PINEL"
-      ]
-    },
-    "pinel_duration": {
-      "description": "Durée du dispositif Pinel: 6, 9 ou 12 ans.",
-      "type": "integer",
-      "enum": [
-        6,
-        9,
-        12
+        "LMNP"
       ]
     },
     "tax_mode": {
@@ -23,9 +14,14 @@
       "description": "Régime d'imposition.",
       "enum": [
         "REAL",
-        "MICRO_FONCIER"
+        "MICRO_BIC"
       ],
       "default": "REAL"
+    },
+    "guestroom_or_classified": {
+      "type": "boolean",
+      "default": false,
+      "description": "Le meublé est une chambre d'hôte ou un meublé de tourisme classé."
     },
     "monthly_rent_value": {
       "description": "Loyer mensuel.",
@@ -33,29 +29,47 @@
       "type": "number"
     },
     "monthly_rent_value_yearly_evolution_rate": {
+      "default": 0,
       "description": "Prévision de l'évolution annuelle du loyer (en pourcentage: mettre 0.5 pour 0.5%, -10 pour -10%, ...).",
       "maximum": 100,
       "minimum": -100,
       "type": "number"
     },
     "price_yearly_evolution_rate": {
+      "default": 0,
       "description": "Prévision de l'évolution annuelle du prix du bien (en pourcentage: mettre 0.5 pour 0.5%, -10 pour -10%, ...).",
       "maximum": 100,
       "minimum": -100,
       "type": "number"
     },
     "renting_charges_rate": {
+      "default": 0,
       "description": "Charges locatives (en pourcentage du loyer: mettre 13 pour 13% par exemple).",
       "maximum": 100,
       "minimum": 0,
       "type": "number"
     },
+    "duration": {
+      "description": "Durée du dispositif LMNP.",
+      "minimum": 0,
+      "type": "integer"
+    },
     "property": {
-      "$ref": "./PinelNewProperty.v1.json"
+      "oneOf": [
+        {
+          "$ref": "./NewProperty.v1.json"
+        },
+        {
+          "$ref": "./OldProperty.v1.json"
+        },
+        {
+          "$ref": "./HouseConstruction.v1.json"
+        }
+      ]
     }
   },
   "required": [
-    "pinel_duration",
+    "type",
     "monthly_rent_value"
   ]
 }
