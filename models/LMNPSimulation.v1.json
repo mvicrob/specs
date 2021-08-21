@@ -1,0 +1,25 @@
+{
+  "title": "LMNPSimulation",
+  "description": "Réponse de la simulation d'un dispositif LMNP.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string",
+      "default": "LMNP",
+      "description": "Type de simulation.",
+      "enum": [
+        "LMNP"
+      ]
+    },
+    "parameters": {
+      "$ref": "./LMNPParameters.v1.json"
+    },
+    "results": {
+      "$ref": "./LMNPResults.v1.json"
+    }
+  },
+  "required": [
+    "type",
+    "parameters"
+  ]
+}

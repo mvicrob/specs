@@ -1,0 +1,20 @@
+{
+  "type": "object",
+  "title": "LightCaseLMNP",
+  "description": "Dossier emprunteur limité aux informations impactant le plan de financement, pour un dispositif LMNP.",
+  "properties": {
+    "project": {
+      "$ref": "./LightLMNP.v1.json"
+    },
+    "actor": {
+      "oneOf": [
+        {
+          "$ref": "./LMNPHouseholdDetails.v1.json"
+        },
+        {
+          "$ref": "./LightLegalPerson.v1.json"
+        }
+      ]
+    }
+  }
+}

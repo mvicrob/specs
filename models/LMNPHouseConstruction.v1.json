@@ -1,0 +1,74 @@
+{
+  "title": "LMNPHouseConstruction",
+  "description": "",
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string",
+      "enum": [
+        "HOUSE_CONSTRUCTION"
+      ]
+    },
+    "calls_for_funds": {
+      "$ref": "./CallsForFunds.v1.json"
+    },
+    "expenses": {
+      "type": "object",
+      "properties": {
+        "land_price": {
+          "description": "Prix du terrain.",
+          "minimum": 0,
+          "type": "number"
+        },
+        "construction_price": {
+          "description": "Prix de la construction.",
+          "minimum": 0,
+          "type": "number"
+        },
+        "infrastructure_price": {
+          "description": "Prix de la viabilisation, dans le cas d'une construction.",
+          "minimum": 0,
+          "type": "number"
+        },
+        "building_insurance": {
+          "description": "Assurance dommage ouvrage.",
+          "minimum": 0,
+          "type": "number"
+        },
+        "other_expenses": {
+          "description": "Montant des éventuelles autres dépenses non catégorisées.",
+          "minimum": 0,
+          "type": "number"
+        },
+        "vat": {
+          "description": "Montant de la TVA, si celle-ci est comptées séparément.",
+          "minimum": 0,
+          "type": "number"
+        },
+        "other_taxes": {
+          "description": "Montant des éventuelles autres taxes (RAP, aménagement, ...).",
+          "minimum": 0,
+          "type": "number"
+        },
+        "fees": {
+          "type": "object",
+          "properties": {
+            "agency_fees": {
+              "description": "Frais d'agence.",
+              "minimum": 0,
+              "type": "number"
+            },
+            "notary_fees": {
+              "description": "Frais de notaire.",
+              "minimum": 0,
+              "type": "number"
+            }
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "type"
+  ]
+}
