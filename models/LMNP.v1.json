@@ -9,6 +9,20 @@
         "LMNP"
       ]
     },
+    "tax_mode": {
+      "type": "string",
+      "description": "Régime d'imposition.",
+      "enum": [
+        "REAL",
+        "MICRO_BIC"
+      ],
+      "default": "REAL"
+    },
+    "guestroom_or_classified": {
+      "type": "boolean",
+      "default": false,
+      "description": "Le meublé est une chambre d'hôte ou un meublé de tourisme classé."
+    },
     "monthly_rent_value": {
       "description": "Loyer mensuel.",
       "minimum": 0,

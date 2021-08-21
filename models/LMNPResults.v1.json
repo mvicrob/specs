@@ -72,6 +72,13 @@
             "type": "number"
           }
         },
+        "amortization": {
+          "type": "array",
+          "description": "Amortissement LMNP.",
+          "items": {
+            "type": "number"
+          }
+        },
         "resulting_tax_impact": {
           "type": "array",
           "description": "Impact final sur l'impôt, incluant loyers et réduction Pinel.",

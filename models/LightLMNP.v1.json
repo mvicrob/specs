@@ -18,6 +18,11 @@
       ],
       "default": "REAL"
     },
+    "guestroom_or_classified": {
+      "type": "boolean",
+      "default": false,
+      "description": "Le meublé est une chambre d'hôte ou un meublé de tourisme classé."
+    },
     "monthly_rent_value": {
       "description": "Loyer mensuel.",
       "minimum": 0,
@@ -61,6 +66,7 @@
     }
   },
   "required": [
+    "type",
     "monthly_rent_value"
   ]
 }
