@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.48.0](https://www.github.com/Toaztr/specs/compare/v0.47.0...v0.48.0) (2021-08-21)
+
+
+### Features
+
+* add guestroom mode and LMNP amortization ([7e53283](https://www.github.com/Toaztr/specs/commit/7e5328329afcc7019f091f9d7d2e7cf6f47aefe2))
+* add information traces ([889318d](https://www.github.com/Toaztr/specs/commit/889318d482b66c6f73d4d3f8822f7acfe57a3d26))
+* align LMNP logs with other outputs ([c98f453](https://www.github.com/Toaztr/specs/commit/c98f4531af13a2e23a74d7adb78f2d5c9feeca46))
+* change information into logs ([a27979d](https://www.github.com/Toaztr/specs/commit/a27979d5719357604c492d69bb28b1c59f8d1ce8))
+* comments ([202847c](https://www.github.com/Toaztr/specs/commit/202847c61002d8c36d681826bb87e3614c0ce028))
+* improve LMNP ([944b441](https://www.github.com/Toaztr/specs/commit/944b4417bda8e44ca8fa43c8130e825f26e42d9e))
+
 ## [0.47.0](https://www.github.com/Toaztr/specs/compare/v0.46.0...v0.47.0) (2021-08-15)
 
 
