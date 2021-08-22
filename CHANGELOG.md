@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.48.1](https://www.github.com/Toaztr/specs/compare/v0.48.0...v0.48.1) (2021-08-22)
+
+
+### Bug Fixes
+
+* Change name of Log objects ([17b5491](https://www.github.com/Toaztr/specs/commit/17b5491a89df8ec197ea08bdc4c282d3fa087ab3))
+
 ## [0.48.0](https://www.github.com/Toaztr/specs/compare/v0.47.0...v0.48.0) (2021-08-21)
 
 
