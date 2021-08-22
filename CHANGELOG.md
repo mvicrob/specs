@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.49.1](https://www.github.com/Toaztr/specs/compare/v0.49.0...v0.49.1) (2021-08-22)
+
+
+### Bug Fixes
+
+* typos ([91c3854](https://www.github.com/Toaztr/specs/commit/91c3854fc68b614c0b086c0ce8d50f1da1c6ebee))
+
 ## [0.49.0](https://www.github.com/Toaztr/specs/compare/v0.48.1...v0.49.0) (2021-08-22)
 
 
