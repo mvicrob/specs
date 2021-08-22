@@ -28,7 +28,7 @@
     "logs": {
       "type": "array",
       "items": {
-        "$ref": "./Information.v1.json"
+        "$ref": "./Log.v1.json"
       }
     }
   }
