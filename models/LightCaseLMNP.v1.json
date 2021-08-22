@@ -9,7 +9,7 @@
     "actor": {
       "oneOf": [
         {
-          "$ref": "./LMNPHouseholdDetails.v1.json"
+          "$ref": "./DetaxHouseholdDetails.v1.json"
         },
         {
           "$ref": "./LightLegalPerson.v1.json"
