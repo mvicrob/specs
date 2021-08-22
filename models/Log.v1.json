@@ -1,0 +1,17 @@
+{
+  "title": "Log",
+  "type": "object",
+  "description": "Message relatif à la simulation. Décisions prises par le moteur de calcul, warning, erreurs non-bloquantes...",
+  "properties": {
+    "level": {
+      "$ref": "./LogLevel.v1.json"
+    },
+    "message": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "level",
+    "message"
+  ]
+}
