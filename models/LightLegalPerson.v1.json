@@ -22,7 +22,7 @@
     },
     "persons": {
       "type": "array",
-      "description": "Associés de la persone morale.",
+      "description": "Associés de la personne morale.",
       "items": {
         "$ref": "./LightPerson.v1.json"
       }
