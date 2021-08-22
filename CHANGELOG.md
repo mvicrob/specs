@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.49.0](https://www.github.com/Toaztr/specs/compare/v0.48.1...v0.49.0) (2021-08-22)
+
+
+### Features
+
+* add LMNPSimulation in Simulation ([42ffc4e](https://www.github.com/Toaztr/specs/commit/42ffc4ecbdc9306ba3dd129884baf24d26c7f951))
+
 ### [0.48.1](https://www.github.com/Toaztr/specs/compare/v0.48.0...v0.48.1) (2021-08-22)
 
 
