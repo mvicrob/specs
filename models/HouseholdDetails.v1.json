@@ -10,7 +10,7 @@
       ]
     },
     "persons": {
-      "description": "Liste des persones du ménage (emprunteurs ou non).",
+      "description": "Liste des personnes du ménage (emprunteurs ou non).",
       "type": "array",
       "items": {
         "$ref": "./Person.v1.json"
