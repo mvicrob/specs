@@ -25,6 +25,11 @@
           "minimum": 0,
           "type": "number"
         },
+        "furnitures_price": {
+          "description": "Coût du mobilier.",
+          "minimum": 0,
+          "type": "number"
+        },
         "infrastructure_price": {
           "description": "Prix de la viabilisation, dans le cas d'une construction.",
           "minimum": 0,

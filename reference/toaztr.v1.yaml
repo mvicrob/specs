@@ -443,6 +443,12 @@ components:
       properties:
         data:
           $ref: ../models/DebtConsolidationResults.v1.json
+    LMNPSimulationResponse:
+      title: LMNPSimulationResponse
+      type: object
+      properties:
+        data:
+          $ref: ../models/LMNPResults.v1.json
     ScoreResponse:
       title: ScoreResponse
       type: object
@@ -1193,7 +1199,7 @@ paths:
       operationId: postPinelSimulation
       tags:
         - standalone_simulation
-      description: Calcule une simulation pinel
+      description: Calcule une simulation Pinel
       requestBody:
         content:
           application/json:
@@ -1212,7 +1218,7 @@ paths:
           $ref: '#/components/responses/403'
         '500':
           $ref: '#/components/responses/500'
-      summary: Calcule une simulation pinel
+      summary: Calcule une simulation Pinel
       security:
         - toaztr_auth:
             - simulations/pinel
@@ -1245,6 +1251,35 @@ paths:
       security:
         - toaztr_auth:
             - simulations/debt_consolidation
+  /v1/simulations/lmnp:
+    parameters: []
+    post:
+      operationId: postLMNPSimulation
+      tags:
+        - standalone_simulation
+      description: Calcule une simulation LMNP
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ../models/LMNPParameters.v1.json
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LMNPSimulationResponse'
+        '400':
+          $ref: '#/components/responses/400'
+        '403':
+          $ref: '#/components/responses/403'
+        '500':
+          $ref: '#/components/responses/500'
+      summary: Calcule une simulation LMNP
+      security:
+        - toaztr_auth:
+            - simulations/lmnp
   /v1/scores:
     parameters: []
     post:

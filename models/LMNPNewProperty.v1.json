@@ -20,6 +20,11 @@
           "minimum": 0,
           "type": "number"
         },
+        "furnitures_price": {
+          "description": "Coût du mobilier.",
+          "minimum": 0,
+          "type": "number"
+        },
         "other_expenses": {
           "description": "Montant des éventuelles autres dépenses non catégorisées.",
           "minimum": 0,

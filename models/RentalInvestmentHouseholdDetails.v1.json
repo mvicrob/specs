@@ -1,5 +1,5 @@
 {
-  "title": "LMNPHouseholdDetails",
+  "title": "RentalInvestmentHouseholdDetails",
   "type": "object",
   "description": "Détail relatifs au ménage.",
   "properties": {
