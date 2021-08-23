@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.50.0](https://www.github.com/Toaztr/specs/compare/v0.49.1...v0.50.0) (2021-08-23)
+
+
+### Features
+
+* comments ([f0bdf7b](https://www.github.com/Toaztr/specs/commit/f0bdf7b3ce34ceccdeb1b9bc73c850bc669bb728))
+* fix lint ([0ad9edb](https://www.github.com/Toaztr/specs/commit/0ad9edb6aac35e428b08f5c71c434e7edd6b6c73))
+* generalise furnitures price for LMNP ([5b1c2d6](https://www.github.com/Toaztr/specs/commit/5b1c2d6960b7e57037b798986c8ca8a2f4298522))
+* merge LMNP and Pinel Households ([afff2cf](https://www.github.com/Toaztr/specs/commit/afff2cfaa1ced4a7d48878006046b8f553ab5388))
+* Update reference ([eb9425b](https://www.github.com/Toaztr/specs/commit/eb9425b53f7930c69198d5c2820a999ecc34c4cd))
+
 ### [0.49.1](https://www.github.com/Toaztr/specs/compare/v0.49.0...v0.49.1) (2021-08-22)
 
 
