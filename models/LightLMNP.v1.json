@@ -67,6 +67,7 @@
   },
   "required": [
     "type",
-    "monthly_rent_value"
+    "monthly_rent_value",
+    "duration"
   ]
 }
