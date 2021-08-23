@@ -443,6 +443,12 @@ components:
       properties:
         data:
           $ref: ../models/DebtConsolidationResults.v1.json
+    LMNPSimulationResponse:
+      title: LMNPSimulationResponse
+      type: object
+      properties:
+        data:
+          $ref: ../models/LMNPResults.v1.json
     ScoreResponse:
       title: ScoreResponse
       type: object
