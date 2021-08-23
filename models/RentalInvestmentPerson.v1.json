@@ -1,6 +1,6 @@
 {
   "type": "object",
-  "title": "PinelPerson",
+  "title": "RentalInvestmentPerson",
   "description": "Informations générales sur l'emprunteur.",
   "properties": {
     "is_borrower": {

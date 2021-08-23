@@ -27,7 +27,7 @@
     "persons": {
       "type": "array",
       "items": {
-        "$ref": "./LMNPPerson.v1.json"
+        "$ref": "./RentalInvestmentPerson.v1.json"
       }
     },
     "finance": {
