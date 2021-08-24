@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.51.0](https://www.github.com/Toaztr/specs/compare/v0.50.0...v0.51.0) (2021-08-24)
+
+
+### Features
+
+* create RentalInvestmentPerson ([abc1593](https://www.github.com/Toaztr/specs/commit/abc1593abcce48be3d8b906d113cdbb620f222d6))
+
 ## [0.50.0](https://www.github.com/Toaztr/specs/compare/v0.49.1...v0.50.0) (2021-08-23)
 
 
