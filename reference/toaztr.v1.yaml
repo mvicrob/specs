@@ -197,7 +197,7 @@ components:
       schema:
         type: number
         minimum: 0
-        maximum: 20
+        maximum: 100
         default: 10
       description: Taille de la page à retourner
     'page[cursor]':
