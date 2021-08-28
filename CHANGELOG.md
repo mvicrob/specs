@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.52.1](https://www.github.com/Toaztr/specs/compare/v0.52.0...v0.52.1) (2021-08-28)
+
+
+### Bug Fixes
+
+* Adds fields to subscription resources ([6f5d3aa](https://www.github.com/Toaztr/specs/commit/6f5d3aa43e77f147dac7dac81e1ca0c98a78a6d5))
+
 ## [0.52.0](https://www.github.com/Toaztr/specs/compare/v0.51.0...v0.52.0) (2021-08-26)
 
 
