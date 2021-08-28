@@ -49,6 +49,9 @@
         },
         {
           "$ref": "./Pinel.v1.json"
+        },
+        {
+          "$ref": "./BalancingAdjustment.v1.json"
         }
       ],
       "description": "Projet."

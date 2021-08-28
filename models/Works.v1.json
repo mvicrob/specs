@@ -21,8 +21,7 @@
       "type": "string"
     },
     "construction_norm": {
-      "description": "Norme de construction.",
-      "type": "string"
+     "$ref": "./ConstructionNorms.v1.json"
     },
     "delivery_date": {
       "description": "Date de livraison.",

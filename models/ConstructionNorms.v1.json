@@ -1,0 +1,14 @@
+{
+  "type": "string",
+  "title": "ConstructionNorms",
+  "enum": [
+    "RT_2020",
+    "HPE_2012",
+    "RT_2012",
+    "BBC_RENOV_2009",
+    "HPE_RENOV_2009",
+    "RT_2005",
+    "RT_ANTERIEUR"
+  ],
+  "description": "Norme énergétique de la construction."
+}
