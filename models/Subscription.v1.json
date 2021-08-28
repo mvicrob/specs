@@ -17,6 +17,18 @@
         "ACTIVE",
         "CLOSED"
       ]
+    },
+    "quantity": {
+      "type": "integer",
+      "description": "Nombre d'items inclus dans la souscription.",
+      "minimum": 1,
+      "default": 1
+    },
+    "used": {
+      "type": "integer",
+      "description": "Nombre d'items en utilisation.",
+      "minimum": 0,
+      "default": 0
     }
   },
   "required": [

@@ -17,6 +17,12 @@
       "enum": [
         "LICENSE"
       ]
+    },
+    "quantity": {
+      "type": "integer",
+      "description": "Nombre d'items dans la souscription.",
+      "minimum": 1,
+      "default": 1
     }
   },
   "required": [
