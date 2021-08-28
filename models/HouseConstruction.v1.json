@@ -33,8 +33,7 @@
       "$ref": "./DpeRate.v1.json"
     },
     "construction_norm": {
-      "description": "Norme de construction.",
-      "type": "string"
+     "$ref": "./ConstructionNorms.v1.json"
     },
     "lot_number": {
       "description": "Numéro de lot.",
