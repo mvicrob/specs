@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.54.0](https://www.github.com/Toaztr/specs/compare/v0.53.0...v0.54.0) (2021-08-29)
+
+
+### Features
+
+* add LMNP in Case ([0a4fec5](https://www.github.com/Toaztr/specs/commit/0a4fec5613711fb83c8826aeddb1ad9eea5d6eb7))
+
 ## [0.53.0](https://www.github.com/Toaztr/specs/compare/v0.52.1...v0.53.0) (2021-08-29)
 
 
