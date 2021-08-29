@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.55.0](https://www.github.com/Toaztr/specs/compare/v0.54.0...v0.55.0) (2021-08-29)
+
+
+### Features
+
+* Pinel tax mode and furnitures in all properties types ([718d542](https://www.github.com/Toaztr/specs/commit/718d5428bc59bd81c467f310443436656135e77d))
+
 ## [0.54.0](https://www.github.com/Toaztr/specs/compare/v0.53.0...v0.54.0) (2021-08-29)
 
 
