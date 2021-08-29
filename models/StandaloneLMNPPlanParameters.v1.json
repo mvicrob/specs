@@ -1,0 +1,29 @@
+{
+  "title": "StandaloneLMNPPlanParameters",
+  "allOf": [
+    {
+      "$ref": "./LMNPPlanParameters.v1.json"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "PINEL_PLAN_PARAMETERS"
+          ],
+          "description": "Type du jeu de paramètres.",
+          "default": "PINEL_PLAN_PARAMETERS"
+        },
+        "name": {
+          "type": "string",
+          "description": "Nom des paramètres"
+        }
+      },
+      "required": [
+        "type"
+      ]
+    }
+  ],
+  "description": "Paramètres d'un calcul LMNP, conservés isolément."
+}
