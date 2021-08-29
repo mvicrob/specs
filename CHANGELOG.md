@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.56.0](https://www.github.com/Toaztr/specs/compare/v0.55.0...v0.56.0) (2021-08-29)
+
+
+### Features
+
+* add standalone LMNP plan parameters ([45020db](https://www.github.com/Toaztr/specs/commit/45020db8b56064d239079fd9698cc69446d6ffff))
+* fix typo ([f06eac7](https://www.github.com/Toaztr/specs/commit/f06eac743e092733305bb52ab6fc57ca8481e89c))
+
 ## [0.55.0](https://www.github.com/Toaztr/specs/compare/v0.54.0...v0.55.0) (2021-08-29)
 
 
