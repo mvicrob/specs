@@ -52,6 +52,9 @@
         },
         {
           "$ref": "./BalancingAdjustment.v1.json"
+        },
+        {
+          "$ref": "./LMNP.v1.json"
         }
       ],
       "description": "Projet."
