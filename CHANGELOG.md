@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.53.0](https://www.github.com/Toaztr/specs/compare/v0.52.1...v0.53.0) (2021-08-29)
+
+
+### Features
+
+* improve wording ([e72955b](https://www.github.com/Toaztr/specs/commit/e72955b0ff57b0063a70c7cf07e5abe9a9fa8a26))
+
 ### [0.52.1](https://www.github.com/Toaztr/specs/compare/v0.52.0...v0.52.1) (2021-08-28)
 
 
