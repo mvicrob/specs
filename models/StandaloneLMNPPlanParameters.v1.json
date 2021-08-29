@@ -10,10 +10,10 @@
         "type": {
           "type": "string",
           "enum": [
-            "PINEL_PLAN_PARAMETERS"
+            "LMNP_PLAN_PARAMETERS"
           ],
           "description": "Type du jeu de paramètres.",
-          "default": "PINEL_PLAN_PARAMETERS"
+          "default": "LMNP_PLAN_PARAMETERS"
         },
         "name": {
           "type": "string",
