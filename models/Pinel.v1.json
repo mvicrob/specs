@@ -18,6 +18,15 @@
         12
       ]
     },
+    "tax_mode": {
+      "type": "string",
+      "description": "Régime d'imposition.",
+      "enum": [
+        "REAL",
+        "MICRO_FONCIER"
+      ],
+      "default": "REAL"
+    },
     "monthly_rent_value": {
       "description": "Loyer mensuel.",
       "minimum": 0,
