@@ -531,6 +531,17 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/SubscriptionItemResource'
+    RedirectUrlResponse:
+      title: RedirectUrlResponse
+      type: object
+      properties:
+        data:
+          type: object
+          properties:
+            url:
+              type: string
+          required:
+            - url
 paths:
   /v1/cases:
     parameters: []
@@ -1380,8 +1391,12 @@ paths:
             schema:
               $ref: ../models/SubscriptionCheckoutParameters.v1.json
       responses:
-        '303':
-          $ref: '#/components/responses/303'
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RedirectUrlResponse'
         '400':
           $ref: '#/components/responses/400'
         '403':
@@ -1464,8 +1479,12 @@ paths:
             schema:
               $ref: ../models/SubscriptionManageParameters.v1.json
       responses:
-        '303':
-          $ref: '#/components/responses/303'
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RedirectUrlResponse'
         '400':
           $ref: '#/components/responses/400'
         '403':
