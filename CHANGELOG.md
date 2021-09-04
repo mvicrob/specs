@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.57.0](https://www.github.com/Toaztr/specs/compare/v0.56.0...v0.57.0) (2021-09-04)
+
+
+### Features
+
+* Change redirect to url returned ([f3d71ac](https://www.github.com/Toaztr/specs/commit/f3d71acf14a1cf1f22b73e1cc467694e9da876d5))
+
 ## [0.56.0](https://www.github.com/Toaztr/specs/compare/v0.55.0...v0.56.0) (2021-08-29)
 
 
