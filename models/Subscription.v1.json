@@ -33,6 +33,8 @@
   },
   "required": [
     "type",
-    "status"
+    "status",
+    "quantity",
+    "used"
   ]
 }
