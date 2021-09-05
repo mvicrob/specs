@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.57.1](https://www.github.com/Toaztr/specs/compare/v0.57.0...v0.57.1) (2021-09-05)
+
+
+### Bug Fixes
+
+* move some attributes to mandatory in Subscription ([c293a45](https://www.github.com/Toaztr/specs/commit/c293a45d1dacbbb5bb3153429b86e2ad6782f27a))
+
 ## [0.57.0](https://www.github.com/Toaztr/specs/compare/v0.56.0...v0.57.0) (2021-09-04)
 
 
