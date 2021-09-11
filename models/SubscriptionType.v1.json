@@ -1,0 +1,9 @@
+{
+  "type": "string",
+  "title": "SubscriptionType",
+  "enum": [
+    "SOLO",
+    "TEAM"
+  ],
+  "description": "Type de souscription."
+}

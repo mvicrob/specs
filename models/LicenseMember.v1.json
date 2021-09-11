@@ -1,0 +1,18 @@
+{
+  "title": "LicenseMember",
+  "description": "Utilisateur attaché à la license Toaztr",
+  "type": "object",
+  "properties": {
+    "ref": {
+      "type": "string",
+      "description": "ID de l'utilisateur."
+    },
+    "name": {
+      "type": "string",
+      "description": "Nom de l'utilisateur."
+    }
+  },
+  "required": [
+    "ref"
+  ]
+}
