@@ -28,14 +28,8 @@ tags:
   - name: subscription
     x-displayName: souscription
     description: Gestion des souscriptions
-  - name: case_model
-    x-displayName: dossier
-    description: |
-      <SchemaDefinition schemaRef="#/components/schemas/Case" />
-  - name: simulation_model
-    x-displayName: simulation
-    description: |
-      <SchemaDefinition schemaRef="#/components/schemas/Simulation" />
+  - name: license
+    description: Informations sur la license courante
 x-tagGroups:
   - name: Gestion de dossiers
     tags:
@@ -50,10 +44,9 @@ x-tagGroups:
       - standalone_score
       - notary
       - income_tax
-  - name: Modèle
+  - name: Informations diverses
     tags:
-      - case_model
-      - simulation_model
+      - license
   - name: Administration
     tags:
       - subscription
@@ -101,6 +94,7 @@ components:
             subscriptions/read: Accès en lecture aux souscriptions
             subscriptions/write: Accès en ecriture aux souscriptions
             subscriptions/*: Accès complet aux souscriptions
+            infos: Accès à des informations sur la session courante
   responses:
     '303':
       description: See Other
@@ -542,6 +536,23 @@ components:
               type: string
           required:
             - url
+    LicenseResponse:
+      title: LicenseResponse
+      type: object
+      properties:
+        data:
+          $ref: ../models/License.v1.json
+    LicenseMembersResponse:
+      title: LicenseMembersResponse
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/PaginatedResponse'
+        - type: object
+          properties:
+            data:
+              type: array
+              items:
+                $ref: ../models/LicenseMember.v1.json
 paths:
   /v1/cases:
     parameters: []
@@ -1555,6 +1566,58 @@ paths:
             - subscriptions/read
       tags:
         - subscription
+  /v1/license:
+    get:
+      operationId: getLicense
+      description: Retourne la license en cours de l'utilisateur
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SubscriptionItemResourceResponse'
+        '400':
+          $ref: '#/components/responses/400'
+        '403':
+          $ref: '#/components/responses/403'
+        '404':
+          $ref: '#/components/responses/404'
+        '500':
+          $ref: '#/components/responses/500'
+      summary: Retourne la license en cours de l'utilisateur
+      security:
+        - toaztr_auth:
+          - infos
+      tags:
+        - license
+  /v1/license/members:
+    get:
+      summary: Liste les membres associés à la license de l'utilisateur
+      operationId: getLicenseMembers
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LicenseMembersResponse'
+        '400':
+          $ref: '#/components/responses/400'
+        '403':
+          $ref: '#/components/responses/403'
+        '500':
+          $ref: '#/components/responses/500'
+      description: Liste les membres associés à la license de l'utilisateur
+      security:
+        - toaztr_auth:
+          - infos
+      parameters: 
+        - $ref: '#/components/parameters/page[size]'
+        - $ref: '#/components/parameters/page[cursor]'
+        - $ref: '#/components/parameters/ordering'
+      tags:
+        - license
 servers:
   - description: Serveur de production
     url: 'https://api.toaztr.com'

@@ -4,11 +4,7 @@
   "type": "object",
   "properties": {
     "type": {
-      "type": "string",
-      "description": "Type de souscription.",
-      "enum": [
-        "LICENSE"
-      ]
+      "$ref": "./SubscriptionType.v1.json"
     },
     "status": {
       "type": "string",

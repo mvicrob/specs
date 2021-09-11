@@ -12,11 +12,7 @@
       "description": "URL de retour en cas d'échec du checkout."
     },
     "type": {
-      "type": "string",
-      "description": "Type de souscription.",
-      "enum": [
-        "LICENSE"
-      ]
+      "$ref": "./SubscriptionType.v1.json"
     },
     "quantity": {
       "type": "integer",
