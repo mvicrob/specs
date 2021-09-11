@@ -30,6 +30,9 @@ tags:
     description: Gestion des souscriptions
   - name: license
     description: Informations sur la license courante
+  - name: invite
+    x-displayName: invitation
+    description: Gestion des invitations aux souscriptions
 x-tagGroups:
   - name: Gestion de dossiers
     tags:
@@ -44,12 +47,11 @@ x-tagGroups:
       - standalone_score
       - notary
       - income_tax
-  - name: Informations diverses
-    tags:
-      - license
   - name: Administration
     tags:
       - subscription
+      - invite
+      - license
 info:
   contact:
     name: API Support
@@ -70,7 +72,7 @@ components:
           tokenUrl: 'https://auth.toaztr.com/oauth2/token'
           scopes:
             cases/read: Accès en lecture aux dossiers
-            cases/write: Accès en ecriture aux dossiers
+            cases/write: Accès en écriture aux dossiers
             cases/*: Accès complet aux dossiers
             simulations/budget: Accès aux simulations de budget
             simulations/funding: Accès aux simulations de financement
@@ -83,7 +85,7 @@ components:
           tokenUrl: 'https://auth.toaztr.com/oauth2/token'
           scopes:
             cases/read: Accès en lecture aux dossiers
-            cases/write: Accès en ecriture aux dossiers
+            cases/write: Accès en écriture aux dossiers
             cases/*: Accès complet aux dossiers
             simulations/budget: Accès aux simulations de budget
             simulations/funding: Accès aux simulations de financement
@@ -92,9 +94,11 @@ components:
             simulations/*: Accès à toutes les simulations
             scores/*: Accès au scoring
             subscriptions/read: Accès en lecture aux souscriptions
-            subscriptions/write: Accès en ecriture aux souscriptions
+            subscriptions/write: Accès en écriture aux souscriptions
             subscriptions/*: Accès complet aux souscriptions
-            infos: Accès à des informations sur la session courante
+            license/read: Accès en lecture aux informations de license
+            license/write: Accès en écriture aux informations de license
+            license/*: Accès complet aux informations de license
   responses:
     '303':
       description: See Other
@@ -525,6 +529,38 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/SubscriptionItemResource'
+    SubscriptionInviteResource:
+      title: SubscriptionInviteResource
+      allOf:
+        - $ref: '#/components/schemas/Resource'
+        - type: object
+          properties:
+            type:
+              type: string
+              enum:
+                - SUBSCRIPTION_INVITE
+            attributes:
+              $ref: ../models/SubscriptionInvite.v1.json
+          required:
+            - type
+      description: Représente une invitation à une souscription
+    SubscriptionInviteResourceResponse:
+      title: SubscriptionInviteResourceResponse
+      type: object
+      properties:
+        data:
+          $ref: '#/components/schemas/SubscriptionInviteResource'
+    SubscriptionInviteResourcePaginatedListResponse:
+      title: SubscriptionInviteResourcePaginatedListResponse
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/PaginatedResponse'
+        - type: object
+          properties:
+            data:
+              type: array
+              items:
+                $ref: '#/components/schemas/SubscriptionInviteResource'
     RedirectUrlResponse:
       title: RedirectUrlResponse
       type: object
@@ -1566,6 +1602,184 @@ paths:
             - subscriptions/read
       tags:
         - subscription
+  '/v1/subscriptions/{subscriptionId}/invites':
+    parameters:
+      - $ref: '#/components/parameters/subscriptionId'
+    post:
+      operationId: postSubscriptionInvite
+      tags:
+        - invite
+      description: Crée une invitation à une souscription
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ../models/SubscriptionInvite.v1.json
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SubscriptionInviteResourceResponse'
+          headers:
+            ETag:
+              $ref: '#/components/headers/ETag'
+        '400':
+          $ref: '#/components/responses/400'
+        '403':
+          $ref: '#/components/responses/403'
+        '500':
+          $ref: '#/components/responses/500'
+      summary: Crée une invitation à une souscription
+      security:
+        - toaztr_auth:
+            - subscriptions/write
+    get:
+      summary: Liste les invitations à la souscription
+      operationId: getSubscriptionInvites
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SubscriptionInviteResourcePaginatedListResponse'
+        '400':
+          $ref: '#/components/responses/400'
+        '403':
+          $ref: '#/components/responses/403'
+        '500':
+          $ref: '#/components/responses/500'
+      description: Liste les invitations à la souscription
+      security:
+        - toaztr_auth:
+            - subscriptions/read
+      parameters:
+        - $ref: '#/components/parameters/page[size]'
+        - $ref: '#/components/parameters/page[cursor]'
+        - $ref: '#/components/parameters/ordering'
+      tags:
+        - invite
+  '/v1/subscriptions/{subscriptionId}/invites/{id}':
+    parameters:
+      - $ref: '#/components/parameters/id'
+      - $ref: '#/components/parameters/subscriptionId'
+    get:
+      operationId: getSubscriptionInviteById
+      description: Retourne une invitation à la souscription par ID
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SubscriptionInviteResourceResponse'
+          headers:
+            ETag:
+              $ref: '#/components/headers/ETag'
+        '400':
+          $ref: '#/components/responses/400'
+        '403':
+          $ref: '#/components/responses/403'
+        '404':
+          $ref: '#/components/responses/404'
+        '500':
+          $ref: '#/components/responses/500'
+      summary: Retourne une invitation à la souscription par ID
+      security:
+        - toaztr_auth:
+            - subscriptions/read
+      tags:
+        - invite
+    put:
+      operationId: putSubscriptionInvite
+      tags:
+        - invite
+      description: Mets à jour une invitation à une subscription par ID
+      parameters:
+        - $ref: '#/components/parameters/IfMatch'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ../models/SubscriptionInvite.v1.json
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SubscriptionInviteResourceResponse'
+          headers:
+            ETag:
+              $ref: '#/components/headers/ETag'
+        '400':
+          $ref: '#/components/responses/400'
+        '403':
+          $ref: '#/components/responses/403'
+        '404':
+          $ref: '#/components/responses/404'
+        '409':
+          $ref: '#/components/responses/409'
+        '500':
+          $ref: '#/components/responses/500'
+      summary: Mets à jour une invitation à une souscription par ID
+      security:
+        - toaztr_auth:
+            - subscriptions/write
+    delete:
+      operationId: deleteSubscriptionInvite
+      tags:
+        - invite
+      description: Supprime une invitation à une souscription par ID
+      parameters:
+        - $ref: '#/components/parameters/IfMatch'
+      responses:
+        '200':
+          description: OK
+        '400':
+          $ref: '#/components/responses/400'
+        '403':
+          $ref: '#/components/responses/403'
+        '404':
+          $ref: '#/components/responses/404'
+        '409':
+          $ref: '#/components/responses/409'
+        '500':
+          $ref: '#/components/responses/500'
+      summary: Supprime une invitation à une souscription par ID
+      security:
+        - toaztr_auth:
+            - susbcriptions/write
+  /v1/license/redeem:
+    post:
+      operationId: postLicenseRedeem
+      tags:
+        - invite
+      description: Utilise un code
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ../models/LicenseRedeemParameters.v1.json
+      responses:
+        '201':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LicenseResponse'
+        '400':
+          $ref: '#/components/responses/400'
+        '403':
+          $ref: '#/components/responses/403'
+        '500':
+          $ref: '#/components/responses/500'
+      summary: Utilise un code
+      security:
+        - toaztr_auth:
+            - license/write
   /v1/license:
     get:
       operationId: getLicense
@@ -1576,7 +1790,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/SubscriptionItemResourceResponse'
+                $ref: '#/components/schemas/LicenseResponse'
         '400':
           $ref: '#/components/responses/400'
         '403':
@@ -1588,7 +1802,7 @@ paths:
       summary: Retourne la license en cours de l'utilisateur
       security:
         - toaztr_auth:
-          - infos
+          - license/read
       tags:
         - license
   /v1/license/members:
@@ -1611,7 +1825,7 @@ paths:
       description: Liste les membres associés à la license de l'utilisateur
       security:
         - toaztr_auth:
-          - infos
+          - license/read
       parameters: 
         - $ref: '#/components/parameters/page[size]'
         - $ref: '#/components/parameters/page[cursor]'

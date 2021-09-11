@@ -1,8 +1,6 @@
-name: lint
+name: pr-preview
 
 on:
-  push:
-    branches: [ master ]
   pull_request:
     branches: [ master ]
 
@@ -20,4 +18,8 @@ jobs:
         path: ~/.npm
         key: ${{ runner.OS }}-node-${{ hashFiles('deploy/package-lock.json') }}
     - run: npm ci
-    - run: npx openapi lint reference/*.yaml
+    - run: npx redoc-cli bundle reference/toaztr.v1.yaml
+    - uses: actions/upload-artifact@v2
+      with:
+        name: specs
+        path: redoc-static.html

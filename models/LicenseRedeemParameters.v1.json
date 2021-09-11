@@ -1,0 +1,14 @@
+{
+  "title": "LicenseRedeemParameters",
+  "description": "Paramètres pour l'utilisation d'un code",
+  "type": "object",
+  "properties": {
+    "code": {
+      "type": "string",
+      "description": "Code à utiliser"
+    }
+  },
+  "required": [
+    "code"
+  ]
+}
