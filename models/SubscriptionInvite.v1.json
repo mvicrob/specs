@@ -1,0 +1,31 @@
+{
+  "title": "SubscriptionInvite",
+  "description": "Invitation dans une souscription Toaztr",
+  "type": "object",
+  "properties": {
+    "code": {
+      "type": "string",
+      "description": "Code d'invitation."
+    },
+    "expiry_date": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date d'expiration."
+    },
+    "quantity": {
+      "type": "integer",
+      "description": "Nombre d'utilisation maximum du code.",
+      "minimum": 1,
+      "default": 1
+    },
+    "used": {
+      "type": "integer",
+      "description": "Nombre d'utilisation actuelle du code.",
+      "minimum": 0,
+      "default": 0
+    }
+  },
+  "required": [
+    "code"
+  ]
+}
