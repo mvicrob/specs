@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.59.0](https://www.github.com/Toaztr/specs/compare/v0.58.1...v0.59.0) (2021-09-12)
+
+
+### Features
+
+* Additional license redeem parameters ([2736d96](https://www.github.com/Toaztr/specs/commit/2736d9669d8142975058b22cfe9c8589bc04db3e))
+
 ### [0.58.1](https://www.github.com/Toaztr/specs/compare/v0.58.0...v0.58.1) (2021-09-12)
 
 
