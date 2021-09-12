@@ -1,14 +1,33 @@
 {
   "title": "LicenseRedeemParameters",
-  "description": "Paramètres pour l'utilisation d'un code",
+  "description": "Paramètres pour l'utilisation d'un code.",
   "type": "object",
   "properties": {
+    "subscription": {
+      "type": "object",
+      "description": "Référence à la souscription.",
+      "properties": {
+        "owner": {
+          "type": "string",
+          "description": "Utilisateur à qui appartient la souscription."
+        },
+        "id": {
+          "type": "string",
+          "description": "Identifiant unique de la souscription."
+        }
+      },
+      "required": [
+        "owner",
+        "id"
+      ]
+    },
     "code": {
       "type": "string",
-      "description": "Code à utiliser"
+      "description": "Code à utiliser."
     }
   },
   "required": [
+    "subscription",
     "code"
   ]
 }
