@@ -1752,34 +1752,6 @@ paths:
       security:
         - toaztr_auth:
             - susbcriptions/write
-  /v1/license/redeem:
-    post:
-      operationId: postLicenseRedeem
-      tags:
-        - invite
-      description: Utilise un code
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: ../models/LicenseRedeemParameters.v1.json
-      responses:
-        '201':
-          description: OK
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/LicenseResponse'
-        '400':
-          $ref: '#/components/responses/400'
-        '403':
-          $ref: '#/components/responses/403'
-        '500':
-          $ref: '#/components/responses/500'
-      summary: Utilise un code
-      security:
-        - toaztr_auth:
-            - license/write
   /v1/license:
     get:
       operationId: getLicense
@@ -1832,6 +1804,34 @@ paths:
         - $ref: '#/components/parameters/ordering'
       tags:
         - license
+  /v1/license/redeem:
+    post:
+      operationId: postLicenseRedeem
+      tags:
+        - license
+      description: Utilise un code
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ../models/LicenseRedeemParameters.v1.json
+      responses:
+        '201':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LicenseResponse'
+        '400':
+          $ref: '#/components/responses/400'
+        '403':
+          $ref: '#/components/responses/403'
+        '500':
+          $ref: '#/components/responses/500'
+      summary: Utilise un code
+      security:
+        - toaztr_auth:
+            - license/write
 servers:
   - description: Serveur de production
     url: 'https://api.toaztr.com'
