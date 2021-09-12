@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.58.0](https://www.github.com/Toaztr/specs/compare/v0.57.1...v0.58.0) (2021-09-12)
+
+
+### Features
+
+* Adds invites ([4738688](https://www.github.com/Toaztr/specs/commit/47386882a40af17e6cf9eef58914ad1b15e401ed))
+* Adds license endpoints ([12ec070](https://www.github.com/Toaztr/specs/commit/12ec0701c91cd5954901eb64e4a917c7a7906e64))
+
 ### [0.57.1](https://www.github.com/Toaztr/specs/compare/v0.57.0...v0.57.1) (2021-09-05)
 
 
