@@ -1817,11 +1817,7 @@ paths:
               $ref: ../models/LicenseRedeemParameters.v1.json
       responses:
         '201':
-          description: OK
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/LicenseResponse'
+          description: Created
         '400':
           $ref: '#/components/responses/400'
         '403':
