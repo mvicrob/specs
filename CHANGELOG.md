@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.59.2](https://www.github.com/Toaztr/specs/compare/v0.59.1...v0.59.2) (2021-09-12)
+
+
+### Bug Fixes
+
+* Remove return value of redeem ([9fb3b46](https://www.github.com/Toaztr/specs/commit/9fb3b46b9daa4684b870aa43d89c7484f43a4b55))
+
 ### [0.59.1](https://www.github.com/Toaztr/specs/compare/v0.59.0...v0.59.1) (2021-09-12)
 
 

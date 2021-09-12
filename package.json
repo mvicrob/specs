@@ -7,5 +7,5 @@
     "@redocly/openapi-cli": "1.0.0-beta.58",
     "redoc-cli": "0.12.3"
   },
-  "version": "0.59.1"
+  "version": "0.59.2"
 }
