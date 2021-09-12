@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.59.1](https://www.github.com/Toaztr/specs/compare/v0.59.0...v0.59.1) (2021-09-12)
+
+
+### Bug Fixes
+
+* Adds invite in redeem parameters ([769947d](https://www.github.com/Toaztr/specs/commit/769947dd81696fa3ac0cda2c5852fa2a3452c350))
+
 ## [0.59.0](https://www.github.com/Toaztr/specs/compare/v0.58.1...v0.59.0) (2021-09-12)
 
 
