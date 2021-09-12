@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.58.1](https://www.github.com/Toaztr/specs/compare/v0.58.0...v0.58.1) (2021-09-12)
+
+
+### Bug Fixes
+
+* move redeem to license from invite ([fa2aebd](https://www.github.com/Toaztr/specs/commit/fa2aebdc6a02d95962262724e13f7d2888c056ab))
+
 ## [0.58.0](https://www.github.com/Toaztr/specs/compare/v0.57.1...v0.58.0) (2021-09-12)
 
 
