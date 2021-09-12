@@ -21,6 +21,10 @@
         "id"
       ]
     },
+    "invite": {
+      "type": "string",
+      "description": "Identifiant unique de l'invitation."
+    },
     "code": {
       "type": "string",
       "description": "Code à utiliser."
@@ -28,6 +32,7 @@
   },
   "required": [
     "subscription",
+    "invite", 
     "code"
   ]
 }
