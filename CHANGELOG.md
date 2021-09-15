@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.61.0](https://www.github.com/Toaztr/specs/compare/v0.60.0...v0.61.0) (2021-09-15)
+
+
+### Features
+
+* Adds DEL/POST subscriptionItem and DEL license ([4419a11](https://www.github.com/Toaztr/specs/commit/4419a11197bc7cacc4d5bc660a703563624a3eee))
+
 ## [0.60.0](https://www.github.com/Toaztr/specs/compare/v0.59.2...v0.60.0) (2021-09-15)
 
 
