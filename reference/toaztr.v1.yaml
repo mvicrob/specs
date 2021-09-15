@@ -1545,6 +1545,36 @@ paths:
   '/v1/subscriptions/{subscriptionId}/items':
     parameters:
       - $ref: '#/components/parameters/subscriptionId'
+    post:
+      operationId: postSubscriptionItem
+      tags:
+        - subscription
+      description: Crée un item de souscription
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ../models/SubscriptionItem.v1.json
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SubscriptionItemResourceResponse'
+          headers:
+            ETag:
+              $ref: '#/components/headers/ETag'
+        '400':
+          $ref: '#/components/responses/400'
+        '403':
+          $ref: '#/components/responses/403'
+        '500':
+          $ref: '#/components/responses/500'
+      summary: Crée un item de souscription
+      security:
+        - toaztr_auth:
+            - subscriptions/write
     get:
       summary: Liste les items de souscription
       operationId: getSubscriptionItems
@@ -1602,6 +1632,30 @@ paths:
             - subscriptions/read
       tags:
         - subscription
+    delete:
+      operationId: deleteSubscriptionItem
+      tags:
+        - subscription
+      description: Supprime un item de souscription par ID
+      parameters:
+        - $ref: '#/components/parameters/IfMatch'
+      responses:
+        '200':
+          description: OK
+        '400':
+          $ref: '#/components/responses/400'
+        '403':
+          $ref: '#/components/responses/403'
+        '404':
+          $ref: '#/components/responses/404'
+        '409':
+          $ref: '#/components/responses/409'
+        '500':
+          $ref: '#/components/responses/500'
+      summary: Supprime un item de souscription par ID
+      security:
+        - toaztr_auth:
+            - susbcriptions/write
   '/v1/subscriptions/{subscriptionId}/invites':
     parameters:
       - $ref: '#/components/parameters/subscriptionId'
@@ -1777,6 +1831,26 @@ paths:
           - license/read
       tags:
         - license
+    delete:
+      operationId: deleteLicense
+      tags:
+        - license
+      description: Supprime la license en cours de l'utilisateur
+      responses:
+        '200':
+          description: OK
+        '400':
+          $ref: '#/components/responses/400'
+        '404':
+          $ref: '#/components/responses/404'
+        '409':
+          $ref: '#/components/responses/409'
+        '500':
+          $ref: '#/components/responses/500'
+      summary: Supprime la license en cours de l'utilisateur
+      security:
+        - toaztr_auth:
+            - license/write
   /v1/license/members:
     get:
       summary: Liste les membres associés à la license de l'utilisateur
