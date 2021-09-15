@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.60.0](https://www.github.com/Toaztr/specs/compare/v0.59.2...v0.60.0) (2021-09-15)
+
+
+### Features
+
+* Adds APIKEY subscription item type ([fed78c8](https://www.github.com/Toaztr/specs/commit/fed78c8bd5998fa095ad08b80fcfca9588cbc142))
+
 ### [0.59.2](https://www.github.com/Toaztr/specs/compare/v0.59.1...v0.59.2) (2021-09-12)
 
 
