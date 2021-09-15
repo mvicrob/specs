@@ -3,7 +3,8 @@
   "title": "SubscriptionType",
   "enum": [
     "SOLO",
-    "TEAM"
+    "TEAM",
+    "START"
   ],
   "description": "Type de souscription."
 }
