@@ -223,6 +223,11 @@ components:
         secret:
           type: string
           description: Secret
+      required:
+        - own
+        - sub
+        - key
+        - secret
     TokenHash:
       title: TokenHash
       type: object
@@ -239,6 +244,10 @@ components:
         hash:
           type: string
           description: Hash du code du token associé
+      required:
+        - alg
+        - it
+        - hash
     Resource:
       title: Resource
       type: object
