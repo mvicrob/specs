@@ -206,6 +206,39 @@ components:
         type: string
       description: Curseur à partir duquel la prochaine page débute
   schemas:
+    Token:
+      title: Token
+      type: object
+      description: Un token
+      properties:
+        own:
+          type: string
+          description: Utilisateur à qui appartient la souscription
+        sub:
+          type: string
+          description: Identifiant de la souscription
+        key:
+          type: string
+          description: Clé de l'objet associé au secret
+        secret:
+          type: string
+          description: Secret
+    TokenHash:
+      title: TokenHash
+      type: object
+      description: Le hash d'un Token
+      properties:
+        alg:
+          type: string 
+          description: Type d'algorithme
+          enum:
+            - pbkdf2-sha256
+        it:
+          type: number
+          description: Nombre d'itération
+        hash:
+          type: string
+          description: Hash du code du token associé
     Resource:
       title: Resource
       type: object
