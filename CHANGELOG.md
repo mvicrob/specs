@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.62.0](https://www.github.com/Toaztr/specs/compare/v0.61.0...v0.62.0) (2021-09-19)
+
+
+### Features
+
+* Adds Token ([d63ab40](https://www.github.com/Toaztr/specs/commit/d63ab40c9f159f300faa6c75e3ede4113165cb29))
+
 ## [0.61.0](https://www.github.com/Toaztr/specs/compare/v0.60.0...v0.61.0) (2021-09-15)
 
 
