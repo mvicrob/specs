@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.62.1](https://www.github.com/Toaztr/specs/compare/v0.62.0...v0.62.1) (2021-09-19)
+
+
+### Bug Fixes
+
+* make fields mandatory in Token and TokenHash ([f6aa1c9](https://www.github.com/Toaztr/specs/commit/f6aa1c9d89cfa14623cded3cba4bddfa5202660f))
+
 ## [0.62.0](https://www.github.com/Toaztr/specs/compare/v0.61.0...v0.62.0) (2021-09-19)
 
 
