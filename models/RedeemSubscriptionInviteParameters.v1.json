@@ -1,0 +1,14 @@
+{
+  "title": "RedeemSubscriptionInviteParameters",
+  "description": "Paramètres pour l'utilisation d'une invitation.",
+  "type": "object",
+  "properties": {
+    "token": {
+      "type": "string",
+      "description": "Invitation à utiliser."
+    }
+  },
+  "required": [
+    "token"
+  ]
+}
