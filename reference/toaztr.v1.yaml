@@ -1848,6 +1848,30 @@ paths:
       security:
         - toaztr_auth:
             - susbcriptions/write
+  /v1/redeem-subscription-invite:
+    post:
+      operationId: redeemSubscriptionInvite
+      tags:
+        - invite
+      description: Utilise une invitation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ../models/RedeemSubscriptionInviteParameters.v1.json
+      responses:
+        '201':
+          description: Created
+        '400':
+          $ref: '#/components/responses/400'
+        '403':
+          $ref: '#/components/responses/403'
+        '500':
+          $ref: '#/components/responses/500'
+      summary: Utilise une invitation
+      security:
+        - toaztr_auth:
+            - subscriptions/write
   /v1/license:
     get:
       operationId: getLicense
@@ -1920,30 +1944,6 @@ paths:
         - $ref: '#/components/parameters/ordering'
       tags:
         - license
-  /v1/license/redeem:
-    post:
-      operationId: postLicenseRedeem
-      tags:
-        - license
-      description: Utilise un code
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: ../models/LicenseRedeemParameters.v1.json
-      responses:
-        '201':
-          description: Created
-        '400':
-          $ref: '#/components/responses/400'
-        '403':
-          $ref: '#/components/responses/403'
-        '500':
-          $ref: '#/components/responses/500'
-      summary: Utilise un code
-      security:
-        - toaztr_auth:
-            - license/write
 servers:
   - description: Serveur de production
     url: 'https://api.toaztr.com'
