@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.63.0](https://www.github.com/Toaztr/specs/compare/v0.62.1...v0.63.0) (2021-09-20)
+
+
+### Features
+
+* Adds redeem of subscription invite ([d60cfb9](https://www.github.com/Toaztr/specs/commit/d60cfb9ee4446cf4645e86b33ac2f8d1df316ad1))
+
 ### [0.62.1](https://www.github.com/Toaztr/specs/compare/v0.62.0...v0.62.1) (2021-09-19)
 
 
