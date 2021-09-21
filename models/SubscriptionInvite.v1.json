@@ -3,9 +3,13 @@
   "description": "Invitation dans une souscription Toaztr",
   "type": "object",
   "properties": {
-    "code": {
+    "name": {
       "type": "string",
-      "description": "Code d'invitation."
+      "description": "Nom de l'invitation."
+    },
+    "hash": {
+      "type": "string",
+      "description": "Hash de l'invitation."
     },
     "expiry_date": {
       "type": "string",
