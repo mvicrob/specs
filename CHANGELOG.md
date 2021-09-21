@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.65.0](https://www.github.com/Toaztr/specs/compare/v0.64.0...v0.65.0) (2021-09-21)
+
+
+### Features
+
+* adds name to subscription invitation ([0ea37c5](https://www.github.com/Toaztr/specs/commit/0ea37c5742beae725d06c0f176212d074f29b5c8))
+
 ## [0.64.0](https://www.github.com/Toaztr/specs/compare/v0.63.0...v0.64.0) (2021-09-21)
 
 
