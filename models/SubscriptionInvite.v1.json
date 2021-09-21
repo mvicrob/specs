@@ -30,6 +30,6 @@
     }
   },
   "required": [
-    "code"
+    "hash"
   ]
 }
