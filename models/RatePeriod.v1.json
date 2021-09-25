@@ -1,0 +1,22 @@
+{
+  "title": "RatePeriod",
+  "type": "object",
+  "properties": {
+    "rate": {
+      "description": "Taux annuel.",
+      "minimum": 0,
+      "type": "number"
+    },
+    "period_start": {
+      "description": "Indice de départ de la période durant laquelle le taux est appliqué (l'indice du premier mois est 1).",
+      "minimum": 1,
+      "type": "integer"
+    },
+    "period_end": {
+      "description": "Indice de fin de la période durant laquelle le taux est appliqué.",
+      "minimum": 1,
+      "type": "integer"
+    }
+  },
+  "description": "Dans le cadre d'un prêt à taux variable, période durant la quelle le taux annuel est constant (le taux annuel variant d'une période à l'autre)"
+}
