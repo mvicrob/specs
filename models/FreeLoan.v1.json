@@ -16,6 +16,13 @@
       "minimum": 0,
       "type": "number"
     },
+    "yearly_rates": {
+      "description": "Taux d'intérêt annuels en %, dans le cadre d'un prêt à taux variable. Mettre 2.1 pour 2.1% par exemple.",
+      "type": "array",
+      "items": {
+        "$ref": "./RatePeriod.v1.json"
+      }
+    },
     "max_duration_months": {
       "description": "Durée maximale du prêt, en mois.",
       "minimum": 0,
