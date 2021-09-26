@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.66.0](https://www.github.com/Toaztr/specs/compare/v0.65.0...v0.66.0) (2021-09-26)
+
+
+### Features
+
+* Add RatesPeriod ([0455b0a](https://www.github.com/Toaztr/specs/commit/0455b0aa929f33dd3ace0f17a0701d4243926292))
+
 ## [0.65.0](https://www.github.com/Toaztr/specs/compare/v0.64.0...v0.65.0) (2021-09-21)
 
 
