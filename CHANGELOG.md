@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.66.1](https://www.github.com/Toaztr/specs/compare/v0.66.0...v0.66.1) (2021-09-26)
+
+
+### Bug Fixes
+
+* no quantity for subscription checkout ([145bbaa](https://www.github.com/Toaztr/specs/commit/145bbaa013b2424785c1967c67352d2b79a31f16))
+
 ## [0.66.0](https://www.github.com/Toaztr/specs/compare/v0.65.0...v0.66.0) (2021-09-26)
 
 
