@@ -1,5 +1,13 @@
 # Changelog
 
+### [0.66.2](https://www.github.com/Toaztr/specs/compare/v0.66.1...v0.66.2) (2021-09-27)
+
+
+### Bug Fixes
+
+* Adds MASTER source to subscription ([fb7558c](https://www.github.com/Toaztr/specs/commit/fb7558c2846e95bce093298534a4ce9dfe94684a))
+* Adds source to subscription ([b6a85cf](https://www.github.com/Toaztr/specs/commit/b6a85cffe58d5579f3af711e06216379ca796cf1))
+
 ### [0.66.1](https://www.github.com/Toaztr/specs/compare/v0.66.0...v0.66.1) (2021-09-26)
 
 
