@@ -14,6 +14,14 @@
         "CLOSED"
       ]
     },
+    "source": {
+      "type": "string",
+      "description": "Système qui a créé cette souscription.",
+      "enum": [
+        "STRIPE",
+        "MANUAL"
+      ]
+    },
     "quantity": {
       "type": "integer",
       "description": "Nombre d'items inclus dans la souscription.",
@@ -30,6 +38,7 @@
   "required": [
     "type",
     "status",
+    "source",
     "quantity",
     "used"
   ]
