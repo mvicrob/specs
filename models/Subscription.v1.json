@@ -19,7 +19,8 @@
       "description": "Système qui a créé cette souscription.",
       "enum": [
         "STRIPE",
-        "MANUAL"
+        "MANUAL",
+        "MASTER"
       ]
     },
     "quantity": {
