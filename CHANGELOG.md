@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.68.0](https://www.github.com/Toaztr/specs/compare/v0.67.0...v0.68.0) (2021-09-29)
+
+
+### Features
+
+* Adds scopes to subscriptions ([eda9aec](https://www.github.com/Toaztr/specs/commit/eda9aecfb2492be94039f0eae19bdb3502f32dc5))
+
 ## [0.67.0](https://www.github.com/Toaztr/specs/compare/v0.66.2...v0.67.0) (2021-09-29)
 
 
