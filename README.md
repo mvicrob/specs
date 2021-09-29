@@ -9,6 +9,8 @@
 
 #### - Prêts amortissable classiques
 #### - Prêts réglementés
+#### - Prêts Grandioz
+#### - Prêts à taux variable
 #### - Assurances
 #### - Garanties
 #### - Appels de fonds
