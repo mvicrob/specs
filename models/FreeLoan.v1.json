@@ -1,7 +1,7 @@
 {
   "type": "object",
   "title": "FreeLoan",
-  "description": "Prêt libre: prêt bancaire classique à amortissement. \n\nIl n'est pas nécessaire de préciser le montant: le moteur de calcul le déterminera de façon optimale en fonction des postes de dépense du projet. Le montant ne doit être précisé que si celui-ci est fixé (par la banque, pour des contraintes légale, etc...).\n\nEn plus des caractéristiques habituelles (taux, durée, assurance et garantie), des caractéristiques d'amortissement peuvent être précisées si nécessaire.",
+  "description": "Prêt libre: prêt bancaire classique à amortissement, à taux fixe ou variable. \n\nIl n'est pas nécessaire de préciser le montant: le moteur de calcul le déterminera de façon optimale en fonction des postes de dépense du projet. Le montant ne doit être précisé que si celui-ci est fixé (par la banque, pour des contraintes légale, etc...).\n\nEn plus des caractéristiques habituelles (taux, durée, assurance et garantie), des caractéristiques d'amortissement peuvent être précisées si nécessaire.",
   "properties": {
     "type": {
       "type": "string",
@@ -11,7 +11,7 @@
       ]
     },
     "yearly_rate": {
-      "description": "Taux d'intérêt annuel en %. Mettre 2.1 pour 2.1% par exemple.",
+      "description": "Taux d'intérêt annuel en %. Mettre 2.1 pour 2.1% par exemple. Au moins l'un de yearly_rate (dans le cas d'un prêt à taux constant) ou yearly_rates (dans le cas d'un prêt à taux variable) doit être précisé.",
       "maximum": 100,
       "minimum": 0,
       "type": "number"
@@ -68,7 +68,6 @@
   },
   "required": [
     "type",
-    "yearly_rate",
     "max_duration_months"
   ]
 }

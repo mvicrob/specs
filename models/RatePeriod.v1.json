@@ -1,6 +1,7 @@
 {
   "title": "RatePeriod",
   "type": "object",
+  "description": "Dans le cadre d'un prêt à taux variable, période durant la quelle le taux annuel est constant (le taux annuel variant d'une période à l'autre).",
   "properties": {
     "rate": {
       "description": "Taux annuel.",
@@ -18,5 +19,9 @@
       "type": "integer"
     }
   },
-  "description": "Dans le cadre d'un prêt à taux variable, période durant la quelle le taux annuel est constant (le taux annuel variant d'une période à l'autre)"
+  "required": [
+    "rate",
+    "period_start",
+    "period_end"
+  ]
 }
