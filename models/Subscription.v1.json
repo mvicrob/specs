@@ -16,12 +16,19 @@
     },
     "source": {
       "type": "string",
-      "description": "Système qui a créé cette souscription.",
+      "description": "Système qui a créé la souscription.",
       "enum": [
         "STRIPE",
         "MANUAL",
         "MASTER"
       ]
+    },
+    "scopes": {
+      "description": "Scopes authorisés pour la souscription.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
     },
     "quantity": {
       "type": "integer",
@@ -40,6 +47,7 @@
     "type",
     "status",
     "source",
+    "scopes",
     "quantity",
     "used"
   ]
