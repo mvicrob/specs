@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.67.0](https://www.github.com/Toaztr/specs/compare/v0.66.2...v0.67.0) (2021-09-29)
+
+
+### Features
+
+* yearly_rate and yearly_rates both optional ([394cc66](https://www.github.com/Toaztr/specs/commit/394cc66e588af19891554763578d099fa5730acb))
+
 ### [0.66.2](https://www.github.com/Toaztr/specs/compare/v0.66.1...v0.66.2) (2021-09-27)
 
 
