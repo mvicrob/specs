@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.70.0](https://www.github.com/Toaztr/specs/compare/v0.69.0...v0.70.0) (2021-09-30)
+
+
+### Features
+
+* yearly rate no more mandatory ([cbc4801](https://www.github.com/Toaztr/specs/commit/cbc48015b392276eca782af138e519aa90c2b493))
+
 ## [0.69.0](https://www.github.com/Toaztr/specs/compare/v0.68.0...v0.69.0) (2021-09-30)
 
 
