@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.69.0](https://www.github.com/Toaztr/specs/compare/v0.68.0...v0.69.0) (2021-09-30)
+
+
+### Features
+
+* typo + rates output improvement ([612164f](https://www.github.com/Toaztr/specs/commit/612164f86f7dbcfe0783adcb6f3e6ab47c0ebd14))
+
 ## [0.68.0](https://www.github.com/Toaztr/specs/compare/v0.67.0...v0.68.0) (2021-09-29)
 
 
