@@ -19,7 +19,7 @@
       "type": "object",
       "properties": {
         "other_expenses": {
-          "description": "Montant des éventuelles autres dépenses à diminuer du budget. Ces dépenses seront exclus du calcul des frais de noataire.",
+          "description": "Montant des éventuelles autres dépenses à diminuer du budget. Ces dépenses seront exclus du calcul des frais de notaire.",
           "minimum": 0,
           "type": "number"
         }

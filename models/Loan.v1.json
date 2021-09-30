@@ -15,9 +15,17 @@
       ]
     },
     "yearly_rate": {
-      "description": "Taux d'intérêt annuel.",
+      "description": "Taux d'intérêt annuel en %.",
+      "maximum": 100,
       "minimum": 0,
       "type": "number"
+    },
+    "yearly_rates": {
+      "description": "Taux d'intérêt annuels en %.",
+      "type": "array",
+      "items": {
+        "type": "number"
+      }
     },
     "duration_months": {
       "description": "Durée du prêt en mois.",
