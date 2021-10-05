@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.70.1](https://www.github.com/Toaztr/specs/compare/v0.70.0...v0.70.1) (2021-10-05)
+
+
+### Bug Fixes
+
+* Cosmetics of README and several fixes in CI ([d5d19df](https://www.github.com/Toaztr/specs/commit/d5d19dfa885ec89ea14be7e26050d86cbf4d68c0))
+
 ## [0.70.0](https://www.github.com/Toaztr/specs/compare/v0.69.0...v0.70.0) (2021-09-30)
 
 
