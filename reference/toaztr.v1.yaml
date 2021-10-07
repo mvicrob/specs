@@ -11,6 +11,9 @@ tags:
     description: Gestion des plans de financement dans un dossier client
   - name: simulation
     description: Gestion des simulations d'un plan de financement dans un dossier client
+  - name: transfer
+    x-displayName: transfert
+    description: Gestion des transferts
   - name: score
     description: Calcule le score d'un dossier emprunteur
   - name: standalone_simulation
@@ -40,6 +43,7 @@ x-tagGroups:
       - case
       - plan_parameters
       - simulation
+      - transfer
       - score
   - name: APIs de calcul
     tags:
@@ -68,18 +72,6 @@ components:
       type: oauth2
       description: Toaztr utilise [OAuth2](https://oauth.net/2/) afin de fournir une méthode simple et standard d'authorisation.
       flows:
-        clientCredentials:
-          tokenUrl: 'https://auth.toaztr.com/oauth2/token'
-          scopes:
-            cases/read: Accès en lecture aux dossiers
-            cases/write: Accès en écriture aux dossiers
-            cases/*: Accès complet aux dossiers
-            simulations/budget: Accès aux simulations de budget
-            simulations/funding: Accès aux simulations de financement
-            simulations/debt_consolidation: Accès aux simulations de consolidation de dette
-            simulations/pinel: Accès aux simulations pinel
-            simulations/*: Accès à toutes les simulations
-            scores/*: Accès au scoring
         authorizationCode:
           authorizationUrl: 'https://auth.toaztr.com/oauth2/authorize'
           tokenUrl: 'https://auth.toaztr.com/oauth2/token'
@@ -92,6 +84,9 @@ components:
             simulations/debt_consolidation: Accès aux simulations de consolidation de dette
             simulations/pinel: Accès aux simulations pinel
             simulations/*: Accès à toutes les simulations
+            transfers/read: Accès en lecture aux transferts
+            transfers/write: Accès en écriture aux transferts
+            transfers/*: Accès complet aux transferts
             scores/*: Accès au scoring
             subscriptions/read: Accès en lecture aux souscriptions
             subscriptions/write: Accès en écriture aux souscriptions
@@ -260,29 +255,26 @@ components:
         type:
           type: string
           description: Type de la resource
+          readOnly: true
         attributes:
           type: object
           description: Attributs de la resource
         meta:
           type: object
           description: Meta-données de la resource
+          readOnly: true
           properties:
             etag:
               type: string
               description: ETag de la resource
-              readOnly: true
             created_at:
               type: string
               format: date-time
               description: Date de création de la resource
-              readOnly: true
             last_updated_at:
               type: string
               format: date-time
               description: Date de dernière update de la resource
-              readOnly: true
-      required:
-        - type
     ErrorResponse:
       title: ErrorResponse
       type: object
@@ -339,12 +331,11 @@ components:
           properties:
             type:
               type: string
+              readOnly: true
               enum:
                 - CASE
             attributes:
               $ref: ../models/Case.v1.json
-          required:
-            - type
       description: Représente un dossier
     CaseResourceResponse:
       title: CaseResourceResponse
@@ -371,12 +362,11 @@ components:
           properties:
             type:
               type: string
+              readOnly: true
               enum:
                 - PARTNER
             attributes:
               $ref: ../models/Partner.v1.json
-          required:
-            - type
       description: Représente un partenaire
     PartnerResourceResponse:
       title: PartnerResourceResponse
@@ -403,12 +393,11 @@ components:
           properties:
             type:
               type: string
+              readOnly: true
               enum:
                 - PLAN_PARAMETERS
             attributes:
               $ref: ../models/PlanParameters.v1.json
-          required:
-            - type
       description: Représente les paramètres d'un plan de financement
     PlanParametersResourceResponse:
       title: PlanParametersResourceResponse
@@ -435,12 +424,11 @@ components:
           properties:
             type:
               type: string
+              readOnly: true
               enum:
                 - SIMULATION
             attributes:
               $ref: ../models/Simulation.v1.json
-          required:
-            - type
       description: Représente une simulation
     SimulationResourceResponse:
       title: SimulationResourceResponse
@@ -507,6 +495,37 @@ components:
       properties:
         data:
           $ref: ../models/FrenchIncomeTaxResults.v1.json
+    TransferResource:
+      title: TransferResource
+      allOf:
+        - $ref: '#/components/schemas/Resource'
+        - type: object
+          properties:
+            type:
+              type: string
+              readOnly: true
+              enum:
+                - TRANSFER
+            attributes:
+              $ref: ../models/Transfer.v1.json
+      description: Représente un transfert
+    TransferResourceResponse:
+      title: TransferResourceResponse
+      type: object
+      properties:
+        data:
+          $ref: '#/components/schemas/TransferResource'
+    TransferResourcePaginatedListResponse:
+      title: TransferResourcePaginatedListResponse
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/PaginatedResponse'
+        - type: object
+          properties:
+            data:
+              type: array
+              items:
+                $ref: '#/components/schemas/TransferResource'
     SubscriptionResource:
       title: SubscriptionResource
       allOf:
@@ -515,12 +534,11 @@ components:
           properties:
             type:
               type: string
+              readOnly: true
               enum:
                 - SUBSCRIPTION
             attributes:
               $ref: ../models/Subscription.v1.json
-          required:
-            - type
       description: Représente une souscription
     SubscriptionResourceResponse:
       title: SubscriptionResourceResponse
@@ -547,12 +565,11 @@ components:
           properties:
             type:
               type: string
+              readOnly: true
               enum:
                 - SUBSCRIPTION_ITEM
             attributes:
               $ref: ../models/SubscriptionItem.v1.json
-          required:
-            - type
       description: Représente un item de souscription
     SubscriptionItemResourceResponse:
       title: SubscriptionItemResourceResponse
@@ -579,12 +596,11 @@ components:
           properties:
             type:
               type: string
+              readOnly: true
               enum:
                 - SUBSCRIPTION_INVITE
             attributes:
               $ref: ../models/SubscriptionInvite.v1.json
-          required:
-            - type
       description: Représente une invitation à une souscription
     SubscriptionInviteResourceResponse:
       title: SubscriptionInviteResourceResponse
@@ -604,7 +620,6 @@ components:
               items:
                 $ref: '#/components/schemas/SubscriptionInviteResource'
     RedirectUrlResponse:
-      title: RedirectUrlResponse
       type: object
       properties:
         data:
@@ -967,16 +982,8 @@ paths:
         - plan_parameters
   '/v1/cases/{caseId}/plans-parameters/{planId}/simulations':
     parameters:
-      - schema:
-          type: string
-        name: caseId
-        in: path
-        required: true
-      - schema:
-          type: string
-        name: planId
-        in: path
-        required: true
+      - $ref: '#/components/parameters/caseId'
+      - $ref: '#/components/parameters/planId'
     post:
       summary: Crée une simulation
       operationId: postSimulation
@@ -1235,6 +1242,94 @@ paths:
       security:
         - toaztr_auth:
             - cases/write
+  /v1/transfers:
+    parameters: []
+    post:
+      operationId: postTransfer
+      tags:
+        - transfer
+      description: Crée un transfert
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ../models/Transfer.v1.json
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TransferResourceResponse'
+          headers:
+            ETag:
+              $ref: '#/components/headers/ETag'
+        '400':
+          $ref: '#/components/responses/400'
+        '403':
+          $ref: '#/components/responses/403'
+        '500':
+          $ref: '#/components/responses/500'
+      summary: Crée un transfert
+      security:
+        - toaztr_auth:
+            - transfers/write
+    get:
+      operationId: getTransfers
+      tags:
+        - transfer
+      description: Liste les transferts
+      parameters:
+        - $ref: '#/components/parameters/page[size]'
+        - $ref: '#/components/parameters/page[cursor]'
+        - $ref: '#/components/parameters/ordering'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TransferResourcePaginatedListResponse'
+        '400':
+          $ref: '#/components/responses/400'
+        '403':
+          $ref: '#/components/responses/403'
+        '500':
+          $ref: '#/components/responses/500'
+      summary: Liste les transferts
+      security:
+        - toaztr_auth:
+            - transfers/read
+  '/v1/transfers/{id}':
+    parameters:
+      - $ref: '#/components/parameters/id'
+    get:
+      operationId: getTransferById
+      tags:
+        - transfer
+      description: Retourne un transfert par ID
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TransferResourceResponse'
+          headers:
+            ETag:
+              $ref: '#/components/headers/ETag'
+        '400':
+          $ref: '#/components/responses/400'
+        '403':
+          $ref: '#/components/responses/403'
+        '404':
+          $ref: '#/components/responses/404'
+        '500':
+          $ref: '#/components/responses/500'
+      summary: Retourne un transfert par ID
+      security:
+        - toaztr_auth:
+            - transfers/read
   /v1/simulations/budget:
     parameters: []
     post:
