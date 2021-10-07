@@ -870,7 +870,7 @@ paths:
       operationId: transferCase
       tags:
         - case
-      description: Transfert un dossier complet vers une autre souscription
+      description: Transfère un dossier complet vers une autre souscription
       responses:
         '201':
           description: Created
@@ -887,7 +887,7 @@ paths:
           $ref: '#/components/responses/403'
         '500':
           $ref: '#/components/responses/500'
-      summary: Transfert un dossier complet
+      summary: Transfère un dossier complet
       security:
         - toaztr_auth:
             - cases/write
