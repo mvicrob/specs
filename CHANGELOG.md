@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.71.0](https://www.github.com/Toaztr/specs/compare/v0.70.0...v0.71.0) (2021-10-07)
+
+
+### Features
+
+* Adds import and transfer case endpoints ([25584b4](https://www.github.com/Toaztr/specs/commit/25584b498c2e3da30aaaaef1b4285432fdbc7ee8))
+* Adds transfers ([ca67d33](https://www.github.com/Toaztr/specs/commit/ca67d33efed719e0c28f0301d4e9c713810cbc9e))
+
+
+### Bug Fixes
+
+* Cosmetics of README and several fixes in CI ([d5d19df](https://www.github.com/Toaztr/specs/commit/d5d19dfa885ec89ea14be7e26050d86cbf4d68c0))
+
 ## [0.70.0](https://www.github.com/Toaztr/specs/compare/v0.69.0...v0.70.0) (2021-09-30)
 
 
