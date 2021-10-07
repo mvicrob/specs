@@ -11,6 +11,9 @@ tags:
     description: Gestion des plans de financement dans un dossier client
   - name: simulation
     description: Gestion des simulations d'un plan de financement dans un dossier client
+  - name: transfer
+    x-displayName: transfert
+    description: Gestion des transferts
   - name: score
     description: Calcule le score d'un dossier emprunteur
   - name: standalone_simulation
@@ -40,6 +43,7 @@ x-tagGroups:
       - case
       - plan_parameters
       - simulation
+      - transfer
       - score
   - name: APIs de calcul
     tags:
@@ -68,18 +72,6 @@ components:
       type: oauth2
       description: Toaztr utilise [OAuth2](https://oauth.net/2/) afin de fournir une méthode simple et standard d'authorisation.
       flows:
-        clientCredentials:
-          tokenUrl: 'https://auth.toaztr.com/oauth2/token'
-          scopes:
-            cases/read: Accès en lecture aux dossiers
-            cases/write: Accès en écriture aux dossiers
-            cases/*: Accès complet aux dossiers
-            simulations/budget: Accès aux simulations de budget
-            simulations/funding: Accès aux simulations de financement
-            simulations/debt_consolidation: Accès aux simulations de consolidation de dette
-            simulations/pinel: Accès aux simulations pinel
-            simulations/*: Accès à toutes les simulations
-            scores/*: Accès au scoring
         authorizationCode:
           authorizationUrl: 'https://auth.toaztr.com/oauth2/authorize'
           tokenUrl: 'https://auth.toaztr.com/oauth2/token'
@@ -92,6 +84,9 @@ components:
             simulations/debt_consolidation: Accès aux simulations de consolidation de dette
             simulations/pinel: Accès aux simulations pinel
             simulations/*: Accès à toutes les simulations
+            transfers/read: Accès en lecture aux transferts
+            transfers/write: Accès en écriture aux transferts
+            transfers/*: Accès complet aux transferts
             scores/*: Accès au scoring
             subscriptions/read: Accès en lecture aux souscriptions
             subscriptions/write: Accès en écriture aux souscriptions
@@ -500,34 +495,37 @@ components:
       properties:
         data:
           $ref: ../models/FrenchIncomeTaxResults.v1.json
-    FullPlanParametersResource:
-      title: FullPlanParametersResource
+    TransferResource:
+      title: TransferResource
       allOf:
-        - $ref: '#/components/schemas/PlanParametersResource'
+        - $ref: '#/components/schemas/Resource'
         - type: object
           properties:
-            relationships:
-              type: object
-              properties:
-                simulations:
-                  type: array
-                  items:
-                    $ref: '#/components/schemas/SimulationResource'
-      description: Représente les paramètres d'un plan de financement avec ses simulations associées
-    FullCaseResource:
-      title: FullCaseResource
+            type:
+              type: string
+              readOnly: true
+              enum:
+                - TRANSFER
+            attributes:
+              $ref: ../models/Transfer.v1.json
+      description: Représente un transfert
+    TransferResourceResponse:
+      title: TransferResourceResponse
+      type: object
+      properties:
+        data:
+          $ref: '#/components/schemas/TransferResource'
+    TransferResourcePaginatedListResponse:
+      title: TransferResourcePaginatedListResponse
+      type: object
       allOf:
-        - $ref: '#/components/schemas/CaseResource'
+        - $ref: '#/components/schemas/PaginatedResponse'
         - type: object
           properties:
-            relationships:
-              type: object
-              properties:
-                plan_parameters:
-                  type: array
-                  items: 
-                    $ref: '#/components/schemas/FullPlanParametersResource'
-      description: Représente un dossier complet
+            data:
+              type: array
+              items:
+                $ref: '#/components/schemas/TransferResource'
     SubscriptionResource:
       title: SubscriptionResource
       allOf:
@@ -827,67 +825,6 @@ paths:
         '500':
           $ref: '#/components/responses/500'
       summary: Supprime un dossier par ID
-      security:
-        - toaztr_auth:
-            - cases/write
-  /v1/cases/import:
-    parameters: []
-    post:
-      operationId: postFullCase
-      tags:
-        - case
-      description: Crée un dossier complet
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/FullCaseResource'
-      responses:
-        '201':
-          description: Created
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/CaseResourceResponse'
-          headers:
-            ETag:
-              $ref: '#/components/headers/ETag'
-        '400':
-          $ref: '#/components/responses/400'
-        '403':
-          $ref: '#/components/responses/403'
-        '500':
-          $ref: '#/components/responses/500'
-      summary: Crée un dossier complet
-      security:
-        - toaztr_auth:
-            - cases/write
-  '/v1/cases/{id}/transfer-to/{subscriptionId}':
-    parameters:
-      - $ref: '#/components/parameters/id'
-      - $ref: '#/components/parameters/subscriptionId'
-    post:
-      operationId: transferCase
-      tags:
-        - case
-      description: Transfère un dossier complet vers une autre souscription
-      responses:
-        '201':
-          description: Created
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/CaseResourceResponse'
-          headers:
-            ETag:
-              $ref: '#/components/headers/ETag'
-        '400':
-          $ref: '#/components/responses/400'
-        '403':
-          $ref: '#/components/responses/403'
-        '500':
-          $ref: '#/components/responses/500'
-      summary: Transfère un dossier complet
       security:
         - toaztr_auth:
             - cases/write
@@ -1305,6 +1242,94 @@ paths:
       security:
         - toaztr_auth:
             - cases/write
+  /v1/transfers:
+    parameters: []
+    post:
+      operationId: postTransfer
+      tags:
+        - transfer
+      description: Crée un transfert
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ../models/Transfer.v1.json
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TransferResourceResponse'
+          headers:
+            ETag:
+              $ref: '#/components/headers/ETag'
+        '400':
+          $ref: '#/components/responses/400'
+        '403':
+          $ref: '#/components/responses/403'
+        '500':
+          $ref: '#/components/responses/500'
+      summary: Crée un transfert
+      security:
+        - toaztr_auth:
+            - transfers/write
+    get:
+      operationId: getTransfers
+      tags:
+        - transfer
+      description: Liste les transferts
+      parameters:
+        - $ref: '#/components/parameters/page[size]'
+        - $ref: '#/components/parameters/page[cursor]'
+        - $ref: '#/components/parameters/ordering'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TransferResourcePaginatedListResponse'
+        '400':
+          $ref: '#/components/responses/400'
+        '403':
+          $ref: '#/components/responses/403'
+        '500':
+          $ref: '#/components/responses/500'
+      summary: Liste les transferts
+      security:
+        - toaztr_auth:
+            - transfers/read
+  '/v1/transfers/{id}':
+    parameters:
+      - $ref: '#/components/parameters/id'
+    get:
+      operationId: getTransferById
+      tags:
+        - transfer
+      description: Retourne un transfert par ID
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TransferResourceResponse'
+          headers:
+            ETag:
+              $ref: '#/components/headers/ETag'
+        '400':
+          $ref: '#/components/responses/400'
+        '403':
+          $ref: '#/components/responses/403'
+        '404':
+          $ref: '#/components/responses/404'
+        '500':
+          $ref: '#/components/responses/500'
+      summary: Retourne un transfert par ID
+      security:
+        - toaztr_auth:
+            - transfers/read
   /v1/simulations/budget:
     parameters: []
     post:

@@ -1,0 +1,41 @@
+{
+  "title": "CaseTransfer",
+  "description": "Opération de transfert d'un dossier.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string",
+      "description": "Type de transfert.",
+      "enum": [
+        "CASE"
+      ]
+    },
+    "case_id": {
+      "type": "string",
+      "description": "ID unique du dossier à transférer."
+    },
+    "subscription_id": {
+      "type": "string",
+      "description": "ID de la souscription de destination."
+    },
+    "include_plans_parameters": {
+      "type": "boolean",
+      "description": "Inclusion des plans de financements dans le transfert.",
+      "default": false
+    },
+    "include_simulations": {
+      "type": "boolean",
+      "description": "Inclusion des simulations dans le transfert.",
+      "default": false
+    },
+    "delete_after_completion": {
+      "type": "boolean",
+      "description": "Supprime le dossier de la souscription courante après l'avoir transféré dans la souscription de destination.",
+      "default": false
+    }
+  },
+  "required": [
+    "caseId",
+    "subscriptionId"
+  ]
+}
