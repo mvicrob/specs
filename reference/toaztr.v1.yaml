@@ -36,6 +36,8 @@ tags:
   - name: invite
     x-displayName: invitation
     description: Gestion des invitations aux souscriptions
+  - name: log
+    description: Accès aux requêtes associées d'une souscription
 x-tagGroups:
   - name: Gestion de dossiers
     tags:
@@ -56,6 +58,7 @@ x-tagGroups:
       - subscription
       - invite
       - license
+      - log
 info:
   contact:
     name: API Support
@@ -619,6 +622,31 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/SubscriptionInviteResource'
+    RequestLogResource:
+      title: RequestLogResource
+      allOf:
+        - $ref: '#/components/schemas/Resource'
+        - type: object
+          properties:
+            type:
+              type: string
+              readOnly: true
+              enum:
+                - REQUEST_LOG
+            attributes:
+              $ref: ../models/RequestLog.v1.json
+      description: Représente la trace d'une requête
+    RequestLogResourcePaginatedListResponse:
+      title: RequestLogResourcePaginatedListResponse
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/PaginatedResponse'
+        - type: object
+          properties:
+            data:
+              type: array
+              items:
+                $ref: '#/components/schemas/RequestLogResource'
     RedirectUrlResponse:
       type: object
       properties:
@@ -1943,6 +1971,35 @@ paths:
       security:
         - toaztr_auth:
             - susbcriptions/write
+  '/v1/subscriptions/{subscriptionId}/request-logs':
+    parameters:
+      - $ref: '#/components/parameters/subscriptionId'
+    get:
+      summary: Liste les requêtes associées à la souscription
+      operationId: getSubscriptionRequestLogs
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RequestLogResourcePaginatedListResponse'
+        '400':
+          $ref: '#/components/responses/400'
+        '403':
+          $ref: '#/components/responses/403'
+        '500':
+          $ref: '#/components/responses/500'
+      description: Liste les requêtes associées à la souscription
+      security:
+        - toaztr_auth:
+            - subscriptions/read
+      parameters:
+        - $ref: '#/components/parameters/page[size]'
+        - $ref: '#/components/parameters/page[cursor]'
+        - $ref: '#/components/parameters/ordering'
+      tags:
+        - log
   /v1/redeem-subscription-invite:
     post:
       operationId: redeemSubscriptionInvite
