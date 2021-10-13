@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.72.0](https://www.github.com/Toaztr/specs/compare/v0.71.0...v0.72.0) (2021-10-13)
+
+
+### Features
+
+* Adds RequestLogs for a subscription ([a3187be](https://www.github.com/Toaztr/specs/commit/a3187be6774bc58f88efad0672c1063696db847a))
+
 ## [0.71.0](https://www.github.com/Toaztr/specs/compare/v0.70.0...v0.71.0) (2021-10-07)
 
 
