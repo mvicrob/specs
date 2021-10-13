@@ -1,0 +1,35 @@
+{
+  "type": "object",
+  "title": "RequestLog",
+  "description": "Trace d'une requête.",
+  "properties": {
+    "timestamp": {
+      "description": "Date à laquelle la requête a été reçue.",
+      "type": "string",
+      "format": "date-time"
+    },
+    "method": {
+      "description": "Méthode HTTP utilisée.",
+      "type": "string",
+      "enum": [
+        "POST",
+        "PUT",
+        "DELETE"
+      ]
+    },
+    "uri": {
+      "description": "Identifiant unique de la resource.",
+      "type": "string"
+    },
+    "status": {
+      "description": "Status HTTP de retour.",
+      "type": "number"
+    }
+  },
+  "required": [
+    "timestamp",
+    "method",
+    "uri",
+    "status"
+  ]
+}
