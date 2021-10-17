@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.73.0](https://www.github.com/Toaztr/specs/compare/v0.72.0...v0.73.0) (2021-10-17)
+
+
+### Features
+
+* Adds name to subscription and allows PUT /name on subscription and subscriptionItem resources ([e7916c9](https://www.github.com/Toaztr/specs/commit/e7916c9a46e64c03bbba1f6a50988df0312b57e8))
+* Adds name to subscription and allows PUT /name on subscription and subscriptionItem resources ([b846413](https://www.github.com/Toaztr/specs/commit/b8464139cb26f6e8b9fba3abecef58055a72d2a5))
+* Adds PUT /name to change name of license ([6f8de98](https://www.github.com/Toaztr/specs/commit/6f8de981ddb8da19036aadc4b55ce656d0dbec5c))
+
 ## [0.72.0](https://www.github.com/Toaztr/specs/compare/v0.71.0...v0.72.0) (2021-10-13)
 
 
