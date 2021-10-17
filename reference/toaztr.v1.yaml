@@ -1707,6 +1707,45 @@ paths:
       security:
         - toaztr_auth:
             - subscriptions/write
+  '/v1/subscriptions/{id}/name':
+    parameters:
+      - $ref: '#/components/parameters/id'
+    put:
+      operationId: putSubscriptionName
+      tags:
+        - subscription
+      description: Mets à jour le nom d'une souscription
+      parameters:
+        - $ref: '#/components/parameters/IfMatch'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ../models/SetNameParameters.v1.json
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SubscriptionResourceResponse'
+          headers:
+            ETag:
+              $ref: '#/components/headers/ETag'
+        '400':
+          $ref: '#/components/responses/400'
+        '403':
+          $ref: '#/components/responses/403'
+        '404':
+          $ref: '#/components/responses/404'
+        '409':
+          $ref: '#/components/responses/409'
+        '500':
+          $ref: '#/components/responses/500'
+      summary: Mets à jour le nom d'une souscription
+      security:
+        - toaztr_auth:
+            - subscriptions/write
   '/v1/subscriptions/{subscriptionId}/items':
     parameters:
       - $ref: '#/components/parameters/subscriptionId'
@@ -1821,6 +1860,46 @@ paths:
       security:
         - toaztr_auth:
             - susbcriptions/write
+  '/v1/subscriptions/{subscriptionId}/items/{id}/name':
+    parameters:
+      - $ref: '#/components/parameters/id'
+      - $ref: '#/components/parameters/subscriptionId'
+    put:
+      operationId: putSubscriptionItemName
+      tags:
+        - subscription
+      description: Mets à jour le nom d'un item de souscription
+      parameters:
+        - $ref: '#/components/parameters/IfMatch'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ../models/SetNameParameters.v1.json
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SubscriptionItemResourceResponse'
+          headers:
+            ETag:
+              $ref: '#/components/headers/ETag'
+        '400':
+          $ref: '#/components/responses/400'
+        '403':
+          $ref: '#/components/responses/403'
+        '404':
+          $ref: '#/components/responses/404'
+        '409':
+          $ref: '#/components/responses/409'
+        '500':
+          $ref: '#/components/responses/500'
+      summary: Mets à jour le nom d'un item de souscription
+      security:
+        - toaztr_auth:
+            - subscriptions/write
   '/v1/subscriptions/{subscriptionId}/invites':
     parameters:
       - $ref: '#/components/parameters/subscriptionId'
@@ -2066,6 +2145,36 @@ paths:
         '500':
           $ref: '#/components/responses/500'
       summary: Supprime la license en cours de l'utilisateur
+      security:
+        - toaztr_auth:
+            - license/write
+  /v1/license/name:
+    put:
+      operationId: putLicenseName
+      tags:
+        - license
+      description: Mets à jour le nom d'une license
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ../models/SetNameParameters.v1.json
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LicenseResponse'
+        '400':
+          $ref: '#/components/responses/400'
+        '403':
+          $ref: '#/components/responses/403'
+        '404':
+          $ref: '#/components/responses/404'
+        '500':
+          $ref: '#/components/responses/500'
+      summary: Mets à jour le nom d'une license
       security:
         - toaztr_auth:
             - license/write

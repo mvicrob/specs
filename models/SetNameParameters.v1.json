@@ -1,0 +1,14 @@
+{
+  "type": "object",
+  "title": "SetNameParameters",
+  "description": "Paramètres utilisés pour changer le nom d'une resource.",
+  "properties": {
+    "name": {
+      "description": "Nom de la resource.",
+      "type": "string"
+    }
+  },
+  "required": [
+    "name"
+  ]
+}
