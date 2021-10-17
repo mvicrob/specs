@@ -6,6 +6,10 @@
     "type": {
       "$ref": "./SubscriptionType.v1.json"
     },
+    "name": {
+      "type": "string",
+      "description": "Nom de la souscription."
+    },
     "status": {
       "type": "string",
       "description": "Status de la souscription.",
