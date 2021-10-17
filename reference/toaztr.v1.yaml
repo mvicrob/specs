@@ -2148,6 +2148,36 @@ paths:
       security:
         - toaztr_auth:
             - license/write
+  /v1/license/name:
+    put:
+      operationId: putLicenseName
+      tags:
+        - license
+      description: Mets à jour le nom d'une license
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ../models/SetNameParameters.v1.json
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LicenseResponse'
+        '400':
+          $ref: '#/components/responses/400'
+        '403':
+          $ref: '#/components/responses/403'
+        '404':
+          $ref: '#/components/responses/404'
+        '500':
+          $ref: '#/components/responses/500'
+      summary: Mets à jour le nom d'une license
+      security:
+        - toaztr_auth:
+            - license/write
   /v1/license/members:
     get:
       summary: Liste les membres associés à la license de l'utilisateur
