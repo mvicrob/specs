@@ -3,6 +3,15 @@
   "description": "Souscription Toaztr",
   "type": "object",
   "properties": {
+    "source": {
+      "type": "string",
+      "description": "Système qui a créé la souscription.",
+      "enum": [
+        "STRIPE",
+        "MANUAL",
+        "MASTER"
+      ]
+    },
     "type": {
       "$ref": "./SubscriptionType.v1.json"
     },
@@ -23,15 +32,6 @@
       "format": "date-time",
       "description": "Date limite de validité."
     },
-    "source": {
-      "type": "string",
-      "description": "Système qui a créé la souscription.",
-      "enum": [
-        "STRIPE",
-        "MANUAL",
-        "MASTER"
-      ]
-    },
     "scopes": {
       "description": "Scopes authorisés pour la souscription.",
       "type": "array",
@@ -50,6 +50,12 @@
       "description": "Nombre d'items en utilisation.",
       "minimum": 0,
       "default": 0
+    },
+    "metered_items": {
+      "type": "array",
+      "items": {
+        "$ref": "./SubscriptionMeteredItem.v1.json"
+      }
     }
   },
   "required": [

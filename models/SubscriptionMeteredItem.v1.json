@@ -1,0 +1,26 @@
+{
+  "type": "object",
+  "title": "SubscriptionMeteredItem",
+  "description": "Critères de sélection des appels enregistrés.",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Nom de l'item"
+    },
+    "ref": {
+      "type": "string",
+      "description": "Référence de l'item."
+    },
+    "paths": {
+      "type": "array",
+      "items": {
+        "$ref": "./SubscriptionMeteredPath.v1.json"
+      }
+    }
+  },
+  "required": [
+    "name",
+    "ref",
+    "paths"
+  ]
+}
