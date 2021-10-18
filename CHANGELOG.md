@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.75.0](https://www.github.com/Toaztr/specs/compare/v0.74.0...v0.75.0) (2021-10-18)
+
+
+### Features
+
+* Adds UsageRecord in subscription ([8a2c5eb](https://www.github.com/Toaztr/specs/commit/8a2c5eb431e197350c6ac265773fb7c97353bf11))
+
 ## [0.74.0](https://www.github.com/Toaztr/specs/compare/v0.73.0...v0.74.0) (2021-10-18)
 
 
