@@ -14,8 +14,6 @@ tags:
   - name: transfer
     x-displayName: transfert
     description: Gestion des transferts
-  - name: score
-    description: Calcule le score d'un dossier emprunteur
   - name: standalone_simulation
     x-displayName: simulation
     description: Calcule un plan de financement complet relatif à un projet
@@ -36,8 +34,12 @@ tags:
   - name: invite
     x-displayName: invitation
     description: Gestion des invitations aux souscriptions
-  - name: log
+  - name: request_log
+    x-displayName: trace
     description: Accès aux requêtes associées d'une souscription
+  - name: usage_record
+    x-displayName: utilisation
+    description: Accès aux enregistrements de l'utilistaion d'une souscription
 x-tagGroups:
   - name: Gestion de dossiers
     tags:
@@ -46,19 +48,19 @@ x-tagGroups:
       - plan_parameters
       - simulation
       - transfer
-      - score
   - name: APIs de calcul
     tags:
       - standalone_simulation
       - standalone_score
       - notary
       - income_tax
-  - name: Administration
+  - name: Gestion des souscriptions
     tags:
       - subscription
       - invite
       - license
-      - log
+      - request_log
+      - usage_record
 info:
   contact:
     name: API Support
@@ -98,12 +100,6 @@ components:
             license/write: Accès en écriture aux informations de license
             license/*: Accès complet aux informations de license
   responses:
-    '303':
-      description: See Other
-      headers:
-        Location:
-          schema:
-            type: string
     '400':
       description: Bad Request
       content:
@@ -255,10 +251,6 @@ components:
           type: string
           description: ID unique de la resource
           readOnly: true
-        type:
-          type: string
-          description: Type de la resource
-          readOnly: true
         attributes:
           type: object
           description: Attributs de la resource
@@ -332,11 +324,6 @@ components:
         - $ref: '#/components/schemas/Resource'
         - type: object
           properties:
-            type:
-              type: string
-              readOnly: true
-              enum:
-                - CASE
             attributes:
               $ref: ../models/Case.v1.json
       description: Représente un dossier
@@ -363,11 +350,6 @@ components:
         - $ref: '#/components/schemas/Resource'
         - type: object
           properties:
-            type:
-              type: string
-              readOnly: true
-              enum:
-                - PARTNER
             attributes:
               $ref: ../models/Partner.v1.json
       description: Représente un partenaire
@@ -394,11 +376,6 @@ components:
         - $ref: '#/components/schemas/Resource'
         - type: object
           properties:
-            type:
-              type: string
-              readOnly: true
-              enum:
-                - PLAN_PARAMETERS
             attributes:
               $ref: ../models/PlanParameters.v1.json
       description: Représente les paramètres d'un plan de financement
@@ -425,11 +402,6 @@ components:
         - $ref: '#/components/schemas/Resource'
         - type: object
           properties:
-            type:
-              type: string
-              readOnly: true
-              enum:
-                - SIMULATION
             attributes:
               $ref: ../models/Simulation.v1.json
       description: Représente une simulation
@@ -504,11 +476,6 @@ components:
         - $ref: '#/components/schemas/Resource'
         - type: object
           properties:
-            type:
-              type: string
-              readOnly: true
-              enum:
-                - TRANSFER
             attributes:
               $ref: ../models/Transfer.v1.json
       description: Représente un transfert
@@ -535,11 +502,6 @@ components:
         - $ref: '#/components/schemas/Resource'
         - type: object
           properties:
-            type:
-              type: string
-              readOnly: true
-              enum:
-                - SUBSCRIPTION
             attributes:
               $ref: ../models/Subscription.v1.json
       description: Représente une souscription
@@ -566,11 +528,6 @@ components:
         - $ref: '#/components/schemas/Resource'
         - type: object
           properties:
-            type:
-              type: string
-              readOnly: true
-              enum:
-                - SUBSCRIPTION_ITEM
             attributes:
               $ref: ../models/SubscriptionItem.v1.json
       description: Représente un item de souscription
@@ -597,11 +554,6 @@ components:
         - $ref: '#/components/schemas/Resource'
         - type: object
           properties:
-            type:
-              type: string
-              readOnly: true
-              enum:
-                - SUBSCRIPTION_INVITE
             attributes:
               $ref: ../models/SubscriptionInvite.v1.json
       description: Représente une invitation à une souscription
@@ -622,22 +574,17 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/SubscriptionInviteResource'
-    RequestLogResource:
-      title: RequestLogResource
+    SubscriptionRequestLogResource:
+      title: SubscriptionRequestLogResource
       allOf:
         - $ref: '#/components/schemas/Resource'
         - type: object
           properties:
-            type:
-              type: string
-              readOnly: true
-              enum:
-                - REQUEST_LOG
             attributes:
-              $ref: ../models/RequestLog.v1.json
+              $ref: ../models/SubscriptionRequestLog.v1.json
       description: Représente la trace d'une requête
-    RequestLogResourcePaginatedListResponse:
-      title: RequestLogResourcePaginatedListResponse
+    SubscriptionRequestLogResourcePaginatedListResponse:
+      title: SubscriptionRequestLogResourcePaginatedListResponse
       type: object
       allOf:
         - $ref: '#/components/schemas/PaginatedResponse'
@@ -646,7 +593,27 @@ components:
             data:
               type: array
               items:
-                $ref: '#/components/schemas/RequestLogResource'
+                $ref: '#/components/schemas/SubscriptionRequestLogResource'
+    SubscriptionUsageRecordResource:
+      title: SubscriptionUsageRecordResource
+      allOf:
+        - $ref: '#/components/schemas/Resource'
+        - type: object
+          properties:
+            attributes:
+              $ref: ../models/SubscriptionUsageRecord.v1.json
+      description: Représente l'enregistrement de l'utilisation d'une souscription
+    SubscriptionUsageRecordResourcePaginatedListResponse:
+      title: SubscriptionUsageRecordResourcePaginatedListResponse
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/PaginatedResponse'
+        - type: object
+          properties:
+            data:
+              type: array
+              items:
+                $ref: '#/components/schemas/SubscriptionUsageRecordResource'
     RedirectUrlResponse:
       type: object
       properties:
@@ -2062,7 +2029,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/RequestLogResourcePaginatedListResponse'
+                $ref: '#/components/schemas/SubscriptionRequestLogResourcePaginatedListResponse'
         '400':
           $ref: '#/components/responses/400'
         '403':
@@ -2078,7 +2045,36 @@ paths:
         - $ref: '#/components/parameters/page[cursor]'
         - $ref: '#/components/parameters/ordering'
       tags:
-        - log
+        - request_log
+  '/v1/subscriptions/{subscriptionId}/usage-records':
+    parameters:
+      - $ref: '#/components/parameters/subscriptionId'
+    get:
+      summary: Liste les enregistrements de l'utilisation d'une souscription
+      operationId: getSubscriptionUsageRecords
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SubscriptionUsageRecordResourcePaginatedListResponse'
+        '400':
+          $ref: '#/components/responses/400'
+        '403':
+          $ref: '#/components/responses/403'
+        '500':
+          $ref: '#/components/responses/500'
+      description: Liste les enregistrements de l'utilisation d'une souscription
+      security:
+        - toaztr_auth:
+            - subscriptions/read
+      parameters:
+        - $ref: '#/components/parameters/page[size]'
+        - $ref: '#/components/parameters/page[cursor]'
+        - $ref: '#/components/parameters/ordering'
+      tags:
+        - usage_record
   /v1/redeem-subscription-invite:
     post:
       operationId: redeemSubscriptionInvite

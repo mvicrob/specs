@@ -1,6 +1,6 @@
 {
   "type": "object",
-  "title": "RequestLog",
+  "title": "SubscriptionRequestLog",
   "description": "Trace d'une requête.",
   "properties": {
     "timestamp": {
@@ -9,13 +9,7 @@
       "format": "date-time"
     },
     "method": {
-      "description": "Méthode HTTP utilisée.",
-      "type": "string",
-      "enum": [
-        "POST",
-        "PUT",
-        "DELETE"
-      ]
+      "$ref": "./SubscriptionRequestLogMethod.v1.json"
     },
     "uri": {
       "description": "Identifiant unique de la resource.",

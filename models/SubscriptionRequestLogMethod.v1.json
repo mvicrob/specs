@@ -1,0 +1,10 @@
+{
+    "title": "SubscriptionRequestLogMethod",
+    "type": "string",
+    "description": "Méthode HTTP utilisée.",
+    "enum": [
+      "POST",
+      "PUT",
+      "DELETE"
+    ]
+}

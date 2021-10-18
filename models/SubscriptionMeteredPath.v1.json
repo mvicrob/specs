@@ -1,0 +1,18 @@
+{
+  "type": "object",
+  "title": "SubscriptionMeteredPath",
+  "description": "Chemin HTTP.",
+  "properties": {
+    "method": {
+      "$ref": "./SubscriptionRequestLogMethod.v1.json"
+    },
+    "path": {
+      "type": "string",
+      "description": "Chemin de la resource."
+    }
+  },
+  "required": [
+    "method",
+    "path"
+  ]
+}

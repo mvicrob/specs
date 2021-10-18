@@ -1,0 +1,25 @@
+{
+  "title": "SubscriptionUsageRecord",
+  "description": "Enregistrement de l'utilisation d'une soucription.",
+  "type": "object",
+  "properties": {
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date d'enregistrement."
+    },
+    "ref": {
+      "type": "string",
+      "description": "Référence de l'item."
+    },
+    "count": {
+      "type": "number",
+      "description": "Nombre d'appels enregistrés."
+    }
+  },
+  "required": [
+    "timestamp",
+    "ref",
+    "count"
+  ]
+}
