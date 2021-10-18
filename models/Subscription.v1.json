@@ -18,6 +18,11 @@
         "CLOSED"
       ]
     },
+    "valid_until": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date limite de validité."
+    },
     "source": {
       "type": "string",
       "description": "Système qui a créé la souscription.",
