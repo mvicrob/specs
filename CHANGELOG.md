@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.74.0](https://www.github.com/Toaztr/specs/compare/v0.73.0...v0.74.0) (2021-10-18)
+
+
+### Features
+
+* Adds validity date to subscription ([352f657](https://www.github.com/Toaztr/specs/commit/352f657a4053b8753b20da8f294de876a71dcfa3))
+
 ## [0.73.0](https://www.github.com/Toaztr/specs/compare/v0.72.0...v0.73.0) (2021-10-17)
 
 
