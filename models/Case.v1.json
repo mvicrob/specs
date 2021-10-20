@@ -7,6 +7,21 @@
       "type": "string",
       "description": "Nom du dossier"
     },
+    "status": {
+      "type": "string",
+      "description": "État de l'avancement du dossier",
+      "enum": [
+        "NEW",
+        "INSTRUCTION",
+        "SENT_TO_BANK",
+        "GRANTED_BANK",
+        "CUSTOMER_ACCEPTED",
+        "COMPLETED",
+        "INVOICED",
+        "CLOSED",
+        "CANCELED"
+      ]
+    },
     "actor": {
       "oneOf": [
         {
