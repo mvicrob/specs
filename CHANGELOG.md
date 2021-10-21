@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.76.0](https://www.github.com/Toaztr/specs/compare/v0.75.0...v0.76.0) (2021-10-21)
+
+
+### Features
+
+* add project status ([#271](https://www.github.com/Toaztr/specs/issues/271)) ([317fb81](https://www.github.com/Toaztr/specs/commit/317fb8159648266929c5128136c8a8187c52d311))
+
 ## [0.75.0](https://www.github.com/Toaztr/specs/compare/v0.74.0...v0.75.0) (2021-10-18)
 
 
