@@ -5,5 +5,5 @@
     "MINIMIZE_COST",
     "MINIMIZE_INSTALMENT"
   ],
-  "description": "Objectif de la simulation:\n\n- Minimiser le coût global du plan de financement, et donc saturer la capacitée de remboursementde l'emprunteur. C'est à dire que la mensualité maximale donnée en entrée est systématiquement utilisée.\n\n- Maximiser le reste à vivre (et donc minimiser la mensualitée): le plan de financement obtenu est plus long et plus coûteux, mais la mensualité est la plus basse possible, et donc le reste à vivre le meilleur possible."
+  "description": "Objectif de la simulation:\n\n- Minimiser le coût global du plan de financement, et donc saturer la capacitée de remboursement de l'emprunteur. C'est à dire que la mensualité maximale donnée en entrée est systématiquement utilisée.\n\n- Maximiser le reste à vivre (et donc minimiser la mensualitée): le plan de financement obtenu est plus long et plus coûteux, mais la mensualité est la plus basse possible, et donc le reste à vivre le meilleur possible."
 }

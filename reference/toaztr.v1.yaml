@@ -134,7 +134,7 @@ components:
     ETag:
       schema:
         type: string
-      description: Entity tag de la resource
+      description: Entity tag de la ressource
   parameters:
     id:
       name: id
@@ -142,7 +142,7 @@ components:
       required: true
       schema:
         type: string
-      description: ID unique de la resource
+      description: ID unique de la ressource
     caseId:
       name: caseId
       in: path
@@ -170,7 +170,7 @@ components:
       required: false
       schema:
         type: string
-      description: ETag de la resource
+      description: ETag de la ressource
     ordering:
       name: ordering
       in: query
@@ -245,37 +245,37 @@ components:
     Resource:
       title: Resource
       type: object
-      description: Resource identifiée par son type et son id
+      description: ressource identifiée par son type et son id
       properties:
         id:
           type: string
-          description: ID unique de la resource
+          description: ID unique de la ressource
           readOnly: true
         attributes:
           type: object
-          description: Attributs de la resource
+          description: Attributs de la ressource
         meta:
           type: object
-          description: Meta-données de la resource
+          description: Meta-données de la ressource
           readOnly: true
           properties:
             etag:
               type: string
-              description: ETag de la resource
+              description: ETag de la ressource
             created_at:
               type: string
               format: date-time
-              description: Date de création de la resource
+              description: Date de création de la ressource
             created_by:
               type: string
-              description: Utilisateur ayant crée la resource
+              description: Utilisateur ayant créé la ressource
             last_updated_at:
               type: string
               format: date-time
-              description: Date de dernière modification de la resource
+              description: Date de dernière modification de la ressource
             last_updated_by:
               type: string
-              description: Utilisateur ayant fait la dernière modification de la resource
+              description: Utilisateur ayant fait la dernière modification de la ressource
     ErrorResponse:
       title: ErrorResponse
       type: object
@@ -307,7 +307,7 @@ components:
     PaginatedResponse:
       title: PaginatedResponse
       type: object
-      description: Page de resources
+      description: Page de ressources
       properties:
         meta:
           type: object
