@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.77.0](https://www.github.com/Toaztr/specs/compare/v0.76.0...v0.77.0) (2021-10-26)
+
+
+### Features
+
+* min_remaining_for_living and jump_charge can be negative ([ba48a00](https://www.github.com/Toaztr/specs/commit/ba48a00fbb50caf260f76d73ea38ef4ed5f8826a))
+
 ## [0.76.0](https://www.github.com/Toaztr/specs/compare/v0.75.0...v0.76.0) (2021-10-21)
 
 
