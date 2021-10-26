@@ -266,10 +266,16 @@ components:
               type: string
               format: date-time
               description: Date de création de la resource
+            created_by:
+              type: string
+              description: Utilisateur ayant crée la resource
             last_updated_at:
               type: string
               format: date-time
-              description: Date de dernière update de la resource
+              description: Date de dernière modification de la resource
+            last_updated_by:
+              type: string
+              description: Utilisateur ayant fait la dernière modification de la resource
     ErrorResponse:
       title: ErrorResponse
       type: object

@@ -7,6 +7,10 @@
       "type": "string",
       "description": "Nom du dossier"
     },
+    "owner": {
+      "type": "string",
+      "description": "Propriétaire actuel du dossier"
+    },
     "status": {
       "type": "string",
       "description": "État de l'avancement du dossier",
