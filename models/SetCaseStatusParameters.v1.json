@@ -1,0 +1,13 @@
+{
+  "type": "object",
+  "title": "SetCaseStatusParameters",
+  "description": "Paramètres utilisés pour changer l'ID de l'utilisateur à qui est assigné le dossier.",
+  "properties": {
+    "status": {
+      "$ref": "./CaseStatus.v1.json"
+    }
+  },
+  "required": [
+    "status"
+  ]
+}

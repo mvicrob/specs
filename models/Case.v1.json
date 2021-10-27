@@ -7,24 +7,12 @@
       "type": "string",
       "description": "Nom du dossier"
     },
-    "owner": {
+    "assigned_to": {
       "type": "string",
-      "description": "Propriétaire actuel du dossier"
+      "description": "ID de l'utilisateur à qui est assigné le dossier"
     },
     "status": {
-      "type": "string",
-      "description": "État de l'avancement du dossier",
-      "enum": [
-        "NEW",
-        "INSTRUCTION",
-        "SENT_TO_BANK",
-        "GRANTED_BANK",
-        "CUSTOMER_ACCEPTED",
-        "COMPLETED",
-        "INVOICED",
-        "CLOSED",
-        "CANCELED"
-      ]
+      "$ref": "./CaseStatus.v1.json"
     },
     "actor": {
       "oneOf": [

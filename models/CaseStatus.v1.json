@@ -1,0 +1,16 @@
+{
+  "type": "string",
+  "title": "CaseStatus",
+  "enum": [
+    "NEW",
+    "INSTRUCTION",
+    "SENT_TO_BANK",
+    "GRANTED_BANK",
+    "CUSTOMER_ACCEPTED",
+    "COMPLETED",
+    "INVOICED",
+    "CLOSED",
+    "CANCELED"
+  ],
+  "description": "État de l'avancement du dossier."
+}

@@ -75,7 +75,7 @@ components:
   securitySchemes:
     toaztr_auth:
       type: oauth2
-      description: Toaztr utilise [OAuth2](https://oauth.net/2/) afin de fournir une méthode simple et standard d'authorisation.
+      description: 'Toaztr utilise [OAuth2](https://oauth.net/2/) afin de fournir une méthode simple et standard d''authorisation.'
       flows:
         authorizationCode:
           authorizationUrl: 'https://auth.toaztr.com/oauth2/authorize'
@@ -228,7 +228,7 @@ components:
       description: Le hash d'un Token
       properties:
         alg:
-          type: string 
+          type: string
           description: Type d'algorithme
           enum:
             - pbkdf2-sha256
@@ -711,7 +711,7 @@ paths:
       operationId: getCasesByName
       tags:
         - case
-      description: Liste les dossiers par leur nom, la recherche n'est pas sensible à la casse
+      description: 'Liste les dossiers par leur nom, la recherche n''est pas sensible à la casse'
       parameters:
         - $ref: '#/components/parameters/page[size]'
         - $ref: '#/components/parameters/page[cursor]'
@@ -826,6 +826,89 @@ paths:
         '500':
           $ref: '#/components/responses/500'
       summary: Supprime un dossier par ID
+      security:
+        - toaztr_auth:
+            - cases/write
+  '/v1/cases/{id}/status':
+    parameters:
+      - $ref: '#/components/parameters/id'
+    put:
+      operationId: putCaseStatus
+      tags:
+        - case
+      description: Mets à jour le statut d'un dossier par ID
+      parameters:
+        - $ref: '#/components/parameters/IfMatch'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ../models/SetCaseStatusParameters.v1.json
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CaseResourceResponse'
+          headers:
+            ETag:
+              $ref: '#/components/headers/ETag'
+        '400':
+          $ref: '#/components/responses/400'
+        '403':
+          $ref: '#/components/responses/403'
+        '404':
+          $ref: '#/components/responses/404'
+        '409':
+          $ref: '#/components/responses/409'
+        '500':
+          $ref: '#/components/responses/500'
+      summary: Mets à jour le statut d'un dossier par ID
+      security:
+        - toaztr_auth:
+            - cases/write
+  '/v1/cases/{id}/assigned-to':
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+        description: ID unique de la ressource
+    put:
+      operationId: putCaseAssignee
+      tags:
+        - case
+      description: Mets à jour l'ID de l'utilisateur à qui est assigné le dossier 
+      parameters:
+        - $ref: '#/components/parameters/IfMatch'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ../models/SetAssignedToParameters.v1.json
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CaseResourceResponse'
+          headers:
+            ETag:
+              $ref: '#/components/headers/ETag'
+        '400':
+          $ref: '#/components/responses/400'
+        '403':
+          $ref: '#/components/responses/403'
+        '404':
+          $ref: '#/components/responses/404'
+        '409':
+          $ref: '#/components/responses/409'
+        '500':
+          $ref: '#/components/responses/500'
+      summary: Mets à jour le status d'un dossier par ID
       security:
         - toaztr_auth:
             - cases/write
@@ -2127,7 +2210,7 @@ paths:
       summary: Retourne la license en cours de l'utilisateur
       security:
         - toaztr_auth:
-          - license/read
+            - license/read
       tags:
         - license
     delete:
@@ -2200,8 +2283,8 @@ paths:
       description: Liste les membres associés à la license de l'utilisateur
       security:
         - toaztr_auth:
-          - license/read
-      parameters: 
+            - license/read
+      parameters:
         - $ref: '#/components/parameters/page[size]'
         - $ref: '#/components/parameters/page[cursor]'
         - $ref: '#/components/parameters/ordering'

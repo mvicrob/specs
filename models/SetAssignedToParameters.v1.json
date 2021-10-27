@@ -1,0 +1,14 @@
+{
+  "type": "object",
+  "title": "SetAssignedToParameters",
+  "description": "Paramètres utilisés pour changer l'ID de l'utilisateur à qui est assigné le dossier.",
+  "properties": {
+    "assigned_to": {
+      "description": "ID de l'utilisateur.",
+      "type": "string"
+    }
+  },
+  "required": [
+    "assigned_to"
+  ]
+}
