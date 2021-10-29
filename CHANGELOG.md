@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.78.1](https://www.github.com/Toaztr/specs/compare/v0.78.0...v0.78.1) (2021-10-29)
+
+
+### Bug Fixes
+
+* Do not allow additional properties for Set*Parameters payloads ([d9153a0](https://www.github.com/Toaztr/specs/commit/d9153a029a82803a9affd96b8da16fadaca49653))
+
 ## [0.78.0](https://www.github.com/Toaztr/specs/compare/v0.77.0...v0.78.0) (2021-10-29)
 
 
