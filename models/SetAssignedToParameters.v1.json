@@ -10,5 +10,6 @@
   },
   "required": [
     "assigned_to"
-  ]
+  ],
+  "additionalProperties": false
 }
