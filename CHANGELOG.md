@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.78.0](https://www.github.com/Toaztr/specs/compare/v0.77.0...v0.78.0) (2021-10-29)
+
+
+### Features
+
+* fix typos ([7dbb66f](https://www.github.com/Toaztr/specs/commit/7dbb66f68ce516057ba2dd4ee9ead6cf84a33f0c))
+* New endpoints to update status/owner ([ca68314](https://www.github.com/Toaztr/specs/commit/ca68314f9ee524181f7a3e8da9c513ddac4c5040))
+
 ## [0.77.0](https://www.github.com/Toaztr/specs/compare/v0.76.0...v0.77.0) (2021-10-26)
 
 
