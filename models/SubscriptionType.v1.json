@@ -4,6 +4,7 @@
   "enum": [
     "SOLO",
     "TEAM",
+    "ENTERPRISE",
     "START"
   ],
   "description": "Type de souscription."
