@@ -9,7 +9,8 @@
       "enum": [
         "APIKEY",
         "APP",
-        "USER"
+        "USER",
+        "TEAM"
       ]
     },
     "ref": {
