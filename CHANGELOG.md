@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.79.0](https://www.github.com/Toaztr/specs/compare/v0.78.1...v0.79.0) (2021-10-30)
+
+
+### Features
+
+* Adds enterprise subscription type ([e2640fd](https://www.github.com/Toaztr/specs/commit/e2640fd4d110fbbf34f6aec41936e4e84b7b6294))
+
 ### [0.78.1](https://www.github.com/Toaztr/specs/compare/v0.78.0...v0.78.1) (2021-10-29)
 
 
