@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.80.0](https://www.github.com/Toaztr/specs/compare/v0.79.0...v0.80.0) (2021-10-30)
+
+
+### Features
+
+* Adds TEAM SubscriptionItem type ([9024a1f](https://www.github.com/Toaztr/specs/commit/9024a1f97f77f160ebbea77b683f8e23300dbab1))
+
 ## [0.79.0](https://www.github.com/Toaztr/specs/compare/v0.78.1...v0.79.0) (2021-10-30)
 
 
