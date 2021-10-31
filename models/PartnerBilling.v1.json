@@ -1,0 +1,21 @@
+{
+  "title": "PartnerBilling",
+  "type": "object",
+  "description": "Structure de facturation du partenaire.",
+  "properties": {
+    "partner_billing": {
+      "type": "array",
+      "items": {
+        "$ref": "./PartnerBillingTiersPerLoan.v1.json"
+      }
+    },
+    "limit": {
+      "type": "number",
+      "description": "Montant maximum du commissionnement de ce partenaire, si un maximum existe.",
+      "minimum": 0
+    }
+  },
+  "required": [
+    "partner_billing"
+  ]
+}
