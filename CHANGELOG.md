@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.81.0](https://www.github.com/Toaztr/specs/compare/v0.80.0...v0.81.0) (2021-11-01)
+
+
+### Features
+
+* better description ([1e359c6](https://www.github.com/Toaztr/specs/commit/1e359c6f39ec19cf04042d2270e8f1dd92be3413))
+* Partner billing ([56a3e7b](https://www.github.com/Toaztr/specs/commit/56a3e7b81ca8e9e5060887e8c2b12aa0d5c7797c))
+
 ## [0.80.0](https://www.github.com/Toaztr/specs/compare/v0.79.0...v0.80.0) (2021-10-30)
 
 
