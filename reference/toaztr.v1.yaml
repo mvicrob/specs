@@ -739,6 +739,39 @@ paths:
       security:
         - toaztr_auth:
             - cases/read
+  /v1/cases/by-category:
+    get:
+      operationId: getCasesByCategory
+      tags:
+        - case
+      description: 'Liste les dossiers par leur categorie, la recherche n''est pas sensible à la casse'
+      parameters:
+        - $ref: '#/components/parameters/page[size]'
+        - $ref: '#/components/parameters/page[cursor]'
+        - $ref: '#/components/parameters/ordering'
+        - name: 'filter[category]'
+          in: query
+          required: false
+          schema:
+            type: string
+          description: Statut du dossier à filtrer
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CaseResourcePaginatedListResponse'
+        '400':
+          $ref: '#/components/responses/400'
+        '403':
+          $ref: '#/components/responses/403'
+        '500':
+          $ref: '#/components/responses/500'
+      summary: Liste les dossiers par leur categorie
+      security:
+        - toaztr_auth:
+            - cases/read
   '/v1/cases/{id}':
     parameters:
       - $ref: '#/components/parameters/id'
