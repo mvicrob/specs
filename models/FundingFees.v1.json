@@ -8,7 +8,7 @@
       "minimum": 0,
       "type": "number"
     },
-    "broker_fees_in_taeg": {
+    "include_broker_fees_in_taeg": {
       "type": "boolean",
       "default": false,
       "description": "Permet d'inclure ou d'exclure les frais de courtage du calcul du TAEG."
