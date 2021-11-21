@@ -8,6 +8,11 @@
       "minimum": 0,
       "type": "number"
     },
+    "broker_fees_in_taeg": {
+      "type": "boolean",
+      "default": false,
+      "description": "Permet d'inclure ou d'explure les frais de courtage du calcul du TAEG."
+    },
     "file_management_fees": {
       "description": "Frais de dossier.",
       "minimum": 0,
