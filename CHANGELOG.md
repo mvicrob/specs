@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.82.0](https://www.github.com/Toaztr/specs/compare/v0.81.0...v0.82.0) (2021-11-21)
+
+
+### Features
+
+* add/remove broker fees from taeg ([dc75923](https://www.github.com/Toaztr/specs/commit/dc75923c60fa019e43e8ddca662631067f7e3fe8))
+* comment ([685c759](https://www.github.com/Toaztr/specs/commit/685c7598198f81f8895a0243cfec8c7ed34f3301))
+* typo ([83f65eb](https://www.github.com/Toaztr/specs/commit/83f65eb8f754598f3fcd5c6100f5204eb30142ee))
+
 ## [0.81.0](https://www.github.com/Toaztr/specs/compare/v0.80.0...v0.81.0) (2021-11-01)
 
 
