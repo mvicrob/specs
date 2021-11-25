@@ -6,6 +6,10 @@
     "type": {
       "$ref": "./PartnerType.v1.json"
     },
+    "id": {
+      "description": "ID unique du partenaire.",
+      "type": "string"
+    },
     "name": {
       "description": "Nom du partenaire.",
       "type": "string"
