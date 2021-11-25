@@ -1,7 +1,7 @@
 {
   "title": "PartnerBill",
   "type": "object",
-  "description": "Facture inter-partenaire",
+  "description": "Facture inter-partenaires.",
   "properties": {
     "partner_from": {
       "$ref": "./ActivePartner.v1.json"
