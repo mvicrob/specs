@@ -52,9 +52,6 @@
       "description": "Lien vers le logo du partenaire. Par exemple: https://www.toaztr.com/assets/toaztr_logo.png",
       "type": "string"
     },
-    "billing": {
-      "$ref": "./PartnerBilling.v1.json"
-    },
     "comment": {
       "description": "Commentaire.",
       "type": "string"
