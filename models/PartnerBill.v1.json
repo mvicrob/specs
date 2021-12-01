@@ -21,7 +21,7 @@
     "iban": {
       "$ref": "./Iban.v1.json"
     },
-    "case": {
+    "case_summary": {
       "$ref": "./CaseSummary.v1.json"
     }
   },
