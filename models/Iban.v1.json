@@ -6,32 +6,38 @@
     "country_code": {
       "type": "string",
       "minLength": 2,
-      "maxLength": 2
+      "maxLength": 2,
+      "description": "Code pays."
     },
     "control_key": {
       "type": "string",
       "minLength": 2,
-      "maxLength": 2
+      "maxLength": 2,
+      "description": "Clé de controle."
     },
     "bank_code": {
       "type": "string",
       "minLength": 5,
-      "maxLength": 5
+      "maxLength": 5,
+      "description": "Code banque."
     },
     "agency_code": {
       "type": "string",
       "minLength": 5,
-      "maxLength": 5
+      "maxLength": 5,
+      "description": "Code guichet."
     },
     "account_number": {
       "type": "string",
       "minLength": 11,
-      "maxLength": 11
+      "maxLength": 11,
+      "description": "Numéro de compte."
     },
     "rib_key": {
       "type": "string",
       "minLength": 2,
-      "maxLength": 2
+      "maxLength": 2,
+      "description": "Clé RIB."
     }
   },
   "required": [
