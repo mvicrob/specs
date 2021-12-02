@@ -32,15 +32,7 @@
       "$ref": "./BankInfo.v1.json"
     },
     "structure_type": {
-      "description": "Type de structure.",
-      "type": "string",
-      "enum": [
-        "SCI",
-        "COMPANY",
-        "ASSOCIATION",
-        "POLITICAL_PARTY",
-        "LOCAL_AUTHORITIES"
-      ]
+      "$ref": "./StructureType.v1.json"
     },
     "legal_status": {
       "description": "Forme juridique (SARL, SA, EURL, auto-entrepreneur, ...).",

@@ -1,0 +1,9 @@
+{
+  "type": "string",
+  "title": "Courtesy",
+  "enum": [
+    "MR",
+    "MRS"
+  ],
+  "description": "Civilité."
+}

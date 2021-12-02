@@ -5,20 +5,54 @@
   "properties": {
     "actors": {
       "type": "array",
+      "description": "Liste des emprunteurs, personnes physiques ou morale",
       "items": {
-        "type": "object",
-        "properties": {
-          "first_name": {
-            "type": "string"
+        "oneOf": [
+          {
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": [
+                  "INDIVIDUAL"
+                ]
+              },
+              "courtesy": {
+                "$ref": "./Courtesy.v1.json"
+              },
+              "first_name": {
+                "type": "string",
+                "description": "Prénom"
+              },
+              "last_name": {
+                "type": "string",
+                "description": "Nom"
+              }
+            },
+            "required": [
+              "type"
+            ]
           },
-          "last_name": {
-            "type": "string"
+          {
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": [
+                  "LEGAL_PERSON"
+                ]
+              },
+              "structure_type": {
+                "$ref": "./StructureType.v1.json"
+              },
+              "name": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "type"
+            ]
           }
-        },
-        "required": [
-          "first_name",
-          "last_name"
-        ]
+        ],
+        "type": "object"
       }
     },
     "loans": {
@@ -43,15 +77,11 @@
         ]
       }
     },
-    "project_adress": {
+    "project_address": {
       "type": "string"
     },
     "signature_date": {
       "type": "string"
     }
-  },
-  "required": [
-    "actors",
-    "loans"
-  ]
+  }
 }

@@ -1,0 +1,12 @@
+{
+  "type": "string",
+  "title": "StructureType",
+  "enum": [
+    "SCI",
+    "COMPANY",
+    "ASSOCIATION",
+    "POLITICAL_PARTY",
+    "LOCAL_AUTHORITIES"
+  ],
+  "description": "Type de structure."
+}
