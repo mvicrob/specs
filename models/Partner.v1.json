@@ -41,6 +41,9 @@
     "customer_billing": {
       "$ref": "./PartnerBillingStructure.v1.json"
     },
+    "iban": {
+      "$ref": "./Iban.v1.json"
+    },
     "comment": {
       "description": "Commentaire.",
       "type": "string"
