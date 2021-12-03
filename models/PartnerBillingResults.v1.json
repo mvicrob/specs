@@ -1,0 +1,16 @@
+{
+  "type": "object",
+  "title": "PartnerBillingResults",
+  "description": "Résultats de la génération d'une facture à destination d'un partenaire.",
+  "properties": {
+    "bill": {
+      "$ref": "./PartnerBill.v1.json"
+    },
+    "logs": {
+      "type": "array",
+      "items": {
+        "$ref": "./Log.v1.json"
+      }
+    }
+  }
+}

@@ -1,5 +1,5 @@
 {
-  "title": "PartnerBilling",
+  "title": "BillingStructure",
   "type": "object",
   "description": "Structure de facturation du partenaire.",
   "properties": {

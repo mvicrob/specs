@@ -4,12 +4,7 @@
   "description": "Informations relatives à l'emprunteur personne physique.",
   "properties": {
     "courtesy": {
-      "description": "Civilité.",
-      "type": "string",
-      "enum": [
-        "MR",
-        "MRS"
-      ]
+      "$ref": "./Courtesy.v1.json"
     },
     "first_name": {
       "description": "Prénom.",

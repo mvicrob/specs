@@ -1,0 +1,35 @@
+{
+  "title": "PartnerBill",
+  "type": "object",
+  "description": "Facture inter-partenaires.",
+  "properties": {
+    "partner_from": {
+      "$ref": "./ActivePartner.v1.json"
+    },
+    "partner_to": {
+      "$ref": "./ActivePartner.v1.json"
+    },
+    "due_date": {
+      "description": "Date d'échéance.",
+      "format": "date-time",
+      "type": "string"
+    },
+    "amount": {
+      "description": "Montant de la facture.",
+      "type": "number"
+    },
+    "iban": {
+      "$ref": "./Iban.v1.json"
+    },
+    "case_summary": {
+      "$ref": "./CaseSummary.v1.json"
+    }
+  },
+  "required": [
+    "partner_from",
+    "partner_to",
+    "due_date",
+    "amount",
+    "iban"
+  ]
+}

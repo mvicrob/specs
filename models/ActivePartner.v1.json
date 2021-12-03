@@ -6,6 +6,10 @@
     "type": {
       "$ref": "./PartnerType.v1.json"
     },
+    "id": {
+      "description": "ID unique du partenaire.",
+      "type": "string"
+    },
     "name": {
       "description": "Nom du partenaire.",
       "type": "string"
@@ -47,9 +51,6 @@
     "logo_uri": {
       "description": "Lien vers le logo du partenaire. Par exemple: https://www.toaztr.com/assets/toaztr_logo.png",
       "type": "string"
-    },
-    "billing": {
-      "$ref": "./PartnerBilling.v1.json"
     },
     "comment": {
       "description": "Commentaire.",
