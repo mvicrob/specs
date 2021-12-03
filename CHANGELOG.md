@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.83.0](https://www.github.com/Toaztr/specs/compare/v0.82.0...v0.83.0) (2021-12-03)
+
+
+### Features
+
+* add customer billing ([fafe669](https://www.github.com/Toaztr/specs/commit/fafe669a771d2cf75ea95a2310eb006b198b74c6))
+* add Iban into partner ([3ca7cb0](https://www.github.com/Toaztr/specs/commit/3ca7cb01b98bb3898426f6427d3b06a798221f4f))
+* bill data model ([6fd2cd2](https://www.github.com/Toaztr/specs/commit/6fd2cd26a12789d791df4de20b3d4941857b3e4f))
+* fix ([6931eb9](https://www.github.com/Toaztr/specs/commit/6931eb9bec15e97a306e617c7357105ba29c961f))
+* improve actor in the CaseSummary ([9715af9](https://www.github.com/Toaztr/specs/commit/9715af9f9d3c81a2b1797c2dfece1c56e7e984da))
+* improve bill datamodel ([6d6c1f4](https://www.github.com/Toaztr/specs/commit/6d6c1f491f540cbd8772022ce40902033a770955))
+* remove unused objet ([2d3df45](https://www.github.com/Toaztr/specs/commit/2d3df4536fbffd6176b58f56386b408880265bc0))
+
 ## [0.82.0](https://www.github.com/Toaztr/specs/compare/v0.81.0...v0.82.0) (2021-11-21)
 
 
