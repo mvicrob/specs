@@ -1029,8 +1029,10 @@ paths:
         - $ref: '#/components/parameters/ordering'
       tags:
         - plan_parameters
-  '/v1/billing/{simulationId}':
+  '/v1/billing/cases/{caseId}/plans-parameters/{planId}/simulations/{simulationId}':
     parameters:
+      - $ref: '#/components/parameters/caseId'
+      - $ref: '#/components/parameters/planId'
       - $ref: '#/components/parameters/simulationId'
     post:
       operationId: postBill
@@ -1440,12 +1442,7 @@ paths:
             - cases/write
   '/v1/bills/{id}':
     parameters:
-      - name: id
-        in: path
-        required: true
-        schema:
-          type: string
-        description: ID unique de la ressource
+      - $ref: '#/components/parameters/id'
     get:
       operationId: getBillById
       description: Retourne une factur par ID
