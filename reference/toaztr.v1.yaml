@@ -1029,13 +1029,9 @@ paths:
         - $ref: '#/components/parameters/ordering'
       tags:
         - plan_parameters
-  '/v1/bills/{simulationId}':
+  '/v1/billing/{simulationId}':
     parameters:
-      - schema:
-          type: string
-        name: simulationId
-        in: path
-        required: true
+      - $ref: '#/components/parameters/simulationId'
     post:
       operationId: postBill
       description: Crée une facture
@@ -1061,6 +1057,8 @@ paths:
       security:
         - toaztr_auth:
             - bills/write
+      tags:
+        - billing
     get:
       summary: Liste les factures liées à une simulation
       operationId: getBills
