@@ -1,5 +1,8 @@
 openapi: 3.0.3
 tags:
+  - name: standalone_billing
+    x-displayName: facturation
+    description: Génération de factures à destination des clients et partenaires
   - name: partner
     x-displayName: partenaire
     description: Gestion des partenaires intervenant dans les dossiers clients
@@ -45,12 +48,14 @@ x-tagGroups:
     tags:
       - partner
       - case
+      - billing
       - plan_parameters
       - simulation
       - transfer
   - name: APIs de calcul
     tags:
       - standalone_simulation
+      - standalone_billing
       - standalone_score
       - notary
       - income_tax
@@ -81,6 +86,9 @@ components:
           authorizationUrl: 'https://auth.toaztr.com/oauth2/authorize'
           tokenUrl: 'https://auth.toaztr.com/oauth2/token'
           scopes:
+            bills/read: Accès en lecture aux factures
+            bills/write: Accès en écriture aux factures
+            bills/*: Accès complet aux factures
             cases/read: Accès en lecture aux dossiers
             cases/write: Accès en écriture aux dossiers
             cases/*: Accès complet aux dossiers
@@ -199,6 +207,13 @@ components:
       schema:
         type: string
       description: Curseur à partir duquel la prochaine page débute
+    simulationId:
+      name: simulationId
+      in: path
+      required: true
+      schema:
+        type: string
+      description: ID de la simulation parente
   schemas:
     Token:
       title: Token
@@ -350,6 +365,32 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/CaseResource'
+    PartnerBillResource:
+      title: PartnerBillResource
+      allOf:
+        - $ref: '#/components/schemas/Resource'
+        - type: object
+          properties:
+            attributes:
+              $ref: ../models/PartnerBill.v1.json
+      description: Représente une facture partenaire
+    PartnerBillResourceResponse:
+      title: PartnerBillResourceResponse
+      type: object
+      properties:
+        data:
+          $ref: '#/components/schemas/PartnerBillResource'
+    PartnerBillResourcePaginatedListResponse:
+      title: PartnerBillResourcePaginatedListResponse
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/PaginatedResponse'
+        - type: object
+          properties:
+            data:
+              type: array
+              items:
+                $ref: '#/components/schemas/PartnerBillResource'
     PartnerResource:
       title: PartnerResource
       allOf:
@@ -376,6 +417,15 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/PartnerResource'
+    PartnerBillingParametersResource:
+      title: PartnerBillingParametersResource
+      allOf:
+        - $ref: '#/components/schemas/Resource'
+        - type: object
+          properties:
+            attributes:
+              $ref: ../models/PartnerBillingParameters.v1.json
+      description: Représente les paramètres de facturation d'un partenaire
     PlanParametersResource:
       title: PlanParametersResource
       allOf:
@@ -464,6 +514,12 @@ components:
       properties:
         data:
           $ref: ../models/ScoreDetails.v1.json
+    PartnerBillingResponse:
+      title: PartnerBillingResponse
+      type: object
+      properties:
+        data:
+          $ref: ../models/PartnerBillingResults.v1.json
     NotaryFeesResponse:
       title: NotaryFeesResponse
       type: object
@@ -913,7 +969,7 @@ paths:
       operationId: putCaseAssignee
       tags:
         - case
-      description: Mets à jour l'ID de l'utilisateur à qui est assigné le dossier 
+      description: Mets à jour l'ID de l'utilisateur à qui est assigné le dossier
       parameters:
         - $ref: '#/components/parameters/IfMatch'
       requestBody:
@@ -1006,6 +1062,64 @@ paths:
         - $ref: '#/components/parameters/ordering'
       tags:
         - plan_parameters
+  '/v1/bills/{simulationId}':
+    parameters:
+      - schema:
+          type: string
+        name: simulationId
+        in: path
+        required: true
+    post:
+      operationId: postBill
+      description: Crée une facture
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PartnerBillResourceResponse'
+          headers:
+            ETag:
+              $ref: '#/components/headers/ETag'
+        '400':
+          $ref: '#/components/responses/400'
+        '403':
+          $ref: '#/components/responses/403'
+        '409':
+          $ref: '#/components/responses/409'
+        '500':
+          $ref: '#/components/responses/500'
+      summary: Crée une facture liée à une simulation
+      security:
+        - toaztr_auth:
+            - bills/write
+    get:
+      summary: Liste les factures liées à une simulation
+      operationId: getBills
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PartnerBillResourcePaginatedListResponse'
+        '400':
+          $ref: '#/components/responses/400'
+        '403':
+          $ref: '#/components/responses/403'
+        '500':
+          $ref: '#/components/responses/500'
+      description: Liste les factures
+      security:
+        - toaztr_auth:
+            - bills/read
+      parameters:
+        - $ref: '#/components/parameters/page[size]'
+        - $ref: '#/components/parameters/page[cursor]'
+        - $ref: '#/components/parameters/ordering'
+      tags:
+        - billing
   '/v1/cases/{caseId}/plans-parameters/{id}':
     parameters:
       - $ref: '#/components/parameters/id'
@@ -1359,6 +1473,66 @@ paths:
       security:
         - toaztr_auth:
             - cases/write
+  '/v1/bills/{id}':
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+        description: ID unique de la ressource
+    get:
+      operationId: getBillById
+      description: Retourne une factur par ID
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PartnerBillResourceResponse'
+          headers:
+            ETag:
+              $ref: '#/components/headers/ETag'
+        '400':
+          $ref: '#/components/responses/400'
+        '403':
+          $ref: '#/components/responses/403'
+        '404':
+          $ref: '#/components/responses/404'
+        '500':
+          $ref: '#/components/responses/500'
+      summary: Retourne une facture par ID
+      security:
+        - toaztr_auth:
+            - bills/read
+      tags:
+        - billing
+      parameters: []
+    delete:
+      operationId: deleteBill
+      tags:
+        - partner
+      description: Supprime une facture par ID
+      parameters:
+        - $ref: '#/components/parameters/IfMatch'
+      responses:
+        '200':
+          description: OK
+        '400':
+          $ref: '#/components/responses/400'
+        '403':
+          $ref: '#/components/responses/403'
+        '404':
+          $ref: '#/components/responses/404'
+        '409':
+          $ref: '#/components/responses/409'
+        '500':
+          $ref: '#/components/responses/500'
+      summary: Supprime une facture par ID
+      security:
+        - toaztr_auth:
+            - bills/write
   /v1/transfers:
     parameters: []
     post:
@@ -1447,6 +1621,35 @@ paths:
       security:
         - toaztr_auth:
             - transfers/read
+  /v1/billing/partner:
+    parameters: []
+    post:
+      operationId: postPartnerBill
+      tags:
+        - standalone_billing
+      description: Calcule une facture partenaire
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ../models/PartnerBillingParameters.v1.json
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PartnerBillingResponse'
+        '400':
+          $ref: '#/components/responses/400'
+        '403':
+          $ref: '#/components/responses/403'
+        '500':
+          $ref: '#/components/responses/500'
+      summary: Calcule une facture partenaire
+      security:
+        - toaztr_auth:
+            - billing/partner
   /v1/simulations/budget:
     parameters: []
     post:
