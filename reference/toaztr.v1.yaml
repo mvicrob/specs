@@ -390,6 +390,24 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/PartnerBillResource'
+    PartnerBillingParametersResource:
+      title: PartnerBillingParametersResource
+      allOf:
+        - $ref: '#/components/schemas/Resource'
+        - type: object
+          properties:
+            attributes:
+              $ref: ../models/PartnerBillingParameters.v1.json
+      description: Représente les paramètres de facturation d'un partenaire
+    PartnerBillingParametersByIdsResource:
+      title: PartnerBillingParametersByIdsResource
+      allOf:
+        - $ref: '#/components/schemas/Resource'
+        - type: object
+          properties:
+            attributes:
+              $ref: ../models/PartnerBillingParametersByIds.v1.json
+      description: Représente les paramètres (par Ids) de facturation d'un partenaire
     PartnerResource:
       title: PartnerResource
       allOf:
@@ -416,15 +434,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/PartnerResource'
-    PartnerBillingParametersResource:
-      title: PartnerBillingParametersResource
-      allOf:
-        - $ref: '#/components/schemas/Resource'
-        - type: object
-          properties:
-            attributes:
-              $ref: ../models/PartnerBillingParameters.v1.json
-      description: Représente les paramètres de facturation d'un partenaire
     PlanParametersResource:
       title: PlanParametersResource
       allOf:
@@ -702,24 +711,6 @@ components:
               type: array
               items:
                 $ref: ../models/LicenseMember.v1.json
-    PartnerBillParametersResource:
-      allOf:
-        - $ref: '#/components/schemas/Resource'
-        - type: object
-          properties:
-            attributes:
-              $ref: '#/components/schemas/PartnerBillParametersResource'
-      title: PartnerBillParametersResource
-      description: Représente les paramètres de génération d'une facture à destination d'un partenaire
-    PartnerBillParametersByIdsResource:
-      allOf:
-        - $ref: '#/components/schemas/Resource'
-        - type: object
-          properties:
-            attributes:
-              $ref: '#/components/schemas/PartnerBillParametersByIdsResource'
-      title: PartnerBillParametersByIdsResource
-      description: Représente les paramètres (par Ids) de génération d'une facture à destination d'un partenaire
 paths:
   /v1/cases:
     parameters: []
