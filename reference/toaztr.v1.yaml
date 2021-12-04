@@ -1,6 +1,6 @@
 openapi: 3.0.3
 tags:
-  - name: standalone_billing
+  - name: billing
     x-displayName: facturation
     description: Génération de factures à destination des clients et partenaires
   - name: partner
