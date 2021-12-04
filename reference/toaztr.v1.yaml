@@ -1513,7 +1513,7 @@ paths:
     parameters: []
     post:
       summary: Génère une facture
-      operationId: post-v1-bills-id
+      operationId: postBill
       responses:
         '200':
           description: OK
