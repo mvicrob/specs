@@ -1493,8 +1493,8 @@ paths:
           application/json:
             schema:
               oneOf:
-                - $ref: '#/components/schemas/PartnerBillParametersResource'
-                - $ref: '#/components/schemas/PartnerBillParametersByIdsResource'
+                - $ref: '#/components/schemas/PartnerBillingParametersResource'
+                - $ref: '#/components/schemas/PartnerBillingParametersByIdsResource'
               description: 'Objets dossier, simulation et partners ou leurs IDs.'
         description: 'Objets dossier, simulation et partners ou leurs IDs.'
       description: 'Génère une facture, depuis les objets dossier, simulation et partners ou leurs IDs.'
