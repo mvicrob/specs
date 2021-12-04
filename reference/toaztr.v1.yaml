@@ -1478,7 +1478,7 @@ paths:
       - $ref: '#/components/parameters/id'
     get:
       operationId: getBillById
-      description: Retourne une factur par ID
+      description: Retourne une facture par ID
       responses:
         '200':
           description: OK
@@ -1506,8 +1506,6 @@ paths:
       parameters: []
     delete:
       operationId: deleteBill
-      tags:
-        - partner
       description: Supprime une facture par ID
       parameters:
         - $ref: '#/components/parameters/IfMatch'
@@ -1528,6 +1526,8 @@ paths:
       security:
         - toaztr_auth:
             - bills/write
+      tags:
+        - billing
   /v1/transfers:
     parameters: []
     post:
