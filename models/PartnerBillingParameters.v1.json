@@ -15,5 +15,12 @@
     "partner_to": {
       "$ref": "./Partner.v1.json"
     }
-  }
+  },
+  "required": [
+    "funding_results",
+    "case",
+    "partner_from",
+    "partner_to"
+  ],
+  "x-internal": false
 }
