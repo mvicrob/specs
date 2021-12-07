@@ -390,24 +390,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/PartnerBillResource'
-    PartnerBillingParametersResource:
-      title: PartnerBillingParametersResource
-      allOf:
-        - $ref: '#/components/schemas/Resource'
-        - type: object
-          properties:
-            attributes:
-              $ref: ../models/PartnerBillingParameters.v1.json
-      description: Représente les paramètres de facturation d'un partenaire
-    PartnerBillingParametersByIdsResource:
-      title: PartnerBillingParametersByIdsResource
-      allOf:
-        - $ref: '#/components/schemas/Resource'
-        - type: object
-          properties:
-            attributes:
-              $ref: ../models/PartnerBillingParametersByIds.v1.json
-      description: Représente les paramètres (par Ids) de facturation d'un partenaire
     PartnerResource:
       title: PartnerResource
       allOf:
@@ -1448,10 +1430,6 @@ paths:
       security:
         - toaztr_auth:
             - bills/read
-      parameters:
-        - $ref: '#/components/parameters/page[size]'
-        - $ref: '#/components/parameters/page[cursor]'
-        - $ref: '#/components/parameters/ordering'
       tags:
         - billing
   '/v1/bills/{id}':
@@ -1526,8 +1504,8 @@ paths:
           application/json:
             schema:
               oneOf:
-                - $ref: '#/components/schemas/PartnerBillingParametersResource'
-                - $ref: '#/components/schemas/PartnerBillingParametersByIdsResource'
+                - $ref: ../models/PartnerBillingParameters.v1.json
+                - $ref: ../models/PartnerBillingParametersByIds.v1.json
               description: 'Objets dossier, simulation et partners ou leurs IDs.'
         description: 'Objets dossier, simulation et partners ou leurs IDs.'
       description: 'Génère une facture, depuis les objets dossier, simulation et partners ou leurs IDs.'

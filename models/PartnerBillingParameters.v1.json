@@ -28,6 +28,5 @@
     "case",
     "partner_from",
     "partner_to"
-  ],
-  "x-internal": false
+  ]
 }
