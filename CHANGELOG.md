@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.84.0](https://www.github.com/Toaztr/specs/compare/v0.83.0...v0.84.0) (2021-12-07)
+
+
+### Features
+
+* comment on case ([9e06edb](https://www.github.com/Toaztr/specs/commit/9e06edbbb2a95910c1c73e05887bcb48692c3a71))
+* filter case by status ([83fa1ab](https://www.github.com/Toaztr/specs/commit/83fa1ab8cfd61d9605a84490e00d6e4ec2d55600))
+
 ## [0.83.0](https://www.github.com/Toaztr/specs/compare/v0.82.0...v0.83.0) (2021-12-03)
 
 
