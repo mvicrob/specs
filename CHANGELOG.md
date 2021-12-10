@@ -1,5 +1,24 @@
 # Changelog
 
+## [0.85.0](https://www.github.com/Toaztr/specs/compare/v0.84.0...v0.85.0) (2021-12-10)
+
+
+### Features
+
+* add types in parameters ([bc02e4b](https://www.github.com/Toaztr/specs/commit/bc02e4bc8aede2af04e0f76ae5d562a361655cd3))
+* comments ([2982ff8](https://www.github.com/Toaztr/specs/commit/2982ff8d2b115481394de927053f01083333be05))
+* fix conflict ([f447b02](https://www.github.com/Toaztr/specs/commit/f447b02eeb6a58d5e77990d59a1e7fbe69cd991a))
+* fix lint ([2221eae](https://www.github.com/Toaztr/specs/commit/2221eae8c4e43f775c810415e8f80c23b6d38ca4))
+* fix operation id ([3787f4d](https://www.github.com/Toaztr/specs/commit/3787f4dbf90690e8511375e2be3e17d674938c6d))
+* fix redoc cli ([69826cd](https://www.github.com/Toaztr/specs/commit/69826cd92a9559c1afae1492dc3689d54b6f4623))
+* fix references ([9925ad7](https://www.github.com/Toaztr/specs/commit/9925ad79255f9281c9e7e8a9dc15746e0828b1e3))
+* fix tags ([6d3ee9d](https://www.github.com/Toaztr/specs/commit/6d3ee9d9d75124eca646ef6268e0b34494cf0ee2))
+* fix typos ([016fb81](https://www.github.com/Toaztr/specs/commit/016fb816e407d011e6a439c2483c1b8c2056e529))
+* improve id management ([27f6c24](https://www.github.com/Toaztr/specs/commit/27f6c24f367ea26c4fefedba50322b6f0f399154))
+* simplification of billing endpoints ([67579c0](https://www.github.com/Toaztr/specs/commit/67579c07dfcef34e6084a28a9f57c239d311c952))
+* third round of comments ([bae36c0](https://www.github.com/Toaztr/specs/commit/bae36c084965ccca935115ff6d56aa53147c8346))
+* update Yaml file for billing ([4c687d4](https://www.github.com/Toaztr/specs/commit/4c687d4a24053260bfe2bacc94f03fb362d60af3))
+
 ## [0.84.0](https://www.github.com/Toaztr/specs/compare/v0.83.0...v0.84.0) (2021-12-07)
 
 
