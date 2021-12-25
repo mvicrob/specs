@@ -1471,6 +1471,9 @@ paths:
       description: 'Génère une facture, depuis les objets dossier, simulation et partners ou leurs IDs.'
       tags:
         - billing
+      security:
+        - toaztr_auth:
+            - bills/write
   /v1/transfers:
     parameters: []
     post:

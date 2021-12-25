@@ -4,10 +4,10 @@
   "description": "Facture inter-partenaires.",
   "properties": {
     "partner_from": {
-      "$ref": "./ActivePartner.v1.json"
+      "$ref": "./Partner.v1.json"
     },
     "partner_to": {
-      "$ref": "./ActivePartner.v1.json"
+      "$ref": "./Partner.v1.json"
     },
     "due_date": {
       "description": "Date d'échéance.",

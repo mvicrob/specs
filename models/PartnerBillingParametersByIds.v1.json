@@ -1,6 +1,6 @@
 {
   "title": "PartnerBillingParametersByIds",
-  "description": "Paramètres permettant de générer une facture à destination d'un partenaire.",
+  "description": "Ids des paramètres permettant de générer une facture à destination d'un partenaire.",
   "type": "object",
   "properties": {
     "type": {
@@ -10,27 +10,31 @@
       ],
       "description": "Type de paramètres de faturation."
     },
-    "simulation": {
+    "simulation_id": {
       "type": "string",
-      "description": "Id de la simulation parente."
+      "description": "Id de la simulation."
     },
-    "case": {
+    "plan_id": {
       "type": "string",
-      "description": "Id du dossier parent"
+      "description": "Id des paramètres du plan."
     },
-    "partner_from": {
+    "case_id": {
+      "type": "string",
+      "description": "Id du dossier."
+    },
+    "partner_from_id": {
       "type": "string",
       "description": "Id du partenaire emettant la facture (courtier en général)."
     },
-    "partner_to": {
+    "partner_to_id": {
       "type": "string",
       "description": "Id du partenaire recevant la facture."
     }
   },
   "required": [
-    "simulation",
-    "case",
-    "partner_from",
-    "partner_to"
+    "simulation_id",
+    "case_id",
+    "partner_from_id",
+    "partner_to_id"
   ]
 }
