@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.86.0](https://www.github.com/Toaztr/specs/compare/v0.85.0...v0.86.0) (2021-12-25)
+
+
+### Features
+
+* improve billing datamodel ([9970adc](https://www.github.com/Toaztr/specs/commit/9970adcee400ee609d692c989b0045966a1b4cd9))
+* improve billing datamodel, plan_id mandatory ([91f5770](https://www.github.com/Toaztr/specs/commit/91f5770ebc3a84e211cf8f0a2396200ccdc44b3f))
+
 ## [0.85.0](https://www.github.com/Toaztr/specs/compare/v0.84.0...v0.85.0) (2021-12-10)
 
 
