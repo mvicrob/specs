@@ -18,6 +18,20 @@
       "type": "string",
       "description": "Commentaire sur le dossier"
     },
+    "candidate_simulations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "plan_id": {
+            "type": "string"
+          },
+          "simulation_id": {
+            "type": "string"
+          }
+        }
+      }
+    },
     "actor": {
       "oneOf": [
         {
