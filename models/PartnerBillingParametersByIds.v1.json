@@ -33,6 +33,7 @@
   },
   "required": [
     "simulation_id",
+    "plan_id",
     "case_id",
     "partner_from_id",
     "partner_to_id"
