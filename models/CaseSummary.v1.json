@@ -85,11 +85,11 @@
       }
     },
     "project_address": {
-      "type": "string",
-      "description": "Addresse du projet."
+      "$ref": "./Address.v1.json"
     },
     "signature_date": {
       "type": "string",
+      "format": "date-time",
       "description": "Date de signature de l'acte."
     }
   }
