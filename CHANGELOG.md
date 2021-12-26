@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.87.0](https://www.github.com/Toaztr/specs/compare/v0.86.0...v0.87.0) (2021-12-26)
+
+
+### Features
+
+* improve case summary ([4f32481](https://www.github.com/Toaztr/specs/commit/4f32481ca1d212bd1484447c10b5a6a2c9ea1d7d))
+
 ## [0.86.0](https://www.github.com/Toaztr/specs/compare/v0.85.0...v0.86.0) (2021-12-25)
 
 
