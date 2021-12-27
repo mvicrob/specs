@@ -20,5 +20,11 @@
       "type": "number",
       "description": "Part variable, à appliquer sur la tranche [0; to_amount - from_amount[."
     }
-  }
+  },
+  "required": [
+    "from_amount",
+    "to_amount",
+    "flat_fee",
+    "rate"
+  ]
 }

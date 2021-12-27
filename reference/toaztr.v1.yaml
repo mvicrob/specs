@@ -1463,10 +1463,7 @@ paths:
         content:
           application/json:
             schema:
-              oneOf:
-                - $ref: ../models/PartnerBillingParameters.v1.json
-                - $ref: ../models/PartnerBillingParametersByIds.v1.json
-              description: 'Objets dossier, simulation et partners ou leurs IDs.'
+              $ref: ../models/PartnerBillingParametersGeneric.v1.json
         description: 'Objets dossier, simulation et partners ou leurs IDs.'
       description: 'Génère une facture, depuis les objets dossier, simulation et partners ou leurs IDs.'
       tags:

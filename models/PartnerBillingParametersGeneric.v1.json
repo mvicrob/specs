@@ -1,0 +1,12 @@
+{
+  "title": "PartnerBillingParametersGeneric",
+  "oneOf": [
+    {
+      "$ref": "./PartnerBillingParameters.v1.json"
+    },
+    {
+      "$ref": "./PartnerBillingParametersByIds.v1.json"
+    }
+  ],
+  "description": "Objet contenant les paramètres de facturation par valeur ou par IDs."
+}
