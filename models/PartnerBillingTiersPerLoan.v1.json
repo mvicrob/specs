@@ -1,7 +1,7 @@
 {
   "title": "PartnerBillingTiersPerLoan",
   "type": "object",
-  "description": "Structure de facturation du partenaire, par type de prêt et par tranches de montants de prêts. Si aucun type de prêt n'est précisé, la structure s'appliquera à tous les types de prêts.\n\nflat_fee et rate s'appliqueront au niveau du ou des prêts, sous la forme flat_fee + rate * montant_du_prêt, en plus de la facturation par tranches.",
+  "description": "Structure de facturation du partenaire, par type de prêt et par tranches de montants de prêts. \n\nSi aucune structure de facturation n'existe pour un type de prêt donné, la structure par défaut (définie sans type de prêt) s'appliquera, si celle-ci existe.\n\nflat_fee et rate s'appliqueront au niveau du ou des prêts, sous la forme flat_fee + rate * montant_du_prêt, en plus de la facturation par tranches.",
   "properties": {
     "type": {
       "type": "string",
