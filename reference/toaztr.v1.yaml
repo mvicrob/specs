@@ -366,15 +366,6 @@ components:
             attributes:
               $ref: ../models/PartnerBill.v1.json
       description: Représente une facture partenaire
-    PartnerBillDocxResource:
-      title: PartnerBillDocxResource
-      allOf:
-        - $ref: '#/components/schemas/Resource'
-        - type: object
-          properties:
-            attributes:
-              $ref: ../models/PartnerBillDocx.v1.json
-      description: Représente une facture partenaire au format Word
     PartnerBillResourceResponse:
       title: PartnerBillResourceResponse
       type: object
@@ -1480,27 +1471,42 @@ paths:
       security:
         - toaztr_auth:
             - bills/write
-  /v1/bills_to_docx:
-    parameters: []
-    post:
+  '/v1/bills/{id}/docx':
+    parameters:
+      - schema:
+          type: string
+        name: id
+        in: path
+        required: true
+    get:
       summary: Génère une facture au format Word
-      operationId: postBillDocx
+      operationId: get-v1-bills-id-docx
       responses:
         '200':
           description: OK
           content:
-            application/json:
+            application/vnd.openxmlformats-officedocument.wordprocessingml.document:
               schema:
-                $ref: '#/components/schemas/PartnerBillDocxResource'
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: ../models/PartnerBill.v1.json
-        description: Objet PartnerBill au fomat JSON.
-      description: Génère une facture au format Word (docx) depuis une facture au format JSON.
-      tags:
-        - billing
+                type: string
+                format: binary
+            application/xml:
+              schema:
+                type: object
+                properties: {}
+            application/vnd.openxmlformats-officedocument.wordprocessingml.documen:
+              schema:
+                type: object
+                properties: {}
+          headers: {}
+        '400':
+          description: Bad Request
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+        '500':
+          description: Internal Server Error
+      description: 'Génère une facture au format Word (docx), à partir de son ID.'
       security:
         - toaztr_auth:
             - bills/read
