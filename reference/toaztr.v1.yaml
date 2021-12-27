@@ -1484,7 +1484,7 @@ paths:
     parameters: []
     post:
       summary: Génère une facture au format Word
-      operationId: postBill
+      operationId: postBillDocx
       responses:
         '200':
           description: OK
