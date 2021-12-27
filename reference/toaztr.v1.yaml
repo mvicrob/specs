@@ -366,6 +366,15 @@ components:
             attributes:
               $ref: ../models/PartnerBill.v1.json
       description: Représente une facture partenaire
+    PartnerBillDocxResource:
+      title: PartnerBillDocxResource
+      allOf:
+        - $ref: '#/components/schemas/Resource'
+        - type: object
+          properties:
+            attributes:
+              $ref: ../models/PartnerBillDocx.v1.json
+      description: Représente une facture partenaire au format Word
     PartnerBillResourceResponse:
       title: PartnerBillResourceResponse
       type: object
@@ -1471,6 +1480,30 @@ paths:
       security:
         - toaztr_auth:
             - bills/write
+  /v1/bills_to_docx:
+    parameters: []
+    post:
+      summary: Génère une facture au format Word
+      operationId: postBill
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PartnerBillDocxResource'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ../models/PartnerBill.v1.json
+        description: Objet PartnerBill au fomat JSON.
+      description: Génère une facture au format Word (docx) depuis une facture au format JSON.
+      tags:
+        - billing
+      security:
+        - toaztr_auth:
+            - bills/read
   /v1/transfers:
     parameters: []
     post:
