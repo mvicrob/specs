@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.88.0](https://www.github.com/Toaztr/specs/compare/v0.87.0...v0.88.0) (2021-12-27)
+
+
+### Features
+
+* correct reference path ([93e16cc](https://www.github.com/Toaztr/specs/commit/93e16cc04b5cabd87155520a3bfe6437ebd727eb))
+* simplify oneOf in billing objects ([dc6fe71](https://www.github.com/Toaztr/specs/commit/dc6fe71dbd37bfb8cb63beccef9be040a2fcfded))
+
 ## [0.87.0](https://www.github.com/Toaztr/specs/compare/v0.86.0...v0.87.0) (2021-12-26)
 
 
