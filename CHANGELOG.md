@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.89.0](https://www.github.com/Toaztr/specs/compare/v0.88.0...v0.89.0) (2021-12-27)
+
+
+### Features
+
+* improve billing doc ([13743b9](https://www.github.com/Toaztr/specs/commit/13743b9e706bb72a72ed865a15abd9af7186045e))
+
 ## [0.88.0](https://www.github.com/Toaztr/specs/compare/v0.87.0...v0.88.0) (2021-12-27)
 
 
