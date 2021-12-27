@@ -1489,14 +1489,6 @@ paths:
               schema:
                 type: string
                 format: binary
-            application/xml:
-              schema:
-                type: object
-                properties: {}
-            application/vnd.openxmlformats-officedocument.wordprocessingml.documen:
-              schema:
-                type: object
-                properties: {}
           headers: {}
         '400':
           description: Bad Request
