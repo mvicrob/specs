@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.90.0](https://www.github.com/Toaztr/specs/compare/v0.89.0...v0.90.0) (2021-12-28)
+
+
+### Features
+
+* Define API bill converter from JSON to Word ([7d8bb3a](https://www.github.com/Toaztr/specs/commit/7d8bb3a75bb3d066bc35a46cb6ca0796ca896017))
+* op id in pascalCase ([7df5949](https://www.github.com/Toaztr/specs/commit/7df5949a21a910c3abe5b3ed6865a74050cddb5f))
+* remove docx object ([f3736b8](https://www.github.com/Toaztr/specs/commit/f3736b8e6de2870296da56c78300138ca8556528))
+* remove not used MIME ([a2e84d8](https://www.github.com/Toaztr/specs/commit/a2e84d8b00a60a383dac612e6a6d54cdd201064d))
+* update operation id ([af0e85b](https://www.github.com/Toaztr/specs/commit/af0e85b22075187ec7dfd76fba8888aa86f03aae))
+* update yaml with MIME for Word ([57ef472](https://www.github.com/Toaztr/specs/commit/57ef4728544ce038750edbcd1b616bd020273ea8))
+
 ## [0.89.0](https://www.github.com/Toaztr/specs/compare/v0.88.0...v0.89.0) (2021-12-27)
 
 
