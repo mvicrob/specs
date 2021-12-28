@@ -1480,7 +1480,7 @@ paths:
         required: true
     get:
       summary: Génère une facture au format Word
-      operationId: get-v1-bills-id-docx
+      operationId: getBillsDocx
       responses:
         '200':
           description: OK
