@@ -1471,6 +1471,37 @@ paths:
       security:
         - toaztr_auth:
             - bills/write
+  '/v1/bills/{id}/docx':
+    parameters:
+      - schema:
+          type: string
+        name: id
+        in: path
+        required: true
+    get:
+      summary: Génère une facture au format Word
+      operationId: getBillsDocx
+      responses:
+        '200':
+          description: OK
+          content:
+            application/vnd.openxmlformats-officedocument.wordprocessingml.document:
+              schema:
+                type: string
+                format: binary
+          headers: {}
+        '400':
+          description: Bad Request
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+        '500':
+          description: Internal Server Error
+      description: 'Génère une facture au format Word (docx), à partir de son ID.'
+      security:
+        - toaztr_auth:
+            - bills/read
   /v1/transfers:
     parameters: []
     post:
