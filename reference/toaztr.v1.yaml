@@ -1459,6 +1459,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/PartnerBillResource'
+          headers:
+            ETag:
+              $ref: '#/components/headers/ETag'
         '409':
           description: Conflict
       requestBody:
