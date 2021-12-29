@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.91.0](https://www.github.com/Toaztr/specs/compare/v0.90.0...v0.91.0) (2021-12-29)
+
+
+### Features
+
+* update return codes ([5d59652](https://www.github.com/Toaztr/specs/commit/5d59652925d6a80a167782473b8e8892e6e1baeb))
+
 ## [0.90.0](https://www.github.com/Toaztr/specs/compare/v0.89.0...v0.90.0) (2021-12-28)
 
 
