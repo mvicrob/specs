@@ -1458,7 +1458,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/PartnerBillResource'
+                $ref: '#/components/schemas/PartnerBillResourceResponse'
           headers:
             ETag:
               $ref: '#/components/headers/ETag'
