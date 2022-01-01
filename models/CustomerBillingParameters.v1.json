@@ -6,7 +6,7 @@
     "type": {
       "type": "string",
       "enum": [
-        "PARTNER_BILLING_PARAMETERS"
+        "CUSTOMER_BILLING_PARAMETERS"
       ],
       "description": "Type de paramètres de faturation."
     },
