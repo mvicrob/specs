@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.93.0](https://www.github.com/Toaztr/specs/compare/v0.92.0...v0.93.0) (2022-01-01)
+
+
+### Features
+
+* fix operation ids ([78140f7](https://www.github.com/Toaztr/specs/commit/78140f72db2a069f3252a94b5f887efd0d8567c2))
+* fix types ([836bbc5](https://www.github.com/Toaztr/specs/commit/836bbc557b00354e14055841eed53b2c8c6d04f2))
+* manage customer bills ([e05f39c](https://www.github.com/Toaztr/specs/commit/e05f39c748d5b70185d1810c0eca614eab0ae1bb))
+
 ## [0.92.0](https://www.github.com/Toaztr/specs/compare/v0.91.0...v0.92.0) (2021-12-31)
 
 
