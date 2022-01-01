@@ -1,0 +1,16 @@
+{
+  "title": "BankAccountReferences",
+  "type": "object",
+  "description": "IBAN, BIC and RIB",
+  "properties": {
+    "iban": {
+      "type": "string"
+    },
+    "bic": {
+      "type": "string"
+    },
+    "rib": {
+      "$ref": "./RIB.v1.json"
+    }
+  }
+}

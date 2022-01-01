@@ -3,10 +3,6 @@
   "title": "BankInfo",
   "description": "Informations bancaires d'un emprunteur.",
   "properties": {
-    "bic": {
-      "description": "Code BIC.",
-      "type": "string"
-    },
     "current_agency": {
       "description": "Nom de l'agence.",
       "type": "string"
@@ -24,9 +20,8 @@
       "description": "Département (75, 13, ...) de la banque actuelle.",
       "type": "string"
     },
-    "iban": {
-      "description": "IBAN.",
-      "type": "string"
+    "bank_account_references": {
+      "$ref": "./BankAccountReferences.v1.json"
     }
   }
 }

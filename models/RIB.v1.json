@@ -1,20 +1,8 @@
 {
-  "title": "Iban",
+  "title": "RIB",
   "type": "object",
-  "description": "IBAN structuré",
+  "description": "IBAN, BIC, RIB",
   "properties": {
-    "country_code": {
-      "type": "string",
-      "minLength": 2,
-      "maxLength": 2,
-      "description": "Code pays."
-    },
-    "control_key": {
-      "type": "string",
-      "minLength": 2,
-      "maxLength": 2,
-      "description": "Clé de controle."
-    },
     "bank_code": {
       "type": "string",
       "minLength": 5,
@@ -33,19 +21,21 @@
       "maxLength": 11,
       "description": "Numéro de compte."
     },
-    "rib_key": {
+    "key": {
       "type": "string",
       "minLength": 2,
       "maxLength": 2,
       "description": "Clé RIB."
+    },
+    "bank_name": {
+      "type": "string"
     }
   },
   "required": [
-    "country_code",
-    "control_key",
     "bank_code",
     "agency_code",
     "account_number",
-    "rib_key"
+    "key",
+    "bank_name"
   ]
 }

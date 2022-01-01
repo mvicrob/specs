@@ -18,8 +18,8 @@
       "description": "Montant de la facture.",
       "type": "number"
     },
-    "iban": {
-      "$ref": "./Iban.v1.json"
+    "bank_account_references": {
+      "$ref": "./BankAccountReferences.v1.json"
     },
     "case_summary": {
       "$ref": "./CaseSummary.v1.json"
@@ -30,6 +30,6 @@
     "partner_to",
     "due_date",
     "amount",
-    "iban"
+    "bank_account_references"
   ]
 }
