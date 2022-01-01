@@ -1482,7 +1482,7 @@ paths:
           type: string
         description: ID unique de la ressource
     get:
-      operationId: getBillById
+      operationId: getCustomerBillById
       description: Retourne une facture client par ID
       responses:
         '200':
@@ -1510,7 +1510,7 @@ paths:
         - billing
       parameters: []
     delete:
-      operationId: deleteBill
+      operationId: deleteCustomerBill
       description: Supprime une facture client par ID
       parameters:
         - $ref: '#/components/parameters/IfMatch'
@@ -1627,7 +1627,7 @@ paths:
         required: true
     get:
       summary: Génère une facture client au format Word
-      operationId: getBillsDocx
+      operationId: getCustomerBillsDocx
       responses:
         '200':
           description: OK
