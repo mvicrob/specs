@@ -35,6 +35,10 @@
       "description": "Lien vers le logo du partenaire. Par exemple: https://www.toaztr.com/assets/toaztr_logo.png",
       "type": "string"
     },
+    "website": {
+      "description": "Addresse du site web du partenaire.",
+      "type": "string"
+    },
     "partner_billing": {
       "$ref": "./PartnerBillingStructure.v1.json"
     },

@@ -4,10 +4,12 @@
   "description": "IBAN, BIC and RIB",
   "properties": {
     "iban": {
-      "type": "string"
+      "type": "string",
+      "description": "IBAN"
     },
     "bic": {
-      "type": "string"
+      "type": "string",
+      "description": "BIC"
     },
     "rib": {
       "$ref": "./RIB.v1.json"
