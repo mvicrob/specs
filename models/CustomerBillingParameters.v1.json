@@ -1,0 +1,28 @@
+{
+  "title": "CustomerBillingParameters",
+  "description": "Paramètres permettant de générer une facture à destination d'un client.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string",
+      "enum": [
+        "PARTNER_BILLING_PARAMETERS"
+      ],
+      "description": "Type de paramètres de faturation."
+    },
+    "funding_results": {
+      "$ref": "./FundingResults.v1.json"
+    },
+    "case": {
+      "$ref": "./Case.v1.json"
+    },
+    "partner": {
+      "$ref": "./Partner.v1.json"
+    }
+  },
+  "required": [
+    "funding_results",
+    "case",
+    "partner"
+  ]
+}

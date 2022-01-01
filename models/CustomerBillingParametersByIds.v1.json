@@ -1,0 +1,36 @@
+{
+  "title": "CustomerBillingParametersByIds",
+  "description": "Ids des paramètres permettant de générer une facture à destination d'un client.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string",
+      "enum": [
+        "PARTNER_BILLING_PARAMETERS_BY_IDS"
+      ],
+      "description": "Type de paramètres de faturation."
+    },
+    "simulation_id": {
+      "type": "string",
+      "description": "Id de la simulation."
+    },
+    "plan_id": {
+      "type": "string",
+      "description": "Id des paramètres du plan."
+    },
+    "case_id": {
+      "type": "string",
+      "description": "Id du dossier."
+    },
+    "partner_id": {
+      "type": "string",
+      "description": "Id du partenaire emettant la facture (courtier en général)."
+    }
+  },
+  "required": [
+    "simulation_id",
+    "plan_id",
+    "case_id",
+    "partner_id"
+  ]
+}

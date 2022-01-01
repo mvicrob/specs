@@ -1,0 +1,32 @@
+{
+  "title": "CustomerBill",
+  "type": "object",
+  "description": "Facture vers un client.",
+  "properties": {
+    "partner": {
+      "$ref": "./Partner.v1.json"
+    },
+    "due_date": {
+      "description": "Date d'échéance.",
+      "format": "date-time",
+      "type": "string"
+    },
+    "amount": {
+      "description": "Montant de la facture.",
+      "type": "number"
+    },
+    "iban": {
+      "$ref": "./Iban.v1.json"
+    },
+    "case_summary": {
+      "$ref": "./CaseSummary.v1.json"
+    }
+  },
+  "required": [
+    "partner",
+    "due_date",
+    "amount",
+    "iban",
+    "case_summary"
+  ]
+}
