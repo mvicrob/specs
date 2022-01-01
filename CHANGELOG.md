@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.92.0](https://www.github.com/Toaztr/specs/compare/v0.91.0...v0.92.0) (2021-12-31)
+
+
+### Features
+
+* add ETag for post bills ([d157064](https://www.github.com/Toaztr/specs/commit/d157064b8e5c7a9beffaf1745bc8785a35d48471))
+* from PartnerBillResource to PartnerBillResourceResponse ([b2a73c6](https://www.github.com/Toaztr/specs/commit/b2a73c69ce597bd1c4525dab64ac5659b8b3ee08))
+
 ## [0.91.0](https://www.github.com/Toaztr/specs/compare/v0.90.0...v0.91.0) (2021-12-29)
 
 
