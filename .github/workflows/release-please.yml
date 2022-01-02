@@ -10,7 +10,7 @@ jobs:
       release_created: ${{ steps.release.outputs.release_created }}
       version_created: ${{ steps.release.outputs.major }}.${{ steps.release.outputs.minor }}.${{ steps.release.outputs.patch }}
     steps:
-      - uses: GoogleCloudPlatform/release-please-action@v2.34
+      - uses: GoogleCloudPlatform/release-please-action@v3.0
         id: release
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
