@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.94.0](https://www.github.com/Toaztr/specs/compare/v0.93.0...v0.94.0) (2022-01-02)
+
+
+### Features
+
+* better rib datamodel ([e8c6012](https://www.github.com/Toaztr/specs/commit/e8c60129031f86bf8683f39030c79b7dd2e4ffcf))
+* better rib datamodel, 2 ([b5fcc51](https://www.github.com/Toaztr/specs/commit/b5fcc51d220d0387e014b0b0d7d456229b4a7c40))
+* fix Iban reference ([02d3563](https://www.github.com/Toaztr/specs/commit/02d356367918347d2fae1d2cc2c7fe9a4ee050b5))
+* improve RIB/IBAN management ([c1c4e9c](https://www.github.com/Toaztr/specs/commit/c1c4e9cc205636a1e2e3d4eb705c5ff4e7af2e04))
+
 ## [0.93.0](https://www.github.com/Toaztr/specs/compare/v0.92.0...v0.93.0) (2022-01-01)
 
 
