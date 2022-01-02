@@ -18,8 +18,8 @@
       "description": "Montant de la facture.",
       "type": "number"
     },
-    "bank_account_references": {
-      "$ref": "./BankAccountReferences.v1.json"
+    "rib": {
+      "$ref": "./RIB.v1.json"
     },
     "case_summary": {
       "$ref": "./CaseSummary.v1.json"
@@ -30,6 +30,6 @@
     "partner_to",
     "due_date",
     "amount",
-    "bank_account_references"
+    "rib"
   ]
 }

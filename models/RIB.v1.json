@@ -3,6 +3,14 @@
   "type": "object",
   "description": "IBAN, BIC, RIB",
   "properties": {
+    "iban": {
+      "type": "string",
+      "description": "IBAN"
+    },
+    "bic": {
+      "type": "string",
+      "description": "BIC"
+    },
     "bank_code": {
       "type": "string",
       "minLength": 5,
