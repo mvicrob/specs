@@ -65,8 +65,8 @@
         "type": "object",
         "properties": {
           "type": {
-            "type": "string",
-            "description": "Type de prêt"
+            "description": "Type de prêt",
+            "type": "string"
           },
           "amount": {
             "type": "number",
@@ -91,6 +91,17 @@
       "type": "string",
       "format": "date-time",
       "description": "Date de signature de l'acte."
+    },
+    "project_nature": {
+      "$ref": "./AcquisitionNature.v1.json"
+    },
+    "case_name": {
+      "type": "string",
+      "description": "Nom du dossier"
+    },
+    "case_id": {
+      "type": "string",
+      "description": "Numéro du dossier"
     }
   }
 }
