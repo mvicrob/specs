@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.95.0](https://github.com/Toaztr/specs/compare/v0.94.0...v0.95.0) (2022-01-03)
+
+
+### Features
+
+* improve CaseSummary ([a39a69f](https://github.com/Toaztr/specs/commit/a39a69fc1142b57588c951beff44120d87888774))
+
 ## [0.94.0](https://www.github.com/Toaztr/specs/compare/v0.93.0...v0.94.0) (2022-01-02)
 
 
