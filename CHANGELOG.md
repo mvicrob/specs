@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.96.0](https://github.com/Toaztr/specs/compare/v0.95.0...v0.96.0) (2022-01-03)
+
+
+### Features
+
+* rib is now optional ([10f5d28](https://github.com/Toaztr/specs/commit/10f5d288a2bbf2905f254564191b9b786be8740a))
+
 ## [0.95.0](https://github.com/Toaztr/specs/compare/v0.94.0...v0.95.0) (2022-01-03)
 
 
