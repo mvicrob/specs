@@ -29,7 +29,6 @@
     "partner_from",
     "partner_to",
     "due_date",
-    "amount",
-    "rib"
+    "amount"
   ]
 }
