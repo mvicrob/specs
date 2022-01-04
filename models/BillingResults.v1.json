@@ -1,23 +1,12 @@
 {
-  "type": "object",
   "title": "BillingResults",
   "description": "Résultats de la génération d'une facture à destination d'un partenaire ou  d'un client.",
-  "properties": {
-    "bill": {
-      "oneOf": [
-        {
-          "$ref": "./PartnerBill.v1.json"
-        },
-        {
-          "$ref": "./CustomerBill.v1.json"
-        }
-      ]
+  "oneOf": [
+    {
+      "$ref": "./PartnerBill.v1.json"
     },
-    "logs": {
-      "type": "array",
-      "items": {
-        "$ref": "./Log.v1.json"
-      }
+    {
+      "$ref": "./CustomerBill.v1.json"
     }
-  }
+  ]
 }
