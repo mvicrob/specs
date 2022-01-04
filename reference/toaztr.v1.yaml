@@ -364,7 +364,7 @@ components:
         - type: object
           properties:
             attributes:
-              $ref: ../models/BillResults.v1.json
+              $ref: ../models/BillingResults.v1.json
       description: Représente une facture partenaire ou client
     BillResourceResponse:
       title: BillResourceResponse
