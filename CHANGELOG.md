@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.98.0](https://github.com/Toaztr/specs/compare/v0.97.0...v0.98.0) (2022-01-05)
+
+
+### Features
+
+* add type in bills ([6a9ba38](https://github.com/Toaztr/specs/commit/6a9ba38dc0f5bfb06b24172a3fd94d8573636d7a))
+
 ## [0.97.0](https://github.com/Toaztr/specs/compare/v0.96.0...v0.97.0) (2022-01-05)
 
 
