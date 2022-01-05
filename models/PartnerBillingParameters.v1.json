@@ -24,6 +24,7 @@
     }
   },
   "required": [
+    "type",
     "funding_results",
     "case",
     "partner_from",

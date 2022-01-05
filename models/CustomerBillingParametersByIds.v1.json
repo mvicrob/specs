@@ -28,6 +28,7 @@
     }
   },
   "required": [
+    "type",
     "simulation_id",
     "plan_id",
     "case_id",

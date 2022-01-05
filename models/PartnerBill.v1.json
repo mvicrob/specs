@@ -3,6 +3,13 @@
   "type": "object",
   "description": "Facture inter-partenaires.",
   "properties": {
+    "type": {
+      "type": "string",
+      "enum": [
+        "PARTNER_BILL"
+      ],
+      "description": "Type de facture: partenaire."
+    },
     "partner_from": {
       "$ref": "./Partner.v1.json"
     },
@@ -26,6 +33,7 @@
     }
   },
   "required": [
+    "type",
     "partner_from",
     "partner_to",
     "due_date",

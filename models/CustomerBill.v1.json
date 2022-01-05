@@ -3,6 +3,13 @@
   "type": "object",
   "description": "Facture vers un client.",
   "properties": {
+    "type": {
+      "type": "string",
+      "enum": [
+        "CUSTOMER_BILL"
+      ],
+      "description": "Type de facture: partenaire."
+    },
     "partner": {
       "$ref": "./Partner.v1.json"
     },
@@ -23,10 +30,9 @@
     }
   },
   "required": [
+    "type",
     "partner",
     "due_date",
-    "amount",
-    "rib",
-    "case_summary"
+    "amount"
   ]
 }
