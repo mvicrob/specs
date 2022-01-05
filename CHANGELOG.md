@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.97.0](https://github.com/Toaztr/specs/compare/v0.96.0...v0.97.0) (2022-01-05)
+
+
+### Features
+
+* fix lint ([ff55f8c](https://github.com/Toaztr/specs/commit/ff55f8c5b7a108b7f1db2cca9f1553d35608076f))
+* merge partner and customer bills ([80dc413](https://github.com/Toaztr/specs/commit/80dc413ec76a3e2edb1d2762cca7eeeee9e30530))
+
 ## [0.96.0](https://github.com/Toaztr/specs/compare/v0.95.0...v0.96.0) (2022-01-03)
 
 
