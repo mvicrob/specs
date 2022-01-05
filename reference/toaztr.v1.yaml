@@ -357,57 +357,30 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/CaseResource'
-    PartnerBillResource:
-      title: PartnerBillResource
+    BillResource:
+      title: BillResource
       allOf:
         - $ref: '#/components/schemas/Resource'
         - type: object
           properties:
             attributes:
-              $ref: ../models/PartnerBill.v1.json
-      description: Représente une facture partenaire
-    CustomerBillResource:
-      title: CustomerBillResource
-      allOf:
-        - $ref: '#/components/schemas/Resource'
-        - type: object
-          properties:
-            attributes:
-              $ref: ../models/CustomerBill.v1.json
-      description: Représente une facture client
-    PartnerBillResourceResponse:
-      title: PartnerBillResourceResponse
+              $ref: ../models/BillingResults.v1.json
+      description: Représente une facture partenaire ou client
+    BillResourceResponse:
+      title: BillResourceResponse
       type: object
       properties:
         data:
-          $ref: '#/components/schemas/PartnerBillResource'
-    CustomerBillResourceResponse:
-      title: CustomerBillResourceResponse
-      type: object
-      description: ''
-      properties:
-        data:
-          $ref: '#/components/schemas/CustomerBillResource'
+          $ref: '#/components/schemas/BillResource'
     PartnerBillResourcePaginatedListResponse:
-      title: PartnerBillResourcePaginatedListResponse
-      type: object
-      allOf:
-        - $ref: '#/components/schemas/PaginatedResponse'
-        - type: object
-          properties:
-            data:
-              type: array
-              items:
-                $ref: '#/components/schemas/PartnerBillResource'
-    CustomerBillResourcePaginatedListResponse:
-      title: CustomerBillResourcePaginatedListResponse
+      title: BillResourcePaginatedListResponse
       allOf:
         - $ref: '#/components/schemas/PaginatedResponse'
         - properties:
             data:
               type: array
               items:
-                $ref: '#/components/schemas/CustomerBillResourceResponse'
+                $ref: '#/components/schemas/BillResource'
       type: object
     PartnerResource:
       title: PartnerResource
@@ -1423,14 +1396,14 @@ paths:
       - $ref: '#/components/parameters/id'
     get:
       operationId: getBillById
-      description: Retourne une facture partenaire par ID
+      description: Retourne une facture partenaire ou client par ID
       responses:
         '200':
           description: OK
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/PartnerBillResourceResponse'
+                $ref: '#/components/schemas/BillResourceResponse'
           headers:
             ETag:
               $ref: '#/components/headers/ETag'
@@ -1442,7 +1415,7 @@ paths:
           $ref: '#/components/responses/404'
         '500':
           $ref: '#/components/responses/500'
-      summary: Retourne une facture partenaire par ID
+      summary: Retourne une facture partenaire ou client par ID
       security:
         - toaztr_auth:
             - bills/read
@@ -1451,7 +1424,7 @@ paths:
       parameters: []
     delete:
       operationId: deleteBill
-      description: Supprime une facture partenaire par ID
+      description: Supprime une facture partenaire ou client par ID
       parameters:
         - $ref: '#/components/parameters/IfMatch'
       responses:
@@ -1467,67 +1440,7 @@ paths:
           $ref: '#/components/responses/409'
         '500':
           $ref: '#/components/responses/500'
-      summary: Supprime une facture partenaire par ID
-      security:
-        - toaztr_auth:
-            - bills/write
-      tags:
-        - billing
-  '/v1/customer_bills/{id}':
-    parameters:
-      - name: id
-        in: path
-        required: true
-        schema:
-          type: string
-        description: ID unique de la ressource
-    get:
-      operationId: getCustomerBillById
-      description: Retourne une facture client par ID
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/CustomerBillResourceResponse'
-          headers:
-            ETag:
-              $ref: '#/components/headers/ETag'
-        '400':
-          $ref: '#/components/responses/400'
-        '403':
-          $ref: '#/components/responses/403'
-        '404':
-          $ref: '#/components/responses/404'
-        '500':
-          $ref: '#/components/responses/500'
-      summary: Retourne une facture client par ID
-      security:
-        - toaztr_auth:
-            - bills/read
-      tags:
-        - billing
-      parameters: []
-    delete:
-      operationId: deleteCustomerBill
-      description: Supprime une facture client par ID
-      parameters:
-        - $ref: '#/components/parameters/IfMatch'
-      responses:
-        '200':
-          description: OK
-        '400':
-          $ref: '#/components/responses/400'
-        '403':
-          $ref: '#/components/responses/403'
-        '404':
-          $ref: '#/components/responses/404'
-        '409':
-          $ref: '#/components/responses/409'
-        '500':
-          $ref: '#/components/responses/500'
-      summary: Supprime une facture client par ID
+      summary: Supprime une facture partenaire ou client par ID
       security:
         - toaztr_auth:
             - bills/write
@@ -1536,7 +1449,7 @@ paths:
   /v1/bills:
     parameters: []
     post:
-      summary: Génère une facture partenaire
+      summary: Génère une facture partenaire ou client
       operationId: postBill
       responses:
         '201':
@@ -1544,7 +1457,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/PartnerBillResourceResponse'
+                $ref: '#/components/schemas/BillResourceResponse'
           headers:
             ETag:
               $ref: '#/components/headers/ETag'
@@ -1554,38 +1467,9 @@ paths:
         content:
           application/json:
             schema:
-              $ref: ../models/PartnerBillingParametersGeneric.v1.json
+              $ref: ../models/BillingParameters.v1.json
         description: 'Objets dossier, simulation et partners ou leurs IDs.'
-      description: 'Génère une facture, depuis les objets dossier, simulation et partners ou leurs IDs.'
-      tags:
-        - billing
-      security:
-        - toaztr_auth:
-            - bills/write
-  /v1/customer_bills:
-    parameters: []
-    post:
-      summary: Génère une facture à destination d'un client
-      operationId: postCustomerBill
-      responses:
-        '201':
-          description: Created
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/CustomerBillResourceResponse'
-          headers:
-            ETag:
-              $ref: '#/components/headers/ETag'
-        '409':
-          description: Conflict
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: ../models/CustomerBillingParametersGeneric.v1.json
-        description: 'Objets dossier, simulation et partners ou leurs IDs.'
-      description: 'Génère une facture, depuis les objets dossier, simulation et partners ou leurs IDs.'
+      description: 'Génère une facture partenaire ou client, depuis les objets dossier, simulation et partners ou leurs IDs.'
       tags:
         - billing
       security:
