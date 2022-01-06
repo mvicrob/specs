@@ -39,11 +39,11 @@
       "description": "Addresse du site web du partenaire.",
       "type": "string"
     },
-    "partner_billing": {
-      "$ref": "./BillingStructure.v1.json"
+    "partner_billing_rules": {
+      "$ref": "./BillingRules.v1.json"
     },
-    "customer_billing": {
-      "$ref": "./BillingStructure.v1.json"
+    "customer_billing_rules": {
+      "$ref": "./BillingRules.v1.json"
     },
     "rib": {
       "$ref": "./RIB.v1.json"

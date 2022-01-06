@@ -29,7 +29,7 @@
     },
     "limit": {
       "type": "number",
-      "description": "Montant maximum du comissionnement de ce partenaire pour ce type de prêt, si un maximum existe.",
+      "description": "Montant maximum du comissionnement de ce partenaire pour ce type de prêt.",
       "minimum": 0
     }
   }

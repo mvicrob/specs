@@ -1,21 +1,21 @@
 {
-  "title": "BillingStructure",
+  "title": "BillingRules",
   "type": "object",
   "description": "Structure de facturation.",
   "properties": {
-    "billing_structure": {
+    "tiers_per_loan": {
       "type": "array",
       "items": {
         "$ref": "./BillingTiersPerLoan.v1.json"
       }
     },
-    "limit": {
+    "maximum_bill_amount": {
       "type": "number",
-      "description": "Montant maximum du commissionnement de ce partenaire, si un maximum existe.",
+      "description": "Montant maximum du commissionnement de ce partenaire.",
       "minimum": 0
     }
   },
   "required": [
-    "billing_structure"
+    "tiers_per_loan"
   ]
 }
