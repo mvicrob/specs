@@ -1,12 +1,12 @@
 {
   "title": "BillingStructure",
   "type": "object",
-  "description": "Structure de facturation du partenaire.",
+  "description": "Structure de facturation.",
   "properties": {
-    "partner_billing": {
+    "billing_structure": {
       "type": "array",
       "items": {
-        "$ref": "./PartnerBillingTiersPerLoan.v1.json"
+        "$ref": "./BillingTiersPerLoan.v1.json"
       }
     },
     "limit": {
@@ -16,6 +16,6 @@
     }
   },
   "required": [
-    "partner_billing"
+    "billing_structure"
   ]
 }

@@ -1,7 +1,7 @@
 {
   "title": "PartnerBillingTier",
   "type": "object",
-  "description": "Modèle de facturation du partenaire: par tranches.\n\nSi from_amount et to_amount ne sont pas remplis, le modèle de facturation s'appliquera sur l'intégralité du montant du prêt, comme: flat_fee + montant_du_prêt * rate\n\nSinon, la facturation pour cette tranche sera calculée comme: flat_fee + (min(montant_du_prêt, to_amount) - from_amount) * rate\n\n",
+  "description": "Modèle de facturation: par tranches.\n\nSi from_amount et to_amount ne sont pas remplis, le modèle de facturation s'appliquera sur l'intégralité du montant du prêt, comme: flat_fee + montant_du_prêt * rate\n\nSinon, la facturation pour cette tranche sera calculée comme: flat_fee + (min(montant_du_prêt, to_amount) - from_amount) * rate\n\n",
   "properties": {
     "from_amount": {
       "type": "number",

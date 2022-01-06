@@ -40,10 +40,10 @@
       "type": "string"
     },
     "partner_billing": {
-      "$ref": "./PartnerBillingStructure.v1.json"
+      "$ref": "./BillingStructure.v1.json"
     },
     "customer_billing": {
-      "$ref": "./PartnerBillingStructure.v1.json"
+      "$ref": "./BillingStructure.v1.json"
     },
     "rib": {
       "$ref": "./RIB.v1.json"
