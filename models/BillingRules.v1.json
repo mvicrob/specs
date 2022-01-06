@@ -1,0 +1,21 @@
+{
+  "title": "BillingRules",
+  "type": "object",
+  "description": "Régles de facturation.",
+  "properties": {
+    "tiers_per_loan": {
+      "type": "array",
+      "items": {
+        "$ref": "./BillingTiersPerLoan.v1.json"
+      }
+    },
+    "maximum_bill_amount": {
+      "type": "number",
+      "description": "Montant maximum du commissionnement de ce partenaire.",
+      "minimum": 0
+    }
+  },
+  "required": [
+    "tiers_per_loan"
+  ]
+}

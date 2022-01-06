@@ -1502,33 +1502,6 @@ paths:
       security:
         - toaztr_auth:
             - bills/read
-  '/v1/customer_bills/{id}/docx':
-    parameters:
-      - schema:
-          type: string
-        name: id
-        in: path
-        required: true
-    get:
-      summary: Génère une facture client au format Word
-      operationId: getCustomerBillsDocx
-      responses:
-        '200':
-          description: OK
-          content:
-            application/vnd.openxmlformats-officedocument.wordprocessingml.document:
-              schema:
-                type: string
-                format: binary
-          headers: {}
-        '409':
-          description: Conflict
-      description: 'Génère une facture client au format Word (docx), à partir de son ID.'
-      tags:
-        - billing
-      security:
-        - toaztr_auth:
-            - bills/read
   /v1/transfers:
     parameters: []
     post:
