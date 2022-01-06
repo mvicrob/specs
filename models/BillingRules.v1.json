@@ -1,7 +1,7 @@
 {
   "title": "BillingRules",
   "type": "object",
-  "description": "Structure de facturation.",
+  "description": "Régles de facturation.",
   "properties": {
     "tiers_per_loan": {
       "type": "array",
