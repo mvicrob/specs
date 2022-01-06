@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.99.0](https://github.com/Toaztr/specs/compare/v0.98.0...v0.99.0) (2022-01-06)
+
+
+### Features
+
+* make billing structure name more generic ([1bdff13](https://github.com/Toaztr/specs/commit/1bdff131f0d7b016051303a231c4fb3473eb4fec))
+* remove endpoint ([9b05d90](https://github.com/Toaztr/specs/commit/9b05d908d75c49404faf210dbfa89da1834b60b2))
+* rename billing structure ([8235787](https://github.com/Toaztr/specs/commit/82357871ac4efdb8f554c37625266b2fd831a7ac))
+* rename billing structure, bis ([80e57e8](https://github.com/Toaztr/specs/commit/80e57e88128586adbaacf8ec4b58fc969d911daa))
+* rename billing structure, bis 2 ([60676cc](https://github.com/Toaztr/specs/commit/60676cc69078b2a8ef1591a1f3521afee2936b22))
+
 ## [0.98.0](https://github.com/Toaztr/specs/compare/v0.97.0...v0.98.0) (2022-01-05)
 
 
