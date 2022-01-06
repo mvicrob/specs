@@ -27,7 +27,7 @@
       "type": "number",
       "description": "Part variable, niveau prêt."
     },
-    "limit": {
+    "maximum_amount": {
       "type": "number",
       "description": "Montant maximum du comissionnement de ce partenaire pour ce type de prêt.",
       "minimum": 0
