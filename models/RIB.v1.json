@@ -39,12 +39,5 @@
       "type": "string",
       "description": "Domiciliation"
     }
-  },
-  "required": [
-    "bank_code",
-    "agency_code",
-    "account_number",
-    "key",
-    "bank_name"
-  ]
+  }
 }

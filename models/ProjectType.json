@@ -10,7 +10,8 @@
     "WORKS",
     "DEBT_CONSOLIDATION",
     "PINEL",
-    "LMNP"
+    "LMNP",
+    "BALANCING_ADJUSTMENT"
   ],
   "description": "Type de projet."
 }
