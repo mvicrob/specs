@@ -34,8 +34,9 @@
       "type": "boolean"
     },
     "remaining_capital": {
+      "type": "number",
       "description": "Capital restant dû.",
-      "type": "number"
+      "minimum": 0
     },
     "start_date": {
       "description": "Date de début du prêt.",

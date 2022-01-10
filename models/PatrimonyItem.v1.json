@@ -56,6 +56,17 @@
       "format": "date-time",
       "type": "string"
     },
+    "address": {
+      "$ref": "./Address.v1.json"
+    },
+    "is_mortgaged": {
+      "type": "boolean",
+      "description": "Présence d'une hypothèque ?"
+    },
+    "is_for_sale": {
+      "type": "boolean",
+      "description": "Mis en vente ?"
+    },
     "for_sale": {
       "$ref": "./ForSale.v1.json"
     },

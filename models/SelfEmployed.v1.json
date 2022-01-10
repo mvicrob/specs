@@ -10,8 +10,16 @@
         "SELFEMPLOYED"
       ]
     },
-    "activity_nature": {
-      "description": "Nature de l'activité.",
+    "name": {
+      "description": "Dénomination ou raison sociale.",
+      "type": "string"
+    },
+    "rcs_number": {
+      "description": "Numéro au Registre du Commerce et des Sociétés.",
+      "type": "string"
+    },
+    "siret": {
+      "description": "Numéro de Siret.",
       "type": "string"
     },
     "profession": {
