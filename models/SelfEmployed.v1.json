@@ -69,10 +69,6 @@
       "minimum": 0,
       "type": "integer"
     },
-    "identification": {
-      "description": "Numéro d'identification au Registre du Commerce et des Sociétés (RCS).",
-      "type": "string"
-    },
     "legal_status": {
       "description": "Forme juridique.",
       "type": "string"
