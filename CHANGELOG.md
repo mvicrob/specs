@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.100.0](https://github.com/Toaztr/specs/compare/v0.99.0...v0.100.0) (2022-01-10)
+
+
+### Features
+
+* remove identification ([ad612d1](https://github.com/Toaztr/specs/commit/ad612d1aefaf1a7f20e8c1284a4852160c10375b))
+* various improvements ([0ecdc59](https://github.com/Toaztr/specs/commit/0ecdc593dd879b61d9f00cd71bd98717a94f7062))
+
 ## [0.99.0](https://github.com/Toaztr/specs/compare/v0.98.0...v0.99.0) (2022-01-06)
 
 
