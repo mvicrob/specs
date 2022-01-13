@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.101.0](https://github.com/Toaztr/specs/compare/v0.100.0...v0.101.0) (2022-01-13)
+
+
+### Features
+
+* add commercial booleans ([a5fb794](https://github.com/Toaztr/specs/commit/a5fb7947a0603861ef1716829c962eb710e9b8c2))
+
 ## [0.100.0](https://github.com/Toaztr/specs/compare/v0.99.0...v0.100.0) (2022-01-10)
 
 
