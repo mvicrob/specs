@@ -8,6 +8,16 @@
       "default": true,
       "description": "Cette personne est-elle un emprunteur, ou est-elle renseignée pour information seulement."
     },
+    "is_advertising_agreed": {
+      "type": "boolean",
+      "default": false,
+      "description": "Cette personne accepte-t-elle de recevoir des offres commerciales par email ?"
+    },
+    "is_transmission_agreed": {
+      "type": "boolean",
+      "default": false,
+      "description": "Cette personne accepte-t-elle que ses coodonnées soient transmises à un partenaire ?"
+    },
     "finance": {
       "$ref": "./FinanceDetails.v1.json"
     },
