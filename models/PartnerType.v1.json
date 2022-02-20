@@ -12,9 +12,10 @@
     "LAND_SURVEYOR",
     "BUSINESS_PROVIDER",
     "ARCHITECT",
+    "REAL_ESTATE_DEVELOPER",
     "LAWYER",
+    "INSURER",
     "OTHER"
   ],
-  "description": "Type de partenaire ou d'intervenant sur un dossier.",
-  "x-examples": {}
+  "description": "Type de partenaire ou d'intervenant sur un dossier."
 }
