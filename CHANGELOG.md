@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.102.0](https://github.com/Toaztr/specs/compare/v0.101.0...v0.102.0) (2022-02-20)
+
+
+### Features
+
+* Insurance questions + misc fixes ([873eee7](https://github.com/Toaztr/specs/commit/873eee7f2ab40fffcd1d8792c45426f4e9e469f6))
+
 ## [0.101.0](https://github.com/Toaztr/specs/compare/v0.100.0...v0.101.0) (2022-01-13)
 
 
