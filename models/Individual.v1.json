@@ -56,6 +56,9 @@
     },
     "residence_permit": {
       "$ref": "./ResidencePermit.v1.json"
+    },
+    "insurance_questionnaire": {
+      "$ref": "./InsuranceQuestionnaire.v1.json"
     }
   }
 }
