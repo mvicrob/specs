@@ -5,7 +5,8 @@
     "SOLO",
     "TEAM",
     "ENTERPRISE",
-    "START"
+    "START",
+    "PROPULSION"
   ],
   "description": "Type de souscription."
 }
