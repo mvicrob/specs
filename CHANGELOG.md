@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.102.1](https://github.com/Toaztr/specs/compare/v0.102.0...v0.102.1) (2022-02-21)
+
+
+### Bug Fixes
+
+* Adds PROPULSION subscription type ([70f6b63](https://github.com/Toaztr/specs/commit/70f6b63fbad8190ebf21fbe9fc576257386f4589))
+
 ## [0.102.0](https://github.com/Toaztr/specs/compare/v0.101.0...v0.102.0) (2022-02-20)
 
 
