@@ -5,6 +5,11 @@
   "properties": {
     "objective": {
       "$ref": "./SimulationObjective.v1.json"
+    },
+    "relax_maximal_constraints": {
+      "type": "boolean",
+      "default": false,
+      "description": "Permet de ne pas tenir compte des contraintes maximal_monthly_payment et maximal_debt_ratio et de renvoyer un plan de financement dans tous les cas, en mode MINIMIZE_INSTALMENT."
     }
   }
 }

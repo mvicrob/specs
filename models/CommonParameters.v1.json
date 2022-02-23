@@ -14,11 +14,6 @@
       "maximum": 100,
       "description": "Pourcentage d'endettement à ne pas dépasser. En général égal à 33% des revenus de l'emprunteur."
     },
-    "relax_maximal_constraints": {
-      "type": "boolean",
-      "default": false,
-      "description": "Permet de ne pas tenir compte des contraintes maximal_monthly_payment et maximal_debt_ratio et de renvoyer un plan de financement dans tous les cas, en mode MINIMIZE_INSTALMENT."
-    },
     "funding_fees": {
       "$ref": "./FundingFees.v1.json"
     },
