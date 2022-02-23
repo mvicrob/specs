@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.103.0](https://github.com/Toaztr/specs/compare/v0.102.1...v0.103.0) (2022-02-23)
+
+
+### Features
+
+* add boolean to relax instalment constraint ([d10bc2c](https://github.com/Toaztr/specs/commit/d10bc2c120e300eadf9f4e87c9f42fbed5da85c6))
+* place relax_maximal_constraints close to objective ([b215275](https://github.com/Toaztr/specs/commit/b215275ff4a6fb17f016a7c891db2ea29f7b5064))
+* rename field ([744d926](https://github.com/Toaztr/specs/commit/744d9264ff86c3b606c397f3491962ae51900910))
+
 ### [0.102.1](https://github.com/Toaztr/specs/compare/v0.102.0...v0.102.1) (2022-02-21)
 
 
