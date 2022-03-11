@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.104.0](https://github.com/Toaztr/specs/compare/v0.103.0...v0.104.0) (2022-03-11)
+
+
+### Features
+
+* can select a candidate simulation ([5b303cb](https://github.com/Toaztr/specs/commit/5b303cb8e7a628f1c24209703e91a723d2618455))
+
 ## [0.103.0](https://github.com/Toaztr/specs/compare/v0.102.1...v0.103.0) (2022-02-23)
 
 
