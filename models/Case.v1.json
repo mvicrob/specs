@@ -28,6 +28,9 @@
           },
           "simulation_id": {
             "type": "string"
+          },
+          "selected": {
+            "type": "boolean"
           }
         }
       }
