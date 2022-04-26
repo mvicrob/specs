@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.105.0](https://github.com/Toaztr/specs/compare/v0.104.0...v0.105.0) (2022-04-26)
+
+
+### Features
+
+* fix land price ([88b9eab](https://github.com/Toaztr/specs/commit/88b9eab5c9a9d36a2d28b60c93c9ad1c40c2cc92))
+
 ## [0.104.0](https://github.com/Toaztr/specs/compare/v0.103.0...v0.104.0) (2022-03-11)
 
 
