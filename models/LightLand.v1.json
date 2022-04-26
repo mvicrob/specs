@@ -15,7 +15,7 @@
     "expenses": {
       "type": "object",
       "properties": {
-        "land_price": {
+        "price": {
           "description": "Prix du bien à acquérir.",
           "minimum": 0,
           "type": "number"
