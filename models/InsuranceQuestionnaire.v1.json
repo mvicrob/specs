@@ -15,9 +15,13 @@
       "type": "number",
       "description": "Kilométrage annuel de l'emprunteur."
     },
+    "risky_sports_activities": {
+      "type": "boolean",
+      "description": "L'emprunteur pratique t-il des sports risqués ?"
+    },
     "height_of_work": {
       "type": "number",
-      "description": "Préciser la hauteur du travail en mêtres, en cas de travail en hauteur."
+      "description": "Préciser la hauteur du travail en mètres, en cas de travail en hauteur."
     },
     "manual_labor": {
       "type": "boolean",
@@ -47,6 +51,10 @@
         "WORK_IN_MONTAINS_OR_IN_UNDERGROUND",
         "HUMANITARIAN_WORKER"
       ]
+    },
+    "comment": {
+      "type": "string",
+      "description": "Commentaire."
     }
   }
 }
