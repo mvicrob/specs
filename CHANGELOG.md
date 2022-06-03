@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.106.0](https://github.com/Toaztr/specs/compare/v0.105.0...v0.106.0) (2022-06-03)
+
+
+### Features
+
+* new fields in questionnaire ([f600342](https://github.com/Toaztr/specs/commit/f6003425975b5f3d3952e0cfba0e6f4c5cd62ec5))
+
 ## [0.105.0](https://github.com/Toaztr/specs/compare/v0.104.0...v0.105.0) (2022-04-26)
 
 
