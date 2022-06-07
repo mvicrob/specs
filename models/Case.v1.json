@@ -11,6 +11,10 @@
       "type": "string",
       "description": "ID de l'utilisateur à qui est assigné le dossier"
     },
+    "copied_from": {
+      "type": "string",
+      "description": "ID du dossier parent, si ce dossier a été créé par copie"
+    },
     "status": {
       "$ref": "./CaseStatus.v1.json"
     },
