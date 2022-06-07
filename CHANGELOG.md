@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.107.0](https://github.com/Toaztr/specs/compare/v0.106.0...v0.107.0) (2022-06-07)
+
+
+### Features
+
+* add copied_from ([5e5d3ca](https://github.com/Toaztr/specs/commit/5e5d3ca1c7738ab27001bb9dea7ffc1a505c538f))
+
 ## [0.106.0](https://github.com/Toaztr/specs/compare/v0.105.0...v0.106.0) (2022-06-03)
 
 
