@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.108.0](https://github.com/Toaztr/specs/compare/v0.107.0...v0.108.0) (2022-07-21)
+
+
+### Features
+
+* permit total grace period in bridge loans ([5cc3a5b](https://github.com/Toaztr/specs/commit/5cc3a5b854a9e60ddb3731c540869b4ea9d6129f))
+
 ## [0.107.0](https://github.com/Toaztr/specs/compare/v0.106.0...v0.107.0) (2022-06-07)
 
 
