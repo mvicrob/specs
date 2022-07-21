@@ -1,7 +1,7 @@
 {
   "type": "object",
   "title": "BridgeLoan",
-  "description": "Prêt relais. \n\nIl est à noter que cet objet peut matérialiser un prêt relais ou un prêt in-fine, ces 2 prêts étants définis de manière identique au sein d'un plan de financement. Les caractéristiques de ces 2 prêts (période de différé partiel et remboursement du capital en une seule fois à la fin du prêt) sont en effet identiques. Seuls changent l'objet du prêt, et ce à quoi le prêt est adossé (un bien immobilier, le nantissement d'un plancement financier...).",
+  "description": "Prêt relais. \n\nIl est à noter que cet objet peut matérialiser un prêt relais ou un prêt in-fine, ces 2 prêts étants définis de manière identique au sein d'un plan de financement. Les caractéristiques de ces 2 prêts (période de différé partiel ou total et remboursement du capital en une seule fois à la fin du prêt) sont en effet identiques. Seuls changent l'objet du prêt, et ce à quoi le prêt est adossé (un bien immobilier, le nantissement d'un plancement financier...).\n\nPar défaut, le différé est partiel.",
   "properties": {
     "type": {
       "type": "string",
@@ -25,6 +25,15 @@
       "description": "Durée du prêt relais, en mois.",
       "minimum": 0,
       "type": "integer"
+    },
+    "grace_period_type": {
+      "description": "Type de différé: partiel (différé d'amortissement uniquement) ou total (différé d'amortissement et d'intérets).",
+      "type": "string",
+      "default": "PARTIAL",
+      "enum": [
+        "PARTIAL",
+        "TOTAL"
+      ]
     },
     "insurances": {
       "description": "Assurance(s) emprunteur(s).",
