@@ -26,10 +26,14 @@
       "minimum": 0,
       "type": "integer"
     },
-    "has_total_grace_period": {
-      "default": false,
-      "description": "Le différé est-il total ? Par défaut, celui-ci est partiel.",
-      "type": "boolean"
+    "grace_period_type": {
+      "description": "Type de différé: partiel (différé d'amortissement uniquement) ou total (différé d'amortissement et d'intérets).",
+      "type": "string",
+      "default": "PARTIAL",
+      "enum": [
+        "PARTIAL",
+        "TOTAL"
+      ]
     },
     "insurances": {
       "description": "Assurance(s) emprunteur(s).",
