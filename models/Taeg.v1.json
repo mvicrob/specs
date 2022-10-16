@@ -1,12 +1,21 @@
 {
   "properties": {
     "free_taeg": {
-      "description": "TAEG, à l'exclusion du ou des prêt(s) relais.",
+      "description": "TAEG des prêts amortissables à taux fixe.",
       "minimum": 0,
       "type": "number"
     },
     "free_taeg_above_wear_rate": {
-      "description": "Comparaison du TAEG avec le taux d'usure en vigueur.",
+      "description": "Comparaison du TAEG des prêts amortissables à taux fixe avec le taux d'usure en vigueur.",
+      "type": "boolean"
+    },
+    "free_variable_rate_taeg": {
+      "description": "TAEG des prêts amortissables à taux variable.",
+      "minimum": 0,
+      "type": "number"
+    },
+    "free_variable_rate_taeg_above_wear_rate": {
+      "description": "Comparaison du TAEG des prêts amortissables à taux variable avec le taux d'usure en vigueur.",
       "type": "boolean"
     },
     "bridge_taeg": {
@@ -22,6 +31,8 @@
   "required": [
     "bridge_taeg",
     "bridge_taeg_above_wear_rate",
+    "free_variable_rate_taeg",
+    "free_variable_rate_taeg_above_wear_rate",
     "free_taeg",
     "free_taeg_above_wear_rate"
   ],
