@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.109.0](https://github.com/Toaztr/specs/compare/v0.108.0...v0.109.0) (2022-10-16)
+
+
+### Features
+
+* Order of mandatory fields ([92723eb](https://github.com/Toaztr/specs/commit/92723eba6855e865e2f8f19f5450ff1594650be7))
+
 ## [0.108.0](https://github.com/Toaztr/specs/compare/v0.107.0...v0.108.0) (2022-07-21)
 
 
