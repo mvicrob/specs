@@ -31,10 +31,10 @@
   "required": [
     "bridge_taeg",
     "bridge_taeg_above_wear_rate",
-    "free_variable_rate_taeg",
-    "free_variable_rate_taeg_above_wear_rate",
     "free_taeg",
-    "free_taeg_above_wear_rate"
+    "free_taeg_above_wear_rate",
+    "free_variable_rate_taeg",
+    "free_variable_rate_taeg_above_wear_rate"
   ],
   "type": "object",
   "title": "Taeg",
