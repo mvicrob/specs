@@ -1,0 +1,33 @@
+{
+    "type": "BANK",
+    "name": "Etude banque gfhouuookjlbn,bn,b,,nbbn,c o    4",
+    "address": {
+      "address": "9, chemin des Roses",
+      "postal_code": "06200",
+      "city": "Nice",
+      "country": "France"
+    },
+    "main_contact": {
+      "courtesy": "MRS",
+			"first_name": "Jeanne",
+      "last_name": "Dupont",
+			"phone_number": "06.93.12.23.56",
+			"email": "jeanne@dupont.com"
+    },
+    "contacts": [
+      {
+        "courtesy": "MRS",
+        "first_name": "Albertine",
+        "last_name": "Contact1",
+				"phone_number": "06.93.12.23.56",
+			  "email": "Albertine@Contact1.com"
+      },
+      {
+        "courtesy": "MR",
+        "first_name": "Albert",
+        "last_name": "Contact2",
+				"phone_number": "06.93.12.23.56",
+			  "email": "Albert@Contact2.com"
+      }
+    ]
+  } 

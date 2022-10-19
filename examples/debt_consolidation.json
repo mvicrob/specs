@@ -1,0 +1,39 @@
+{
+	"actor": {
+		"type": "HOUSEHOLD",
+		"people_count": 1,
+		"finance": {
+			"personal_funding": 10000
+		}
+	},
+	"project": {
+		"type": "DEBT_CONSOLIDATION",
+		"loans_to_consolidate": [
+			{
+				"yearly_rate": 1,
+				"first_monthly_payment_date": "2018-12-31T23:00:00.000Z",
+				"duration_months": 240,
+				"ira": {
+					"type": "NEGOCIATED",
+					"value": 550
+				},
+				"initial_capital": 200000
+			}
+		]
+	},
+	"funding_fees": {
+		"file_management_fees": 0
+	},
+	"type": "DEBT_CONSOLIDATION_PLAN_PARAMETERS",
+	"maximal_monthly_payment": 1400,
+	"loans": [
+		{
+			"insurances": [
+			],
+			"type": "FREE_LOAN",
+			"yearly_rate": 1,
+			"max_duration_months": 209
+		}
+	],
+	"objective": "MINIMIZE_INSTALMENT"
+}

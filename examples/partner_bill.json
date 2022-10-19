@@ -1,0 +1,155 @@
+{
+                "type": "PARTNER_BILLING_PARAMETERS",
+                "case": {
+									  "name": "Dossier Dupond",
+									  "actor": {
+											"type": "HOUSEHOLD",
+											"persons": [
+												{ 
+													"is_borrower": true,
+													"civil": {
+													  "courtesy": "MR",
+													  "first_name": "Jean",
+													  "last_name": "Dupond"
+												  }
+												},
+												{
+													"is_borrower": true,
+													"civil": {
+													  "courtesy": "MRS",
+													  "first_name": "Jeanne",
+													  "last_name": "Dupond"
+												  }
+												},
+												{
+													"civil": {
+													  "civility": "MRS",
+													  "first_name": "Albertine",
+													  "last_name": "Dupond"
+												  }
+												}
+											]
+										},
+                    "project": {
+                        "type": "OLD_PROPERTY",
+                        "expenses": {
+                            "price": 225000
+                        },
+                        "administrative_information": {
+                            "address": {
+                              "address": "227, rue des roses avec une addresse tellement longue pour tester",
+														  "postal_code": "06200",
+                              "city": "Nice",
+															"country": "France"
+                            },
+													  "nature": "FLAT",
+                            "project_dates": {
+                            "signature_date": "2023-12-31T23:00:00.000Z"
+                            }
+                        }
+                    }
+                },
+                "partner_from": {
+                    "type": "BROKER",
+                    "name": "CreditPierre",
+									  "address": {
+											"address": "110, rue des lilas avec une addresse tellement longue pour tester",
+											"postal_code": "06300",
+											"city": "Antibes",
+											"country": "France"
+										},
+									  "website": "www.creditpierre.com",
+										"phone_number": "04 93 75 89 65",
+									  "rib": {
+											"iban": "iban-123",
+											"bic": "bic-456",
+											"agency_code": "code2",
+											"key": "ab",
+											"account_number": "a-account-n",
+											"bank_code": "code1",
+											"bank_name": "BPCE PRO"
+										}
+                },
+                "partner_to": {
+									  "toto": "toto1",
+                    "type": "BANK",
+									  "website": "www.bnp.com",
+                    "name": "BNP",
+									  "main_contact": {
+											"phone_number": "04 93 77 77 77",
+											"email": "main@alongcontactemailtotest.com"
+										},
+									  "address": {
+											"address": "45, rue des banques avec une addresse tellement longue pour tester",
+											"postal_code": "06700",
+											"city": "Cannes",
+											"country": "France"
+										},
+                    "partner_billing_rules": {
+                      "maximum_bill_amount": 2000,
+											"tiers_per_loan": [
+												{
+													"type": "FREE_LOAN",
+													"tiers": [
+															{
+																"from_amount": 0,
+																"to_amount": 1000,
+																"flat_fee": 10,
+																"rate": 0.3
+															},
+															{
+																"from_amount": 1000,
+																"to_amount": 1000000,
+																"flat_fee": 173,
+																"rate": 0.1
+															}
+													],
+													"flat_fee": 50,
+													"rate": 0.5,
+													"maximum_amount": 1500
+												},
+												{
+													"flat_fee": 50,
+													"rate": 0.5,
+													"maximum_amount": 1500,
+													"tiers": []
+												}
+											]
+                  }
+                },
+                "funding_results": {
+                    "status": "OPTIMAL",
+                    "loans": [
+                        {
+                            "type": "FREE_LOAN",
+                            "yearly_rate": 1,
+                            "duration_months": 240,
+                            "amount": 200000,
+                            "amortizations": [],
+                            "interests": [],
+                            "insurances": [],
+                            "released_amounts": [],
+                            "remaining_capital": [],
+                            "preamortizations": [],
+                            "interests_cost": 40165.46,
+                            "insurance_cost": 56045.3,
+                            "preamortization_cost": 0
+                        },
+											  {
+                            "type": "PTZ_LOAN",
+                            "yearly_rate": 0,
+                            "duration_months": 300,
+                            "amount": 136000,
+                            "amortizations": [],
+                            "interests": [],
+                            "insurances": [],
+                            "released_amounts": [],
+                            "remaining_capital": [],
+                            "preamortizations": [],
+                            "interests_cost": 40165.46,
+                            "insurance_cost": 56045.3,
+                            "preamortization_cost": 0
+                        }
+                    ]
+                }
+            }
