@@ -1,0 +1,72 @@
+{
+	"maximal_monthly_payment": 1250,
+	"objective": "MINIMIZE_INSTALMENT",
+	"loans": [
+		{
+			"type": "FREE_LOAN",
+			"yearly_rate": 1,
+			"max_duration_months": 240,
+			"insurances": [
+				{
+					"type": "INITIAL_CAPITAL",
+					"rate": 0.3
+				}
+			]
+		}
+	],
+	"project": {
+		"type": "PINEL",
+		"pinel_duration": 9,
+		"monthly_rent_value": 458,
+		"monthly_rent_value_yearly_evolution_rate": 0.3,
+		"price_yearly_evolution_rate": 1,
+		"renting_charges_rate": 12,
+		"property": {
+			"type": "NEW_PROPERTY",
+			"administrative_information": {
+				"address": {
+					"insee_code": "06088"
+				}
+			},
+			"surfaces": {
+				"surface": 50,
+				"additional_surface": 0
+			},
+			"expenses": {
+				"price": 250000,
+				"fees": {
+					"agency_fees": 3500,
+					"broker_fees": 1000, 
+					"file_management_fees": 550,
+					"notary_fees": 5000
+				}
+			}
+		}
+	},
+	"actor": {
+		"type": "HOUSEHOLD",
+		"people_count": 5,
+		"children_count": 3,
+		"persons": [
+			{
+				"finance": {
+					"personal_funding": 3500,
+					"revenues": [
+						{
+							"type": "SALARY",
+							"monthly_amount": {
+								"figure": 5500
+							}
+						}
+					]
+				},
+				"civil": {
+					"type": "INDIVIDUAL",
+					"family_situation": {
+						"marital_status": "MARRIED"
+					}
+				}
+			}
+		]
+	}  
+} 

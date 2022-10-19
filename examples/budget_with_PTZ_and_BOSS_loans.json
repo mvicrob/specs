@@ -1,0 +1,108 @@
+{
+	"objective": "MAXIMIZE_BUDGET",
+	"maximal_monthly_payment": 5200,
+	"loans": [
+		{
+			"type": "PTZ_LOAN"
+		},
+		{
+			"type": "BOSS_LOAN",
+			"insurances": [
+				{
+					"rate": 0.4,
+					"type": "REMAINING_CAPITAL"
+				},
+				{
+					"rate": 0.2,
+					"type": "REMAINING_CAPITAL",
+					"mandatory": false,
+					"risks_covered": [
+						"ITT",
+						"DC"
+					],
+					"quota": 70,
+					"comment": "This is an optional insurance"
+				}
+			],
+			"guaranty": {
+				"type": "CREDIT_LOGEMENT_CLASSIC"
+			}
+		},
+		{
+			"type": "FREE_LOAN",
+			"yearly_rate": 1,
+			"guaranty": {
+				"type": "CASDEN"
+			},
+			"max_duration_months": 240,
+			"insurances": [
+				{
+					"rate": 0.2,
+					"type": "INITIAL_CAPITAL"
+				}
+			]
+		},
+		{
+			"type": "FREE_LOAN",
+			"yearly_rate": 0.5,
+			"guaranty": {
+				"type": "HYPOTHEQUE"
+			},
+			"max_duration_months": 120,
+			"insurances": [
+				{
+					"type": "REMAINING_CAPITAL",
+					"rate": 0.4
+				}
+			],
+			"grace_period": {
+				"type": "PARTIAL",
+				"length": 24
+			}
+		}
+	],
+	"project": {
+		"type": "BUDGET",
+		"administrative_information": {
+			"state": "NEW",
+			"nature": "FLAT",
+			"destination": "MAIN_PROPERTY",
+			"address": {
+				"insee_code": "44100"
+			}
+		},
+		"dpe_rate": "B",
+		"expenses": {
+			"land_price": 372534.06,
+			"construction_price": 680000,
+			"fees": {
+				"agency_fees": 18500,
+				"broker_fees": 850,
+				"file_management_fees": 650,
+				"notary_fees": 27465.94
+			}
+		}
+	},
+	"actor": {
+		"type": "HOUSEHOLD",
+		"people_count": 2,
+		"dependent_persons_count": 1,
+		"first_time_buyer": true,
+		"finance": {
+			"income_tax": {
+				"fiscal_reference_revenue_Nminus2": 18500
+			}
+		},
+		"persons": [
+			{
+				"finance": {
+					"personal_funding": 100000
+				},
+				"profession": {
+					"status": "EMPLOYEE",
+					"employees_number": 113
+				}
+			}
+		]
+	}
+}

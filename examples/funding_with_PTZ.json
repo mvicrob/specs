@@ -1,0 +1,72 @@
+{
+	"objective": "MINIMIZE_INSTALMENT",
+	"maximal_monthly_payment": 1000,
+	"loans": [
+		{
+			"type": "PTZ_LOAN",
+			"insurances": [
+				{
+					"rate": 0.2,
+					"type": "INITIAL_CAPITAL"
+				}
+			]
+		},
+		{
+			"type": "FREE_LOAN",
+			"yearly_rate": 1,
+			"max_duration_months": 240,
+			"insurances": [
+				{
+					"rate": 0.2,
+					"type": "INITIAL_CAPITAL"
+				}
+			]
+		}
+	],
+	"project": {
+		"type": "NEW_PROPERTY",
+		"administrative_information": {
+			"state": "NEW",
+			"nature": "FLAT",
+			"destination": "MAIN_PROPERTY",
+			"address": {
+				"insee_code": "44100"
+			}
+		},
+		"dpe_rate": "B",
+		"expenses": {
+			"price": 200000,
+			"fees": {
+				"agency_fees": 1100,
+				"broker_fees": 1200,
+				"file_management_fees": 1300,
+				"notary_fees": 4000
+			}
+		}
+	},
+	"actor": {
+	  "type": "HOUSEHOLD",
+		"people_count": 2,
+		"dependent_persons_count": 5,
+		"first_time_buyer": true,
+		"finance": {
+			"personal_funding": 10000
+		},
+		"persons": [
+			{
+				"finance": {
+					"income_tax": {
+				    "fiscal_reference_revenue_Nminus2": 6500
+					}
+				}
+			},
+			{
+				"finance": {
+					"income_tax": {
+				    "fiscal_reference_revenue_Nminus2": 1200
+					}
+				}
+			}
+		]
+  }
+}

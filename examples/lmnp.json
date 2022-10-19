@@ -1,0 +1,68 @@
+{
+	"objective": "MINIMIZE_INSTALMENT",
+	"maximal_monthly_payment": 1400,
+	"funding_fees": {
+		"broker_fees": 500,
+		"file_management_fees": 650
+	},
+	"loans": [
+		{
+			"type": "FREE_LOAN",
+			"yearly_rate": 1,
+			"max_duration_months": 240,
+			"insurances": [
+				{
+					"type": "INITIAL_CAPITAL",
+					"rate": 0.3
+				}
+			],
+			"guaranty": {
+				"type": "HYPOTHEQUE"
+			}
+		}
+	],
+	"project": {
+		"type": "LMNP",
+		"tax_mode": "REAL",
+		"guestroom_or_classified": false,
+		"monthly_rent_value": 750,
+		"monthly_rent_value_yearly_evolution_rate": 0.5,
+		"price_yearly_evolution_rate": 1,
+		"renting_charges_rate": 12,
+		"duration": 30,
+		"property": {
+			"type": "NEW_PROPERTY",
+			"expenses": {
+				"price": 200000,
+				"other_expenses": 5000,
+				"vat": 1200,
+				"other_taxes": 2000,
+				"fees": {
+					"agency_fees": 1000,
+					"notary_fees": 15000
+				}
+			}
+		}
+	},
+	"actor": {
+		"type": "HOUSEHOLD",
+		"people_count": 5,
+		"children_count": 3,
+		"finance": {
+			"personal_funding": 15000,
+			"income_tax": {
+				"fiscal_reference_revenue_Nminus1": 48500,
+				"fiscal_reference_revenue_Nminus2": 48000
+			}
+		},
+		"persons": [
+			{
+				"civil": {
+					"family_situation": {
+						"marital_status": "MARRIED"
+					}
+				}
+			}
+		]
+	}
+}

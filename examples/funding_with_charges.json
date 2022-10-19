@@ -1,0 +1,83 @@
+{
+    "type": "FUNDING",
+    "objective": "MINIMIZE_INSTALMENT",
+	  "funding_fees": {
+			"broker_fees": 1000,
+			"include_broker_fees_in_taeg": true
+		},
+	  "maximal_debt_ratio": 55,
+    "loans": [{
+            "type": "FREE_LOAN",
+            "yearly_rate": 1.3,
+            "max_duration_months": 240,
+						"insurances": [
+							{
+								"type": "INITIAL_CAPITAL",
+								"rate": 0.3,
+								"quota": 50
+							},
+							{
+								"type": "INITIAL_CAPITAL",
+								"rate": 0.4,
+								"quota": 100
+							},
+							{
+								"type": "INITIAL_CAPITAL",
+								"rate": 0.4,
+								"quota": 100,
+								"mandatory": true
+							}
+						],
+						"guaranty": {
+							"type": "CREDIT_LOGEMENT_CLASSIC"
+						}  
+    }],
+    "project": {
+        "type": "OLD_PROPERTY", 
+        "expenses": {
+            "price": 225000,
+            "works_price": 65000,
+            "fees": {
+              "notary_fees": 13500,
+							"agency_fees": 7000
+            }
+        }
+    },
+    "actor": {
+        "type": "HOUSEHOLD",
+        "people_count": 2,
+        "finance": {
+            "personal_funding": 20000,
+            "revenues": [
+                {
+                    "type": "OTHER",
+                    "monthly_amount": {
+                        "figure": 4200
+                    }
+                },
+							  {
+                    "type": "SALARY",
+                    "monthly_amount": {
+                        "figure": 1200
+                    }
+                }
+            ],
+            "charges": [
+                {
+                    "type": "OTHER",
+                    "monthly_amount": {
+                        "figure": 650
+                    },
+                    "continue_after_project": true
+                },
+							  {
+                    "type": "SCHEDULED_SAVING",
+                    "monthly_amount": {
+                        "figure": 200
+                    },
+                    "continue_after_project": true
+                }
+            ]
+        }
+    }  
+}
