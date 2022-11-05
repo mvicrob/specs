@@ -1,0 +1,166 @@
+{
+  "title": "LifeInsuranceParameters",
+  "type": "object",
+  "description": "Paramètres de simulation d'un projet d'assurance vie",
+  "properties": {
+    "mode": {
+      "type": "string",
+      "description": "Mode de simulation: grandeur recherchée",
+      "enum": [
+        "FINAL_CAPITAL",
+        "INITIAL_CAPITAL",
+        "MONTHLY_PAYMENT",
+        "YEARLY_AVERAGE_PERFORMANCE"
+      ]
+    },
+    "contract_parameters": {
+      "type": "object",
+      "required": [
+        "subscription_date",
+        "valuation_date",
+        "horizon_date"
+      ],
+      "properties": {
+        "subscription_date": {
+          "description": "Date de la première souscription.",
+          "format": "date-time",
+          "type": "string"
+        },
+        "valuation_date": {
+          "description": "Date de valorisation du contrat.",
+          "format": "date-time",
+          "type": "string"
+        },
+        "horizon_date": {
+          "description": "Horizon du contrat: date de fin.",
+          "format": "date-time",
+          "type": "string"
+        },
+        "percentage_in_non_euro_fund": {
+          "description": "Pourcentage du capital investis hors du fond euros.",
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100,
+          "default": 0
+        }
+      }
+    },
+    "installments": {
+      "type": "array",
+      "description": "Liste des versements, incluant le versement initial",
+      "items": {
+        "$ref": "./LifeInsuranceInstallmentItem.v1.json"
+      }
+    },
+    "purchases": {
+      "type": "array",
+      "description": "Liste des rachats",
+      "items": {
+        "$ref": "./LifeInsurancePurchaseItem.v1.json"
+      }
+    },
+    "advances": {
+      "type": "array",
+      "description": "Liste des avances",
+      "items": {
+        "$ref": "./LifeInsuranceAdvanceItem.v1.json"
+      }
+    },
+    "adjudications": {
+      "type": "array",
+      "description": "Liste des arbitrages",
+      "items": {
+        "$ref": "./LifeInsuranceAdjudicationItem.v1.json"
+      }
+    },
+    "fees": {
+      "type": "object",
+      "description": "Frais sur les opérations du contrat d'assurance vie: versement initial, persement ponctuel, versement régulier, rachat, avance, arbitrage et gestion (du fond euro et UC).",
+      "properties": {
+        "initial_installment": {
+          "$ref": "./LifeInsuranceFees.v1.json"
+        },
+        "installment": {
+          "$ref": "./LifeInsuranceFees.v1.json"
+        },
+        "regular_installment": {
+          "$ref": "./LifeInsuranceFees.v1.json"
+        },
+        "purchase": {
+          "$ref": "./LifeInsuranceFees.v1.json"
+        },
+        "advance": {
+          "$ref": "./LifeInsuranceFees.v1.json"
+        },
+        "adjudication": {
+          "$ref": "./LifeInsuranceFees.v1.json"
+        },
+        "management_euro_fund": {
+          "$ref": "./LifeInsuranceFees.v1.json"
+        },
+        "management_non_euro_fund": {
+          "$ref": "./LifeInsuranceFees.v1.json"
+        }
+      }
+    },
+    "funds_yearly_performances": {
+      "type": "object",
+      "description": "Performance annuelle brute de frais de gestion des fonds euro et non euro. Le nombre d'élèments doit correspondre à la durée du contrat, soit le nombre d'années entre les paramètres subscription_date et horizon_date.",
+      "properties": {
+        "euro": {
+          "type": "array",
+          "description": "Performances annuelles du fond euros",
+          "items": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 100
+          }
+        },
+        "non_euro": {
+          "type": "array",
+          "description": "Performances annuelles du ou des fonds non euros",
+          "items": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 100
+          }
+        }
+      }
+    },
+    "taxes": {
+      "type": "object",
+      "description": "Impositions des plus-values",
+      "properties": {
+        "tax_mode": {
+          "type": "string",
+          "description": "Fiscalité choisie: prélèvement forfaitaire libératoire ou intégration à l'impôt sur le revenu.",
+          "enum": [
+            "ONE_SHOT_PAYING",
+            "INTEGRATION_TO_INCOME_TAX"
+          ],
+          "default": "ONE_SHOT_PAYING"
+        },
+        "merginal_tax_rate": {
+          "type": "number",
+          "description": "Taux marginal d'imposition",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "allowance": {
+          "type": "number",
+          "minimum": 0,
+          "default": 0,
+          "description": "Abbatement éventuels"
+        }
+      },
+      "required": [
+        "tax_mode"
+      ]
+    }
+  },
+  "required": [
+    "mode",
+    "contract_parameters",
+    "installments"
+  ]
+}

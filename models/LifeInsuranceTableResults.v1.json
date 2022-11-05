@@ -1,0 +1,56 @@
+{
+  "type": "object",
+  "title": "LifeInsuranceTableResults",
+  "description": "Tableau de résultat de la simulation d'un contrat d'assurance vie",
+  "properties": {
+    "capital": {
+      "type": "array",
+      "description": "Capital",
+      "items": {
+        "type": "number"
+      }
+    },
+    "installments": {
+      "type": "array",
+      "description": "Versements",
+      "items": {
+        "type": "number"
+      }
+    },
+    "gains": {
+      "type": "array",
+      "description": "Intérêts",
+      "items": {
+        "type": "number"
+      }
+    },
+    "purshases": {
+      "type": "array",
+      "description": "Rachats",
+      "items": {
+        "type": "number"
+      }
+    },
+    "fees": {
+      "type": "array",
+      "description": "Frais",
+      "items": {
+        "type": "number"
+      }
+    },
+    "advances": {
+      "type": "array",
+      "description": "Avances",
+      "items": {
+        "type": "number"
+      }
+    },
+    "adjudications": {
+      "type": "array",
+      "description": "Arbitrages",
+      "items": {
+        "type": "number"
+      }
+    }
+  }
+}

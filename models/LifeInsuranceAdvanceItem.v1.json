@@ -1,0 +1,37 @@
+{
+  "title": "LifeInsuranceAdvanceItem",
+  "x-stoplight": {
+    "id": "0b9xa584a6b3a"
+  },
+  "description": "Représente une avance sur un contrat d'assurance vie",
+  "type": "object",
+  "properties": {
+    "amount": {
+      "description": "Montant de l'avance.",
+      "minimum": 0,
+      "type": "number"
+    },
+    "percentage_in_euro_fund": {
+      "type": "number",
+      "description": "Pourcentage du rachat sur le fond euro.",
+      "minimum": 0,
+      "default": 100,
+      "maximum": 100
+    },
+    "date_out": {
+      "description": "Date du déblocage de l'avance.",
+      "format": "date-time",
+      "type": "string"
+    },
+    "date_in": {
+      "description": "Date du remboursement de l'avance.",
+      "format": "date-time",
+      "type": "string"
+    }
+  },
+  "required": [
+    "amount",
+    "date_out",
+    "date_in"
+  ]
+}

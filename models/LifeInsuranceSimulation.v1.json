@@ -1,0 +1,28 @@
+{
+  "title": "LifeInsuranceSimulation",
+  "x-stoplight": {
+    "id": "0df8467fdf4f9"
+  },
+  "description": "Réponse de la simulation d'un projet d'assurance vie.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string",
+      "default": "LIFE_INSURANCE",
+      "description": "Type de simulation.",
+      "enum": [
+        "PINEL"
+      ]
+    },
+    "parameters": {
+      "$ref": "./LifeInsuranceParameters.v1.json"
+    },
+    "results": {
+      "$ref": "./LifeInsuranceResults.v1.json"
+    }
+  },
+  "required": [
+    "type",
+    "parameters"
+  ]
+}

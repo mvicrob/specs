@@ -9,6 +9,12 @@ tags:
   - name: case
     x-displayName: dossier
     description: Gestion de dossiers clients
+  - name: invite
+    x-displayName: invitations
+    description: Gestion des invitation conseillers dans une licence interface de type Teams
+  - name: standalone_life_insurance
+    x-displayName: Assurance vie
+    description: Simulation d'un contrat d'assurance vie
   - name: plan_parameters
     x-displayName: financement
     description: Gestion des plans de financement dans un dossier client
@@ -58,6 +64,7 @@ x-tagGroups:
       - standalone_score
       - notary
       - income_tax
+      - standalone_life_insurance
   - name: Gestion des souscriptions
     tags:
       - subscription
@@ -100,6 +107,7 @@ components:
             transfers/write: Accès en écriture aux transferts
             transfers/*: Accès complet aux transferts
             scores/*: Accès au scoring
+            wealth/*: Accès à la simulation d'un contrat d'assurance vie
             subscriptions/read: Accès en lecture aux souscriptions
             subscriptions/write: Accès en écriture aux souscriptions
             subscriptions/*: Accès complet aux souscriptions
@@ -502,6 +510,13 @@ components:
       properties:
         data:
           $ref: ../models/NotaryFees.v1.json
+    LifeInsuranceResponse:
+      title: LifeInsuranceResponse
+      type: object
+      properties:
+        data:
+          $ref: ../models/LifeInsuranceResults.v1.json
+      description: Résultat d'une simulation de contrat d'assurance vie
     IncomeTaxResponse:
       title: IncomeTaxResponse
       type: object
@@ -1735,6 +1750,35 @@ paths:
       security:
         - toaztr_auth:
             - simulations/lmnp
+  /v1/life_insurance:
+    parameters: []
+    post:
+      operationId: postLifeInsurance
+      description: Simule un contrat d'assurance vie
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ../models/LifeInsuranceParameters.v1.json
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LifeInsuranceResponse'
+        '400':
+          $ref: '#/components/responses/400'
+        '403':
+          $ref: '#/components/responses/403'
+        '500':
+          $ref: '#/components/responses/500'
+      summary: Simule un contrat d'assurance vie
+      security:
+        - toaztr_auth:
+            - wealth/*
+      tags:
+        - standalone_life_insurance
   /v1/scores:
     parameters: []
     post:

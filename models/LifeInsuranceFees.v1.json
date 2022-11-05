@@ -1,0 +1,35 @@
+{
+  "title": "LifeInsuranceFees",
+  "x-stoplight": {
+    "id": "se1018hcgiqm1"
+  },
+  "oneOf": [
+    {
+      "properties": {
+        "percentage": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100,
+          "default": 0
+        }
+      },
+      "required": [
+        "percentage"
+      ]
+    },
+    {
+      "properties": {
+        "flat": {
+          "type": "number",
+          "default": 0,
+          "minimum": 0
+        }
+      },
+      "required": [
+        "flat"
+      ]
+    }
+  ],
+  "type": "object",
+  "description": "Frais appliqués à une opération sur un contrat d'assurance vie: valeur fixe + pourcentage du montant de l'opération (versement, rachat, avance)."
+}
