@@ -44,20 +44,7 @@
         {
           "properties": {
             "periodicity": {
-              "type": [
-                {
-                  "description": "Périodicité du rachat.",
-                  "type": "string",
-                  "enum": [
-                    "MONTHLY",
-                    "QUARTERLY",
-                    "HALF_YEARLY",
-                    "YEARLY"
-                  ]
-                },
-                "string"
-              ],
-              "default": "MONTHLY"
+              "$ref": "./LifeInsurancePeriodicity.v1.json"
             }
           },
           "required": [

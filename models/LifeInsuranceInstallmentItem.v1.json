@@ -39,20 +39,7 @@
         {
           "properties": {
             "periodicity": {
-              "type": [
-                {
-                  "default": "MONTHLY",
-                  "description": "Périodicité du versement.",
-                  "type": "string",
-                  "enum": [
-                    "MONTHLY",
-                    "QUARTERLY",
-                    "HALF_YEARLY",
-                    "YEARLY"
-                  ]
-                },
-                "string"
-              ]
+              "$ref": "./LifeInsurancePeriodicity.v1.json"
             }
           }
         }

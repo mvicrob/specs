@@ -1,0 +1,12 @@
+{
+  "type": "string",
+  "title": "LifeInsurancePeriodicity",
+  "enum": [
+    "MONTHLY",
+    "QUARTERLY",
+    "HALF_YEARLY",
+    "YEARLY"
+  ],
+  "description": "Périodicité des évènements d'un contrat d'assurance vie.",
+  "default": "MONTHLY"
+}
