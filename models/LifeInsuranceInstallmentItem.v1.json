@@ -1,0 +1,55 @@
+{
+  "title": "LifeInsuranceInstallmentItem",
+  "description": "Représente le versement d'une prime sur un contrat d'assurance vie",
+  "type": "object",
+  "properties": {
+    "type": {
+      "default": "ONE_TIME",
+      "description": "Type de versement.",
+      "type": "string",
+      "enum": [
+        "INITIAL",
+        "ONE_TIME",
+        "RECURRING"
+      ]
+    },
+    "amount": {
+      "description": "Montant du versement.",
+      "minimum": 0,
+      "type": "number"
+    },
+    "percentage_in_euro_fund": {
+      "type": "number",
+      "description": "Pourcentage du versement alloué au fond euro.",
+      "minimum": 0,
+      "default": 100,
+      "maximum": 100
+    },
+    "date_or_periodicity": {
+      "oneOf": [
+        {
+          "properties": {
+            "date": {
+              "description": "Date du versement.",
+              "format": "date-time",
+              "type": "string"
+            }
+          }
+        },
+        {
+          "properties": {
+            "periodicity": {
+              "$ref": "./LifeInsurancePeriodicity.v1.json"
+            }
+          }
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "required": [
+    "type",
+    "amount",
+    "date_or_periodicity"
+  ]
+}

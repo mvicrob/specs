@@ -1,0 +1,64 @@
+{
+  "title": "LifeInsurancePurchaseItem",
+  "x-stoplight": {
+    "id": "rn6qdhcylzis7"
+  },
+  "description": "Représente le rachat, partiel ou total, d'un contrat d'assurance vie",
+  "type": "object",
+  "properties": {
+    "type": {
+      "default": "ONE_TIME",
+      "description": "Type de rachat.",
+      "type": "string",
+      "enum": [
+        "ONE_TIME",
+        "RECURRING",
+        "COMPLETE"
+      ]
+    },
+    "amount": {
+      "description": "Montant du rachat.",
+      "minimum": 0,
+      "type": "number"
+    },
+    "percentage_in_euro_fund": {
+      "type": "number",
+      "description": "Pourcentage du rachat sur le fond euro.",
+      "minimum": 0,
+      "default": 100,
+      "maximum": 100
+    },
+    "date_or_periodicity": {
+      "oneOf": [
+        {
+          "properties": {
+            "date": {
+              "description": "Date du rachat.",
+              "format": "date-time",
+              "type": "string"
+            }
+          },
+          "required": [
+            "date"
+          ]
+        },
+        {
+          "properties": {
+            "periodicity": {
+              "$ref": "./LifeInsurancePeriodicity.v1.json"
+            }
+          },
+          "required": [
+            "periodicity"
+          ]
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "required": [
+    "type",
+    "amount",
+    "date_or_periodicity"
+  ]
+}

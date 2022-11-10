@@ -1,0 +1,34 @@
+{
+  "title": "LifeInsuranceAdjudicationItem",
+  "x-stoplight": {
+    "id": "l2blqkdfsa5zq"
+  },
+  "description": "Représente une opération d'arbitrage sur un contrat d'assurance vie, depuis ou vers le fonds euros.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "default": "FROM_EURO_FUNDS",
+      "description": "Type d'arbitrage.",
+      "type": "string",
+      "enum": [
+        "FROM_EURO_FUNDS",
+        "TO_EURO_FUNDS"
+      ]
+    },
+    "amount": {
+      "description": "Montant de l'arbitrage.",
+      "minimum": 0,
+      "type": "number"
+    },
+    "date": {
+      "description": "Date de l'arbitrage.",
+      "format": "date-time",
+      "type": "string"
+    }
+  },
+  "required": [
+    "type",
+    "amount",
+    "date"
+  ]
+}

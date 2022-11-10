@@ -1,0 +1,47 @@
+{
+  "type": "object",
+  "x-stoplight": {
+    "id": "i6looooy50x2l"
+  },
+  "title": "LifeInsuranceSummaryResults",
+  "description": "Résumé des résultats de la simulation d'un contrat d'assurance vie",
+  "properties": {
+    "capital": {
+      "type": "number",
+      "description": "Capital"
+    },
+    "installment": {
+      "type": "number",
+      "description": "Versements"
+    },
+    "gains": {
+      "type": "number",
+      "description": "Intérêts"
+    },
+    "purshase": {
+      "type": "number",
+      "description": "Rachats"
+    },
+    "fees": {
+      "type": "number",
+      "description": "Frais"
+    },
+    "advance": {
+      "type": "number",
+      "description": "Avances"
+    },
+    "adjudication": {
+      "type": "number",
+      "description": "Arbitrages"
+    }
+  },
+  "required": [
+    "capital",
+    "installment",
+    "gains",
+    "purshase",
+    "fees",
+    "advance",
+    "adjudication"
+  ]
+}
