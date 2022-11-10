@@ -4,7 +4,7 @@
     "id": "gxadcfz10kqv9"
   },
   "title": "LifeInsuranceResults",
-  "description": "Résultats de la simulation d'un contrat d'assurance vie",
+  "description": "Résultats de la simulation d'un contrat d'assurance vie.",
   "properties": {
     "table_euro_fund": {
       "$ref": "./LifeInsuranceTableResults.v1.json"
