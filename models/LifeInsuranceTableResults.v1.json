@@ -52,5 +52,14 @@
         "type": "number"
       }
     }
-  }
+  },
+  "required": [
+    "capital",
+    "installments",
+    "gains",
+    "purshases",
+    "fees",
+    "advances",
+    "adjudications"
+  ]
 }

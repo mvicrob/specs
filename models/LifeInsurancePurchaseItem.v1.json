@@ -12,6 +12,7 @@
       "type": "string",
       "enum": [
         "ONE_TIME",
+        "RECURRING",
         "COMPLETE"
       ]
     },

@@ -11,7 +11,7 @@
       "default": "LIFE_INSURANCE",
       "description": "Type de simulation.",
       "enum": [
-        "PINEL"
+        "LIFE_INSURANCE"
       ]
     },
     "parameters": {

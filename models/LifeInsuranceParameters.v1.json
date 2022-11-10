@@ -112,17 +112,14 @@
           "description": "Performances annuelles du fond euros",
           "items": {
             "type": "number",
-            "minimum": 0,
-            "maximum": 100
+            "minimum": 0
           }
         },
         "non_euro": {
           "type": "array",
           "description": "Performances annuelles du ou des fonds non euros",
           "items": {
-            "type": "number",
-            "minimum": 0,
-            "maximum": 100
+            "type": "number"
           }
         }
       }
@@ -140,7 +137,7 @@
           ],
           "default": "ONE_SHOT_PAYING"
         },
-        "merginal_tax_rate": {
+        "marginal_tax_rate": {
           "type": "number",
           "description": "Taux marginal d'imposition",
           "minimum": 0,

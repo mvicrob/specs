@@ -34,5 +34,14 @@
       "type": "number",
       "description": "Arbitrages"
     }
-  }
+  },
+  "required": [
+    "capital",
+    "installment",
+    "gains",
+    "purshase",
+    "fees",
+    "advance",
+    "adjudication"
+  ]
 }
